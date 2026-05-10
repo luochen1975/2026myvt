@@ -1,0 +1,33 @@
+name: Update IPTV Sources
+
+on:
+  schedule:
+    - cron: '0 2,14 * * *'  # 每天 02:00 和 14:00 运行
+  workflow_dispatch:  # 支持手动触发
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.14'
+    
+    - name: Install dependencies
+      run: |
+        pip install aiohttp requests
+    
+    - name: Run processor
+      run: python main.py
+    
+    - name: Commit results
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add output/
+        git diff --quiet && git diff --staged --quiet || git commit -m "Update IPTV sources $(date +%Y-%m-%d)"
+        git push
