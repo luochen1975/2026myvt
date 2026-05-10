@@ -1,9 +1,12 @@
 name: Update IPTV Sources
 
+permissions:
+  contents: write
+
 on:
   schedule:
-    - cron: '0 2,14 * * *'  # 每天 02:00 和 14:00 运行
-  workflow_dispatch:  # 支持手动触发
+    - cron: '0 2,14 * * *'
+  workflow_dispatch:
 
 jobs:
   update:
@@ -11,11 +14,13 @@ jobs:
     
     steps:
     - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.14'
+        python-version: '3.12'
     
     - name: Install dependencies
       run: |
