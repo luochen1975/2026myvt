@@ -35,7 +35,7 @@ class ChannelMerger:
         except FileNotFoundError:
             pass
     
-       def _normalize_name(self, name: str) -> str:
+    def _normalize_name(self, name: str) -> str:
         """标准化频道名称"""
         # 去空格、转小写
         name = re.sub(r'\s+', '', name).lower()
