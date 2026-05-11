@@ -36,10 +36,25 @@ class ChannelMerger:
             pass
     
     def _normalize_name(self, name: str) -> str:
-        name = re.sub(r'\s+', '', name).lower()
-        for old, new in self.aliases.items():
-            name = name.replace(old, new)
-        return name
+    """标准化频道名称"""
+    # 去空格、转小写
+    name = re.sub(r'\s+', '', name).lower()
+    
+    # CCTV 统一格式
+    name = re.sub(r'cctv\s*(\d+)', r'cctv-\1', name)           # cctv1 → cctv-1
+    name = re.sub(r'cctv-(\d+)[^\d].*', r'cctv-\1', name)      # cctv-1综合 → cctv-1
+    
+    # 去掉清晰度后缀
+    name = re.sub(r'(高清|hd|超清|uhd|4k|8k|标清|sd|1080p|720p)', '', name)
+    
+    # 去掉"频道"后缀
+    name = re.sub(r'频道$', '', name)
+    
+    # 别名替换
+    for old, new in self.aliases.items():
+        name = name.replace(old, new)
+    
+    return name
     
     def merge(self, all_channels: List[Channel]) -> List[Channel]:
         filtered = self._filter_blacklist(all_channels)
