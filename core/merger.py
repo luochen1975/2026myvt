@@ -13,6 +13,7 @@ class ChannelMerger:
         self.keep_strategy = keep_strategy
         self.blacklist = set()
         self.multicast_limit = 4
+        self.mobile_multicast_limit = 8  # 移动组播多保留
     
     def load_blacklist(self, blacklist_file: str):
         try:
@@ -22,20 +23,14 @@ class ChannelMerger:
             pass
     
     def _normalize_name(self, name: str) -> str:
-        """名称标准化：统一别名、去空格、转小写"""
         name = re.sub(r'\s+', '', name).lower()
-        
-        # 别名映射
         aliases = {
             'brtv': '北京',
-            'hunantv': '湖南',
-            'zjtv': '浙江',
-            'jstv': '江苏',
+            'zhejiangtv': '浙江',
+            'ningbotv': '宁波',
         }
-        
         for old, new in aliases.items():
             name = name.replace(old, new)
-        
         return name
     
     def merge(self, all_channels: List[Channel]) -> List[Channel]:
@@ -47,7 +42,6 @@ class ChannelMerger:
             selected = self._select_by_type(channels)
             result.extend(selected)
         
-        result.sort(key=lambda c: (c.group, c.name))
         return result
     
     def _filter_blacklist(self, channels: List[Channel]) -> List[Channel]:
@@ -66,19 +60,35 @@ class ChannelMerger:
     def _is_multicast(self, url: str) -> bool:
         return url.startswith(('udp://', 'rtp://', 'rtsp://'))
     
+    def _get_isp(self, channels: List[Channel]) -> str:
+        """判断频道组的主要ISP"""
+        isps = [c.extra.get('isp', 'other') for c in channels]
+        if 'mobile' in isps:
+            return 'mobile'
+        elif 'unicom' in isps:
+            return 'unicom'
+        elif 'telecom' in isps:
+            return 'telecom'
+        return 'other'
+    
     def _select_by_type(self, channels: List[Channel]) -> List[Channel]:
         multicast = [c for c in channels if self._is_multicast(c.url)]
         unicast = [c for c in channels if not self._is_multicast(c.url)]
         
         selected = []
+        isp = self._get_isp(channels)
         
+        # 组播源：移动网络多保留
         if multicast:
             multicast.sort(key=lambda c: c.speed, reverse=True)
-            selected.extend(multicast[:self.multicast_limit])
-            if len(multicast) > self.multicast_limit:
-                print(f"  [组播去重] {channels[0].name}: {len(multicast)}个→{self.multicast_limit}个")
+            limit = self.mobile_multicast_limit if isp == 'mobile' else self.multicast_limit
+            selected.extend(multicast[:limit])
+            if len(multicast) > limit:
+                print(f"  [组播去重] {channels[0].name}({isp}): {len(multicast)}个→{limit}个")
         
+        # 单播源：全部保留
         selected.extend(unicast)
+        
         return selected
     
     def apply_template(self, channels: List[Channel], template_file: str) -> List[Channel]:
@@ -97,9 +107,7 @@ class ChannelMerger:
                 if id(ch) in used:
                     continue
                 
-                # 模板匹配时也用标准化名称
                 names = [ch.name, ch.tvg_name] if ch.tvg_name else [ch.name]
-                # 同时匹配原始名称和标准化名称
                 check_names = list(names)
                 check_names.append(self._normalize_name(ch.name))
                 
