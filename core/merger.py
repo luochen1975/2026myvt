@@ -84,26 +84,32 @@ class ChannelMerger:
             valid.append(ch)
         return valid
     
-    def _filter_keywords(self, channels: List[Channel]) -> List[Channel]:
-        """过滤特定关键词和年份+年+逗号"""
-        skip_keywords = ['春晚', '春节联欢晚会', '历年春晚', '春晚回放', 'cctv春晚']
-        year_nian_comma_pattern = re.compile(r'(19\d{2}|20\d{2})年,')
+   def _filter_keywords(self, channels: List[Channel]) -> List[Channel]:
+    """过滤特定关键词"""
+    skip_keywords = [
+        '春晚', '春节联欢晚会', '历年春晚', '春晚回放', 'cctv春晚',
+        '成人', '午夜', '激情', '诱惑', '私密', '限制级',
+        'av', 'xxx', 'porn', 'adult', 'hot', 'sexy','redtraffic','G2s9zK2n9m','mycamtv','adult','ddyunbo','bgbfds','6apzfdx','shuma5588','xsmj10','aosikazy12','slbfsl','cdn2020','hndtl','m8t9ew','46cdn','41cdn','34cdn','m8t9ew','46cdn','krevonix'
+    ]
+    year_nian_comma_pattern = re.compile(r'(19\d{2}|20\d{2})年,')
+    
+    filtered = []
+    for ch in channels:
+        text = f"{ch.name} {ch.group}".lower()
         
-        filtered = []
-        for ch in channels:
-            text = f"{ch.name} {ch.group}".lower()
-            
-            if any(kw in text for kw in skip_keywords):
-                print(f"  [过滤] {ch.name}")
-                continue
-            
-            if year_nian_comma_pattern.search(ch.name):
-                print(f"  [过滤] {ch.name}")
-                continue
-            
-            filtered.append(ch)
+        # 检查关键词
+        if any(kw in text for kw in skip_keywords):
+            print(f"  [过滤] {ch.name}")
+            continue
         
-        return filtered
+        # 检查年份+年+逗号
+        if year_nian_comma_pattern.search(ch.name):
+            print(f"  [过滤] {ch.name}")
+            continue
+        
+        filtered.append(ch)
+    
+    return filtered
     
     def _group_by_name(self, channels: List[Channel]) -> Dict[str, List[Channel]]:
         groups = defaultdict(list)
