@@ -85,31 +85,35 @@ class ChannelMerger:
         return valid
     
     def _filter_keywords(self, channels: List[Channel]) -> List[Channel]:
-    """过滤特定关键词"""
-    skip_keywords = [
-        '春晚', '春节联欢晚会', '历年春晚', '春晚回放', 'cctv春晚',
-        '成人', '午夜', '激情', '诱惑', '私密', '限制级',
-        'av', 'xxx', 'porn', 'adult', 'hot', 'sexy','redtraffic','G2s9zK2n9m','mycamtv','adult','ddyunbo','bgbfds','6apzfdx','shuma5588','xsmj10','aosikazy12','slbfsl','cdn2020','hndtl','m8t9ew','46cdn','41cdn','34cdn','m8t9ew','46cdn','krevonix'
-    ]
-    year_nian_comma_pattern = re.compile(r'(19\d{2}|20\d{2})年,')
-    
-    filtered = []
-    for ch in channels:
-        text = f"{ch.name} {ch.group}".lower()
+        """过滤特定关键词"""
+        skip_keywords = [
+            '春晚', '春节联欢晚会', '历年春晚', '春晚回放', 'cctv春晚',
+            '成人', '午夜', '激情', '诱惑', '私密', '限制级',
+            'av', 'xxx', 'porn', 'adult', 'hot', 'sexy',
+            'redtraffic', 'G2s9zK2n9m', 'mycamtv', 'ddyunbo',
+            'bgbfds', '6apzfdx', 'shuma5588', 'xsmj10',
+            'aosikazy12', 'slbfsl', 'cdn2020', 'hndtl',
+            'm8t9ew', '46cdn', '41cdn', '34cdn', 'krevonix'
+        ]
+        year_nian_comma_pattern = re.compile(r'(19\d{2}|20\d{2})年,')
         
-        # 检查关键词
-        if any(kw in text for kw in skip_keywords):
-            print(f"  [过滤] {ch.name}")
-            continue
+        filtered = []
+        for ch in channels:
+            text = f"{ch.name} {ch.group}".lower()
+            
+            # 检查关键词
+            if any(kw in text for kw in skip_keywords):
+                print(f"  [过滤] {ch.name}")
+                continue
+            
+            # 检查年份+年+逗号
+            if year_nian_comma_pattern.search(ch.name):
+                print(f"  [过滤] {ch.name}")
+                continue
+            
+            filtered.append(ch)
         
-        # 检查年份+年+逗号
-        if year_nian_comma_pattern.search(ch.name):
-            print(f"  [过滤] {ch.name}")
-            continue
-        
-        filtered.append(ch)
-    
-    return filtered
+        return filtered
     
     def _group_by_name(self, channels: List[Channel]) -> Dict[str, List[Channel]]:
         groups = defaultdict(list)
@@ -163,7 +167,10 @@ class ChannelMerger:
         result = []
         used = set()
         
-        for pattern in template_lines:
+        for pattern_line in template_lines:
+            # 支持 | 分隔多个别名
+            patterns = [p.strip() for p in pattern_line.split('|')]
+            
             matched = []
             for ch in channels:
                 if id(ch) in used:
@@ -173,7 +180,11 @@ class ChannelMerger:
                 check_names = list(names)
                 check_names.append(self._normalize_name(ch.name))
                 
-                if any(fnmatch.fnmatch(name, pattern) for name in check_names):
+                # 任一模式匹配即可
+                if any(
+                    any(fnmatch.fnmatch(name, pat) for name in check_names)
+                    for pat in patterns
+                ):
                     matched.append(ch)
                     used.add(id(ch))
             
@@ -182,5 +193,5 @@ class ChannelMerger:
         for ch in channels:
             if id(ch) not in used:
                 result.append(ch)
-                
+        
         return result
