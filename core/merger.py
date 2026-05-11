@@ -84,7 +84,7 @@ class ChannelMerger:
             valid.append(ch)
         return valid
     
-   def _filter_keywords(self, channels: List[Channel]) -> List[Channel]:
+    def _filter_keywords(self, channels: List[Channel]) -> List[Channel]:
     """过滤特定关键词"""
     skip_keywords = [
         '春晚', '春节联欢晚会', '历年春晚', '春晚回放', 'cctv春晚',
