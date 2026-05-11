@@ -9,9 +9,9 @@
     "https://raw.githubusercontent.com/testnmb/migu_video/refs/heads/main/interfaceTXT.txt",
     "https://raw.githubusercontent.com/testnmb/5566/refs/heads/main/fhtv.txt",
 
-  ],
+  ]
   "m3u": [
     "https://raw.githubusercontent.com/luochen1975/yuanzl77--IPTV/refs/heads/main/live.m3u"
-  ],
+  ]
   "json": []
 }
