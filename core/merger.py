@@ -1,6 +1,8 @@
 import hashlib
 import re
 import fnmatch
+import json
+from pathlib import Path
 from typing import List, Dict
 from collections import defaultdict
 from core.parser import Channel
@@ -15,6 +17,16 @@ class ChannelMerger:
         self.multicast_limit = 2
         self.mobile_multicast_limit = 4
         self.unicast_limit = 5
+        self.aliases = self._load_aliases()
+    
+    def _load_aliases(self) -> Dict[str, str]:
+        """从文件加载别名"""
+        alias_file = Path(__file__).parent.parent / "config" / "aliases.json"
+        try:
+            with open(alias_file, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            return {}
     
     def load_blacklist(self, blacklist_file: str):
         try:
@@ -25,19 +37,14 @@ class ChannelMerger:
     
     def _normalize_name(self, name: str) -> str:
         name = re.sub(r'\s+', '', name).lower()
-        aliases = {
-            'brtv': '北京',
-            'zhejiangtv': '浙江',
-            'ningbotv': '宁波',
-        }
-        for old, new in aliases.items():
+        for old, new in self.aliases.items():
             name = name.replace(old, new)
         return name
     
     def merge(self, all_channels: List[Channel]) -> List[Channel]:
         filtered = self._filter_blacklist(all_channels)
         filtered = self._filter_invalid(filtered)
-        filtered = self._filter_keywords(filtered)  # 过滤关键词
+        filtered = self._filter_keywords(filtered)
         name_groups = self._group_by_name(filtered)
         
         result = []
@@ -62,32 +69,26 @@ class ChannelMerger:
             valid.append(ch)
         return valid
     
-  import re
-
-def _filter_keywords(self, channels: List[Channel]) -> List[Channel]:
-    """过滤特定关键词和年份+年+逗号"""
-    skip_keywords = ['春晚', '春节联欢晚会', '历年春晚', '春晚回放', 'cctv春晚']
-    
-    # 匹配 "年份+年+逗号"：2024年,、1999年, 等
-    year_nian_comma_pattern = re.compile(r'(19\d{2}|20\d{2})年,')
-    
-    filtered = []
-    for ch in channels:
-        text = f"{ch.name} {ch.group}".lower()
+    def _filter_keywords(self, channels: List[Channel]) -> List[Channel]:
+        """过滤特定关键词和年份+年+逗号"""
+        skip_keywords = ['春晚', '春节联欢晚会', '历年春晚', '春晚回放', 'cctv春晚']
+        year_nian_comma_pattern = re.compile(r'(19\d{2}|20\d{2})年,')
         
-        # 检查关键词
-        if any(kw in text for kw in skip_keywords):
-            print(f"  [过滤] {ch.name}")
-            continue
+        filtered = []
+        for ch in channels:
+            text = f"{ch.name} {ch.group}".lower()
+            
+            if any(kw in text for kw in skip_keywords):
+                print(f"  [过滤] {ch.name}")
+                continue
+            
+            if year_nian_comma_pattern.search(ch.name):
+                print(f"  [过滤] {ch.name}")
+                continue
+            
+            filtered.append(ch)
         
-        # 检查 "年份+年+逗号"
-        if year_nian_comma_pattern.search(ch.name):
-            print(f"  [过滤] {ch.name}")
-            continue
-        
-        filtered.append(ch)
-    
-    return filtered
+        return filtered
     
     def _group_by_name(self, channels: List[Channel]) -> Dict[str, List[Channel]]:
         groups = defaultdict(list)
