@@ -12,8 +12,9 @@ class ChannelMerger:
         self.dedup_mode = dedup_mode
         self.keep_strategy = keep_strategy
         self.blacklist = set()
-        self.multicast_limit = 4
-        self.mobile_multicast_limit = 8  # 移动组播多保留
+        self.multicast_limit = 2
+        self.mobile_multicast_limit = 4
+        self.unicast_limit = 5
     
     def load_blacklist(self, blacklist_file: str):
         try:
@@ -35,6 +36,8 @@ class ChannelMerger:
     
     def merge(self, all_channels: List[Channel]) -> List[Channel]:
         filtered = self._filter_blacklist(all_channels)
+        filtered = self._filter_invalid(filtered)
+        filtered = self._filter_keywords(filtered)  # 过滤关键词
         name_groups = self._group_by_name(filtered)
         
         result = []
@@ -50,6 +53,42 @@ class ChannelMerger:
             if not any(black in ch.url for black in self.blacklist)
         ]
     
+    def _filter_invalid(self, channels: List[Channel]) -> List[Channel]:
+        """过滤无效URL"""
+        valid = []
+        for ch in channels:
+            if not ch.url or ch.url.startswith(','):
+                continue
+            valid.append(ch)
+        return valid
+    
+  import re
+
+def _filter_keywords(self, channels: List[Channel]) -> List[Channel]:
+    """过滤特定关键词和年份+年+逗号"""
+    skip_keywords = ['春晚', '春节联欢晚会', '历年春晚', '春晚回放', 'cctv春晚']
+    
+    # 匹配 "年份+年+逗号"：2024年,、1999年, 等
+    year_nian_comma_pattern = re.compile(r'(19\d{2}|20\d{2})年,')
+    
+    filtered = []
+    for ch in channels:
+        text = f"{ch.name} {ch.group}".lower()
+        
+        # 检查关键词
+        if any(kw in text for kw in skip_keywords):
+            print(f"  [过滤] {ch.name}")
+            continue
+        
+        # 检查 "年份+年+逗号"
+        if year_nian_comma_pattern.search(ch.name):
+            print(f"  [过滤] {ch.name}")
+            continue
+        
+        filtered.append(ch)
+    
+    return filtered
+    
     def _group_by_name(self, channels: List[Channel]) -> Dict[str, List[Channel]]:
         groups = defaultdict(list)
         for ch in channels:
@@ -61,7 +100,6 @@ class ChannelMerger:
         return url.startswith(('udp://', 'rtp://', 'rtsp://'))
     
     def _get_isp(self, channels: List[Channel]) -> str:
-        """判断频道组的主要ISP"""
         isps = [c.extra.get('isp', 'other') for c in channels]
         if 'mobile' in isps:
             return 'mobile'
@@ -78,7 +116,6 @@ class ChannelMerger:
         selected = []
         isp = self._get_isp(channels)
         
-        # 组播源：移动网络多保留
         if multicast:
             multicast.sort(key=lambda c: c.speed, reverse=True)
             limit = self.mobile_multicast_limit if isp == 'mobile' else self.multicast_limit
@@ -86,8 +123,11 @@ class ChannelMerger:
             if len(multicast) > limit:
                 print(f"  [组播去重] {channels[0].name}({isp}): {len(multicast)}个→{limit}个")
         
-        # 单播源：全部保留
-        selected.extend(unicast)
+        if unicast:
+            unicast.sort(key=lambda c: c.speed, reverse=True)
+            selected.extend(unicast[:self.unicast_limit])
+            if len(unicast) > self.unicast_limit:
+                print(f"  [单播去重] {channels[0].name}: {len(unicast)}个→{self.unicast_limit}个")
         
         return selected
     
