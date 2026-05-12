@@ -2,13 +2,11 @@
   "txt": [
     {"name": "主源", "url": "https://wp.kayyw.com/f/MbVmc6/zb2026.txt", "isp": "mobile"},
     "https://raw.githubusercontent.com/luochen1975/dszby/refs/heads/main/merged_output.txt",
-    "https://raw.githubusercontent.com/fafa002/yf2025/refs/heads/main/yiyifafa.txt",
     "https://raw.githubusercontent.com/fafa002/yf2025/refs/heads/main/wangye.txt",
     "https://raw.githubusercontent.com/testnmb/mynew/refs/heads/main/rihou.txt",
     "https://raw.githubusercontent.com/testnmb/mynew/refs/heads/main/ttest.txt",
-    "https://raw.githubusercontent.com/testnmb/migu_video/refs/heads/main/interfaceTXT.txt",
-    "https://raw.githubusercontent.com/testnmb/5566/refs/heads/main/fhtv.txt"
-  ],
+    "https://raw.githubusercontent.com/testnmb/migu_video/refs/heads/main/interfaceTXT.txt"
+    ],
   "m3u": [
     "https://raw.githubusercontent.com/luochen1975/yuanzl77--IPTV/refs/heads/main/live.m3u"
   ],
