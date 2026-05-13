@@ -5,8 +5,14 @@
     "https://raw.githubusercontent.com/fafa002/yf2025/refs/heads/main/wangye.txt",
     "https://raw.githubusercontent.com/testnmb/mynew/refs/heads/main/rihou.txt",
     "https://raw.githubusercontent.com/testnmb/mynew/refs/heads/main/ttest.txt",
-    "https://raw.githubusercontent.com/testnmb/migu_video/refs/heads/main/interfaceTXT.txt"
-    ],
+    "https://raw.githubusercontent.com/testnmb/migu_video/refs/heads/main/interfaceTXT.txt",
+    
+    {"name": "浙江电信组播", "url": "https://gh-proxy.org/https://raw.githubusercontent.com/jia070310/4K-IPTV-M3U/main/txt/%E6%B5%99%E6%B1%9F%E7%94%B5%E4%BF%A1.txt", "isp": "telecom"},
+    {"name": "浙江电信组播1", "url": "https://gh-proxy.org/https://raw.githubusercontent.com/jia070310/4K-IPTV-M3U/main/txt/%E6%B5%99%E6%B1%9F%E7%94%B5%E4%BF%A11.txt", "isp": "telecom"},
+    {"name": "浙江电信组播2", "url": "https://gh-proxy.org/https://raw.githubusercontent.com/jia070310/4K-IPTV-M3U/main/txt/%E6%B5%99%E6%B1%9F%E7%94%B5%E4%BF%A12.txt", "isp": "telecom"},
+    {"name": "浙江电信组播3", "url": "https://gh-proxy.org/https://raw.githubusercontent.com/jia070310/4K-IPTV-M3U/main/txt/%E6%B5%99%E6%B1%9F%E7%94%B5%E4%BF%A13.txt", "isp": "telecom"},
+    {"name": "浙江电信组播4", "url": "https://gh-proxy.org/https://raw.githubusercontent.com/jia070310/4K-IPTV-M3U/main/txt/%E6%B5%99%E6%B1%9F%E7%94%B5%E4%BF%A14.txt", "isp": "telecom"}
+  ],
   "m3u": [
     "https://raw.githubusercontent.com/luochen1975/yuanzl77--IPTV/refs/heads/main/live.m3u"
   ],
