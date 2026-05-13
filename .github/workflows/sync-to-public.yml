@@ -16,25 +16,29 @@ jobs:
           # 创建工作目录
           mkdir -p source/output
           
-          # 获取文件列表（调试用）
-          echo "Fetching file list from API..."
+          # 获取文件列表并保存
+          echo "Fetching file list..."
           curl -sL -H "Authorization: token ${TOKEN}" \
                "https://api.github.com/repos/luochen1975/mytv/contents/output?ref=main" > /tmp/files.json
           
-          echo "API response:"
-          cat /tmp/files.json
+          # 提取文件名保存到临时文件
+          grep -o '"name":"[^"]*"' /tmp/files.json | cut -d'"' -f4 > /tmp/filelist.txt
           
-          # 提取文件名并下载到 source/output/
-          grep -o '"name":"[^"]*"' /tmp/files.json | cut -d'"' -f4 | while read -r FILE; do
+          echo "Files to download:"
+          cat /tmp/filelist.txt
+          
+          # 逐行读取并下载（不用管道，避免子shell问题）
+          while IFS= read -r FILE; do
+            [ -z "$FILE" ] && continue
             echo "Downloading: $FILE"
             curl -sL -H "Authorization: token ${TOKEN}" \
                  -H "Accept: application/vnd.github.v3.raw" \
                  "https://api.github.com/repos/luochen1975/mytv/contents/output/${FILE}?ref=main" \
                  > "source/output/${FILE}"
-          done
+            echo "  -> $(wc -c < source/output/${FILE}) bytes"
+          done < /tmp/filelist.txt
           
-          # 检查下载结果
-          echo "Files downloaded:"
+          echo "All files downloaded:"
           ls -la source/output/
 
       - name: Push to public repo
