@@ -4,6 +4,7 @@ import json
 import os
 import time
 from pathlib import Path
+from collections import OrderedDict
 
 from config.settings import *
 from core.parser import SourceLoader
@@ -87,6 +88,42 @@ def load_sources() -> list:
     return sources
 
 
+def merge_subgroups(grouped_channels):
+    """聚合同一分组下的所有子分组，确保频道真正在一起"""
+    fixed_groups = OrderedDict()
+
+    for group_name, sub_groups in grouped_channels.items():
+        # 收集该分组下的所有频道
+        all_channels_in_group = []
+        for sub_name, chs in sub_groups.items():
+            all_channels_in_group.extend(chs)
+
+        # 去重（按URL去重，保留速度较快的）
+        seen_urls = {}
+        unique_channels = []
+        for ch in all_channels_in_group:
+            if ch.url not in seen_urls:
+                seen_urls[ch.url] = ch
+                unique_channels.append(ch)
+            else:
+                # 保留速度更快的
+                existing = seen_urls[ch.url]
+                if ch.speed > existing.speed:
+                    seen_urls[ch.url] = ch
+                    unique_channels.remove(existing)
+                    unique_channels.append(ch)
+
+        # 按速度排序（快的在前）
+        unique_channels.sort(key=lambda x: x.speed if x.speed else float('inf'))
+
+        # 重新组织：只有一个子分组"全部"
+        if unique_channels:
+            fixed_groups[group_name] = OrderedDict()
+            fixed_groups[group_name]['全部'] = unique_channels
+
+    return fixed_groups
+
+
 def main():
     # 确保输出目录存在（GitHub Actions 环境需要）
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -135,6 +172,11 @@ def main():
     if TEMPLATE_FILE.exists():
         log.info("[3/5] 应用模板...")
         grouped_channels = merger.apply_template(merged, str(TEMPLATE_FILE))
+
+        # === 关键修复：聚合同分组下的所有子分组 ===
+        log.info("[3/5] 聚合分组...")
+        grouped_channels = merge_subgroups(grouped_channels)
+        # === 修复结束 ===
 
         # 调试：打印分组结果
         log.info("=== 频道分组诊断 ===")
