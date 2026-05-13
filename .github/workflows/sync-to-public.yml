@@ -13,20 +13,13 @@ jobs:
         env:
           TOKEN: ${{ secrets.SYNC_TOKEN }}
         run: |
-          # 创建目录结构
           mkdir -p source/output
           
-          # 下载文件（支持多个文件）
+          # 下载文件
           curl -sL -H "Authorization: token ${TOKEN}" \
                -H "Accept: application/vnd.github.v3.raw" \
                "https://api.github.com/repos/luochen1975/mytv/contents/output/result-mobile-first.txt?ref=main" \
                > source/output/result-mobile-first.txt
-          
-          # 如果有其他文件，继续添加 curl 命令
-          # curl -sL -H "Authorization: token ${TOKEN}" \
-          #      -H "Accept: application/vnd.github.v3.raw" \
-          #      "https://api.github.com/repos/luochen1975/mytv/contents/output/其他文件.txt?ref=main" \
-          #      > source/output/其他文件.txt
 
       - name: Push to public repo
         env:
@@ -35,19 +28,18 @@ jobs:
         run: |
           cd source
           
-          # 初始化 git
-          git init
+          # 初始化 git，指定分支为 main
+          git init --initial-branch=main
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 添加所有文件
           git add .
           git commit -m "sync from private repo - $(date +%Y-%m-%d_%H:%M:%S)"
           
-          # 推送到公开仓库（强制覆盖）
+          # 推送到公开仓库的 main 分支
           git push https://x-access-token:${TOKEN}@github.com/${PUBLIC_REPO}.git main --force
 
       - name: Verify sync
         run: |
-          echo "同步完成，公开仓库地址："
-          echo "https://github.com/${{ secrets.PUBLIC_REPO }}"
+          echo "同步完成！访问地址："
+          echo "https://raw.githubusercontent.com/${{ secrets.PUBLIC_REPO }}/main/output/result-mobile-first.txt"
