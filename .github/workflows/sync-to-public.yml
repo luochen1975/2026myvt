@@ -1,12 +1,47 @@
+name: Sync to Public Repo
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download files from private repo
+        env:
+          TOKEN: ${{ secrets.SYNC_TOKEN }}
+        run: |
+          mkdir -p source/output
+          
+          # 下载文件（支持多个文件，按需添加）
+          curl -sL -H "Authorization: token ${TOKEN}" \
+               -H "Accept: application/vnd.github.v3.raw" \
+               "https://api.github.com/repos/luochen1975/mytv/contents/output/result-mobile-first.txt?ref=main" \
+               > source/output/result-mobile-first.txt
+
+      - name: Push to public repo
+        env:
+          TOKEN: ${{ secrets.SYNC_TOKEN }}
+          PUBLIC_REPO: ${{ secrets.PUBLIC_REPO }}
+        run: |
+          cd source
+          
+          # 初始化并强制使用 main 分支
           git init
+          git checkout -b main
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
           git add .
           git commit -m "sync from private repo - $(date +%Y-%m-%d_%H:%M:%S)"
           
-          # 将 master 重命名为 main
-          git branch -m master main
-          
           # 推送到公开仓库
           git push https://x-access-token:${TOKEN}@github.com/${PUBLIC_REPO}.git main --force
+
+      - name: Verify sync
+        run: |
+          echo "✅ 同步完成！"
+          echo "📎 访问地址："
+          echo "https://raw.githubusercontent.com/${{ secrets.PUBLIC_REPO }}/main/output/result-mobile-first.txt"
