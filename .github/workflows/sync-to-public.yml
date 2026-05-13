@@ -9,20 +9,24 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Clone private repo with PAT
+      - name: Download files from private repo
         env:
           TOKEN: ${{ secrets.SYNC_TOKEN }}
         run: |
-          # 配置 git 使用 token
-          git config --global credential.helper store
-          echo "https://x-access-token:${TOKEN}@github.com" > ~/.git-credentials
+          # 创建目录结构
+          mkdir -p source/output
           
-          # 克隆私有仓库
-          git clone --depth 1 https://github.com/luochen1975/mytv.git source
+          # 下载文件（支持多个文件）
+          curl -sL -H "Authorization: token ${TOKEN}" \
+               -H "Accept: application/vnd.github.v3.raw" \
+               "https://api.github.com/repos/luochen1975/mytv/contents/output/result-mobile-first.txt?ref=main" \
+               > source/output/result-mobile-first.txt
           
-          cd source
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          # 如果有其他文件，继续添加 curl 命令
+          # curl -sL -H "Authorization: token ${TOKEN}" \
+          #      -H "Accept: application/vnd.github.v3.raw" \
+          #      "https://api.github.com/repos/luochen1975/mytv/contents/output/其他文件.txt?ref=main" \
+          #      > source/output/其他文件.txt
 
       - name: Push to public repo
         env:
@@ -31,8 +35,19 @@ jobs:
         run: |
           cd source
           
-          # 设置公开仓库 remote
-          git remote add public https://github.com/${PUBLIC_REPO}.git
+          # 初始化 git
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 推送
-          git push public main --force
+          # 添加所有文件
+          git add .
+          git commit -m "sync from private repo - $(date +%Y-%m-%d_%H:%M:%S)"
+          
+          # 推送到公开仓库（强制覆盖）
+          git push https://x-access-token:${TOKEN}@github.com/${PUBLIC_REPO}.git main --force
+
+      - name: Verify sync
+        run: |
+          echo "同步完成，公开仓库地址："
+          echo "https://github.com/${{ secrets.PUBLIC_REPO }}"
