@@ -15,7 +15,6 @@ jobs:
         run: |
           mkdir -p source/output
           
-          # 下载文件（支持多个文件，按需添加）
           curl -sL -H "Authorization: token ${TOKEN}" \
                -H "Accept: application/vnd.github.v3.raw" \
                "https://api.github.com/repos/luochen1975/mytv/contents/output/result-mobile-first.txt?ref=main" \
@@ -28,7 +27,7 @@ jobs:
         run: |
           cd source
           
-          # 初始化并强制使用 main 分支
+          # 初始化 git
           git init
           git checkout -b main
           git config user.name "github-actions[bot]"
@@ -37,8 +36,15 @@ jobs:
           git add .
           git commit -m "sync from private repo - $(date +%Y-%m-%d_%H:%M:%S)"
           
-          # 推送到公开仓库
-          git push https://x-access-token:${TOKEN}@github.com/${PUBLIC_REPO}.git main --force
+          # 配置 credential helper，避免 token 在 URL 中
+          git config credential.helper 'store --file=.git-credentials'
+          echo "https://x-access-token:${TOKEN}@github.com" > .git-credentials
+          
+          # 添加 remote（URL 中不带 token）
+          git remote add public https://github.com/${PUBLIC_REPO}.git
+          
+          # 推送
+          git push public main --force
 
       - name: Verify sync
         run: |
