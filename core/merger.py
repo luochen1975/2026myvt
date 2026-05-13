@@ -14,8 +14,8 @@ class ChannelMerger:
         self.dedup_mode = dedup_mode
         self.keep_strategy = keep_strategy
         self.blacklist = set()
-        self.multicast_limit = 4
-        self.mobile_multicast_limit = 5
+        self.multicast_limit = 5
+        self.mobile_multicast_limit = 6
         self.unicast_limit = 8
         self.aliases = self._load_aliases()
     
@@ -93,7 +93,7 @@ class ChannelMerger:
         skip_keywords = [
             '春晚', '春节联欢晚会', '历年春晚', '春晚回放', 'cctv春晚',
             '成人', '午夜', '激情', '诱惑', '私密', '限制级',
-            'av', 'xxx', 'porn', 'adult', 'hot', 'sexy',
+            'av', 'xxx', 'porn', 'adult',  'sexy',
             'redtraffic', 'G2s9zK2n9m', 'mycamtv', 'ddyunbo',
             'bgbfds', '6apzfdx', 'shuma5588', 'xsmj10',
             'aosikazy12', 'slbfsl', 'cdn2020', 'hndtl',
