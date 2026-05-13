@@ -16,38 +16,51 @@ jobs:
           # 创建工作目录
           mkdir -p source/output
           
-          # 获取文件列表并保存
+          # 获取文件列表
           echo "Fetching file list..."
           curl -sL -H "Authorization: token ${TOKEN}" \
                "https://api.github.com/repos/luochen1975/mytv/contents/output?ref=main" > /tmp/files.json
           
-          # 提取文件名保存到临时文件
-          grep -o '"name":"[^"]*"' /tmp/files.json | cut -d'"' -f4 > /tmp/filelist.txt
+          echo "API response:"
+          cat /tmp/files.json
+          
+          # 用 jq 提取文件名（GitHub Actions 自带 jq）
+          jq -r '.[].name' /tmp/files.json > /tmp/filelist.txt 2>/dev/null || echo "jq failed, trying grep..."
+          
+          # 如果 jq 失败，用 grep 备用
+          if [ ! -s /tmp/filelist.txt ]; then
+            grep -o '"name":"[^"]*"' /tmp/files.json | cut -d'"' -f4 > /tmp/filelist.txt
+          fi
           
           echo "Files to download:"
           cat /tmp/filelist.txt
+          echo "---"
           
-          # 逐行读取并下载（不用管道，避免子shell问题）
+          # 逐行下载
           while IFS= read -r FILE; do
             [ -z "$FILE" ] && continue
-            echo "Downloading: $FILE"
+            echo "Downloading: output/$FILE"
             curl -sL -H "Authorization: token ${TOKEN}" \
                  -H "Accept: application/vnd.github.v3.raw" \
                  "https://api.github.com/repos/luochen1975/mytv/contents/output/${FILE}?ref=main" \
                  > "source/output/${FILE}"
-            echo "  -> $(wc -c < source/output/${FILE}) bytes"
+            echo "  -> $(wc -c < "source/output/${FILE}") bytes"
           done < /tmp/filelist.txt
           
-          echo "All files downloaded:"
-          ls -la source/output/
+          echo "All files in source/output/:"
+          ls -la source/output/ || echo "Directory empty or not found"
 
       - name: Push to public repo
         env:
           TOKEN: ${{ secrets.SYNC_TOKEN }}
           PUBLIC_REPO: ${{ secrets.PUBLIC_REPO }}
         run: |
+          echo "Current directory: $(pwd)"
+          echo "Contents:"
+          ls -la
+          
           # 检查是否有文件
-          if [ ! "$(ls -A source/output/ 2>/dev/null)" ]; then
+          if [ ! -d "source/output" ] || [ ! "$(ls -A source/output/ 2>/dev/null)" ]; then
             echo "❌ No files to sync!"
             exit 1
           fi
