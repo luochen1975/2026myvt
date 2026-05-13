@@ -9,26 +9,30 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout private repo
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.SYNC_TOKEN }}  # 关键：使用你的 PAT 而不是默认 GITHUB_TOKEN
+      - name: Clone private repo with PAT
+        env:
+          TOKEN: ${{ secrets.SYNC_TOKEN }}
+        run: |
+          # 配置 git 使用 token
+          git config --global credential.helper store
+          echo "https://x-access-token:${TOKEN}@github.com" > ~/.git-credentials
+          
+          # 克隆私有仓库
+          git clone --depth 1 https://github.com/luochen1975/mytv.git source
+          
+          cd source
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Push to public repo
         env:
           TOKEN: ${{ secrets.SYNC_TOKEN }}
-          REPO: ${{ secrets.PUBLIC_REPO }}
+          PUBLIC_REPO: ${{ secrets.PUBLIC_REPO }}
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          cd source
           
           # 设置公开仓库 remote
-          git remote add public https://github.com/${REPO}.git
-          
-          # 配置 credential helper 使用 token
-          git config --global credential.helper store
-          echo "https://github-actions:${TOKEN}@github.com" > ~/.git-credentials
+          git remote add public https://github.com/${PUBLIC_REPO}.git
           
           # 推送
           git push public main --force
