@@ -34,6 +34,9 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git pull origin main --rebase || true
-        git add output/
+        
+        # 提交所有改动：代码修改 + 生成结果
+        git add -A
+        
         git diff --quiet && git diff --staged --quiet || git commit -m "Update IPTV sources $(date +%Y-%m-%d)"
         git push
