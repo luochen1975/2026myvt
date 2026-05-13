@@ -1,0 +1,26 @@
+name: Sync to Public Repo
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:  # 支持手动触发
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout private repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push to public repo
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 添加公开仓库为远程
+          git remote add public https://x-access-token:${{ secrets.SYNC_TOKEN }}@github.com/${{ secrets.PUBLIC_REPO }}.git
+          
+          # 推送所有分支
+          git push public main --force
