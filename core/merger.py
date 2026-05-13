@@ -14,8 +14,8 @@ class ChannelMerger:
         self.dedup_mode = dedup_mode
         self.keep_strategy = keep_strategy
         self.blacklist = set()
-        self.multicast_limit = 2
-        self.mobile_multicast_limit = 4
+        self.multicast_limit = 4
+        self.mobile_multicast_limit = 5
         self.unicast_limit = 5
         self.aliases = self._load_aliases()
     
