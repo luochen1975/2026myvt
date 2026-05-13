@@ -13,56 +13,42 @@ jobs:
         env:
           TOKEN: ${{ secrets.SYNC_TOKEN }}
         run: |
+          # 创建工作目录
           mkdir -p source/output
-          cd source
           
-          # 获取 output 目录内容
-          echo "Fetching file list..."
+          # 获取文件列表（调试用）
+          echo "Fetching file list from API..."
           curl -sL -H "Authorization: token ${TOKEN}" \
                "https://api.github.com/repos/luochen1975/mytv/contents/output?ref=main" > /tmp/files.json
           
-          # 显示 API 返回内容（调试用）
           echo "API response:"
           cat /tmp/files.json
           
-          # 检查是否是数组（文件列表）或错误
-          if grep -q '"message":"Not Found"' /tmp/files.json; then
-            echo "❌ output directory not found!"
-            exit 1
-          fi
-          
-          # 提取文件名并下载
+          # 提取文件名并下载到 source/output/
           grep -o '"name":"[^"]*"' /tmp/files.json | cut -d'"' -f4 | while read -r FILE; do
-            echo "Downloading: output/$FILE"
+            echo "Downloading: $FILE"
             curl -sL -H "Authorization: token ${TOKEN}" \
                  -H "Accept: application/vnd.github.v3.raw" \
                  "https://api.github.com/repos/luochen1975/mytv/contents/output/${FILE}?ref=main" \
-                 > "output/${FILE}"
-            
-            # 检查文件是否下载成功
-            if [ -s "output/${FILE}" ]; then
-              echo "✅ Downloaded: ${FILE} ($(wc -c < output/${FILE}) bytes)"
-            else
-              echo "⚠️ Empty file: ${FILE}"
-            fi
+                 > "source/output/${FILE}"
           done
           
-          # 显示下载结果
-          echo "Files in output/:"
-          ls -la output/
+          # 检查下载结果
+          echo "Files downloaded:"
+          ls -la source/output/
 
       - name: Push to public repo
         env:
           TOKEN: ${{ secrets.SYNC_TOKEN }}
           PUBLIC_REPO: ${{ secrets.PUBLIC_REPO }}
         run: |
-          cd source
-          
           # 检查是否有文件
-          if [ ! "$(ls -A output/ 2>/dev/null)" ]; then
+          if [ ! "$(ls -A source/output/ 2>/dev/null)" ]; then
             echo "❌ No files to sync!"
             exit 1
           fi
+          
+          cd source
           
           git init
           git checkout -b main
