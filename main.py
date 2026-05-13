@@ -306,6 +306,85 @@ def merge_subgroups(grouped_channels):
     return fixed_groups
 
 
+# ========== 新增：省份标签合并功能 ==========
+def merge_province_groups(grouped_channels):
+    """
+    合并省份标签：
+    - ☘️河北频道、❤️河北频道、河北频道 → ❤️河北
+    - ☘️北京频道、❤️北京频道 → ❤️北京
+    规则：去掉前缀(☘️❤️📡等)和"频道"后缀，统一为 ❤️省份名
+    """
+    import re
+
+    # 中国省份列表（按需增减）
+    provinces = [
+        '河北', '北京', '广东', '河南', '新疆', '上海', '安徽', '江苏', 
+        '浙江', '四川', '湖北', '湖南', '山东', '山西', '辽宁', '福建',
+        '甘肃', '广西', '贵州', '陕西', '江西', '重庆', '云南', '黑龙江',
+        '海南', '内蒙古', '天津', '宁夏', '青海', '西藏', '吉林', '澳门', '香港', '台湾'
+    ]
+
+    # 构建替换规则：原始标签 -> 目标标签
+    replace_rules = {}
+    for prov in provinces:
+        target = f'❤️{prov}'
+        # 需要合并的源格式
+        sources = [
+            f'☘️{prov}频道',
+            f'❤️{prov}频道', 
+            f'📡{prov}频道',
+            f'🌐{prov}频道',
+            f'{prov}频道',
+            f'☘️{prov}',
+            f'❤️{prov}',
+            f'📡{prov}',
+            f'🌐{prov}',
+        ]
+        for src in sources:
+            replace_rules[src] = target
+
+    merged = OrderedDict()
+
+    for group_name, sub_groups in grouped_channels.items():
+        # 检查是否需要替换
+        new_name = replace_rules.get(group_name, group_name)
+
+        # 如果目标已存在，合并频道
+        if new_name not in merged:
+            merged[new_name] = OrderedDict()
+
+        # 合并子分组下的所有频道
+        for sub_name, channels in sub_groups.items():
+            if sub_name not in merged[new_name]:
+                merged[new_name][sub_name] = []
+            merged[new_name][sub_name].extend(channels)
+
+    # 去重：同一省份分组内按URL去重（保留速度快的）
+    for group_name, sub_groups in merged.items():
+        for sub_name, channels in sub_groups.items():
+            seen = {}
+            unique = []
+            for ch in channels:
+                if ch.url not in seen:
+                    seen[ch.url] = ch
+                    unique.append(ch)
+                else:
+                    # 保留速度更快的（数值越小越快）
+                    existing = seen[ch.url]
+                    ch_speed = getattr(ch, 'speed', float('inf'))
+                    ex_speed = getattr(existing, 'speed', float('inf'))
+                    if ch_speed < ex_speed:
+                        seen[ch.url] = ch
+                        unique.remove(existing)
+                        unique.append(ch)
+            # 按速度排序（快的在前，数值小）
+            unique.sort(key=lambda x: getattr(x, 'speed', float('inf')))
+            sub_groups[sub_name] = unique
+
+    return merged
+# ===========================================
+
+
 def main():
     # 确保输出目录存在（GitHub Actions 环境需要）
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -390,6 +469,11 @@ def main():
         # 聚合同分组下的所有子分组
         log.info("[3/5] 聚合分组...")
         grouped_channels = merge_subgroups(grouped_channels)
+
+        # ========== 新增：合并省份标签 ==========
+        log.info("[3/5] 合并省份标签...")
+        grouped_channels = merge_province_groups(grouped_channels)
+        # =========================================
 
         # 调试：打印分组结果
         log.info("=== 频道分组诊断 ===")
