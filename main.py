@@ -310,8 +310,9 @@ def merge_subgroups(grouped_channels):
 def merge_province_groups(grouped_channels):
     """
     合并省份标签：
-    - ☘️河北频道、❤️河北频道、河北频道 → ❤️河北
-    - ☘️北京频道、❤️北京频道 → ❤️北京
+    - ☘️河北频道、❤️河北频道、河北频道、❤️河北→ ❤️河北
+    - ☘️北京频道、❤️北京频道 、❤️北京→ ❤️北京
+    
     规则：去掉前缀(☘️❤️📡等)和"频道"后缀，统一为 ❤️省份名
     """
     import re
