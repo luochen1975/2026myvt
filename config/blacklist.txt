@@ -14,3 +14,9 @@ contains:wsSecret
 
 # 自动添加 [2026-05-13 12:40:13] - 梨园频道 - 匹配包含规则: wsSecret
 contains:txSecret
+
+# 自动添加 [2026-05-13 13:24:38] - 广州竞赛 - 匹配包含规则: txSecret
+contains:amp;txSecret
+
+# 自动添加 [2026-05-13 13:24:38] - 九屏直播 - 匹配URL黑名单: 192.168.
+domain:192.168.6.1:8888
