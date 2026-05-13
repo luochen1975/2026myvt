@@ -3,3 +3,11 @@ ads.com
 buffering
 timeout
 192.168.
+# 域名黑名单
+domain:aktv.top
+domain:aktv.live
+
+# Token参数黑名单
+contains:play_token
+contains:auth_key
+contains:wsSecret
