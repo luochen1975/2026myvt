@@ -7,6 +7,7 @@ from typing import List, Optional, Dict
 
 from config.settings import PROXY_ENABLED, PROXY_URL, USER_AGENT
 
+
 @dataclass
 class Channel:
     name: str
@@ -18,10 +19,11 @@ class Channel:
     extra: Dict = None
     source: str = ""
     speed: float = 0.0
-    
+
     def __post_init__(self):
         if self.extra is None:
             self.extra = {}
+
 
 class M3UParser:
     @staticmethod
@@ -29,12 +31,12 @@ class M3UParser:
         channels = []
         lines = content.strip().split('\n')
         current_meta = {}
-        
+
         for i, line in enumerate(lines):
             line = line.strip()
             if not line:
                 continue
-                
+
             if line.startswith('#EXTINF:'):
                 current_meta = M3UParser._parse_extinf(line)
             elif line.startswith('#EXTGRP:'):
@@ -52,9 +54,9 @@ class M3UParser:
                 )
                 channels.append(channel)
                 current_meta = {}
-                
+
         return channels
-    
+
     @staticmethod
     def _parse_extinf(line: str) -> dict:
         meta = {}
@@ -71,38 +73,60 @@ class M3UParser:
                 meta[key] = value
         return meta
 
+
 class TXTParser:
     @staticmethod
     def parse(content: str, source: str = "") -> List[Channel]:
         channels = []
+        current_group = ""
+
         for line in content.strip().split('\n'):
             line = line.strip()
             if not line or line.startswith('#'):
                 continue
+
+            # 分组标题行: "央视,#genre#" 或 "央视, #genre#"
+            if ',#genre#' in line or ', #genre#' in line:
+                parts = line.split(',', 1)
+                current_group = parts[0].strip()
+                continue
+
+            # 普通频道行: "CCTV-1,http://..."
             if ',' in line:
                 parts = line.split(',', 1)
                 name = parts[0].strip()
                 url_part = parts[1].strip()
-                
+
                 # 过滤掉只有后半段的（前面带逗号）
                 if not name or url_part.startswith(','):
                     continue
-                
-                group = ""
+
+                # 提取 URL 和附加分组
+                group = current_group  # 使用当前分组
                 if '#' in url_part:
-                    url, group = url_part.rsplit('#', 1)
+                    url, extra_group = url_part.rsplit('#', 1)
+                    url = url.strip()
+                    if extra_group.strip():
+                        group = extra_group.strip()  # URL后面的#分组优先
                 else:
                     url = url_part
-                
+
                 # 清洗 $ 后面的垃圾
                 if '$' in url:
                     url = url.split('$')[0].strip()
-                
+
                 # 确保组播地址不被过滤
                 url = url.strip()
                 if url and (url.startswith('http') or url.startswith(('udp://', 'rtp://', 'rtsp://', 'UDP://', 'RTP://', 'RTSP://'))):
-                    channels.append(Channel(name=name, url=url, group=group, source=source))
+                    channels.append(Channel(
+                        name=name, 
+                        url=url, 
+                        group=group, 
+                        source=source
+                    ))
+
         return channels
+
 
 class JSONParser:
     @staticmethod
@@ -121,7 +145,7 @@ class JSONParser:
                 if ch:
                     channels.append(ch)
         return channels
-    
+
     @staticmethod
     def _item_to_channel(item: dict, source: str) -> Optional[Channel]:
         if not isinstance(item, dict):
@@ -139,6 +163,7 @@ class JSONParser:
             extra=item
         )
 
+
 class SourceLoader:
     PARSERS = {
         'txt': TXTParser,
@@ -146,28 +171,28 @@ class SourceLoader:
         'm3u8': M3UParser,
         'json': JSONParser
     }
-    
+
     @staticmethod
     def load(source_config: dict) -> List[Channel]:
         name = source_config.get('name', 'unknown')
         url = source_config['url']
         file_type = source_config.get('type', 'm3u').lower()
         use_proxy = source_config.get('proxy', False)
-        
+
         try:
             content = SourceLoader._fetch_content(url, use_proxy)
             parser = SourceLoader.PARSERS.get(file_type, M3UParser)
             channels = parser.parse(content, source=name)
-            
+
             isp = source_config.get('isp', 'other')
             for ch in channels:
                 ch.extra['isp'] = isp
-            
+
             return channels
         except Exception as e:
             print(f"[ERROR] 加载源 {name} 失败: {e}")
             return []
-    
+
     @staticmethod
     def _fetch_content(url: str, use_proxy: bool = False) -> str:
         proxies = None
@@ -176,12 +201,12 @@ class SourceLoader:
                 'http': PROXY_URL,
                 'https': PROXY_URL
             }
-        
+
         if url.startswith('http'):
             headers = {'User-Agent': USER_AGENT}
             resp = requests.get(url, headers=headers, timeout=30, proxies=proxies)
             resp.raise_for_status()
-            
+
             # 尝试多种编码解码
             content_bytes = resp.content
             for enc in ['utf-8', 'gbk', 'gb2312', 'big5']:
@@ -189,7 +214,7 @@ class SourceLoader:
                     return content_bytes.decode(enc)
                 except UnicodeDecodeError:
                     continue
-            
+
             # 都失败则忽略错误字符
             return content_bytes.decode('utf-8', errors='ignore')
         else:
