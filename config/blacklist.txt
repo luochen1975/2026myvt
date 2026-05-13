@@ -11,3 +11,6 @@ domain:aktv.live
 contains:play_token
 contains:auth_key
 contains:wsSecret
+
+# 自动添加 [2026-05-13 12:40:13] - 梨园频道 - 匹配包含规则: wsSecret
+contains:txSecret
