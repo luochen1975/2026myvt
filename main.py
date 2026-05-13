@@ -88,6 +88,10 @@ def load_sources() -> list:
 
 
 def main():
+    # 确保输出目录存在（GitHub Actions 环境需要）
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
+    
     log.info("=" * 50)
     log.info("IPTV 源处理器启动")
     
@@ -171,9 +175,26 @@ def main():
     
     # TXT 按模板分组
     TXTExporter.export_by_template(grouped_channels, str(OUTPUT_DIR / "result.txt"))
+    log.info(f"  ✓ TXT 导出完成: {OUTPUT_DIR / 'result.txt'}")
     
     # M3U 按模板分组
     M3UExporter.export_by_template(grouped_channels, str(OUTPUT_DIR))
+    log.info(f"  ✓ M3U 导出完成: {OUTPUT_DIR}")
     
     # 速度日志
     LogExporter.export_speed_log(all_channels_flat, str(LOG_DIR / "speed_test.log"))
+    log.info(f"  ✓ 测速日志导出完成: {LOG_DIR / 'speed_test.log'}")
+    
+    elapsed = time.time() - start_time
+    log.info(f"处理完成，耗时: {elapsed:.1f}秒")
+    log.info("=" * 50)
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as e:
+        log.error(f"运行出错: {e}")
+        import traceback
+        traceback.print_exc()
+        raise
