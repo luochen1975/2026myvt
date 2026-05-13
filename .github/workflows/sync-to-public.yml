@@ -13,14 +13,22 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.SYNC_TOKEN }}
+          token: ${{ secrets.SYNC_TOKEN }}  # 关键：使用你的 PAT 而不是默认 GITHUB_TOKEN
 
       - name: Push to public repo
+        env:
+          TOKEN: ${{ secrets.SYNC_TOKEN }}
+          REPO: ${{ secrets.PUBLIC_REPO }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 直接设置 remote URL 包含 token（用引号包裹）
-          git remote add public "https://x-access-token:${{ secrets.SYNC_TOKEN }}@github.com/${{ secrets.PUBLIC_REPO }}.git"
+          # 设置公开仓库 remote
+          git remote add public https://github.com/${REPO}.git
           
+          # 配置 credential helper 使用 token
+          git config --global credential.helper store
+          echo "https://github-actions:${TOKEN}@github.com" > ~/.git-credentials
+          
+          # 推送
           git push public main --force
