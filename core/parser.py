@@ -98,7 +98,9 @@ class TXTParser:
                 if '$' in url:
                     url = url.split('$')[0].strip()
                 
-                if url and (url.startswith('http') or url.startswith(('udp://', 'rtp://', 'rtsp://'))):
+                # 确保组播地址不被过滤
+                url = url.strip()
+                if url and (url.startswith('http') or url.startswith(('udp://', 'rtp://', 'rtsp://', 'UDP://', 'RTP://', 'RTSP://'))):
                     channels.append(Channel(name=name, url=url, group=group, source=source))
         return channels
 
@@ -125,7 +127,7 @@ class JSONParser:
         if not isinstance(item, dict):
             return None
         url = item.get('url', item.get('link', item.get('address', '')))
-        if not url or not url.startswith('http'):
+        if not url or not (url.startswith('http') or url.startswith(('udp://', 'rtp://', 'rtsp://'))):
             return None
         return Channel(
             name=item.get('name', item.get('title', 'Unknown')),
