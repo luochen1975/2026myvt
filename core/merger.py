@@ -16,7 +16,7 @@ class ChannelMerger:
         self.blacklist = set()
         self.multicast_limit = 4
         self.mobile_multicast_limit = 5
-        self.unicast_limit = 5
+        self.unicast_limit = 8
         self.aliases = self._load_aliases()
     
     def _load_aliases(self) -> Dict[str, str]:
