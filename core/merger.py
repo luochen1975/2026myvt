@@ -4,6 +4,10 @@ from core.parser import Channel, load_blacklist_rules
 
 
 class ChannelMerger:
+    def __init__(self, dedup_mode: str = "auto", keep_strategy: str = "first"):
+        self.dedup_mode = dedup_mode
+        self.keep_strategy = keep_strategy
+    
     def filter_keywords(self, channels: list[Channel]) -> list[Channel]:
         """过滤特定关键词和广告台（从 blacklist.txt 加载规则）"""
         rules = load_blacklist_rules()
