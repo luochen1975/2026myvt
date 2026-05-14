@@ -20,3 +20,6 @@ contains:amp;txSecret
 contains:smart.cityq.xyz:8278
 # 自动添加 [2026-05-13 13:24:38] - 九屏直播 - 匹配URL黑名单: 192.168.
 domain:192.168.6.1:8888
+
+# 自动添加 [2026-05-13 23:59:58] - RTHK31 - 匹配包含规则: smart.cityq.xyz:8278
+domain:smart.cityq.xyz:8278
