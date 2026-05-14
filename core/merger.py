@@ -1,3 +1,4 @@
+from __future__ import annotations  # 放在第一行，允许使用 list[Channel] 而无需导入 List
 def _filter_keywords(self, channels: List[Channel]) -> List[Channel]:
     """过滤特定关键词和广告台（从 blacklist.txt 加载规则）"""
     from core.parser import load_blacklist_rules
