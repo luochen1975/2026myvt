@@ -1,6 +1,7 @@
 import json
 import re
 import requests
+from pathlib import Path
 from urllib.parse import urlparse
 from dataclasses import dataclass
 from typing import List, Optional, Dict
@@ -164,6 +165,126 @@ class JSONParser:
         )
 
 
+# ========== 新增：blacklist.txt 支持 ==========
+
+# blacklist.txt 路径：parser.py 在 core/，向上退一级到项目根目录，再进 config/
+BLACKLIST_FILE = Path(__file__).parent.parent / "config" / "blacklist.txt"
+
+
+def load_blacklist_rules() -> dict:
+    """
+    加载 config/blacklist.txt 规则文件
+    支持规则类型：
+        domain:    域名黑名单（匹配 URL 域名部分）
+        contains:  包含黑名单（匹配 URL 包含的字符串）
+        genre:     【新增】genre 分组黑名单（匹配 TXT 的 #genre# 分组名）
+        keyword:   【新增】单行关键词黑名单（匹配任意行内容）
+    """
+    rules = {
+        'domains': [],
+        'contains': [],
+        'urls': [],
+        'genres': [],      # ← 新增：genre 分组黑名单
+        'keywords': [],    # ← 新增：单行关键词黑名单
+    }
+
+    if not BLACKLIST_FILE.exists():
+        return rules  # 文件不存在则返回空规则
+
+    with open(BLACKLIST_FILE, 'r', encoding='utf-8') as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith('#'):
+                continue
+
+            if ':' in line:
+                rule_type, rule_value = line.split(':', 1)
+                rule_type = rule_type.strip().lower()
+                rule_value = rule_value.strip()
+
+                if rule_type == 'domain':
+                    rules['domains'].append(rule_value)
+                elif rule_type == 'contains':
+                    rules['contains'].append(rule_value)
+                # ========== 新增规则类型 ==========
+                elif rule_type == 'genre':
+                    rules['genres'].append(rule_value)
+                elif rule_type == 'keyword':
+                    rules['keywords'].append(rule_value)
+                # ==================================
+            else:
+                rules['urls'].append(line)
+
+    return rules
+
+
+def filter_genre(text: str, genres: list) -> str:
+    """
+    【genre 分组过滤】
+    作用：剔除 TXT 格式中指定的整个 #genre# 分组及其下所有频道
+    
+    在 blacklist.txt 中配置：
+        genre:广播电台RADIO    ← 过滤"广播电台RADIO"整个分组
+        genre:购物             ← 过滤"购物"整个分组
+        genre:少儿             ← 过滤"少儿"整个分组
+    
+    匹配方式：包含匹配，如 "广播" 匹配 "广播电台RADIO,#genre#"
+    适用格式：仅 TXT（M3U/JSON 无 #genre# 行，自动跳过）
+    """
+    if not genres:
+        return text
+    out, skip = [], False
+    for line in text.strip().split('\n'):
+        stripped = line.strip()
+        # 检测 genre 分组标题行，如 "广播电台RADIO,#genre#"
+        if stripped.endswith(',#genre#'):
+            # 判断该 genre 名称是否包含在过滤列表中
+            skip = any(g in stripped for g in genres)
+            if skip:
+                continue  # 跳过该 genre 行，不输出
+        # 非 genre 行，根据 skip 状态决定是否保留
+        if not skip:
+            out.append(line)
+    return '\n'.join(out) + '\n'
+
+
+def filter_keyword(text: str, keywords: list) -> str:
+    """
+    【单行关键词过滤】
+    作用：剔除包含指定关键词的任意行（频道行或分组行）
+    
+    在 blacklist.txt 中配置：
+        keyword:测试           ← 过滤包含"测试"的行
+        keyword:体验           ← 过滤包含"体验"的行
+        keyword:高清           ← 过滤包含"高清"的行
+    
+    匹配方式：包含匹配，对所有格式（TXT/M3U/JSON）有效
+    注意：大小写敏感
+    """
+    if not keywords:
+        return text
+    return '\n'.join(l for l in text.strip().split('\n') 
+                    if not any(k in l for k in keywords)) + '\n'
+
+
+def apply_blacklist_filter(text: str, rules: dict) -> str:
+    """
+    应用 blacklist 规则过滤原始文本
+    在 SourceLoader.load() 解析前调用
+    """
+    # 先按 genre 过滤（仅 TXT 有效，M3U/JSON 无 #genre# 行）
+    if rules.get('genres'):
+        text = filter_genre(text, rules['genres'])
+    
+    # 再按关键词过滤单行（所有格式通用）
+    if rules.get('keywords'):
+        text = filter_keyword(text, rules['keywords'])
+    
+    return text
+
+
+# ========== SourceLoader（增加自动加载 blacklist）==========
+
 class SourceLoader:
     PARSERS = {
         'txt': TXTParser,
@@ -181,6 +302,17 @@ class SourceLoader:
 
         try:
             content = SourceLoader._fetch_content(url, use_proxy)
+            
+            # ========== 新增：自动加载并应用 blacklist ==========
+            # 无需修改 main.py，parser.py 自己读取 config/blacklist.txt
+            # 支持规则：
+            #   genre:xxx    → 过滤 TXT 的 #genre# 分组
+            #   keyword:xxx  → 过滤包含关键词的单行
+            # ================================================
+            blacklist_rules = load_blacklist_rules()
+            content = apply_blacklist_filter(content, blacklist_rules)
+            # ==================================================
+            
             parser = SourceLoader.PARSERS.get(file_type, M3UParser)
             channels = parser.parse(content, source=name)
 
