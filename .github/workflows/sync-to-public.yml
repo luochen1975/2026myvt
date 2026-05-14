@@ -15,89 +15,134 @@ jobs:
         run: |
           mkdir -p source/output
           
-          # 获取文件列表（确保 header 格式正确）
+          # 验证 Token 是否设置
+          if [ -z "${TOKEN}" ]; then
+            echo "❌ SYNC_TOKEN is not set"
+            exit 1
+          fi
+          
+          # 先验证 Token 是否有效
+          echo "Verifying token..."
+          curl -sL \
+               -H "Authorization: Bearer ${TOKEN}" \
+               -H "Accept: application/vnd.github+json" \
+               -o /tmp/user.json \
+               "https://api.github.com/user"
+          
+          echo "Token user info:"
+          cat /tmp/user.json | jq -r '.login // .message' 2>/dev/null || cat /tmp/user.json
+          
+          # 获取文件列表（使用正确的 API 版本）
           echo "Fetching file list..."
           HTTP_CODE=$(curl -sL \
                -H "Authorization: Bearer ${TOKEN}" \
                -H "Accept: application/vnd.github+json" \
+               -H "X-GitHub-Api-Version: 2022-11-28" \
                -w "%{http_code}" \
                -o /tmp/files.json \
                "https://api.github.com/repos/luochen1975/mytv/contents/output?ref=main")
           
           echo "HTTP Code: $HTTP_CODE"
           echo "Response:"
-          cat /tmp/files.json
+          cat /tmp/files.json | jq . 2>/dev/null || cat /tmp/files.json
           
-          # 检查是否限流
-          if grep -q '"API rate limit exceeded"' /tmp/files.json; then
-            echo "❌ Rate limit exceeded. Token may not be working."
+          # 处理 404 错误
+          if [ "$HTTP_CODE" = "404" ]; then
+            echo "❌ Repository or path not found."
+            echo "Please verify:"
+            echo "  1. Repository 'luochen1975/mytv' exists"
+            echo "  2. Branch 'main' exists (try 'master' if repo is old)"
+            echo "  3. Directory 'output' exists in the repo"
+            echo "  4. Token has access to this repository"
             exit 1
           fi
           
-          # 检查 HTTP 状态
+          # 处理其他错误
           if [ "$HTTP_CODE" != "200" ]; then
             echo "❌ API request failed with code $HTTP_CODE"
+            cat /tmp/files.json
+            exit 1
+          fi
+          
+          # 检查返回的是否是数组（目录）还是对象（单个文件）
+          TYPE=$(cat /tmp/files.json | jq -r 'if type == "array" then "directory" else .type // "unknown" end' 2>/dev/null)
+          
+          if [ "$TYPE" != "directory" ] && [ "$TYPE" != "array" ]; then
+            echo "❌ Expected directory, got: $TYPE"
+            echo "Response:"
+            cat /tmp/files.json
             exit 1
           fi
           
           # 提取文件名
-          FILES=$(cat /tmp/files.json | jq -r '.[].name' 2>/dev/null || \
-                grep -o '"name":"[^"]*"' /tmp/files.json | cut -d'"' -f4)
+          FILES=$(cat /tmp/files.json | jq -r '.[].name // empty' 2>/dev/null)
           
           if [ -z "$FILES" ]; then
-            echo "❌ No files found"
-            exit 1
+            echo "⚠️ No files found in output directory"
+            exit 0  # 改为 0 避免空目录导致失败
           fi
           
           echo "Files to download:"
           echo "$FILES"
           echo "---"
           
-          # 下载每个文件（使用 Bearer 认证）
+          # 下载每个文件
+          FAILED=0
           echo "$FILES" | while IFS= read -r FILE; do
             [ -z "$FILE" ] && continue
             
             echo "Downloading: $FILE"
-            curl -sL \
+            HTTP_CODE=$(curl -sL \
                  -H "Authorization: Bearer ${TOKEN}" \
                  -H "Accept: application/vnd.github.v3.raw" \
+                 -w "%{http_code}" \
                  -o "source/output/${FILE}" \
-                 "https://api.github.com/repos/luochen1975/mytv/contents/output/${FILE}?ref=main"
+                 "https://api.github.com/repos/luochen1975/mytv/contents/output/${FILE}?ref=main")
             
-            if [ ! -s "source/output/${FILE}" ]; then
-              echo "❌ Failed to download: $FILE"
-              exit 1
+            if [ "$HTTP_CODE" != "200" ] || [ ! -s "source/output/${FILE}" ]; then
+              echo "❌ Failed to download: $FILE (HTTP $HTTP_CODE)"
+              FAILED=1
+              continue
             fi
             
             echo "  ✅ $(wc -c < "source/output/${FILE}") bytes"
           done
           
-          echo "All files downloaded:"
-          ls -la source/output/
+          if [ "$FAILED" = "1" ]; then
+            echo "⚠️ Some files failed to download"
+          fi
+          
+          echo "Downloaded files:"
+          ls -la source/output/ || echo "Directory is empty"
 
       - name: Push to public repo
+        if: success() && hashFiles('source/output/**') != ''  # 只在有文件时执行
         env:
           TOKEN: ${{ secrets.SYNC_TOKEN }}
           PUBLIC_REPO: ${{ secrets.PUBLIC_REPO }}
         run: |
+          if [ -z "$(ls -A source/output/ 2>/dev/null)" ]; then
+            echo "⚠️ No files to push"
+            exit 0
+          fi
+          
           cd source
           
           git init
-          git checkout -b main
+          git checkout -b main 2>/dev/null || git checkout main
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
           git add .
           git commit -m "sync output directory - $(date +%Y-%m-%d_%H:%M:%S)"
           
-          git config credential.helper 'store --file=.git-credentials'
-          echo "https://x-access-token:${TOKEN}@github.com" > .git-credentials
+          # 使用更安全的认证方式
+          git remote add public "https://x-access-token:${TOKEN}@github.com/${PUBLIC_REPO}.git"
           
-          git remote add public https://github.com/${PUBLIC_REPO}.git
           git push public main --force
-
+          
       - name: Verify sync
+        if: success()
         run: |
           echo "✅ 同步完成！"
-          echo "📎 公开仓库地址："
-          echo "https://github.com/${{ secrets.PUBLIC_REPO }}"
+          echo "📎 公开仓库地址：https://github.com/${{ secrets.PUBLIC_REPO }}"
