@@ -177,19 +177,17 @@ def load_blacklist_rules() -> dict:
     支持规则类型：
         domain:    域名黑名单（匹配 URL 域名部分）
         contains:  包含黑名单（匹配 URL 包含的字符串）
-        genre:     【新增】genre 分组黑名单（匹配 TXT 的 #genre# 分组名）
-        keyword:   【新增】单行关键词黑名单（匹配任意行内容）
+        genre:     genre 分组黑名单（匹配 TXT 的 #genre# 分组名）
+        keyword:   单行关键词黑名单（匹配任意行内容）
+        regex:     【新增】正则黑名单（匹配频道名，用于 merger.py）
     """
     rules = {
-        'domains': [],
-        'contains': [],
-        'urls': [],
-        'genres': [],      # ← 新增：genre 分组黑名单
-        'keywords': [],    # ← 新增：单行关键词黑名单
+        'domains': [], 'contains': [], 'urls': [],
+        'genres': [], 'keywords': [], 'regex': [],
     }
 
     if not BLACKLIST_FILE.exists():
-        return rules  # 文件不存在则返回空规则
+        return rules
 
     with open(BLACKLIST_FILE, 'r', encoding='utf-8') as f:
         for line in f:
@@ -206,12 +204,15 @@ def load_blacklist_rules() -> dict:
                     rules['domains'].append(rule_value)
                 elif rule_type == 'contains':
                     rules['contains'].append(rule_value)
-                # ========== 新增规则类型 ==========
                 elif rule_type == 'genre':
                     rules['genres'].append(rule_value)
                 elif rule_type == 'keyword':
                     rules['keywords'].append(rule_value)
-                # ==================================
+                elif rule_type == 'regex':
+                    try:
+                        rules['regex'].append(re.compile(rule_value))
+                    except re.error as e:
+                        print(f"[WARNING] 正则编译失败 '{rule_value}': {e}")
             else:
                 rules['urls'].append(line)
 
@@ -236,13 +237,10 @@ def filter_genre(text: str, genres: list) -> str:
     out, skip = [], False
     for line in text.strip().split('\n'):
         stripped = line.strip()
-        # 检测 genre 分组标题行，如 "广播电台RADIO,#genre#"
         if stripped.endswith(',#genre#'):
-            # 判断该 genre 名称是否包含在过滤列表中
             skip = any(g in stripped for g in genres)
             if skip:
-                continue  # 跳过该 genre 行，不输出
-        # 非 genre 行，根据 skip 状态决定是否保留
+                continue
         if not skip:
             out.append(line)
     return '\n'.join(out) + '\n'
@@ -272,25 +270,17 @@ def apply_blacklist_filter(text: str, rules: dict) -> str:
     应用 blacklist 规则过滤原始文本
     在 SourceLoader.load() 解析前调用
     """
-    # 先按 genre 过滤（仅 TXT 有效，M3U/JSON 无 #genre# 行）
     if rules.get('genres'):
         text = filter_genre(text, rules['genres'])
-    
-    # 再按关键词过滤单行（所有格式通用）
     if rules.get('keywords'):
         text = filter_keyword(text, rules['keywords'])
-    
     return text
 
 
-# ========== SourceLoader（增加自动加载 blacklist）==========
-
 class SourceLoader:
     PARSERS = {
-        'txt': TXTParser,
-        'm3u': M3UParser,
-        'm3u8': M3UParser,
-        'json': JSONParser
+        'txt': TXTParser, 'm3u': M3UParser,
+        'm3u8': M3UParser, 'json': JSONParser
     }
 
     @staticmethod
@@ -311,7 +301,6 @@ class SourceLoader:
             # ================================================
             blacklist_rules = load_blacklist_rules()
             content = apply_blacklist_filter(content, blacklist_rules)
-            # ==================================================
             
             parser = SourceLoader.PARSERS.get(file_type, M3UParser)
             channels = parser.parse(content, source=name)
@@ -329,17 +318,13 @@ class SourceLoader:
     def _fetch_content(url: str, use_proxy: bool = False) -> str:
         proxies = None
         if use_proxy and PROXY_ENABLED:
-            proxies = {
-                'http': PROXY_URL,
-                'https': PROXY_URL
-            }
+            proxies = {'http': PROXY_URL, 'https': PROXY_URL}
 
         if url.startswith('http'):
             headers = {'User-Agent': USER_AGENT}
             resp = requests.get(url, headers=headers, timeout=30, proxies=proxies)
             resp.raise_for_status()
 
-            # 尝试多种编码解码
             content_bytes = resp.content
             for enc in ['utf-8', 'gbk', 'gb2312', 'big5']:
                 try:
@@ -347,7 +332,6 @@ class SourceLoader:
                 except UnicodeDecodeError:
                     continue
 
-            # 都失败则忽略错误字符
             return content_bytes.decode('utf-8', errors='ignore')
         else:
             with open(url, 'r', encoding='utf-8') as f:
