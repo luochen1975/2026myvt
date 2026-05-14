@@ -101,6 +101,9 @@ def load_blacklist_rules(blacklist_file: str) -> dict:
         'domains': [],
         'contains': [],
         'urls': [],
+        'keywords': [],
+        'regex': [],
+        'genre': [],
     }
 
     if not os.path.exists(blacklist_file):
@@ -124,6 +127,18 @@ def load_blacklist_rules(blacklist_file: str) -> dict:
                 elif rule_type == 'contains':
                     rules['contains'].append(rule_value)
                     log.debug(f"加载包含规则: {rule_value}")
+                elif rule_type == 'keyword':
+                    rules['keywords'].append(rule_value)
+                    log.debug(f"加载关键词规则: {rule_value}")
+                elif rule_type == 'regex':
+                    try:
+                        rules['regex'].append(re.compile(rule_value))
+                        log.debug(f"加载正则规则: {rule_value}")
+                    except re.error as e:
+                        log.warning(f"正则表达式错误 在第 {line_num} 行: {e}")
+                elif rule_type == 'genre':
+                    rules['genre'].append(rule_value)
+                    log.debug(f"加载类型规则: {rule_value}")
                 else:
                     log.warning(f"未知规则类型 '{rule_type}' 在第 {line_num} 行")
             else:
@@ -131,7 +146,9 @@ def load_blacklist_rules(blacklist_file: str) -> dict:
                 log.debug(f"加载URL黑名单: {line}")
 
     log.info(f"黑名单规则加载完成: {len(rules['domains'])} 个域名, "
-             f"{len(rules['contains'])} 个包含规则, {len(rules['urls'])} 个URL")
+             f"{len(rules['contains'])} 个包含规则, {len(rules['urls'])} 个URL, "
+             f"{len(rules['keywords'])} 个关键词, {len(rules['regex'])} 个正则, "
+             f"{len(rules['genre'])} 个类型")
     return rules
 
 
@@ -154,6 +171,14 @@ def should_blacklist(url: str, rules: dict) -> tuple[bool, str]:
     for pattern in rules['contains']:
         if pattern.lower() in url_lower:
             return True, f"匹配包含规则: {pattern}"
+
+    for keyword in rules['keywords']:
+        if keyword.lower() in url_lower:
+            return True, f"匹配关键词: {keyword}"
+
+    for regex in rules['regex']:
+        if regex.search(url):
+            return True, f"匹配正则: {regex.pattern}"
 
     return False, ""
 
