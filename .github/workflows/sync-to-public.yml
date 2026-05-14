@@ -9,28 +9,40 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Clone private repo and copy output files
+      - name: Download files from private repo
         env:
           TOKEN: ${{ secrets.SYNC_TOKEN }}
         run: |
           mkdir -p source/output
           
-          echo "Cloning private repository..."
-          git clone --depth 1 --branch main \
-            "https://x-access-token:${TOKEN}@github.com/luochen1975/mytv.git" \
-            /tmp/mytv
+          # 获取文件列表
+          curl -sL \
+               -H "Authorization: Bearer ${TOKEN}" \
+               -H "Accept: application/vnd.github+json" \
+               -o /tmp/files.json \
+               "https://api.github.com/repos/luochen1975/mytv/contents/output?ref=main"
           
-          # 验证 output 目录
-          if [ ! -d "/tmp/mytv/output" ]; then
-            echo "❌ output directory not found"
-            ls -la /tmp/mytv/
+          FILES=$(cat /tmp/files.json | jq -r '.[].name // empty' 2>/dev/null)
+          
+          if [ -z "$FILES" ]; then
+            echo "❌ No files found"
+            cat /tmp/files.json
             exit 1
           fi
           
-          # 复制文件（保留目录结构）
-          cp -r /tmp/mytv/output/* source/output/
+          echo "Files: $FILES"
           
-          echo "✅ Files copied:"
+          # 下载文件
+          echo "$FILES" | while IFS= read -r FILE; do
+            [ -z "$FILE" ] && continue
+            curl -sL \
+                 -H "Authorization: Bearer ${TOKEN}" \
+                 -H "Accept: application/vnd.github.v3.raw" \
+                 -o "source/output/${FILE}" \
+                 "https://api.github.com/repos/luochen1975/mytv/contents/output/${FILE}?ref=main"
+            echo "✅ ${FILE}"
+          done
+          
           ls -la source/output/
 
       - name: Push to public repo
@@ -46,14 +58,13 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
           git add .
-          git commit -m "sync output directory - $(date +%Y-%m-%d_%H:%M:%S)"
+          git commit -m "sync output - $(date +%Y-%m-%d_%H:%M:%S)"
           
-          # 推送到目标仓库
           git remote add public "https://x-access-token:${TOKEN}@github.com/${PUBLIC_REPO}.git"
           git push public main --force
           
-          echo "✅ Sync completed"
+          echo "✅ Done: https://github.com/${PUBLIC_REPO}"
 
-      - name: Verify sync
+      - name: Verify
         run: |
-          echo "📎 Public repo: https://github.com/${{ secrets.PUBLIC_REPO }}"
+          echo "📎 https://github.com/${{ secrets.PUBLIC_REPO }}"
