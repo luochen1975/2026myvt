@@ -8,6 +8,10 @@ from pathlib import Path
 from collections import OrderedDict
 from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
 
+# 设置北京时区
+os.environ['TZ'] = 'Asia/Shanghai'
+time.tzset()
+
 from config.settings import *
 from core.parser import SourceLoader
 from core.merger import ChannelMerger
