@@ -23,3 +23,7 @@ domain:192.168.6.1:8888
 
 # 自动添加 [2026-05-13 23:59:58] - RTHK31 - 匹配包含规则: smart.cityq.xyz:8278
 domain:smart.cityq.xyz:8278
+genre:8+频道免翻_1111
+genre:购物
+genre:国外
+keyword:测试
