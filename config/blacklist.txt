@@ -200,3 +200,21 @@ domain:fl1.moveonjoy.com
 
 # 自动添加 [2026-05-14 22:43:15] - CCTV2 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult|sexy
 contains:AuthInfo
+
+# 自动添加 [2026-05-15 07:21:53] - 点燃一根烟 - 匹配域名黑名单: vd2.bdstatic.com
+domain:vd2.bdstatic.com:443
+
+# 自动添加 [2026-05-15 07:21:53] - 爱情一阵风 - 匹配域名黑名单: vd4.bdstatic.com
+domain:vd4.bdstatic.com:443
+
+# 自动添加 [2026-05-15 07:21:53] - 初恋情人 - 匹配域名黑名单: vd3.bdstatic.com
+domain:vd3.bdstatic.com:443
+
+# 自动添加 [2026-05-15 07:21:53] - 东北戏曲 - 匹配域名黑名单: live3.lalifeier.eu.org
+contains:key
+
+# 自动添加 [2026-05-15 07:21:53] - 乐山 - 匹配包含规则: sign
+contains:vzsign
+
+# 自动添加 [2026-05-15 07:21:54] - 深圳卫视 - 匹配包含规则: AuthInfo
+contains:Authinfo
