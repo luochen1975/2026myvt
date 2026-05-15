@@ -547,6 +547,12 @@ def main():
         grouped_channels = finalize_groups(grouped_channels)
         # =======================================
 
+        # 应用频道数量限制
+        log.info("[3/5] 应用频道数量限制...")
+        for group_name, sub_groups in grouped_channels.items():
+            for sub_name, channels in sub_groups.items():
+                sub_groups[sub_name] = merger.limit_channels(channels)
+
         log.info("=== 频道分组诊断 ===")
         for group_name, sub_groups in grouped_channels.items():
             total = sum(len(chs) for chs in sub_groups.values())
