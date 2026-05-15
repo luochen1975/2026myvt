@@ -218,3 +218,21 @@ contains:vzsign
 
 # 自动添加 [2026-05-15 07:21:54] - 深圳卫视 - 匹配包含规则: AuthInfo
 contains:Authinfo
+
+# 自动添加 [2026-05-15 13:04:11] - PopC电影 - 匹配包含规则: key
+contains:license_key
+
+# 自动添加 [2026-05-15 13:04:11] - 上海新闻 - 匹配包含规则: key
+contains:SecurityKey
+
+# 自动添加 [2026-05-15 13:04:12] - STV City - 匹配包含规则: key
+contains:authid
+
+# 自动添加 [2026-05-15 13:04:12] - 福建公共 - 匹配包含规则: key
+contains:livekey
+
+# 自动添加 [2026-05-15 13:04:12] - HTVKey - 匹配包含规则: key
+domain:liveh12.vtvprime.vn
+
+# 自动添加 [2026-05-15 13:04:13] - 浪子闲话 - 匹配包含规则: key
+contains:pkey
