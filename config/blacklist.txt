@@ -2,23 +2,6 @@
 # 年份+逗号格式
 regex:^\d{4}年,
 
-# 广告域名特征
-regex:G2s9zK2n9m
-regex:mycamtv
-regex:ddyunbo
-regex:bgbfds
-regex:6apzfdx
-regex:shuma5588
-regex:xsmj10
-regex:aosikazy12
-regex:slbfsl
-regex:cdn2020
-regex:hndtl
-regex:m8t9ew
-regex:46cdn
-regex:41cdn
-regex:34cdn
-regex:krevonix
 
 # 加入黑名单的示例
 ads.com
@@ -31,8 +14,6 @@ domain:aktv.top
 domain:aktv.live
 
 # 敏感内容
-regex:成人|午夜|激情|诱惑|私密|限制级
-regex:[Aa][Vv]|[Xx]{3}|porn|adult
 regex:春晚|春节联欢晚会|历年春晚|春晚回放|cctv春晚
 
 # 购物广告
@@ -42,146 +23,4 @@ regex:购物|直销|广告|电视购物|快乐购|家家购|优购物|好享购|
 
 
 
-# 自动添加 [2026-05-16 20:20:42] - 凤凰香港 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:8.218.84.3:8885
 
-# 自动添加 [2026-05-16 20:20:42] - ViuTV - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:pull-vivek.speedws.com
-
-# 自动添加 [2026-05-16 20:20:42] - EYE旅游 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:smart.cityq.xyz:8278
-
-# 自动添加 [2026-05-16 20:20:42] - y+ - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:hms3659nc3747353871.live.aikan.miguvideo.com
-
-# 自动添加 [2026-05-16 20:20:42] - 3D-5视觉效果 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:vd3.bdstatic.com
-
-# 自动添加 [2026-05-16 20:20:42] - 恩施新闻综合 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-contains:auth_key
-
-# 自动添加 [2026-05-16 20:20:42] - 辽宁经济 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-contains:accesstoken
-
-# 自动添加 [2026-05-16 20:20:42] - 吉林纪录片轮播 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:lsfb.avap.jilintv.cn
-
-# 自动添加 [2026-05-16 20:20:42] - 吉林乡村 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:lsfb.avap.jilintv.cn:443
-
-# 自动添加 [2026-05-16 20:20:42] - 神思-陕西戏曲广播 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:satellitepull.cnr.cn
-
-# 自动添加 [2026-05-16 20:20:42] - CCTV风云足球 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:tptvh.mobaibox.com
-
-# 自动添加 [2026-05-16 20:20:42] - 黑龙江卫视 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:s1.abntelevision.com
-
-# 自动添加 [2026-05-16 20:20:42] - 中国教育4台 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:[2409:8087:8:21::18]:6610
-
-# 自动添加 [2026-05-16 20:20:42] - 罗时丰男人的汗[848*480] - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:vd4.bdstatic.com
-
-# 自动添加 [2026-05-16 20:20:42] - 头号玩家 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:vd2.bdstatic.com
-
-# 自动添加 [2026-05-16 20:20:42] - 镪上我的美燕房东-舒可芯 - 匹配正则: cdn2020
-domain:t21.cdn2020.com
-
-# 自动添加 [2026-05-16 20:20:42] - 赢当女主编-多乙 - 匹配正则: cdn2020
-domain:t19.cdn2020.com
-
-# 自动添加 [2026-05-16 20:20:42] - 交换女友-欧妮 - 匹配正则: cdn2020
-domain:t10t13t16.cdn2020.com
-
-# 自动添加 [2026-05-16 20:20:42] - @老熬21:32播放 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:vdm6-ali.kavimmensucat.com
-
-# 自动添加 [2026-05-16 20:20:42] - 第二集 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:1080p.huyall.com
-
-# 自动添加 [2026-05-16 20:20:42] - 第八集 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:v.gsuus.com
-
-# 自动添加 [2026-05-16 20:20:42] - 孟庭苇-雾里看花 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:bizcommon.alicdn.com
-
-# 自动添加 [2026-05-16 20:20:42] - xxxxonexxxx - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:live3.lalifeier.eu.org
-
-# 自动添加 [2026-05-16 20:20:42] - 第二十九集 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:play.hhuus.com
-
-# 自动添加 [2026-05-16 20:20:42] - 海峡卫视 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-contains:sign
-
-# 自动添加 [2026-05-16 20:20:42] - EBS1 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:ebsonairios.ebs.co.kr
-
-# 自动添加 [2026-05-16 20:20:42] - ABC 7 Los Angeles - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:epicboss.live
-
-# 自动添加 [2026-05-16 20:20:42] - BBC One UK - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:fr3d0m.tebasya.work:8080
-
-# 自动添加 [2026-05-16 20:20:42] - 🇯🇵日本东映 - 匹配正则: G2s9zK2n9m
-domain:cdns.jp-primehome.com:8000
-
-# 自动添加 [2026-05-16 20:20:42] - 🔄美女短视频[刷新就是新内容] - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:av.npcq.cn
-
-# 自动添加 [2026-05-16 20:20:42] - 蔡依林-日不落 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:www.iesdouyin.com
-
-# 自动添加 [2026-05-16 20:20:42] - 揭阳综合高清 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:jiange.dns.navy:10001
-
-# 自动添加 [2026-05-16 20:20:42] - 揭阳综合高清 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:xhzza.v6.navy:34040
-
-# 自动添加 [2026-05-16 20:20:42] - CCTV12社会与法高清 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:183.59.56.116:554
-
-# 自动添加 [2026-05-16 20:20:42] - 加载慢耐心等待 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:d6.qyshare.store
-
-# 自动添加 [2026-05-16 20:20:42] - 牛魔王之魔王再临 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:hd.ijycnd.com
-
-# 自动添加 [2026-05-16 20:20:42] - 大话西游之月光宝盒 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:vip.kuaikan-cdn3.com
-
-# 自动添加 [2026-05-16 20:20:42] - 1987年 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:50069.njc.svp.tencent-cloud.com
-
-# 自动添加 [2026-05-16 20:20:42] - 2024山东新年交响音乐会 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:top.1080pzy.co
-
-# 自动添加 [2026-05-16 20:20:42] - 白日烟火 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-contains:clientCacheKey
-
-# 自动添加 [2026-05-16 20:20:42] - ☆song1 - 匹配正则: G2s9zK2n9m
-domain:15.204.105.50:25461
-
-# 自动添加 [2026-05-16 20:20:42] - ☆Anal - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:cdn.adultiptv.net
-
-# 自动添加 [2026-05-16 20:20:42] - ☆Arab Girls - 匹配正则: mycamtv
-domain:live.mycamtv.com
-
-# 自动添加 [2026-05-16 20:20:42] - ☆Pornstar HD - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:live.redtraffic.xyz
-
-# 自动添加 [2026-05-16 20:20:42] - 通化市综合频道[1920*1080] - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:lsfb.avap.jilintv.cn:80
-
-# 自动添加 [2026-05-16 20:20:42] - 泾县新闻综合[1920*1080] - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:apisave.jxnn.cn
-
-# 自动添加 [2026-05-16 20:20:42] - BRAVO - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-domain:fl1.moveonjoy.com
-
-# 自动添加 [2026-05-16 20:20:42] - CCTV2 - 匹配正则: [Aa][Vv]|[Xx]{3}|porn|adult
-contains:AuthInfo
