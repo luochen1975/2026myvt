@@ -1,24 +1,29 @@
-# 测速日志 - 2026-05-16 16:52:13
-# 总计: 20 个频道
+# 测速日志 - 2026-05-16 16:57:40
+# 总计: 25 个频道
 # 名称                   分组              ISP      类型     速度(KB/s)     URL
 ------------------------------------------------------------------------------------------------------------------------
-✗ CCTV16               ❤️V4央视          mobile   单播            0.8  http://38.75.136.137:98/gslb/dsdqbv/cctv16hd.m3u8?auth=test2
-✗ CCTV15               ❤️V4央视          mobile   单播            0.8  http://38.75.136.137:98/gslb/dsdqbv/cctv15hd.m3u8?auth=test2
-✗ CCTV6                ❤️V4央视          mobile   单播            0.8  http://38.75.136.137:98/gslb/dsdqbv/cctv6hd.m3u8?auth=test20
-✗ CCTV17               ❤️V4央视          mobile   单播            0.8  http://38.75.136.137:98/gslb/dsdqbv/cctv17hd.m3u8?auth=test2
-✗ CCTV13               ❤️V4央视          mobile   单播            0.8  http://38.75.136.137:98/gslb/dsdqbv/cctv13hd.m3u8?auth=test2
-✗ CCTV2                ❤️V4央视          mobile   单播            0.8  http://38.75.136.137:98/gslb/dsdqbv/cctv2hd.m3u8?auth=test20
-✗ CCTV14               ❤️V4央视          mobile   单播            0.8  http://38.75.136.137:98/gslb/dsdqbv/cctv14hd.m3u8?auth=test2
-✗ CCTV4                ❤️V4央视          mobile   单播            0.8  http://38.75.136.137:98/gslb/dsdqbv/cctv4hd.m3u8?auth=test20
-✗ CCTV3                ❤️V4央视          mobile   单播            0.8  http://38.75.136.137:98/gslb/dsdqbv/cctv3hd.m3u8?auth=test20
-✗ CCTV7                ❤️V4央视          mobile   单播            0.8  http://38.75.136.137:98/gslb/dsdqbv/cctv7hd.m3u8?auth=test20
-✗ CCTV8                ❤️V4央视          mobile   单播            0.8  http://38.75.136.137:98/gslb/dsdqbv/cctv8hd.m3u8?auth=test20
-✗ CCTV12               ❤️V4央视          mobile   单播            0.2  http://38.75.136.137:98/gslb/dsdqbv/cctv12hd.m3u8?auth=test2
-✗ CCTV4                ❤️V4央视          mobile   单播            0.1  http://38.75.136.137:98/gslb/dsdqca/hljwshd.m3u8?auth=test20
-✗ CCTV2                ❤️V4央视          mobile   单播            0.1  http://38.75.136.137:98/gslb/dsdqca/cctv2hd.m3u8?auth=test20
-✗ CCTV1                ❤️V4央视          mobile   单播            0.1  http://38.75.136.137:98/gslb/dsdqca/cctv1hd.m3u8?auth=test20
-✗ CCTV1                ❤️V4央视          mobile   单播            0.0  http://38.75.136.137:98/gslb/dsdqbv/cctv1hd.m3u8?auth=test20
-✗ CCTV5                ❤️V4央视          mobile   单播            0.0  http://38.75.136.137:98/gslb/dsdqbv/cctv5hd.m3u8?auth=test20
-✗ CCTV9                ❤️V4央视          mobile   单播            0.0  http://38.75.136.137:98/gslb/dsdqbv/cctv9hd.m3u8?auth=test20
-✗ CCTV10               ❤️V4央视          mobile   单播            0.0  http://38.75.136.137:98/gslb/dsdqbv/cctv10hd.m3u8?auth=test2
-✗ CCTV11               ❤️V4央视          mobile   单播            0.0  http://38.75.136.137:98/gslb/dsdqbv/cctv11hd.m3u8?auth=test2
+✓ 倩女幽魂2                ❤️移动直播          mobile   单播           63.3  http://jsmov2.a.yximgs.com/bs3/video-hls/5232901391302199073
+✓ 倩女幽魂3                ❤️移动直播          mobile   单播           60.5  http://jsmov2.a.yximgs.com/bs3/video-hls/5216294367991385255
+✓ 倩女幽魂1                ❤️移动直播          mobile   单播           53.4  http://jsmov2.a.yximgs.com/bs3/video-hls/5250634317044855747
+✗ onetv                ❤️移动直播          mobile   单播            0.2  http://play2.one-tv.com/live/onetv.m3u8
+✗ 北京文艺                                 other    组播            0.0  rtp://239.3.1.242:8000
+✗ 体育休闲                                 other    组播            0.0  rtp://239.3.1.243:8000
+✗ 北京影视                                 other    组播            0.0  rtp://239.3.1.158:8000
+✗ 北京国际                                 other    组播            0.0  rtp://239.3.1.235:8000
+✗ CGTN英语                               other    组播            0.0  rtp://239.3.1.215:4220
+✗ 亚洲影院                 ❤️移动直播          mobile   单播            0.0  http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/322
+✗ 亚洲影院                 ❤️移动直播          mobile   单播            0.0  http://39.134.185.235/PLTV/88888888/224/3221226245/index.m3u
+✗ 亚洲影院                 ❤️移动直播          mobile   单播            0.0  http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamob
+✗ 欧美影院                 ❤️移动直播          mobile   单播            0.0  http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/322
+✗ 欧美影院                 ❤️移动直播          mobile   单播            0.0  http://183.249.160.53:6610/hwltc.tv.cdn.zj.chinamobile.com/P
+✗ 欧美影院                 ❤️移动直播          mobile   单播            0.0  http://39.134.185.235/PLTV/88888888/224/3221226176/index.m3u
+✗ 欧美影院                 ❤️移动直播          mobile   单播            0.0  http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamob
+✗ 看电影了没V               ❤️移动直播          mobile   单播            0.0  https://www.goodiptv.club/douyu/9562616
+✗ 咪视界4K                ❤️移动直播          mobile   单播            0.0  http://anfeind1.kmdns.net:19999/migunohosts.php?channel-id=F
+✗ 至臻视界4K               ❤️移动直播          mobile   单播            0.0  http://anfeind1.kmdns.net:19999/migunohosts.php?channel-id=F
+✗ 晴彩青少                 ❤️移动直播          mobile   单播            0.0  http://anfeind1.kmdns.net:19999/migunohosts.php?channel-id=F
+✗ 晴彩竞技                 ❤️移动直播          mobile   单播            0.0  http://anfeind1.kmdns.net:19999/migunohosts.php?channel-id=F
+✗ 晴彩篮球                 ❤️移动直播          mobile   单播            0.0  http://anfeind1.kmdns.net:19999/migunohosts.php?channel-id=F
+✗ 晴彩广场舞                ❤️移动直播          mobile   单播            0.0  http://anfeind1.kmdns.net:19999/migunohosts.php?channel-id=F
+✗ 咪视界                  ❤️移动直播          mobile   单播            0.0  http://anfeind1.kmdns.net:19999/migunohosts.php?channel-id=F
+✗ 真香动漫                 ❤️移动直播          mobile   单播            0.0  https://www.goodiptv.club/douyu/9391292
