@@ -1,11 +1,149 @@
 #EXTM3U
+#EXTINF:-1,山歌《阿里山的姑娘》《康定情歌》《山路十八弯》《敖包相会》
+https://vdse.bdstatic.com//ae82f5b93166f47d85ff12124a021323.mp4
+#EXTINF:-1 group-title="☘️青海频道",西宁生活服务
+https://stream1.freetv.fun/xi-zhu-sheng-huo-fu-wu-3.m3u8
+#EXTINF:-1 group-title="☘️青海频道",西宁生活服务
+https://stream1.freetv.fun/xi-zhu-sheng-huo-fu-wu-1.m3u8
+#EXTINF:-1 group-title="☘️青海频道",西宁新闻综合
+https://stream1.freetv.fun/xi-zhu-xin-wen-zong-he-1.m3u8
+#EXTINF:-1 group-title="☘️青海频道",西宁新闻综合
+https://stream1.freetv.fun/xi-zhu-xin-wen-zong-he-2.m3u8
+#EXTINF:-1 group-title="☘️青海频道",西宁新闻综合
+https://stream1.freetv.fun/xi-zhu-xin-wen-zong-he-3.m3u8
+#EXTINF:-1,阿里郎台4Gtv
+http://220.135.64.124:5050/li-4gtv-4gtv079/index.m3u8?proxy=true
+#EXTINF:-1 group-title="☘️宁夏频道",宁夏｜西宁新闻综合
+https://stream1.freetv.fun/zhu-xia--xi-zhu-xin-wen-zong-he-1.m3u8
+#EXTINF:-1,阿里郎台4Gtv
+http://220.135.64.124:5050/4gtv-4gtv079/index.m3u8?proxy=true
+#EXTINF:-1 group-title="☘️青海频道",西宁新闻综合
+https://stream1.freetv.fun/xi-zhu-xin-wen-zong-he-5.ctv
+#EXTINF:-1 group-title="☘️青海频道",西宁生活服务
+https://stream1.freetv.fun/xi-zhu-sheng-huo-fu-wu-4.ctv
+#EXTINF:-1 group-title="☘️甘肃频道",甘肃少儿
+https://stream1.freetv.fun/ipv6-gan-su-shao-er-1.ctv
+#EXTINF:-1 group-title="☘️青海频道",西宁生活服务
+https://stream1.freetv.fun/xi-zhu-sheng-huo-fu-wu-2.m3u8
+#EXTINF:-1,阿里郎电视
+https://epg.pw/stream/f71b00bffdc25476502479870351e7f801879a9b7bbce6bc77332b7f8b0dbd7a.m3u8
+#EXTINF:-1,西宁新闻频率[0*0]
+http://ls.qingting.fm/live/3400403.m3u8
+#EXTINF:-1,宁夏都市广播 FM103.7[0*0]
+http://ls.qingting.fm/live/1842.m3u8
+#EXTINF:-1,青海交通音乐广播 FM97.2[0*0]
+http://ls.qingting.fm/live/5009.m3u8
+#EXTINF:-1 group-title="☘️甘肃频道",临夏州综合
+http://play.kankanlive.com/live/1714096320293954.m3u8
+#EXTINF:-1 group-title="☘️宁夏频道",宁夏经济
+https://ls.qingting.fm/live/1841/64k.m3u8
+#EXTINF:-1,阿里郎电视
+https://epg.pw/stream/b9cfac4fcde8586bd7fa4c477777ee18be1fc1f2299b669b5286b8cda420c254.m3u8
+#EXTINF:-1 group-title="☘️甘肃频道",甘肃经济
+http://a21709.tv.netsite.cc/proxy/1373372389/1373372389.m3u8
+#EXTINF:-1,青海经济广播 FM07.5[0*0]
+http://ls.qingting.fm/live/5008.m3u8
+#EXTINF:-1 group-title="☘️甘肃频道",甘肃少儿
+http://a21709.tv.netsite.cc/proxy/1645236406/1645236406.m3u8
+#EXTINF:-1,阿里郎电视
+https://epg.pw/stream/f592a0d375966407059e0daa1a72f252e4522cef754eff14091bf8650e378831.m3u8
+#EXTINF:-1,拉萨汉语综合
+http://file.lasatv.cn/cms/videos/nmip-media/channellive/channel1/playlist.m3u8
+#EXTINF:-1,西藏影视文化
+http://php.jdshipin.com:8880/xztv.php?id=ys
+#EXTINF:-1,拉萨藏语综合
+http://file.lasatv.cn/cms/videos/nmip-media/channellive/channel4/playlist.m3u8
+#EXTINF:-1,西藏林芝工布公园
+https://gcalic.v.myalicdn.com/gc/bsszbcs_1/index.m3u8
+#EXTINF:-1 group-title="☘️甘肃频道",甘肃经济
+https://satellitepull.cnr.cn/live/wxgshhzs/playlist.m3u8
+#EXTINF:-1,拉萨文旅频道
+http://file.lasatv.cn/cms/videos/nmip-media/channellive/channel3/playlist.m3u8
+#EXTINF:-1,宁夏将台堡
+https://gctxyc.liveplay.myqcloud.com/gc/hlxsd_1/index.m3u8
+#EXTINF:-1,宁夏沙坡头
+https://gctxyc.liveplay.myqcloud.com/gc/cntv466-zbzg_1/index.m3u8
+#EXTINF:-1,睛彩青少
+rtp://239.3.1.127:8001
+#EXTINF:-1,睛彩广场舞
+rtp://239.3.1.128:8001
+#EXTINF:-1,爱上4K
+rtp://239.3.1.236:2000
+#EXTINF:-1,4K超清
+rtp://239.3.1.249:8001
+#EXTINF:-1,城市剧场
+rtp://239.3.1.67:4120
+#EXTINF:-1 group-title="test",湖南卫视超清
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227581/10000100000000060000000004462928_0.smil?0&accountinfo=%7E%7EV2.0%7EzIYMxo8wtW4k6wf7gJlomw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="test",深圳卫视超清
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227543/10000100000000060000000004462919_0.smil?0&accountinfo=%7E%7EV2.0%7E0konh4hFkquc848UdP9yOw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="test",黑龙江卫视超清
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227604/10000100000000060000000004462921_0.smil?0&accountinfo=%7E%7EV2.0%7EQN9_lS2prEZSf6XyQkpjcQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="test",湖北卫视超清
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227584/10000100000000060000000004462929_0.smil?0&accountinfo=%7E%7EV2.0%7EZIj_4E2ewBQbd51BiTNKOA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="test",天津卫视超清
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227575/10000100000000060000000004462922_0.smil?0&accountinfo=%7E%7EV2.0%7E-J4B7nijVKr_NAMo7qZTIw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="test",东南卫视高清
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229798/10000100000000060000000009574969_0.smil?0&accountinfo=%7E%7EV2.0%7EfJL0ZFSnBct56inJbkqSmw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 tvg-id="87" tvg-name="东南卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/东南卫视.png" group-title="卫视频道",东南卫视
+rtp://239.3.1.156:8148$LR•IPV4『线路87』
 #EXTINF:-1,北京文艺
 rtp://239.3.1.242:8000
-#EXTINF:-1,体育休闲
-rtp://239.3.1.243:8000
 #EXTINF:-1,北京影视
 rtp://239.3.1.158:8000
 #EXTINF:-1,北京国际
 rtp://239.3.1.235:8000
+#EXTINF:-1 group-title="💓港澳台📶",香港卫视
+http://zhibo.hkstv.tv/livestream/mutfysrq.flv
+#EXTINF:-1 group-title="💓港澳台📶",香港卫视
+http://zhibo.hkstv.tv:80/livestream/mutfysrq.flv
+#EXTINF:-1 group-title="💓港澳台📶",香港卫视
+http://zhibo.hkstv.tv/livestream/mutfysrq/playlist.m3u8
+#EXTINF:-1 group-title="test",广州综合
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221230104/453207146.smil?0&accountinfo=%7E%7EV2.0%7EzPzHhhIQTsmwS_6SJEwFCg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="test",广州新闻
+rtsp://183.59.131.100:554/PLTV/88888905/224/3221230113/453206913.smil?0&accountinfo=%7E%7EV2.0%7E0SFQT4d134tJBYGpDmeXDQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="test",广州影视
+rtsp://183.59.131.37:554/PLTV/88888905/224/3221230115/453198755.smil?0&accountinfo=%7E%7EV2.0%7ENaCaue7LGOmXprWOEgXTzw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="test",广州法治
+rtsp://183.59.153.37:554/PLTV/88888905/224/3221230168/453206912.smil?0&accountinfo=%7E%7EV2.0%7EUSiyCu_w9WF99m5iQxHYRA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="test",广州竞赛
+rtsp://183.59.153.37:554/PLTV/88888905/224/3221230122/453206917.smil?0&accountinfo=%7E%7EV2.0%7EYewCUd3e3HXUSDKCfQk-Jw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1,阿里郎
+http://litv.zapi.us.kg/?id=4gtv-4gtv079
+#EXTINF:-1 group-title="test",上海纪实高清
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229872/10000100000000060000000009575047_0.smil?0&accountinfo=%7E%7EV2.0%7EK7Z3v0csIIQiA8ZhV0ySEA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="test",湖南茶
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229888/10000100000000060000000010323146_0.smil?0&accountinfo=%7E%7EV2.0%7EMhQ6ZyeRjk5mta22OM89Dw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="☘️青海频道",西宁新闻综合
+https://liveout.xntv.tv/a65jur/90p2i1.m3u8
+#EXTINF:-1,青海生活广播 花儿调频 FM90.3[0*0]
+http://ls.qingting.fm/live/2163891.m3u8
+#EXTINF:-1,宁夏文旅
+https://livepgc.cmc.ningxiahuangheyun.com/tv/nxwl.m3u8
+#EXTINF:-1,吴忠公共
+http://live.kanwz.net/ggpd/sd/live.m3u8
+#EXTINF:-1,石嘴山公共
+http://live.kanwz.net/zhpd/playlist.m3u8
+#EXTINF:-1,石嘴山综合
+http://live.kanwz.net/ggpd/playlist.m3u8
+#EXTINF:-1,吴忠综合
+http://live.kanwz.net/zhpd/sd/live.m3u8?zningxd
+#EXTINF:-1 group-title="直播中国②",宁夏沙坡头长河落日
+https://gcalic.v.myalicdn.com/gc/nxsptdmgychlr_1/index.m3u8
+#EXTINF:-1 group-title="直播中国②",宁夏沙坡头大漠孤烟
+https://gcalic.v.myalicdn.com/gc/nxsptdmgy_1/index.m3u8
+#EXTINF:-1 group-title="直播中国②",宁夏黄河大峡谷
+https://gcalic.v.myalicdn.com/gc/hhdxg01_1/index.m3u8
+#EXTINF:-1 group-title="各地方台4",宁夏：石嘴山综合
+https://pili-live-hls-jrszs.szsnews.com:443/jrszs/zhpd.m3u8
+#EXTINF:-1,体育休闲
+rtp://239.3.1.243:8000
 #EXTINF:-1,CGTN英语
 rtp://239.3.1.215:4220
+#EXTINF:-1,CGTN纪录
+rtp://239.3.1.216:4220
+#EXTINF:-1,CGTN西语
+rtp://239.3.1.217:4220
+#EXTINF:-1,CGTN法语
+rtp://239.3.1.218:4220
