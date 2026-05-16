@@ -15,7 +15,7 @@ class ChannelMerger:
         # 限制参数
         self.multicast_limit = 5
         self.mobile_multicast_limit = 6
-        self.unicast_limit = 5000
+        self.unicast_limit = 20
     
     def load_blacklist(self, path: str) -> None:
         """加载黑名单文件"""
