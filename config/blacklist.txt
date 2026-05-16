@@ -1,1 +1,40 @@
+# regex: 正则匹配频道名
+# 年份+逗号格式
+regex:^\d{4}年,
+
+# 广告域名特征
+regex:G2s9zK2n9m
+regex:mycamtv
+regex:ddyunbo
+regex:bgbfds
+regex:6apzfdx
+regex:shuma5588
+regex:xsmj10
+regex:aosikazy12
+regex:slbfsl
+regex:cdn2020
+regex:hndtl
+regex:m8t9ew
+regex:46cdn
+regex:41cdn
+regex:34cdn
+regex:krevonix
+
+# 加入黑名单的示例
+ads.com
+buffering
+timeout
+192.168.
+
+# 域名黑名单
+domain:aktv.top
+domain:aktv.live
+
+# 敏感内容
+regex:成人|午夜|激情|诱惑|私密|限制级
+regex:[Aa][Vv]|[Xx]{3}|porn|adult|sexy
+regex:春晚|春节联欢晚会|历年春晚|春晚回放|cctv春晚
+
+# 购物广告
+regex:购物|直销|广告|电视购物|快乐购|家家购|优购物|好享购|聚鲨|环球购物|时尚购物
 
