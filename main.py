@@ -108,6 +108,7 @@ def load_blacklist_rules(blacklist_file: str) -> dict:
         'keywords': [],
         'regex': [],
         'genre': [],
+        'combined': [],  # 新增：组合规则
     }
 
     if not os.path.exists(blacklist_file):
@@ -121,30 +122,42 @@ def load_blacklist_rules(blacklist_file: str) -> dict:
                 continue
 
             if ':' in line:
-                rule_type, rule_value = line.split(':', 1)
-                rule_type = rule_type.strip().lower()
-                rule_value = rule_value.strip()
-
-                if rule_type == 'domain':
-                    rules['domains'].append(rule_value)
-                    log.debug(f"加载域名黑名单: {rule_value}")
-                elif rule_type == 'contains':
-                    rules['contains'].append(rule_value)
-                    log.debug(f"加载包含规则: {rule_value}")
-                elif rule_type == 'keyword':
-                    rules['keywords'].append(rule_value)
-                    log.debug(f"加载关键词规则: {rule_value}")
-                elif rule_type == 'regex':
-                    try:
-                        rules['regex'].append(re.compile(rule_value))
-                        log.debug(f"加载正则规则: {rule_value}")
-                    except re.error as e:
-                        log.warning(f"正则表达式错误 在第 {line_num} 行: {e}")
-                elif rule_type == 'genre':
-                    rules['genre'].append(rule_value)
-                    log.debug(f"加载类型规则: {rule_value}")
+                # 检查是否是组合规则（包含 | ）
+                if '|' in line:
+                    # source:a|name:b|group:购物
+                    conditions = {}
+                    for part in line.split('|'):
+                        if ':' in part:
+                            k, v = part.split(':', 1)
+                            conditions[k.strip()] = v.strip()
+                    rules['combined'].append(conditions)
+                    log.debug(f"加载组合规则: {line}")
                 else:
-                    log.warning(f"未知规则类型 '{rule_type}' 在第 {line_num} 行")
+                    # 普通规则
+                    rule_type, rule_value = line.split(':', 1)
+                    rule_type = rule_type.strip().lower()
+                    rule_value = rule_value.strip()
+
+                    if rule_type == 'domain':
+                        rules['domains'].append(rule_value)
+                        log.debug(f"加载域名黑名单: {rule_value}")
+                    elif rule_type == 'contains':
+                        rules['contains'].append(rule_value)
+                        log.debug(f"加载包含规则: {rule_value}")
+                    elif rule_type == 'keyword':
+                        rules['keywords'].append(rule_value)
+                        log.debug(f"加载关键词规则: {rule_value}")
+                    elif rule_type == 'regex':
+                        try:
+                            rules['regex'].append(re.compile(rule_value))
+                            log.debug(f"加载正则规则: {rule_value}")
+                        except re.error as e:
+                            log.warning(f"正则表达式错误 在第 {line_num} 行: {e}")
+                    elif rule_type == 'genre' or rule_type == 'group':
+                        rules['genre'].append(rule_value)
+                        log.debug(f"加载分组规则: {rule_value}")
+                    else:
+                        log.warning(f"未知规则类型 '{rule_type}' 在第 {line_num} 行")
             else:
                 rules['urls'].append(line)
                 log.debug(f"加载URL黑名单: {line}")
@@ -152,20 +165,49 @@ def load_blacklist_rules(blacklist_file: str) -> dict:
     log.info(f"黑名单规则加载完成: {len(rules['domains'])} 个域名, "
              f"{len(rules['contains'])} 个包含规则, {len(rules['urls'])} 个URL, "
              f"{len(rules['keywords'])} 个关键词, {len(rules['regex'])} 个正则, "
-             f"{len(rules['genre'])} 个类型")
+             f"{len(rules['genre'])} 个分组, {len(rules['combined'])} 个组合规则")
     return rules
 
 
-def should_blacklist(url: str, rules: dict) -> tuple[bool, str]:
-    if not url:
+def should_blacklist(ch, rules: dict) -> tuple[bool, str]:
+    """传入 Channel 对象，检查是否匹配黑名单"""
+    if not ch or not ch.url:
         return False, ""
 
-    url_lower = url.lower()
-    parsed = urlparse(url)
+    url = ch.url.lower()
+    name = ch.name.lower()
+    group = getattr(ch, 'group', '').lower()
+    source = getattr(ch, 'source', '').lower()
+    parsed = urlparse(ch.url)
     domain = parsed.netloc.lower()
 
+    # 检查组合规则（优先）
+    for combined in rules.get('combined', []):
+        match = True
+        for key, value in combined.items():
+            value_lower = value.lower()
+            if key == 'source' and value_lower not in source:
+                match = False
+                break
+            elif key == 'name' and value_lower not in name:
+                match = False
+                break
+            elif key in ('group', 'genre') and value_lower not in group:
+                match = False
+                break
+            elif key == 'url' and value_lower not in url:
+                match = False
+                break
+            elif key == 'domain' and value_lower not in domain:
+                match = False
+                break
+        
+        if match:
+            return True, f"匹配组合规则: {combined}"
+
+    # 检查普通规则
     for black_url in rules['urls']:
-        if black_url.lower() in url_lower:
+        if black_url.lower() in url:
             return True, f"匹配URL黑名单: {black_url}"
 
     for black_domain in rules['domains']:
@@ -173,16 +215,20 @@ def should_blacklist(url: str, rules: dict) -> tuple[bool, str]:
             return True, f"匹配域名黑名单: {black_domain}"
 
     for pattern in rules['contains']:
-        if pattern.lower() in url_lower:
+        if pattern.lower() in url:
             return True, f"匹配包含规则: {pattern}"
 
     for keyword in rules['keywords']:
-        if keyword.lower() in url_lower:
+        if keyword.lower() in name:
             return True, f"匹配关键词: {keyword}"
 
     for regex in rules['regex']:
-        if regex.search(url):
+        if regex.search(name):
             return True, f"匹配正则: {regex.pattern}"
+
+    for g in rules['genre']:
+        if g.lower() in group:
+            return True, f"匹配分组黑名单: {g}"
 
     return False, ""
 
@@ -503,7 +549,7 @@ def main():
     filtered_channels = []
 
     for ch in all_channels:
-        should_block, reason = should_blacklist(ch.url, blacklist_rules)
+        should_block, reason = should_blacklist(ch, blacklist_rules)
 
         if should_block:
             if save_blacklist_rule(str(BLACKLIST_FILE_PATH), ch.url, ch.name, reason):
