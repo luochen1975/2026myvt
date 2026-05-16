@@ -28,7 +28,7 @@ def auto_group_by_name(channels: list[Channel]) -> dict:
     """按频道名自动分组，IPv6 按省份归入对应分组，包含各省、自治区、直辖市及主要城市"""
     
     groups = OrderedDict()
-    grouped_channels_set = set()
+    grouped_urls_set = set()  # 存储已分组的 URL 字符串，避免 Channel 不可哈希
     
     # === 第一步：特殊分组（优先级最高）===
     
@@ -38,46 +38,48 @@ def auto_group_by_name(channels: list[Channel]) -> dict:
         name_lower = ch.name.lower()
         if 'radio' in name_lower or 'qingting' in name_lower:
             groups['❤️Radio'].append(ch)
-            grouped_channels_set.add(ch)
+            grouped_urls_set.add(ch.url)
     
     # 2. 歌舞分组：带有 歌曲、合集、精选、舞曲 字样
     groups['❤️歌舞'] = []
     for ch in channels:
-        if ch in grouped_channels_set:
+        if ch.url in grouped_urls_set:
             continue
         name = ch.name
         if any(kw in name for kw in ['歌曲', '合集', '精选', '舞曲']):
             groups['❤️歌舞'].append(ch)
-            grouped_channels_set.add(ch)
+            grouped_urls_set.add(ch.url)
     
     # 3. 新电视分组：带有 NEWTV、iHOT、IPTV 字样（不区分大小写）
     groups['❤️新电视'] = []
     for ch in channels:
-        if ch in grouped_channels_set:
+        if ch.url in grouped_urls_set:
             continue
         name_lower = ch.name.lower()
         if any(kw in name_lower for kw in ['newtv', 'ihot', 'iptv']):
             groups['❤️新电视'].append(ch)
-            grouped_channels_set.add(ch)
+            grouped_urls_set.add(ch.url)
     
     # === 第二步：央视 & 卫视 ===
     groups['❤️央视'] = []
     for ch in channels:
-        if ch in grouped_channels_set:
+        if ch.url in grouped_urls_set:
             continue
         if 'CCTV' in ch.name or '央视' in ch.name:
             groups['❤️央视'].append(ch)
-            grouped_channels_set.add(ch)
+            grouped_urls_set.add(ch.url)
     
     groups['❤️卫视'] = []
     for ch in channels:
-        if ch in grouped_channels_set:
+        if ch.url in grouped_urls_set:
             continue
         if '卫视' in ch.name:
             groups['❤️卫视'].append(ch)
-            grouped_channels_set.add(ch)
+            grouped_urls_set.add(ch.url)
     
     # === 第三步：各省、自治区、直辖市及主要城市 ===
+    # 中国共有 34 个省级行政区：
+    # 23 个省、5 个自治区、4 个直辖市、2 个特别行政区
     province_map = {
         # === 4 个直辖市 ===
         '❤️北京': ['北京', 'BTV', '北京卫视', '北京新闻', '北京文艺', '北京科教', '北京影视', '北京财经', '北京体育', '北京生活', '北京青年', '北京纪实', '北京通州', '北京怀柔', '北京顺义', '北京昌平', '北京大兴', '北京丰台', '北京海淀', '北京西城', '北京东城', '北京朝阳', '北京石景山', '北京门头沟', '北京房山', '北京平谷', '北京密云', '北京延庆'],
@@ -126,16 +128,16 @@ def auto_group_by_name(channels: list[Channel]) -> dict:
     for group_name, keywords in province_map.items():
         matched = []
         for ch in channels:
-            if ch in grouped_channels_set:
+            if ch.url in grouped_urls_set:
                 continue
             if any(kw in ch.name for kw in keywords):
                 matched.append(ch)
-                grouped_channels_set.add(ch)
+                grouped_urls_set.add(ch.url)
         if matched:
             groups[group_name] = matched
     
     # === 其他未分组频道 ===
-    remaining = [c for c in channels if c not in grouped_channels_set]
+    remaining = [c for c in channels if c.url not in grouped_urls_set]
     if remaining:
         groups['❤️其他频道'] = remaining
     
