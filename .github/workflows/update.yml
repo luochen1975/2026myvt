@@ -16,6 +16,8 @@ jobs:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
+        # 关键：先获取远程最新提交，避免 push 冲突
+        ref: main
     
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -33,10 +35,31 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git pull origin main --rebase || true
+        
+        # 关键修复：先拉取远程最新更改并自动合并冲突（带重试）
+        for i in 1 2 3; do
+          echo "Attempt $i: pulling remote changes..."
+          if git pull origin main --rebase --autostash; then
+            echo "Pull succeeded"
+            break
+          fi
+          echo "Pull failed, waiting 5 seconds..."
+          sleep 5
+        done
         
         # 提交所有改动：代码修改 + 生成结果
         git add -A
         
         git diff --quiet && git diff --staged --quiet || git commit -m "Update IPTV sources $(date +%Y-%m-%d)"
-        git push
+        
+        # 关键修复：推送前再次拉取确保最新（防止其他并发提交）
+        for i in 1 2 3; do
+          echo "Attempt $i: pushing to remote..."
+          if git push origin main; then
+            echo "Push succeeded"
+            break
+          fi
+          echo "Push failed, pulling again..."
+          git pull origin main --rebase --autostash || true
+          sleep 3
+        done
