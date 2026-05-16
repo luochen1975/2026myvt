@@ -1,12 +1,12 @@
 {
   "txt": [
     {"name": "主源", "url": "https://wp.kayyw.com/f/MbVmc6/zb2026.txt", "isp": "mobile"},
-    {"name": "备用1", "url":     "https://raw.githubusercontent.com/luochen1975/dszby/refs/heads/main/merged_output.txt"},
-    {"name": "备用2", "url":     "https://raw.githubusercontent.com/fafa002/yf2025/refs/heads/main/wangye.txt"},
-    {"name": "备用3", "url":     "https://raw.githubusercontent.com/n3rddd/collect-tv-txt/refs/heads/main/others_output.txt"},
-    {"name": "备用4", "url":     "https://raw.githubusercontent.com/testnmb/mynew/refs/heads/main/ttest.txt"},
-    {"name": "备用5", "url":     "https://raw.githubusercontent.com/testnmb/migu_video/refs/heads/main/interfaceTXT.txt"},
-    {"name": "备用6", "url":     "https://gh-proxy.org/https://raw.githubusercontent.com/807080747/zv/refs/heads/main/sese.txt"},
+    {"name": "备用1", "url": "https://raw.githubusercontent.com/luochen1975/dszby/refs/heads/main/merged_output.txt"},
+    {"name": "备用2", "url": "https://raw.githubusercontent.com/fafa002/yf2025/refs/heads/main/wangye.txt"},
+    {"name": "备用3", "url": "https://raw.githubusercontent.com/n3rddd/collect-tv-txt/refs/heads/main/others_output.txt"},
+    {"name": "备用4", "url": "https://raw.githubusercontent.com/testnmb/mynew/refs/heads/main/ttest.txt"},
+    {"name": "备用5", "url": "https://raw.githubusercontent.com/testnmb/migu_video/refs/heads/main/interfaceTXT.txt"},
+    {"name": "备用6", "url": "https://gh-proxy.org/https://raw.githubusercontent.com/807080747/zv/refs/heads/main/sese.txt"},
     {"name": "组播", "url": "https://gh-proxy.org/https://raw.githubusercontent.com/jia070310/4K-IPTV-M3U/main/txt/%E6%B5%99%E6%B1%9F%E7%94%B5%E4%BF%A1.txt", "isp": "telecom"},
     {"name": "组播1", "url": "https://gh-proxy.org/https://raw.githubusercontent.com/zxmlxw520/5566/refs/heads/main/fhtv.txt", "isp": "telecom"},
     {"name": "组播2", "url": "https://gh-proxy.org/https://raw.githubusercontent.com/jia070310/4K-IPTV-M3U/main/txt/%E6%B5%99%E6%B1%9F%E7%94%B5%E4%BF%A12.txt", "isp": "telecom"},
