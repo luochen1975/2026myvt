@@ -14,7 +14,7 @@ time.tzset()
 
 from config.settings import *
 from core.parser import SourceLoader
-from core.merger import ChannelMerger
+from core.merger import ChannelMerger, auto_group_by_name
 from core.speed_tester import SpeedTester
 from core.exporter import M3UExporter, TXTExporter, LogExporter
 from utils.cache import SpeedCache
@@ -358,12 +358,15 @@ def merge_special_groups(grouped_channels):
         '歌曲': ['❤️歌曲', '歌曲', '🎵歌曲', '☘️歌曲'],
         '剧电影': ['❤️剧电影', '剧电影', '🎬剧电影', '☘️剧电影'],
         '香港台湾': ['🐎🐎⬇️❤️xianggang\\wanwan', '❤️xianggang\\wanwan', 'xianggang\\wanwan'],
-        '其他': ['🍉🍉❤️其他1', '❤️其他1', '其他1', '❤️其他', '其他'],
-        '央视': ['❤️V4央视', '❤️V6央视', 'V4央视', 'V6央视', '央视'],
+        '其他频道': ['🍉🍉❤️其他1', '❤️其他1', '其他1', '❤️其他频道', '❤️其他', '其他'],
+        '央视': ['❤️央视', '❤️V4央视', '❤️V6央视', 'V4央视', 'V6央视', '央视'],
+        '卫视': ['❤️卫视', '❤️V4卫视', '❤️V6卫视', 'V4卫视', 'V6卫视', '卫视'],
         '广播': ['❤️广播', '广播', '📻广播'],
         '移动直播': ['❤️移动直播', '移动直播'],
-        '卫视': ['❤️V4卫视', '❤️V6卫视', 'V4卫视', 'V6卫视'],
         '4k8K+': ['❤️4k8K+', '4k8K+'],
+        'Radio': ['❤️Radio', 'Radio', '📻Radio'],
+        '歌舞': ['❤️歌舞', '歌舞', '🎵歌舞', '☘️歌舞'],
+        '新电视': ['❤️新电视', '新电视', '📺新电视', '☘️新电视'],
     }
 
     merged = OrderedDict()
@@ -527,43 +530,39 @@ def main():
     merged_multicast = sum(1 for ch in merged if ch.url.strip().lower().startswith(('udp://', 'rtp://', 'rtsp://')))
     log.info(f"  去重后: {len(merged)} 个频道 (组播:{merged_multicast}个)")
 
-    grouped_channels = {}
-    if TEMPLATE_FILE.exists():
-        log.info("[3/5] 应用模板...")
-        grouped_channels = merger.apply_template(merged, str(TEMPLATE_FILE))
+    # ========== 【修改】使用自动分组替代模板分组 ==========
+    log.info("[3/5] 自动分组...")
+    grouped_channels = auto_group_by_name(merged)
 
-        log.info("[3/5] 聚合分组...")
-        grouped_channels = merge_subgroups(grouped_channels)
+    log.info("[3/5] 聚合分组...")
+    grouped_channels = merge_subgroups(grouped_channels)
 
-        # ========== 合并省份标签（修复：函数已移到外部）==========
-        log.info("[3/5] 合并省份标签...")
-        grouped_channels = merge_province_groups(grouped_channels)
+    # ========== 合并省份标签 ==========
+    log.info("[3/5] 合并省份标签...")
+    grouped_channels = merge_province_groups(grouped_channels)
 
-        log.info("[3/5] 合并特殊分组...")
-        grouped_channels = merge_special_groups(grouped_channels)
+    log.info("[3/5] 合并特殊分组...")
+    grouped_channels = merge_special_groups(grouped_channels)
 
-        # ========== 【新增】最终整理 ==========
-        log.info("[3/5] 最终整理分组...")
-        grouped_channels = finalize_groups(grouped_channels)
-        # =======================================
+    # ========== 最终整理 ==========
+    log.info("[3/5] 最终整理分组...")
+    grouped_channels = finalize_groups(grouped_channels)
 
-        # 应用频道数量限制
-        log.info("[3/5] 应用频道数量限制...")
-        for group_name, sub_groups in grouped_channels.items():
-            for sub_name, channels in sub_groups.items():
-                sub_groups[sub_name] = merger.limit_channels(channels)
+    # 应用频道数量限制
+    log.info("[3/5] 应用频道数量限制...")
+    for group_name, sub_groups in grouped_channels.items():
+        for sub_name, channels in sub_groups.items():
+            sub_groups[sub_name] = merger.limit_channels(channels)
 
-        log.info("=== 频道分组诊断 ===")
-        for group_name, sub_groups in grouped_channels.items():
-            total = sum(len(chs) for chs in sub_groups.values())
-            if total > 0:
-                log.info(f"  分组 '{group_name}': {total} 个频道")
-                for sub_name, chs in sub_groups.items():
-                    if len(chs) > 0:
-                        sample = chs[0].name if chs else "空"
-                        log.info(f"    - {sub_name}: {len(chs)} 个 (示例: {sample})")
-    else:
-        grouped_channels = {'其他': {'未分类': merged}}
+    log.info("=== 频道分组诊断 ===")
+    for group_name, sub_groups in grouped_channels.items():
+        total = sum(len(chs) for chs in sub_groups.values())
+        if total > 0:
+            log.info(f"  分组 '{group_name}': {total} 个频道")
+            for sub_name, chs in sub_groups.items():
+                if len(chs) > 0:
+                    sample = chs[0].name if chs else "空"
+                    log.info(f"    - {sub_name}: {len(chs)} 个 (示例: {sample})")
 
     log.info(f"[4/5] 测速中... 并发: {MAX_CONCURRENT_TESTS}")
 
