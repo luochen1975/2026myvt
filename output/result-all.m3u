@@ -79,16 +79,16 @@ http://222.90.22.2:9999/rtp/239.112.205.207:5140
 http://222.90.22.2:9999/rtp/239.109.205.104:8768
 #EXTINF:-1 group-title="❤️陕西",CHC家庭影院
 http://222.90.22.2:9999/rtp/239.112.205.205:5140
-#EXTINF:-1 group-title="数字频道",CHC家庭影院
-http://220.176.218.130:9000/udp/239.252.219.84:5140
-#EXTINF:-1 group-title="数字频道",CHC家庭影院
-http://42.237.212.149:4022/rtp/225.1.4.209:1262
-#EXTINF:-1 group-title="数字频道",CHC家庭影院
-http://36.49.53.138:8800/rtp/239.37.0.188:5540
-#EXTINF:-1 group-title="数字频道",CHC家庭影院
-http://106.59.3.2:55555/rtp/239.200.201.30:8140
-#EXTINF:-1 group-title="数字频道",CHC家庭影院
-http://106.59.2.72:55555/rtp/239.200.201.30:8140
+#EXTINF:-1 group-title="山东",CHC动作电影
+http://192.168.6.1:8888/http://112.226.107.85:4001/udp/239.253.254.153:8000
+#EXTINF:-1 group-title="山东",CHC家庭影院
+http://192.168.6.1:8888/http://112.226.107.85:4001/udp/239.253.254.152:8000
+#EXTINF:-1 group-title="湖南",CHC家庭影院
+http://192.168.6.1:8888/http://58.46.28.197:8188/udp/239.76.252.241:9000
+#EXTINF:-1 group-title="湖南",CHC动作电影
+http://192.168.6.1:8888/http://58.46.28.197:8188/udp/239.76.252.243:9000
+#EXTINF:-1 group-title="湖南",CHC动作电影
+http://192.168.6.1:8888/http://58.46.28.197:8188/udp/239.76.245.243:1234
 #EXTINF:-1 group-title="test",上海纪实高清
 rtsp://183.59.56.116:554/PLTV/88888905/224/3221229872/10000100000000060000000009575047_0.smil?0&accountinfo=%7E%7EV2.0%7EK7Z3v0csIIQiA8ZhV0ySEA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
 #EXTINF:-1 group-title="❤️移动直播",五星体育
