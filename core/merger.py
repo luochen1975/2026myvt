@@ -37,43 +37,49 @@ class ChannelMerger:
         return list(seen.values())
     
     def apply_template(self, channels: list[Channel], template_path: str) -> dict:
-        """应用模板分组"""
-        template = OrderedDict()
-        if Path(template_path).exists():
-            with open(template_path, 'r', encoding='utf-8') as f:
-                current_group = None
-                for line in f:
-                    line = line.strip()
-                    if not line:
-                        continue
-                    if line.startswith('#'):
-                        current_group = line.lstrip('#').strip()
-                        template[current_group] = []
-                    elif current_group:
-                        template[current_group].append(line)
+    """应用模板分组"""
+    template = OrderedDict()
+    if Path(template_path).exists():
+        with open(template_path, 'r', encoding='utf-8') as f:
+            current_group = None
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                
+                # 支持你的格式: ❤️央视卫视,#group# 或 ❤️综合,#genre#
+                if ',#group#' in line or ',#genre#' in line:
+                    current_group = line.split(',')[0].strip()
+                    template[current_group] = []
+                elif line.startswith('#'):
+                    # 也支持标准格式: # 分组名
+                    current_group = line.lstrip('#').strip()
+                    template[current_group] = []
+                elif current_group:
+                    template[current_group].append(line)
+    
+    grouped = OrderedDict()
+    ungrouped = []
+    
+    for ch in channels:
+        matched = False
+        for group_name, patterns in template.items():
+            if any(self._match_pattern(ch.name, p) for p in patterns):
+                if group_name not in grouped:
+                    grouped[group_name] = OrderedDict()
+                    grouped[group_name]['全部'] = []
+                grouped[group_name]['全部'].append(ch)
+                matched = True
+                break
         
-        grouped = OrderedDict()
-        ungrouped = []
-        
-        for ch in channels:
-            matched = False
-            for group_name, patterns in template.items():
-                if any(self._match_pattern(ch.name, p) for p in patterns):
-                    if group_name not in grouped:
-                        grouped[group_name] = OrderedDict()
-                        grouped[group_name]['全部'] = []
-                    grouped[group_name]['全部'].append(ch)
-                    matched = True
-                    break
-            
-            if not matched:
-                ungrouped.append(ch)
-        
-        if ungrouped:
-            grouped['其他'] = OrderedDict()
-            grouped['其他']['全部'] = ungrouped
-        
-        return grouped
+        if not matched:
+            ungrouped.append(ch)
+    
+    if ungrouped:
+        grouped['❤️其他'] = OrderedDict()
+        grouped['❤️其他']['全部'] = ungrouped
+    
+    return grouped
     
     def _match_pattern(self, name: str, pattern: str) -> bool:
         """匹配频道名和模板模式"""
