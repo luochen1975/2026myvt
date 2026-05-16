@@ -155,8 +155,8 @@ class ChannelMerger:
     def __init__(self, dedup_mode: str = "auto", keep_strategy: str = "first",
                  multicast_limit: int = 4,
                  mobile_multicast_limit: int = 6,
-                 unicast_limit: int = 10,
-                 max_per_group: int = 100):
+                 unicast_limit: int = 15,
+                 max_per_group: int = 300):
         """
         参数:
             multicast_limit:       普通组播限制（UDP/RTP/RTSP）
