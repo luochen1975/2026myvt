@@ -85,7 +85,6 @@ KTSF26洛杉矶旧金山,http://38.64.72.148/hls/modn/list/4026/playlist.m3u8
 
 ❤️辽宁,#genre#
 辽宁影视,http://192.151.150.154/live/lnys.m3u8
-丹东新闻综合,http://1866360232.cloudvdn.com/a.m3u8?domain=pili-live-hdl-zhdd-tv.ddrtv.cn&player=1&streamid=zhdd-tv%3Azhdd-tv%2Fddnews&v3=1
 
 ❤️湖北,#genre#
 湖北教育,http://120.202.94.181:9446/tsfile/live/0107_1.m3u8?key=txiptv
@@ -211,17 +210,11 @@ CHC动作电影,http://38.75.136.137:98/gslb/dsdqpub/chcdz.m3u8?auth=testpub
 ❤️浙江,#genre#
 浙江国际,http://ali-m-l.cztv.com/channels/lantian/channel010/1080p.m3u8
 
-❤️辽宁,#genre#
-锦州新闻综合,http://srs.beijihainews.com.cn/video/jinzhou1/index.m3u8
-
 ❤️移动直播,#genre#
 onetv,http://play2.one-tv.com/live/onetv.m3u8
 
 ❤️安徽,#genre#
 淮南新闻综合,http://112.28.222.71:20080/live/8f025f302a3441f4b5a45ad4f06b42cb/hls.m3u8
-
-❤️辽宁,#genre#
-锦州教育,http://srs.beijihainews.com.cn/video/jinzhou2/index.m3u8
 
 ☘️河南,#genre#
 河南梨园,https://dxtx.hntv.tv/live/lypd.m3u8?txSecret=10c771842a0be59e8b575d765173ec96&txTime=7B923E0A&wsSecret=da4f84c8803aef1ccb2623b57bca9647&wsTime=1772884829
@@ -456,11 +449,14 @@ CHC动作电影,http://192.168.6.1:8888/http://58.46.28.197:8188/udp/239.76.245.
 辽宁体育,http://156.238.248.80:8880/play/24.m3u8
 
 ❤️辽宁,#genre#
-辽宁公共,http://124.71.194.147:1234/962045223
-辽宁生活,http://124.71.194.147:1234/962045226
-辽宁影视剧,http://124.71.194.147:1234/962067517
-辽宁公共,http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/lngg/50/20251225/index.m3u8?msisdn=20260321080230143ca901f128462ba262f3b2d51b3934&mdspid=&spid=600697&netType=0&sid=5910022323&pid=2028597139&timestamp=20260321080230&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=962045223&ParentNodeID=-99&assertID=5910022323&client_ip=218.28.233.106&SecurityKey=20260321080230&promotionId=&mvid=5900006791&mcid=500020&playurlVersion=ZQ-A1-9.3.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=2ad98ad4f1bc8d151ea28553a73d9f06
-辽宁生活,http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/lnsh/50/20251225/index.m3u8?msisdn=202603210802300fdb1acd9400420094dce8c560f94a95&mdspid=&spid=600697&netType=0&sid=5910022324&pid=2028597139&timestamp=20260321080230&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=962045226&ParentNodeID=-99&assertID=5910022324&client_ip=218.28.233.106&SecurityKey=20260321080230&promotionId=&mvid=5900006792&mcid=500020&playurlVersion=ZQ-A1-9.3.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=1905221810c42fe5a55fbce7f4ebcccd
+辽宁经济,http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=live&protocol=http&accesstoken=R5F2408FEU3198804BK78052214IE73560DFP2BF4M340CE68V0Z339CBW1626D4D261E46FEA&playtoken=31608RMZHGPUCXX10&programid=4200000076
+辽宁都市,http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=live&protocol=http&accesstoken=R5F2408FEU3198804BK78052214IE73560DFP2BF4M340CE68V0Z339CBW1626D4D261E46FEA&playtoken=31608RMZHGPUCXX10&programid=4200000068
+辽宁教育青少,http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=live&protocol=http&accesstoken=R5F2408FEU3198804BK78052214IE73560DFP2BF4M340CE68V0Z339CBW1626D4D261E46FEA&playtoken=31608RMZHGPUCXX10&programid=4200000075
+辽宁生活,http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=live&protocol=http&accesstoken=R5F2408FEU3198804BK78052214IE73560DFP2BF4M340CE68V0Z339CBW1626D4D261E46FEA&playtoken=31608RMZHGPUCXX10&programid=4200000073
+朝阳新闻综合,http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=live&protocol=http&accesstoken=R5F2408FEU3198804BK78052214IE73560DFP2BF4M340CE68V0Z339CBW1626D4D261E46FEA&playtoken=31608RMZHGPUCXX10&programid=4200000282
+辽宁北方,http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=live&protocol=http&accesstoken=R5F2408FEU3198804BK78052214IE73560DFP2BF4M340CE68V0Z339CBW1626D4D261E46FEA&playtoken=31608RMZHGPUCXX10&programid=4200000071
+辽宁体育,http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=live&protocol=http&accesstoken=R5F2408FEU3198804BK78052214IE73560DFP2BF4M340CE68V0Z339CBW1626D4D261E46FEA&playtoken=31608RMZHGPUCXX10&programid=4200000611
+辽宁影视剧,http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=live&protocol=http&accesstoken=R5F2408FEU3198804BK78052214IE73560DFP2BF4M340CE68V0Z339CBW1626D4D261E46FEA&playtoken=31608RMZHGPUCXX10&programid=4200000070
 
 ❤️V4央视,#genre#
 南方影视,http://180.152.19.206:1234/614961829

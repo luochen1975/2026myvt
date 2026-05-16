@@ -1,4 +1,4 @@
-# 测速日志 - 2026-05-16 20:20:54
+# 测速日志 - 2026-05-16 21:23:21
 # 总计: 428 个频道
 # 名称                   分组              ISP      类型     速度(KB/s)     URL
 ------------------------------------------------------------------------------------------------------------------------
@@ -45,7 +45,6 @@
 ✗ 湖南公共                 ❤️湖南            mobile   单播            1.6  http://192.151.150.154/live/hngg.m3u8
 ✗ 湖南都市                 ❤️湖南            mobile   单播            1.5  http://63.141.230.178/live/hnds.m3u8
 ✗ 辽宁影视                 ❤️辽宁            mobile   单播            1.5  http://192.151.150.154/live/lnys.m3u8
-✗ 丹东新闻综合               ❤️辽宁            mobile   单播            1.5  http://1866360232.cloudvdn.com/a.m3u8?domain=pili-live-hdl-z
 ✗ 湖北教育                 ❤️湖北            mobile   单播            1.4  http://120.202.94.181:9446/tsfile/live/0107_1.m3u8?key=txipt
 ✗ 湖北影视                 ❤️湖北            mobile   单播            1.4  http://120.202.94.181:9446/tsfile/live/1005_1.m3u8?key=txipt
 ✗ 辽宁都市                 ❤️辽宁            mobile   单播            1.4  http://63.141.230.178/live/lnds.m3u8
@@ -98,10 +97,8 @@
 ✗ 黄山新闻综合               ❤️安徽            mobile   单播            0.3  http://hslive.hsnewsnet.com/lsdream/hve9Wjs/1000/live.m3u8
 ✗ 四川乡村                 ❤️四川            mobile   单播            0.2  http://scxclivepull.sctvcloud.com/live/c0b8c1c3018e1000e5119
 ✗ 浙江国际                 ❤️浙江            mobile   单播            0.2  http://ali-m-l.cztv.com/channels/lantian/channel010/1080p.m3
-✗ 锦州新闻综合               ❤️辽宁            mobile   单播            0.2  http://srs.beijihainews.com.cn/video/jinzhou1/index.m3u8
 ✗ onetv                ❤️移动直播          mobile   单播            0.2  http://play2.one-tv.com/live/onetv.m3u8
 ✗ 淮南新闻综合               ❤️安徽            mobile   单播            0.2  http://112.28.222.71:20080/live/8f025f302a3441f4b5a45ad4f06b
-✗ 锦州教育                 ❤️辽宁            mobile   单播            0.2  http://srs.beijihainews.com.cn/video/jinzhou2/index.m3u8
 ✗ 河南梨园                 ☘️河南            mobile   单播            0.2  https://dxtx.hntv.tv/live/lypd.m3u8?txSecret=10c771842a0be59
 ✗ 亳州综合                 ❤️安徽            mobile   单播            0.2  http://zbbf2.ahbztv.com/live/416.m3u8?zanhd
 ✗ 河北经济                 ☘️河北            mobile   单播            0.2  http://1.94.31.214/php/hebei.php?id=jjsh
@@ -271,11 +268,14 @@
 ✗ 辽宁体育                 ❤️V4央视          mobile   单播            0.0  http://180.152.19.206:1234/962067526
 ✗ 辽宁体育                 ❤️V4卫视          mobile   单播            0.0  https://mgcn.chinacert.cftest5.cn/962067526
 ✗ 辽宁体育                 ❤️V4卫视          mobile   单播            0.0  http://156.238.248.80:8880/play/24.m3u8
-✗ 辽宁公共                 ❤️辽宁            mobile   单播            0.0  http://124.71.194.147:1234/962045223
-✗ 辽宁生活                 ❤️辽宁            mobile   单播            0.0  http://124.71.194.147:1234/962045226
-✗ 辽宁影视剧                ❤️辽宁            mobile   单播            0.0  http://124.71.194.147:1234/962067517
-✗ 辽宁公共                 ❤️辽宁            mobile   单播            0.0  http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/lngg/50/
-✗ 辽宁生活                 ❤️辽宁            mobile   单播            0.0  http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/lnsh/50/
+✗ 辽宁经济                 ❤️辽宁            mobile   单播            0.0  http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=liv
+✗ 辽宁都市                 ❤️辽宁            mobile   单播            0.0  http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=liv
+✗ 辽宁教育青少               ❤️辽宁            mobile   单播            0.0  http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=liv
+✗ 辽宁生活                 ❤️辽宁            mobile   单播            0.0  http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=liv
+✗ 朝阳新闻综合               ❤️辽宁            mobile   单播            0.0  http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=liv
+✗ 辽宁北方                 ❤️辽宁            mobile   单播            0.0  http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=liv
+✗ 辽宁体育                 ❤️辽宁            mobile   单播            0.0  http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=liv
+✗ 辽宁影视剧                ❤️辽宁            mobile   单播            0.0  http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=liv
 ✗ 广州综合                 test            other    组播            0.0  rtsp://183.59.56.116:554/PLTV/88888905/224/3221230104/453207
 ✗ 广州新闻                 test            other    组播            0.0  rtsp://183.59.131.100:554/PLTV/88888905/224/3221230113/45320
 ✗ 广州影视                 test            other    组播            0.0  rtsp://183.59.131.37:554/PLTV/88888905/224/3221230115/453198
