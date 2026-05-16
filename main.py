@@ -259,6 +259,10 @@ def clean_url(url: str) -> str:
 
 
 def merge_subgroups(grouped_channels):
+    """
+    合并子分组：对每个分组下的所有子分组进行去重和排序
+    修复：安全处理 speed 为 None 的情况
+    """
     fixed_groups = OrderedDict()
 
     for group_name, sub_groups in grouped_channels.items():
@@ -266,6 +270,7 @@ def merge_subgroups(grouped_channels):
         for sub_name, chs in sub_groups.items():
             all_channels_in_group.extend(chs)
 
+        # 去重：同一 URL 保留速度最快的
         seen_urls = {}
         unique_channels = []
         for ch in all_channels_in_group:
@@ -274,12 +279,20 @@ def merge_subgroups(grouped_channels):
                 unique_channels.append(ch)
             else:
                 existing = seen_urls[ch.url]
-                if ch.speed > existing.speed:
+                # 安全比较 speed，处理 None 值
+                ch_speed = getattr(ch, 'speed', None)
+                ex_speed = getattr(existing, 'speed', None)
+                if ch_speed is not None and (ex_speed is None or ch_speed < ex_speed):
+                    seen_urls[ch.url] = ch
+                    unique_channels.remove(existing)
+                    unique_channels.append(ch)
+                elif ex_speed is None and ch_speed is not None:
                     seen_urls[ch.url] = ch
                     unique_channels.remove(existing)
                     unique_channels.append(ch)
 
-        unique_channels.sort(key=lambda x: x.speed if x.speed else float('inf'))
+        # 排序：按速度从快到慢（None 放最后）
+        unique_channels.sort(key=lambda x: getattr(x, 'speed', float('inf')) or float('inf'))
 
         if unique_channels:
             fixed_groups[group_name] = OrderedDict()
@@ -293,7 +306,7 @@ def merge_subgroups(grouped_channels):
 def merge_province_groups(grouped_channels):
     """
     合并省份标签：统一各种前缀和后缀变体
-    例如：☘️上海、❤️上海、上海、上海频道、☘️上海频道、上海地区 → ❤️上海，☘️内蒙、❤️内蒙、内蒙古、内蒙、☘️内蒙频道、内蒙古地区 → ❤️上海，
+    例如：☘️上海、❤️上海、上海、上海频道、☘️上海频道、上海地区 → ❤️上海
     """
     provinces = [
         '河北', '北京', '广东', '河南', '新疆', '上海', '安徽', '江苏', 
@@ -338,13 +351,17 @@ def merge_province_groups(grouped_channels):
                     unique.append(ch)
                 else:
                     existing = seen[ch.url]
-                    ch_speed = getattr(ch, 'speed', float('inf'))
-                    ex_speed = getattr(existing, 'speed', float('inf'))
-                    if ch_speed < ex_speed:
+                    ch_speed = getattr(ch, 'speed', None)
+                    ex_speed = getattr(existing, 'speed', None)
+                    if ch_speed is not None and (ex_speed is None or ch_speed < ex_speed):
                         seen[ch.url] = ch
                         unique.remove(existing)
                         unique.append(ch)
-            unique.sort(key=lambda x: getattr(x, 'speed', float('inf')))
+                    elif ex_speed is None and ch_speed is not None:
+                        seen[ch.url] = ch
+                        unique.remove(existing)
+                        unique.append(ch)
+            unique.sort(key=lambda x: getattr(x, 'speed', float('inf')) or float('inf'))
             sub_groups[sub_name] = unique
 
     return merged
@@ -398,13 +415,17 @@ def merge_special_groups(grouped_channels):
                     unique.append(ch)
                 else:
                     existing = seen[ch.url]
-                    ch_speed = getattr(ch, 'speed', float('inf'))
-                    ex_speed = getattr(existing, 'speed', float('inf'))
-                    if ch_speed < ex_speed:
+                    ch_speed = getattr(ch, 'speed', None)
+                    ex_speed = getattr(existing, 'speed', None)
+                    if ch_speed is not None and (ex_speed is None or ch_speed < ex_speed):
                         seen[ch.url] = ch
                         unique.remove(existing)
                         unique.append(ch)
-            unique.sort(key=lambda x: getattr(x, 'speed', float('inf')))
+                    elif ex_speed is None and ch_speed is not None:
+                        seen[ch.url] = ch
+                        unique.remove(existing)
+                        unique.append(ch)
+            unique.sort(key=lambda x: getattr(x, 'speed', float('inf')) or float('inf'))
             sub_groups[sub_name] = unique
 
     return merged
@@ -415,7 +436,7 @@ def finalize_groups(grouped_channels):
     """
     最终整理：统一去重、排序、清理空分组
     在省份合并 + 特殊合并后调用，确保输出干净
-    
+
     作用：
         1. 收集每个分组下所有子分组的频道
         2. 统一去重：同一 URL 保留速度最快的
@@ -441,14 +462,16 @@ def finalize_groups(grouped_channels):
                 seen[ch.url] = ch
             else:
                 existing = seen[ch.url]
-                ch_speed = getattr(ch, 'speed', float('inf'))
-                ex_speed = getattr(existing, 'speed', float('inf'))
-                if ch_speed < ex_speed:
+                ch_speed = getattr(ch, 'speed', None)
+                ex_speed = getattr(existing, 'speed', None)
+                if ch_speed is not None and (ex_speed is None or ch_speed < ex_speed):
+                    seen[ch.url] = ch
+                elif ex_speed is None and ch_speed is not None:
                     seen[ch.url] = ch
 
-        # 排序：按速度从快到慢（inf 放最后）
+        # 排序：按速度从快到慢（None 放最后）
         unique_channels = list(seen.values())
-        unique_channels.sort(key=lambda x: getattr(x, 'speed', float('inf')))
+        unique_channels.sort(key=lambda x: getattr(x, 'speed', float('inf')) or float('inf'))
 
         # 重建子分组结构（只保留"全部"子分组）
         final[group_name] = OrderedDict()
@@ -488,6 +511,9 @@ def main():
 
     for source in sources:
         channels = SourceLoader.load(source)
+        # 记录每个频道的来源
+        for ch in channels:
+            ch.source = source.get('name', 'unknown')
         all_channels.extend(channels)
         proxy_tag = "[代理]" if source.get('proxy') else ""
         isp_tag = source.get('isp', 'other')
@@ -522,7 +548,15 @@ def main():
     all_channels = filtered_channels
 
     log.info("[2/5] 整合去重...")
-    merger = ChannelMerger(dedup_mode=DEDUP_MODE, keep_strategy=DEDUP_KEEP)
+    # ========== 【修改】使用新的参数 ==========
+    merger = ChannelMerger(
+        dedup_mode=DEDUP_MODE, 
+        keep_strategy=DEDUP_KEEP,
+        multicast_limit=4,           # 普通组播限制
+        mobile_multicast_limit=6,    # 移动组播限制
+        unicast_limit=10,            # 单播限制
+        max_per_group=100            # 每个genre最多100个频道
+    )
     if BLACKLIST_FILE.exists():
         merger.load_blacklist(str(BLACKLIST_FILE))
     merged = merger.merge(all_channels)
@@ -548,23 +582,8 @@ def main():
     log.info("[3/5] 最终整理分组...")
     grouped_channels = finalize_groups(grouped_channels)
 
-    # 应用频道数量限制
-    log.info("[3/5] 应用频道数量限制...")
-    for group_name, sub_groups in grouped_channels.items():
-        for sub_name, channels in sub_groups.items():
-            sub_groups[sub_name] = merger.limit_channels(channels)
-
-    log.info("=== 频道分组诊断 ===")
-    for group_name, sub_groups in grouped_channels.items():
-        total = sum(len(chs) for chs in sub_groups.values())
-        if total > 0:
-            log.info(f"  分组 '{group_name}': {total} 个频道")
-            for sub_name, chs in sub_groups.items():
-                if len(chs) > 0:
-                    sample = chs[0].name if chs else "空"
-                    log.info(f"    - {sub_name}: {len(chs)} 个 (示例: {sample})")
-
-    log.info(f"[4/5] 测速中... 并发: {MAX_CONCURRENT_TESTS}")
+    # ========== 【关键修复】先测速，再限制数量 ==========
+    log.info("[4/5] 测速中... 并发: {MAX_CONCURRENT_TESTS}")
 
     all_channels_flat = []
     for group in grouped_channels.values():
@@ -594,6 +613,22 @@ def main():
         cache.save()
 
     log.info(f"  总频道: {len(all_channels_flat)}个")
+
+    # ========== 【关键修复】测速后再按 genre 限制数量 ==========
+    log.info("[3/5] 按 genre 限制频道数量...")
+    for group_name, sub_groups in grouped_channels.items():
+        for sub_name, channels in sub_groups.items():
+            sub_groups[sub_name] = merger.limit_by_group(channels)
+
+    log.info("=== 频道分组诊断 ===")
+    for group_name, sub_groups in grouped_channels.items():
+        total = sum(len(chs) for chs in sub_groups.values())
+        if total > 0:
+            log.info(f"  分组 '{group_name}': {total} 个频道")
+            for sub_name, chs in sub_groups.items():
+                if len(chs) > 0:
+                    sample = chs[0].name if chs else "空"
+                    log.info(f"    - {sub_name}: {len(chs)} 个 (示例: {sample})")
 
     log.info("[5/5] 导出结果...")
 
