@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import re
 import ipaddress
-from collections import OrderedDict
+from collections import OrderedDict, defaultdict
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -26,12 +26,12 @@ def is_ipv6_url(url: str) -> bool:
 
 def auto_group_by_name(channels: list[Channel]) -> dict:
     """按频道名自动分组，IPv6 按省份归入对应分组，包含各省、自治区、直辖市及主要城市"""
-    
+
     groups = OrderedDict()
     grouped_urls_set = set()  # 存储已分组的 URL 字符串，避免 Channel 不可哈希
-    
+
     # === 第一步：特殊分组（优先级最高）===
-    
+
     # 1. Radio 分组：带有 radio、qingting 字样（不区分大小写）
     groups['❤️Radio'] = []
     for ch in channels:
@@ -39,7 +39,7 @@ def auto_group_by_name(channels: list[Channel]) -> dict:
         if 'radio' in name_lower or 'qingting' in name_lower:
             groups['❤️Radio'].append(ch)
             grouped_urls_set.add(ch.url)
-    
+
     # 2. 歌舞分组：带有 歌曲、合集、精选、舞曲 字样
     groups['❤️歌舞'] = []
     for ch in channels:
@@ -49,7 +49,7 @@ def auto_group_by_name(channels: list[Channel]) -> dict:
         if any(kw in name for kw in ['歌曲', '合集', '精选', '舞曲']):
             groups['❤️歌舞'].append(ch)
             grouped_urls_set.add(ch.url)
-    
+
     # 3. 新电视分组：带有 NEWTV、iHOT、IPTV 字样（不区分大小写）
     groups['❤️新电视'] = []
     for ch in channels:
@@ -59,7 +59,7 @@ def auto_group_by_name(channels: list[Channel]) -> dict:
         if any(kw in name_lower for kw in ['newtv', 'ihot', 'iptv']):
             groups['❤️新电视'].append(ch)
             grouped_urls_set.add(ch.url)
-    
+
     # === 第二步：央视 & 卫视 ===
     groups['❤️央视'] = []
     for ch in channels:
@@ -68,7 +68,7 @@ def auto_group_by_name(channels: list[Channel]) -> dict:
         if 'CCTV' in ch.name or '央视' in ch.name:
             groups['❤️央视'].append(ch)
             grouped_urls_set.add(ch.url)
-    
+
     groups['❤️卫视'] = []
     for ch in channels:
         if ch.url in grouped_urls_set:
@@ -76,7 +76,7 @@ def auto_group_by_name(channels: list[Channel]) -> dict:
         if '卫视' in ch.name:
             groups['❤️卫视'].append(ch)
             grouped_urls_set.add(ch.url)
-    
+
     # === 第三步：各省、自治区、直辖市及主要城市 ===
     # 中国共有 34 个省级行政区：
     # 23 个省、5 个自治区、4 个直辖市、2 个特别行政区
@@ -86,7 +86,7 @@ def auto_group_by_name(channels: list[Channel]) -> dict:
         '❤️天津': ['天津', '天视', '天津卫视', '天津新闻', '天津文艺', '天津影视频道', '天津都市', '天津体育', '天津教育', '天津相声', '天津滨海', '天津西青', '天津北辰', '天津东丽', '天津津南', '天津武清', '天津宝坻', '天津静海', '天津宁河', '天津蓟州', '天津河东', '天津河西', '天津南开', '天津河北', '天津红桥', '天津和平'],
         '❤️上海': ['上海', '东方', '上视', 'SMG', '东方卫视', '上海新闻综合', '上海第一财经', '上海纪实人文', '上海五星体育', '上海娱乐', '上海都市', '上海教育', '上海外语', '上海法治', '上海生活', '上海金山', '上海松江', '上海青浦', '上海奉贤', '上海嘉定', '上海宝山', '上海闵行', '上海浦东', '上海崇明', '上海黄浦', '上海静安', '上海徐汇', '上海长宁', '上海普陀', '上海虹口', '上海杨浦'],
         '❤️重庆': ['重庆', '重庆卫视', '渝', '重庆新闻', '重庆影视', '重庆科教', '重庆都市', '重庆娱乐', '重庆公共', '重庆时尚', '重庆区县', '重庆万州', '重庆涪陵', '重庆黔江', '重庆江北', '重庆沙坪坝', '重庆九龙坡', '重庆南岸', '重庆北碚', '重庆渝北', '重庆巴南', '重庆长寿', '重庆江津', '重庆合川', '重庆永川', '重庆南川', '重庆綦江', '重庆大足', '重庆璧山', '重庆铜梁', '重庆潼南', '重庆荣昌', '重庆开州', '重庆梁平', '重庆武隆'],
-        
+
         # === 23 个省 ===
         '❤️河北': ['河北', '石家庄', '唐山', '秦皇岛', '邯郸', '邢台', '保定', '张家口', '承德', '沧州', '廊坊', '衡水', '河北卫视', '河北经济', '河北都市', '河北影视', '河北少儿', '河北公共', '河北农民', '河北杂技', '石家庄新闻综合', '石家庄娱乐', '石家庄生活', '石家庄都市', '石家庄财经'],
         '❤️山西': ['山西', '太原', '大同', '阳泉', '长治', '晋城', '朔州', '晋中', '运城', '忻州', '临汾', '吕梁', '山西卫视', '山西经济与科技', '山西影视频道', '山西社会与法治', '山西公共', '山西少儿', '山西黄河', '太原新闻', '太原经济生活', '太原社教法制', '太原影视频道', '太原百姓'],
@@ -111,19 +111,19 @@ def auto_group_by_name(channels: list[Channel]) -> dict:
         '❤️甘肃': ['甘肃', '兰州', '嘉峪关', '金昌', '白银', '天水', '武威', '张掖', '平凉', '酒泉', '庆阳', '定西', '陇南', '临夏', '甘南', '甘肃卫视', '甘肃经济', '甘肃文化影视频道', '甘肃公共应急', '甘肃都市', '甘肃少儿', '甘肃移动', '甘肃数字', '兰州新闻综合', '兰州生活经济', '兰州文旅', '兰州公共', '兰州综艺体育'],
         '❤️青海': ['青海', '西宁', '海东', '海北', '黄南', '海南州', '果洛', '玉树', '海西', '青海卫视', '青海新闻综合', '青海经济生活', '青海都市', '青海影视', '青海公共', '安多藏语', '康巴藏语', '青海移动', '西宁新闻', '西宁生活服务', '西宁文旅', '西宁教育'],
         '❤️台湾': ['台湾', '台北', '新北', '桃园', '台中', '台南', '高雄', '基隆', '新竹', '嘉义', 'TVBS', '中天', '东森', '三立', '民视', '台视', '中视', '华视', '公视', '纬来', '非凡', '年代', '东森新闻', 'TVBS新闻', '三立新闻', '民视新闻', '台视新闻', '中视新闻', '华视新闻', '东森财经', '东森电影', '东森戏剧', '东森综合', '东森超视', '东森幼幼', 'TVBS欢乐', 'TVBS精彩', '三立都会', '三立台湾', '三立国际', '民视无线', '民视交通', '民视新闻台', '台视综合', '台视财经', '中视经典', '中视菁采', '华视教育', '华视新闻', '公视2', '公视3', '小公视', '客家', '原视', '国会', 'TaiwanPlus'],
-        
+
         # === 5 个自治区 ===
         '❤️内蒙古': ['内蒙古', '呼和浩特', '包头', '乌海', '赤峰', '通辽', '鄂尔多斯', '呼伦贝尔', '巴彦淖尔', '乌兰察布', '兴安', '锡林郭勒', '阿拉善', '内蒙古卫视', '内蒙古新闻', '内蒙古经济生活', '内蒙古影视', '内蒙古文体娱乐', '内蒙古农牧', '内蒙古少儿', '内蒙古蒙语', '呼和浩特新闻综合', '呼和浩特都市生活', '呼和浩特影视娱乐', '包头新闻综合', '包头经济', '包头生活', '包头影视', '包头教育', '鄂尔多斯新闻', '鄂尔多斯经济', '鄂尔多斯城市', '鄂尔多斯影视'],
         '❤️广西': ['广西', '南宁', '柳州', '桂林', '梧州', '北海', '防城港', '钦州', '贵港', '玉林', '百色', '贺州', '河池', '来宾', '崇左', '广西卫视', '广西综艺旅游', '广西新闻', '广西科教', '广西公共', '广西影视', '广西国际', '南宁新闻综合', '南宁影视娱乐', '南宁都市生活', '南宁公共', '南宁科教', '柳州新闻', '桂林新闻', '桂林公共'],
         '❤️西藏': ['西藏', '拉萨', '日喀则', '昌都', '林芝', '山南', '那曲', '阿里', '西藏卫视', '藏语', '西藏影视文化', '西藏经济生活', '西藏新闻', '拉萨综合', '拉萨藏语'],
         '❤️宁夏': ['宁夏', '银川', '石嘴山', '吴忠', '固原', '中卫', '宁夏卫视', '宁夏公共', '宁夏经济', '宁夏影视', '宁夏少儿', '银川公共', '银川生活', '银川文体', '银川新闻综合', '石嘴山综合', '吴忠综合', '固原综合', '中卫综合'],
         '❤️新疆': ['新疆', '乌鲁木齐', '克拉玛依', '吐鲁番', '哈密', '昌吉', '博尔塔拉', '巴音郭楞', '阿克苏', '克孜勒苏', '喀什', '和田', '伊犁', '塔城', '阿勒泰', '石河子', '阿拉尔', '图木舒克', '五家渠', '北屯', '铁门关', '双河', '可克达拉', '昆玉', '胡杨河', '新星', '新疆卫视', '新疆汉语', '新疆维语', '新疆哈语', '新疆少儿', '新疆影视', '新疆经济生活', '新疆体育健康', '新疆教育', '新疆新闻', '新疆法制报', '兵团卫视', '兵团', '乌鲁木齐新闻综合', '乌鲁木齐影视', '乌鲁木齐都市', '乌鲁木齐旅游', '乌鲁木齐娱乐', '乌鲁木齐科教', '乌鲁木齐经济'],
-        
+
         # === 2 个特别行政区 ===
         '❤️香港': ['香港', 'TVB', '翡翠', '明珠', '本港', '亚视', '有线', '开电视', '香港国际', '香港卫视', '凤凰卫视', '凤凰资讯', '凤凰香港', '星空', 'Channel[V]', 'ViuTV', 'Now', '香港电台', 'RTHK', '香港商业', '新城', '无线', 'J2', 'TVB经典', 'TVB新闻', 'TVB娱乐', 'TVB明珠', 'TVB翡翠', 'TVB互动', 'TVB生活', 'TVB为食', 'TVB8', 'TVB星河', 'TVBS', 'TVBS新闻', 'TVBS欢乐', 'TVBS精彩', '香港开电视', '香港国际财经', '香港赛马', '美亚', '天映', '华娱', '东风', '星空华文', '凤凰中文', '凤凰欧洲', '凤凰美洲', '凤凰澳洲'],
         '❤️澳门': ['澳门', '澳视', '澳亚', '澳广视', '澳门莲花', '澳门资讯', '澳门体育', '澳门综艺', '澳门MACAU', '澳视葡文', '澳视高清', '澳视澳门', '澳亚卫视', '澳门卫视', '澳门莲花', '澳门互动', '澳视卫星', '澳视生活', '澳视新闻', '澳视体育', '澳视综艺', '澳视文化', '澳视教育', '澳视经济', '澳视旅游', '澳视音乐', '澳门电台', '澳门莲花卫视', '澳门有线电视', '澳门天浪'],
     }
-    
+
     # 处理每个省份（包含 IPv6 和普通频道）
     for group_name, keywords in province_map.items():
         matched = []
@@ -135,36 +135,47 @@ def auto_group_by_name(channels: list[Channel]) -> dict:
                 grouped_urls_set.add(ch.url)
         if matched:
             groups[group_name] = matched
-    
+
     # === 其他未分组频道 ===
     remaining = [c for c in channels if c.url not in grouped_urls_set]
     if remaining:
         groups['❤️其他频道'] = remaining
-    
+
     # 转换为和 apply_template 相同的返回格式
     result = OrderedDict()
     for group_name, channels_list in groups.items():
         if channels_list:
             result[group_name] = OrderedDict()
             result[group_name]['全部'] = channels_list
-    
+
     return result
 
 
 class ChannelMerger:
-    def __init__(self, dedup_mode: str = "auto", keep_strategy: str = "first"):
+    def __init__(self, dedup_mode: str = "auto", keep_strategy: str = "first",
+                 multicast_limit: int = 4,
+                 mobile_multicast_limit: int = 6,
+                 unicast_limit: int = 10,
+                 max_per_group: int = 100):
+        """
+        参数:
+            multicast_limit:       普通组播限制（UDP/RTP/RTSP）
+            mobile_multicast_limit: 移动运营商组播源保留数量
+            unicast_limit:          普通HTTP/HTTPS源保留数量
+            max_per_group:          每个 genre/分组 下保留的最大频道数
+        """
         self.dedup_mode = dedup_mode
         self.keep_strategy = keep_strategy
         self.blacklist_rules = None
-        # 限制参数
-        self.multicast_limit = 5
-        self.mobile_multicast_limit = 6
-        self.unicast_limit = 20
-    
+        self.multicast_limit = multicast_limit
+        self.mobile_multicast_limit = mobile_multicast_limit
+        self.unicast_limit = unicast_limit
+        self.max_per_group = max_per_group
+
     def load_blacklist(self, path: str) -> None:
         """加载黑名单文件"""
         self.blacklist_rules = load_blacklist_rules()
-    
+
     def merge(self, channels: list[Channel]) -> list[Channel]:
         """整合去重：按 URL 去重，保留速度最快的"""
         seen = {}
@@ -177,9 +188,9 @@ class ChannelMerger:
                 ex_speed = getattr(existing, 'speed', float('inf'))
                 if ch_speed < ex_speed:
                     seen[ch.url] = ch
-        
+
         return list(seen.values())
-    
+
     def apply_template(self, channels: list[Channel], template_path: str) -> dict:
         """应用模板分组"""
         template = OrderedDict()
@@ -195,10 +206,10 @@ class ChannelMerger:
                         template[current_group] = []
                     elif current_group:
                         template[current_group].append(line)
-        
+
         grouped = OrderedDict()
         ungrouped = []
-        
+
         for ch in channels:
             matched = False
             for group_name, patterns in template.items():
@@ -209,29 +220,29 @@ class ChannelMerger:
                     grouped[group_name]['全部'].append(ch)
                     matched = True
                     break
-            
+
             if not matched:
                 ungrouped.append(ch)
-        
+
         if ungrouped:
             grouped['❤️其他频道'] = OrderedDict()
             grouped['❤️其他频道']['全部'] = ungrouped
-        
+
         return grouped
-    
+
     def _match_pattern(self, name: str, pattern: str) -> bool:
         """匹配频道名和模板模式"""
         if '*' in pattern or '?' in pattern:
             regex = pattern.replace('*', '.*').replace('?', '.')
             return bool(re.search(regex, name, re.IGNORECASE))
         return pattern.lower() in name.lower()
-    
+
     def filter_keywords(self, channels: list[Channel]) -> list[Channel]:
         """过滤特定关键词和广告台"""
         rules = load_blacklist_rules()
         patterns = rules.get('regex', [])
         keywords = rules.get('keywords', [])
-        
+
         filtered = []
         for ch in channels:
             name = ch.name
@@ -240,15 +251,21 @@ class ChannelMerger:
             if any(k in name for k in keywords):
                 continue
             filtered.append(ch)
-        
+
         return filtered
-    
+
     def limit_channels(self, channels: list[Channel]) -> list[Channel]:
-        """按类型限制频道数量（组播/单播分别限制）"""
+        """
+        按连接类型限制频道数量：
+        - 普通组播（UDP/RTP/RTSP）: 最多 multicast_limit 个
+        - 移动组播: 最多 mobile_multicast_limit 个
+        - 单播（HTTP/HTTPS）: 最多 unicast_limit 个
+        按速度排序，快的优先保留
+        """
         multicast = []
         mobile_multicast = []
         unicast = []
-        
+
         for ch in channels:
             url = ch.url.lower()
             if url.startswith(('udp://', 'rtp://', 'rtsp://')):
@@ -259,16 +276,35 @@ class ChannelMerger:
                     multicast.append(ch)
             else:
                 unicast.append(ch)
-        
-        # 按速度排序，快的在前
-        multicast.sort(key=lambda x: getattr(x, 'speed', float('inf')))
-        mobile_multicast.sort(key=lambda x: getattr(x, 'speed', float('inf')))
-        unicast.sort(key=lambda x: getattr(x, 'speed', float('inf')))
-        
+
+        # 按速度排序，快的在前（处理 None 值）
+        multicast.sort(key=lambda x: getattr(x, 'speed', float('inf')) or float('inf'))
+        mobile_multicast.sort(key=lambda x: getattr(x, 'speed', float('inf')) or float('inf'))
+        unicast.sort(key=lambda x: getattr(x, 'speed', float('inf')) or float('inf'))
+
         # 限制数量
         limited = []
         limited.extend(multicast[:self.multicast_limit])
         limited.extend(mobile_multicast[:self.mobile_multicast_limit])
         limited.extend(unicast[:self.unicast_limit])
-        
+
         return limited
+
+    def limit_by_group(self, channels: list[Channel]) -> list[Channel]:
+        """
+        按 genre 分组限制：每个 genre 下保留最多 max_per_group 个频道（按速度取最快）
+        这个在分组后、测速后调用
+        """
+        if self.max_per_group <= 0:
+            return channels
+
+        # 先按连接类型限制
+        type_limited = self.limit_channels(channels)
+
+        # 再按数量限制（按速度排序）
+        sorted_channels = sorted(
+            type_limited, 
+            key=lambda x: getattr(x, 'speed', float('inf')) or float('inf')
+        )
+
+        return sorted_channels[:self.max_per_group]
