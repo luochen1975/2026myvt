@@ -8,7 +8,6 @@ from pathlib import Path
 from collections import OrderedDict
 from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
 
-# 设置北京时区
 os.environ['TZ'] = 'Asia/Shanghai'
 time.tzset()
 
@@ -21,10 +20,8 @@ from utils.cache import SpeedCache
 from utils.logger import log
 
 
-# ========== 路径配置 ==========
 CONFIG_DIR = Path(__file__).parent / "config"
 BLACKLIST_FILE_PATH = CONFIG_DIR / "blacklist.txt"
-# ================================
 
 
 def auto_detect_type(url: str) -> str:
@@ -33,8 +30,7 @@ def auto_detect_type(url: str) -> str:
         return 'm3u'
     elif url_lower.endswith('.json'):
         return 'json'
-    else:
-        return 'txt'
+    return 'txt'
 
 
 def load_sources() -> list:
@@ -43,53 +39,32 @@ def load_sources() -> list:
 
     sources = []
 
-    if isinstance(config, list):
-        for item in config:
-            if isinstance(item, str):
-                url = item.strip()
+    def add_item(item):
+        if isinstance(item, str):
+            url = item.strip()
+            sources.append({
+                'name': 'auto', 'url': url,
+                'type': auto_detect_type(url), 'isp': 'other',
+                'proxy': False, 'enabled': True
+            })
+        elif isinstance(item, dict):
+            if item.get('enabled', True):
                 sources.append({
-                    'name': 'auto',
-                    'url': url,
-                    'type': auto_detect_type(url),
-                    'isp': 'other',
-                    'proxy': False,
+                    'name': item.get('name', 'auto'),
+                    'url': item['url'],
+                    'type': item.get('type') or auto_detect_type(item['url']),
+                    'isp': item.get('isp', 'other'),
+                    'proxy': item.get('proxy', False),
                     'enabled': True
                 })
-            elif isinstance(item, dict):
-                if item.get('enabled', True):
-                    url = item['url']
-                    file_type = item.get('type') or auto_detect_type(url)
-                    sources.append({
-                        'name': item.get('name', 'auto'),
-                        'url': url,
-                        'type': file_type,
-                        'isp': item.get('isp', 'other'),
-                        'proxy': item.get('proxy', False),
-                        'enabled': True
-                    })
 
+    if isinstance(config, list):
+        for item in config:
+            add_item(item)
     elif isinstance(config, dict):
         for file_type, items in config.items():
             for item in items:
-                if isinstance(item, str):
-                    url = item.strip()
-                    sources.append({
-                        'name': 'auto',
-                        'url': url,
-                        'type': file_type,
-                        'isp': 'other',
-                        'proxy': False,
-                        'enabled': True
-                    })
-                elif isinstance(item, dict) and item.get('enabled', True):
-                    sources.append({
-                        'name': item.get('name', 'auto'),
-                        'url': item['url'],
-                        'type': file_type,
-                        'isp': item.get('isp', 'other'),
-                        'proxy': item.get('proxy', False),
-                        'enabled': True
-                    })
+                add_item(item)
 
     if os.getenv('GITHUB_ACTIONS'):
         proxy_sources = [s for s in sources if s.get('proxy')]
@@ -101,15 +76,7 @@ def load_sources() -> list:
 
 
 def load_blacklist_rules(blacklist_file: str) -> dict:
-    rules = {
-        'domains': [],
-        'contains': [],
-        'urls': [],
-        'keywords': [],
-        'regex': [],
-        'genre': [],
-    }
-
+    rules = {'domains': [], 'contains': [], 'urls': [], 'keywords': [], 'regex': [], 'genre': []}
     if not os.path.exists(blacklist_file):
         log.warning(f"黑名单文件不存在: {blacklist_file}")
         return rules
@@ -119,374 +86,68 @@ def load_blacklist_rules(blacklist_file: str) -> dict:
             line = line.strip()
             if not line or line.startswith('#'):
                 continue
-
             if ':' in line:
                 rule_type, rule_value = line.split(':', 1)
                 rule_type = rule_type.strip().lower()
                 rule_value = rule_value.strip()
-
                 if rule_type == 'domain':
                     rules['domains'].append(rule_value)
-                    log.debug(f"加载域名黑名单: {rule_value}")
                 elif rule_type == 'contains':
                     rules['contains'].append(rule_value)
-                    log.debug(f"加载包含规则: {rule_value}")
                 elif rule_type == 'keyword':
                     rules['keywords'].append(rule_value)
-                    log.debug(f"加载关键词规则: {rule_value}")
                 elif rule_type == 'regex':
                     try:
                         rules['regex'].append(re.compile(rule_value))
-                        log.debug(f"加载正则规则: {rule_value}")
                     except re.error as e:
-                        log.warning(f"正则表达式错误 在第 {line_num} 行: {e}")
+                        log.warning(f"正则错误 第{line_num}行: {e}")
                 elif rule_type == 'genre':
                     rules['genre'].append(rule_value)
-                    log.debug(f"加载类型规则: {rule_value}")
-                else:
-                    log.warning(f"未知规则类型 '{rule_type}' 在第 {line_num} 行")
             else:
                 rules['urls'].append(line)
-                log.debug(f"加载URL黑名单: {line}")
-
-    log.info(f"黑名单规则加载完成: {len(rules['domains'])} 个域名, "
-             f"{len(rules['contains'])} 个包含规则, {len(rules['urls'])} 个URL, "
-             f"{len(rules['keywords'])} 个关键词, {len(rules['regex'])} 个正则, "
-             f"{len(rules['genre'])} 个类型")
     return rules
 
 
 def should_blacklist(url: str, rules: dict) -> tuple[bool, str]:
     if not url:
         return False, ""
-
     url_lower = url.lower()
     parsed = urlparse(url)
     domain = parsed.netloc.lower()
 
     for black_url in rules['urls']:
         if black_url.lower() in url_lower:
-            return True, f"匹配URL黑名单: {black_url}"
-
+            return True, f"URL黑名单:{black_url}"
     for black_domain in rules['domains']:
         if black_domain.lower() in domain:
-            return True, f"匹配域名黑名单: {black_domain}"
-
+            return True, f"域名黑名单:{black_domain}"
     for pattern in rules['contains']:
         if pattern.lower() in url_lower:
-            return True, f"匹配包含规则: {pattern}"
-
+            return True, f"包含规则:{pattern}"
     for keyword in rules['keywords']:
         if keyword.lower() in url_lower:
-            return True, f"匹配关键词: {keyword}"
-
+            return True, f"关键词:{keyword}"
     for regex in rules['regex']:
         if regex.search(url):
-            return True, f"匹配正则: {regex.pattern}"
-
+            return True, f"正则:{regex.pattern}"
     return False, ""
 
 
-def save_blacklist_rule(blacklist_file: str, url: str, name: str, reason: str):
-    os.makedirs(os.path.dirname(blacklist_file), exist_ok=True)
-
-    parsed = urlparse(url)
-
-    if '?' in url:
-        params = parse_qs(parsed.query)
-        for param in params.keys():
-            if any(kw in param.lower() for kw in ['token', 'auth', 'sign', 'secret', 'key']):
-                rule = f"contains:{param}"
-                break
-        else:
-            rule = f"domain:{parsed.netloc}"
-    else:
-        rule = f"domain:{parsed.netloc}"
-
-    if os.path.exists(blacklist_file):
-        with open(blacklist_file, 'r', encoding='utf-8') as f:
-            existing = f.read()
-        if rule in existing:
-            return False
-
-    with open(blacklist_file, 'a', encoding='utf-8') as f:
-        f.write(f"\n# 自动添加 [{time.strftime('%Y-%m-%d %H:%M:%S')}] - {name} - {reason}\n")
-        f.write(f"{rule}\n")
-
-    return True
-
-
 def clean_url(url: str) -> str:
+    """清洗URL用于去重对比"""
     if not url or '?' not in url:
         return url
-
     parsed = urlparse(url)
     params = parse_qs(parsed.query, keep_blank_values=True)
-
-    token_params = [
-        'play_token', 'auth_key', 'wsSecret', 'wsTime', 'token',
-        'auth', 'sign', 'signature', 'timestamp', 'ts', 't',
-        'expires', 'expire', 'e', 'key', 'ak', 'sk',
-        'user', 'pass', 'password', 'pwd', 'nonce', 'salt',
-        'session', 'sid', 'cookie', 'ck',
-        'auth_info', 'security_token', 'x-oss-', 'x-cos-',
-        'edge_key', 'cdn_token', 'verify',
-    ]
-
-    cleaned_params = {}
-    for key, values in params.items():
-        key_lower = key.lower()
-        should_remove = any(
-            tp.lower() in key_lower or key_lower.startswith(tp.lower()) 
-            for tp in token_params
-        )
-
-        if not should_remove:
-            cleaned_params[key] = values
-
-    if cleaned_params:
-        new_query = urlencode(cleaned_params, doseq=True)
-        new_url = urlunparse((
-            parsed.scheme, parsed.netloc, parsed.path,
-            parsed.params, new_query, parsed.fragment
-        ))
-        return new_url
-    else:
-        return urlunparse((
-            parsed.scheme, parsed.netloc, parsed.path,
-            parsed.params, '', parsed.fragment
-        ))
-
-
-def merge_subgroups(grouped_channels):
-    """
-    合并子分组：对每个分组下的所有子分组进行去重和排序
-    修复：安全处理 speed 为 None 的情况
-    """
-    fixed_groups = OrderedDict()
-
-    for group_name, sub_groups in grouped_channels.items():
-        all_channels_in_group = []
-        for sub_name, chs in sub_groups.items():
-            all_channels_in_group.extend(chs)
-
-        # 去重：同一 URL 保留速度最快的
-        seen_urls = {}
-        unique_channels = []
-        for ch in all_channels_in_group:
-            if ch.url not in seen_urls:
-                seen_urls[ch.url] = ch
-                unique_channels.append(ch)
-            else:
-                existing = seen_urls[ch.url]
-                # 安全比较 speed，处理 None 值
-                ch_speed = getattr(ch, 'speed', None)
-                ex_speed = getattr(existing, 'speed', None)
-                if ch_speed is not None and (ex_speed is None or ch_speed < ex_speed):
-                    seen_urls[ch.url] = ch
-                    unique_channels.remove(existing)
-                    unique_channels.append(ch)
-                elif ex_speed is None and ch_speed is not None:
-                    seen_urls[ch.url] = ch
-                    unique_channels.remove(existing)
-                    unique_channels.append(ch)
-
-        # 排序：按速度从快到慢（None 放最后）
-        unique_channels.sort(key=lambda x: getattr(x, 'speed', float('inf')) or float('inf'))
-
-        if unique_channels:
-            fixed_groups[group_name] = OrderedDict()
-            fixed_groups[group_name]['全部'] = unique_channels
-
-    return fixed_groups
-
-
-# ========== 新增：分组合并功能（移到 main() 外部）==========
-
-def merge_province_groups(grouped_channels):
-    """
-    合并省份标签：统一各种前缀和后缀变体
-    例如：☘️上海、❤️上海、上海、上海频道、☘️上海频道、上海地区 → ❤️上海
-    """
-    provinces = [
-        '河北', '北京', '广东', '河南', '新疆', '上海', '安徽', '江苏', 
-        '浙江', '四川', '湖北', '湖南', '山东', '山西', '辽宁', '福建',
-        '甘肃', '广西', '贵州', '陕西', '江西', '重庆', '云南', '黑龙江',
-        '海南', '内蒙古', '天津', '宁夏', '青海', '西藏', '吉林', 
-        '澳门', '香港', '台湾'
-    ]
-
-    replace_rules = {}
-    for prov in provinces:
-        target = f'❤️{prov}'
-        sources = [
-            f'☘️{prov}频道', f'❤️{prov}频道', f'📡{prov}频道',
-            f'🌐{prov}频道', f'{prov}频道',
-            f'☘️{prov}', f'❤️{prov}', f'📡{prov}', f'🌐{prov}',
-        ]
-        for src in sources:
-            replace_rules[src] = target
-
-    merged = OrderedDict()
-
-    for group_name, sub_groups in grouped_channels.items():
-        new_name = replace_rules.get(group_name, group_name)
-
-        if new_name not in merged:
-            merged[new_name] = OrderedDict()
-
-        for sub_name, channels in sub_groups.items():
-            if sub_name not in merged[new_name]:
-                merged[new_name][sub_name] = []
-            merged[new_name][sub_name].extend(channels)
-
-    # 去重
-    for group_name, sub_groups in merged.items():
-        for sub_name, channels in sub_groups.items():
-            seen = {}
-            unique = []
-            for ch in channels:
-                if ch.url not in seen:
-                    seen[ch.url] = ch
-                    unique.append(ch)
-                else:
-                    existing = seen[ch.url]
-                    ch_speed = getattr(ch, 'speed', None)
-                    ex_speed = getattr(existing, 'speed', None)
-                    if ch_speed is not None and (ex_speed is None or ch_speed < ex_speed):
-                        seen[ch.url] = ch
-                        unique.remove(existing)
-                        unique.append(ch)
-                    elif ex_speed is None and ch_speed is not None:
-                        seen[ch.url] = ch
-                        unique.remove(existing)
-                        unique.append(ch)
-            unique.sort(key=lambda x: getattr(x, 'speed', float('inf')) or float('inf'))
-            sub_groups[sub_name] = unique
-
-    return merged
-
-
-def merge_special_groups(grouped_channels):
-    """
-    合并特殊分组（非省份分组）
-    """
-    special_rules = {
-        '歌曲': ['❤️歌曲', '歌曲', '🎵歌曲', '☘️歌曲'],
-        '剧电影': ['❤️剧电影', '剧电影', '🎬剧电影', '☘️剧电影'],
-        '香港台湾': ['🐎🐎⬇️❤️xianggang\\wanwan', '❤️xianggang\\wanwan', 'xianggang\\wanwan'],
-        '其他频道': ['🍉🍉❤️其他1', '❤️其他1', '其他1', '❤️其他频道', '❤️其他', '其他'],
-        '央视': ['❤️央视', '❤️V4央视', '❤️V6央视', 'V4央视', 'V6央视', '央视'],
-        '卫视': ['❤️卫视', '❤️V4卫视', '❤️V6卫视', 'V4卫视', 'V6卫视', '卫视'],
-        '广播': ['❤️广播', '广播', '📻广播'],
-        '移动直播': ['❤️移动直播', '移动直播'],
-        '4k8K+': ['❤️4k8K+', '4k8K+'],
-        'Radio': ['❤️Radio', 'Radio', '📻Radio'],
-        '歌舞': ['❤️歌舞', '歌舞', '🎵歌舞', '☘️歌舞'],
-        '新电视': ['❤️新电视', '新电视', '📺新电视', '☘️新电视'],
+    cleaned = {
+        k: v for k, v in params.items()
+        if not any(tp.lower() in k.lower() or k.lower().startswith(tp.lower())
+                   for tp in ['play_token', 'auth_key', 'wsSecret', 'wsTime', 'token',
+                             'auth', 'sign', 'signature', 'timestamp', 'ts', 't',
+                             'expires', 'expire', 'e', 'key', 'ak', 'sk'])
     }
-
-    merged = OrderedDict()
-
-    for group_name, sub_groups in grouped_channels.items():
-        new_name = group_name
-
-        for target, sources in special_rules.items():
-            if group_name in sources:
-                new_name = f'❤️{target}'
-                break
-
-        if new_name not in merged:
-            merged[new_name] = OrderedDict()
-
-        for sub_name, channels in sub_groups.items():
-            if sub_name not in merged[new_name]:
-                merged[new_name][sub_name] = []
-            merged[new_name][sub_name].extend(channels)
-
-    # 去重
-    for group_name, sub_groups in merged.items():
-        for sub_name, channels in sub_groups.items():
-            seen = {}
-            unique = []
-            for ch in channels:
-                if ch.url not in seen:
-                    seen[ch.url] = ch
-                    unique.append(ch)
-                else:
-                    existing = seen[ch.url]
-                    ch_speed = getattr(ch, 'speed', None)
-                    ex_speed = getattr(existing, 'speed', None)
-                    if ch_speed is not None and (ex_speed is None or ch_speed < ex_speed):
-                        seen[ch.url] = ch
-                        unique.remove(existing)
-                        unique.append(ch)
-                    elif ex_speed is None and ch_speed is not None:
-                        seen[ch.url] = ch
-                        unique.remove(existing)
-                        unique.append(ch)
-            unique.sort(key=lambda x: getattr(x, 'speed', float('inf')) or float('inf'))
-            sub_groups[sub_name] = unique
-
-    return merged
-
-
-# ========== 【新增】最终整理函数 ==========
-def finalize_groups(grouped_channels):
-    """
-    最终整理：统一去重、排序、清理空分组
-    在省份合并 + 特殊合并后调用，确保输出干净
-
-    作用：
-        1. 收集每个分组下所有子分组的频道
-        2. 统一去重：同一 URL 保留速度最快的
-        3. 按速度排序（从快到慢）
-        4. 重建为单一 "全部" 子分组
-        5. 清理空分组
-    """
-    final = OrderedDict()
-
-    for group_name, sub_groups in grouped_channels.items():
-        # 收集该分组下所有频道（所有子分组）
-        all_channels = []
-        for sub_name, chs in sub_groups.items():
-            all_channels.extend(chs)
-
-        if not all_channels:
-            continue  # 跳过空分组
-
-        # 统一去重：同一 URL 保留速度最快的
-        seen = {}
-        for ch in all_channels:
-            if ch.url not in seen:
-                seen[ch.url] = ch
-            else:
-                existing = seen[ch.url]
-                ch_speed = getattr(ch, 'speed', None)
-                ex_speed = getattr(existing, 'speed', None)
-                if ch_speed is not None and (ex_speed is None or ch_speed < ex_speed):
-                    seen[ch.url] = ch
-                elif ex_speed is None and ch_speed is not None:
-                    seen[ch.url] = ch
-
-        # 排序：按速度从快到慢（None 放最后）
-        unique_channels = list(seen.values())
-        unique_channels.sort(key=lambda x: getattr(x, 'speed', float('inf')) or float('inf'))
-
-        # 重建子分组结构（只保留"全部"子分组）
-        final[group_name] = OrderedDict()
-        final[group_name]['全部'] = unique_channels
-
-    return final
-
-
-def merge_all_groups(grouped_channels):
-    """统一合并所有分组（省份 + 特殊分组）"""
-    step1 = merge_province_groups(grouped_channels)
-    step2 = merge_special_groups(step1)
-    return step2
-
-# =========================================================
+    new_query = urlencode(cleaned, doseq=True) if cleaned else ''
+    return urlunparse((parsed.scheme, parsed.netloc, parsed.path, parsed.params, new_query, parsed.fragment))
 
 
 def main():
@@ -495,7 +156,7 @@ def main():
     CONFIG_DIR.mkdir(parents=True, exist_ok=True)
 
     log.info("=" * 50)
-    log.info("IPTV 源处理器启动")
+    log.info("IPTV 源处理器启动 [优化版]")
 
     if os.getenv('GITHUB_ACTIONS'):
         log.info("[环境] GitHub Actions (跳过代理源)")
@@ -504,102 +165,72 @@ def main():
 
     start_time = time.time()
     cache = SpeedCache(str(CACHE_FILE), ttl=CACHE_TTL_HOURS * 3600)
+    cache_stats = cache.stats()
+    log.info(f"[缓存] 总计:{cache_stats['total']} 有效:{cache_stats['valid']} 失败:{cache_stats['failed']}")
 
-    log.info("[1/5] 加载订阅源...")
+    # ========== 1. 加载源 ==========
+    log.info("[1/6] 加载订阅源...")
     sources = load_sources()
     all_channels = []
 
     for source in sources:
         channels = SourceLoader.load(source)
-        # 记录每个频道的来源
         for ch in channels:
             ch.source = source.get('name', 'unknown')
+            ch.extra['isp'] = source.get('isp', 'other')
         all_channels.extend(channels)
+        mc_count = sum(1 for c in channels if c.url.strip().lower().startswith(('udp://', 'rtp://', 'rtsp://')))
         proxy_tag = "[代理]" if source.get('proxy') else ""
-        isp_tag = source.get('isp', 'other')
+        log.info(f"  ✓ {source['name']}{proxy_tag}: {len(channels)}个 (组播:{mc_count}个)")
 
-        multicast_count = sum(1 for ch in channels if ch.url.strip().lower().startswith(('udp://', 'rtp://', 'rtsp://')))
-        log.info(f"  ✓ {source['name']}{proxy_tag}: {len(channels)}个 [{isp_tag}] (组播:{multicast_count}个)")
+    total_mc = sum(1 for c in all_channels if c.url.strip().lower().startswith(('udp://', 'rtp://', 'rtsp://')))
+    log.info(f"  总计: {len(all_channels)}个频道 (组播:{total_mc}个)")
 
-    total_multicast = sum(1 for ch in all_channels if ch.url.strip().lower().startswith(('udp://', 'rtp://', 'rtsp://')))
-    log.info(f"  总计加载: {len(all_channels)} 个频道 (组播:{total_multicast}个)")
-
-    log.info("[2/5] 加载黑名单规则...")
+    # ========== 2. 黑名单过滤 ==========
+    log.info("[2/6] 黑名单过滤...")
     blacklist_rules = load_blacklist_rules(str(BLACKLIST_FILE_PATH))
-
-    log.info("[2/5] 应用黑名单过滤...")
-    new_blacklist_count = 0
-    filtered_channels = []
-
+    filtered = []
+    blocked = 0
     for ch in all_channels:
-        should_block, reason = should_blacklist(ch.url, blacklist_rules)
-
-        if should_block:
-            if save_blacklist_rule(str(BLACKLIST_FILE_PATH), ch.url, ch.name, reason):
-                new_blacklist_count += 1
-                log.debug(f"新增黑名单: {ch.name} - {reason}")
+        is_block, reason = should_blacklist(ch.url, blacklist_rules)
+        if is_block:
+            blocked += 1
         else:
-            filtered_channels.append(ch)
+            filtered.append(ch)
+    log.info(f"  过滤后: {len(filtered)}个 (移除{blocked}个)")
 
-    if new_blacklist_count > 0:
-        log.info(f"  新增黑名单规则: {new_blacklist_count} 条")
-
-    log.info(f"  过滤后: {len(filtered_channels)} 个频道 (移除 {len(all_channels)-len(filtered_channels)} 个)")
-    all_channels = filtered_channels
-
-    log.info("[2/5] 整合去重...")
-    # ========== 【修改】使用新的参数 ==========
+    # ========== 3. 去重（不限制数量！）==========
+    log.info("[3/6] URL去重...")
     merger = ChannelMerger(
-        dedup_mode=DEDUP_MODE, 
-        keep_strategy=DEDUP_KEEP,
-        multicast_limit=4,           # 普通组播限制
-        mobile_multicast_limit=6,    # 移动组播限制
-        unicast_limit=10,            # 单播限制
-        max_per_group=100            # 每个genre最多100个频道
+        multicast_limit=4,
+        mobile_multicast_limit=6,
+        unicast_limit=15,
+        max_per_group=300
     )
-    if BLACKLIST_FILE.exists():
-        merger.load_blacklist(str(BLACKLIST_FILE))
-    merged = merger.merge(all_channels)
+    deduped = merger.merge(filtered)
+    log.info(f"  去重后: {len(deduped)}个唯一URL")
 
-    merged_multicast = sum(1 for ch in merged if ch.url.strip().lower().startswith(('udp://', 'rtp://', 'rtsp://')))
-    log.info(f"  去重后: {len(merged)} 个频道 (组播:{merged_multicast}个)")
-
-    # ========== 【修改】使用自动分组替代模板分组 ==========
-    log.info("[3/5] 自动分组...")
-    grouped_channels = auto_group_by_name(merged)
-
-    log.info("[3/5] 聚合分组...")
-    grouped_channels = merge_subgroups(grouped_channels)
-
-    # ========== 合并省份标签 ==========
-    log.info("[3/5] 合并省份标签...")
-    grouped_channels = merge_province_groups(grouped_channels)
-
-    log.info("[3/5] 合并特殊分组...")
-    grouped_channels = merge_special_groups(grouped_channels)
-
-    # ========== 最终整理 ==========
-    log.info("[3/5] 最终整理分组...")
-    grouped_channels = finalize_groups(grouped_channels)
-
-    # ========== 【关键修复】先测速，再限制数量 ==========
-    log.info("[4/5] 测速中... 并发: {MAX_CONCURRENT_TESTS}")
-
-    all_channels_flat = []
-    for group in grouped_channels.values():
-        for sub_group in group.values():
-            all_channels_flat.extend(sub_group)
-
+    # ========== 4. 测速（关键步骤）==========
+    log.info("[4/6] 测速...")
+    
+    # 分离已缓存和待测速
     need_test = []
-    for ch in all_channels_flat:
-        cached_speed = cache.get(ch.url)
-        if cached_speed is not None:
-            ch.speed = cached_speed
+    cached_ok = 0
+    cached_fail = 0
+    
+    for ch in deduped:
+        cached = cache.get(ch.url)
+        if cached == SpeedCache.FAIL_MARKER:
+            ch.speed = None
+            cached_fail += 1
+        elif cached is not None:
+            ch.speed = cached
+            cached_ok += 1
         else:
             need_test.append(ch)
-
-    log.info(f"  缓存命中: {len(all_channels_flat)-len(need_test)}/{len(all_channels_flat)}")
-
+    
+    log.info(f"  缓存命中: 成功{cached_ok} 失败{cached_fail} 待测{len(need_test)}")
+    
     if need_test:
         tester = SpeedTester(
             timeout=SPEED_TEST_TIMEOUT,
@@ -607,50 +238,90 @@ def main():
             max_concurrent=MAX_CONCURRENT_TESTS
         )
         asyncio.run(tester.test_all(need_test))
-
+        
+        # 保存缓存
         for ch in need_test:
             cache.set(ch.url, ch.speed)
         cache.save()
+        
+        # 统计
+        tested_ok = sum(1 for c in need_test if c.speed is not None)
+        tested_fail = len(need_test) - tested_ok
+        log.info(f"  测速结果: 成功{tested_ok} 失败{tested_fail}")
 
-    log.info(f"  总频道: {len(all_channels_flat)}个")
+    # ========== 5. 按类型限制数量（测速后！）==========
+    log.info("[5/6] 按类型限制数量...")
+    
+    # 合并所有频道（含缓存和刚测速的）
+    all_valid = [ch for ch in deduped if ch.speed is not None]
+    # 组播源不测速，speed=None，但应该保留
+    multicast_all = [ch for ch in deduped if ch.url.strip().lower().startswith(('udp://', 'rtp://', 'rtsp://'))]
+    unicast_valid = [ch for ch in deduped if not ch.url.strip().lower().startswith(('udp://', 'rtp://', 'rtsp://')) and ch.speed is not None]
+    
+    log.info(f"  组播源: {len(multicast_all)}个 (不测速，直接保留)")
+    log.info(f"  单播有效: {len(unicast_valid)}个")
+    
+    # 限制数量
+    limited = merger.limit_by_type(deduped)
+    log.info(f"  限制后: {len(limited)}个")
 
-    # ========== 【关键修复】测速后再按 genre 限制数量 ==========
-    log.info("[3/5] 按 genre 限制频道数量...")
-    for group_name, sub_groups in grouped_channels.items():
-        for sub_name, channels in sub_groups.items():
-            sub_groups[sub_name] = merger.limit_by_group(channels)
+    # ========== 6. 分组与导出 ==========
+    log.info("[6/6] 分组与导出...")
+    
+    # 自动分组
+    grouped = auto_group_by_name(limited)
+    
+    # 每组内限制数量并排序
+    final_groups = OrderedDict()
+    for group_name, sub_groups in grouped.items():
+        all_chs = []
+        for chs in sub_groups.values():
+            all_chs.extend(chs)
+        
+        if not all_chs:
+            continue
+        
+        # 组内去重
+        seen = set()
+        unique = []
+        for ch in all_chs:
+            if ch.url not in seen:
+                seen.add(ch.url)
+                unique.append(ch)
+        
+        # 限制每组数量（按速度）
+        limited_group = merger.limit_by_group(unique)
+        
+        # 排序：组播在前（内网源优先），然后按速度
+        def sort_key(ch):
+            is_mc = ch.url.strip().lower().startswith(('udp://', 'rtp://', 'rtsp://'))
+            speed = ch.speed if ch.speed is not None else 999999  # 组播给个高速度值排前面
+            return (-int(is_mc), -speed)
+        
+        limited_group.sort(key=sort_key)
+        
+        final_groups[group_name] = OrderedDict()
+        final_groups[group_name]['全部'] = limited_group
 
-    log.info("=== 频道分组诊断 ===")
-    for group_name, sub_groups in grouped_channels.items():
-        total = sum(len(chs) for chs in sub_groups.values())
-        if total > 0:
-            log.info(f"  分组 '{group_name}': {total} 个频道")
-            for sub_name, chs in sub_groups.items():
-                if len(chs) > 0:
-                    sample = chs[0].name if chs else "空"
-                    log.info(f"    - {sub_name}: {len(chs)} 个 (示例: {sample})")
-
-    log.info("[5/5] 导出结果...")
-
-    TXTExporter.export_by_template(grouped_channels, str(OUTPUT_DIR / "result.txt"))
-    log.info(f"  ✓ TXT 模板导出完成")
-
-    M3UExporter.export_by_template(grouped_channels, str(OUTPUT_DIR))
-    log.info(f"  ✓ M3U 模板导出完成")
-
-    M3UExporter.export_all(all_channels_flat, str(OUTPUT_DIR / "result-all.m3u"))
-    log.info(f"  ✓ 全部M3U导出完成")
-
-    M3UExporter.export_mobile_first(all_channels_flat, str(OUTPUT_DIR / "result-mobile-first.m3u"))
-    TXTExporter.export_mobile_first(all_channels_flat, str(OUTPUT_DIR / "result-mobile-first.txt"))
-    log.info(f"  ✓ 移动优先导出完成")
-
-    M3UExporter.export_other(all_channels_flat, str(OUTPUT_DIR / "result-other.m3u"))
-    TXTExporter.export_other(all_channels_flat, str(OUTPUT_DIR / "result-other.txt"))
-    log.info(f"  ✓ 其他源导出完成")
-
-    LogExporter.export_speed_log(all_channels_flat, str(LOG_DIR / "speed_test.log"))
-    log.info(f"  ✓ 测速日志导出完成")
+    # 导出
+    log.info("  导出结果...")
+    TXTExporter.export_by_template(final_groups, str(OUTPUT_DIR / "result.txt"))
+    M3UExporter.export_by_template(final_groups, str(OUTPUT_DIR))
+    
+    # 全部频道（调试用）
+    M3UExporter.export_all(deduped, str(OUTPUT_DIR / "result-all.m3u"))
+    
+    # 移动优先
+    mobile_first = sorted(
+        [c for c in deduped if c.speed is not None],
+        key=lambda x: x.speed if x.speed is not None else 0,
+        reverse=True
+    )
+    M3UExporter.export_mobile_first(mobile_first, str(OUTPUT_DIR / "result-mobile-first.m3u"))
+    TXTExporter.export_mobile_first(mobile_first, str(OUTPUT_DIR / "result-mobile-first.txt"))
+    
+    # 测速日志
+    LogExporter.export_speed_log(deduped, str(LOG_DIR / "speed_test.log"))
 
     elapsed = time.time() - start_time
     log.info(f"处理完成，耗时: {elapsed:.1f}秒")
