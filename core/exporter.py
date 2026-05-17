@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+"""导出模块 - M3U/TXT/日志导出"""
 from typing import List, Dict
 from datetime import datetime
 from pathlib import Path
@@ -9,12 +11,12 @@ from config.settings import ISP_GROUPS
 class M3UExporter:
     @staticmethod
     def export(channels: List[Channel], output_file: str, epg_url: str = ""):
-        lines = ['#EXTM3U']
+        lines = ["#EXTM3U"]
         if epg_url:
             lines[0] += f' url-tvg="{epg_url}"'
 
         for ch in channels:
-            extinf = f'#EXTINF:-1'
+            extinf = f"#EXTINF:-1"
             attrs = []
             if ch.tvg_id:
                 attrs.append(f'tvg-id="{ch.tvg_id}"')
@@ -26,13 +28,13 @@ class M3UExporter:
                 attrs.append(f'group-title="{ch.group}"')
 
             if attrs:
-                extinf += ' ' + ' '.join(attrs)
-            extinf += f',{ch.name}'
+                extinf += " " + " ".join(attrs)
+            extinf += f",{ch.name}"
             lines.append(extinf)
             lines.append(ch.url)
 
-        with open(output_file, 'w', encoding='utf-8') as f:
-            f.write('\n'.join(lines))
+        with open(output_file, "w", encoding="utf-8") as f:
+            f.write("\n".join(lines))
 
         print(f"[OK] M3U已导出: {output_file} ({len(channels)}个频道)")
 
@@ -41,22 +43,21 @@ class M3UExporter:
         """按模板分组导出M3U"""
         filepath = Path(output_dir) / "result.m3u"
 
-        lines = ['#EXTM3U']
+        lines = ["#EXTM3U"]
 
         for group_name, sub_groups in grouped_channels.items():
             for sub_name, channels in sub_groups.items():
                 for ch in channels:
-                    # 组播源标记
-                    is_multicast = ch.url.strip().lower().startswith(('udp://', 'rtp://', 'rtsp://'))
+                    is_multicast = ch.url.strip().lower().startswith(("udp://", "rtp://", "rtsp://"))
                     multicast_tag = "[组播]" if is_multicast else ""
 
                     extinf = f'#EXTINF:-1 group-title="{group_name}-{sub_name}"'
-                    extinf += f',{ch.name}{multicast_tag}'
+                    extinf += f",{ch.name}{multicast_tag}"
                     lines.append(extinf)
                     lines.append(ch.url)
 
-        with open(filepath, 'w', encoding='utf-8') as f:
-            f.write('\n'.join(lines))
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write("\n".join(lines))
 
         print(f"[OK] M3U已导出: {filepath}")
 
@@ -68,15 +69,12 @@ class M3UExporter:
     @staticmethod
     def export_mobile_first(channels: List[Channel], output_file: str, epg_url: str = ""):
         """移动源优先排序导出"""
-        # 移动源排前面，其他排后面
-        mobile = [c for c in channels if c.extra.get('isp') == 'mobile']
-        other = [c for c in channels if c.extra.get('isp') != 'mobile']
+        mobile = [c for c in channels if c.extra.get("isp") == "mobile"]
+        other = [c for c in channels if c.extra.get("isp") != "mobile"]
 
-        # 各自按速度排序
         mobile.sort(key=lambda c: c.speed, reverse=True)
         other.sort(key=lambda c: c.speed, reverse=True)
 
-        # 合并：移动优先
         sorted_channels = mobile + other
 
         M3UExporter.export(sorted_channels, output_file, epg_url)
@@ -85,7 +83,7 @@ class M3UExporter:
     @staticmethod
     def export_other(channels: List[Channel], output_file: str, epg_url: str = ""):
         """只导出非移动源"""
-        other = [c for c in channels if c.extra.get('isp') != 'mobile']
+        other = [c for c in channels if c.extra.get("isp") != "mobile"]
         other.sort(key=lambda c: c.speed, reverse=True)
         M3UExporter.export(other, output_file, epg_url)
         print(f"[OK] 其他源M3U已导出: {output_file} ({len(other)}个)")
@@ -108,8 +106,8 @@ class TXTExporter:
                 line += f"#{ch.group}"
             lines.append(line)
 
-        with open(output_file, 'w', encoding='utf-8') as f:
-            f.write('\n'.join(lines))
+        with open(output_file, "w", encoding="utf-8") as f:
+            f.write("\n".join(lines))
 
         print(f"[OK] TXT已导出: {output_file} ({len(channels)}个频道)")
 
@@ -119,30 +117,27 @@ class TXTExporter:
         lines = []
 
         for group_name, sub_groups in grouped_channels.items():
-            # 一级分组标题
             lines.append(f"\n❤️{group_name},#group#")
 
             for sub_name, channels in sub_groups.items():
-                # 二级分组标题
                 lines.append(f"\n❤️{sub_name},#genre#")
 
                 for ch in channels:
-                    # 组播源标记
-                    is_multicast = ch.url.strip().lower().startswith(('udp://', 'rtp://', 'rtsp://'))
+                    is_multicast = ch.url.strip().lower().startswith(("udp://", "rtp://", "rtsp://"))
                     multicast_tag = " [组播]" if is_multicast else ""
 
                     lines.append(f"{ch.name}{multicast_tag},{ch.url}")
 
-        with open(output_file, 'w', encoding='utf-8') as f:
-            f.write('\n'.join(lines))
+        with open(output_file, "w", encoding="utf-8") as f:
+            f.write("\n".join(lines))
 
         print(f"[OK] TXT已导出: {output_file}")
 
     @staticmethod
     def export_mobile_first(channels: List[Channel], output_file: str, include_speed: bool = False):
         """移动源优先排序导出TXT"""
-        mobile = [c for c in channels if c.extra.get('isp') == 'mobile']
-        other = [c for c in channels if c.extra.get('isp') != 'mobile']
+        mobile = [c for c in channels if c.extra.get("isp") == "mobile"]
+        other = [c for c in channels if c.extra.get("isp") != "mobile"]
 
         mobile.sort(key=lambda c: c.speed, reverse=True)
         other.sort(key=lambda c: c.speed, reverse=True)
@@ -154,7 +149,7 @@ class TXTExporter:
     @staticmethod
     def export_other(channels: List[Channel], output_file: str, include_speed: bool = False):
         """只导出非移动源TXT"""
-        other = [c for c in channels if c.extra.get('isp') != 'mobile']
+        other = [c for c in channels if c.extra.get("isp") != "mobile"]
         other.sort(key=lambda c: c.speed, reverse=True)
         TXTExporter.export(other, output_file, include_speed)
         print(f"[OK] 其他源TXT已导出: {output_file} ({len(other)}个)")
@@ -173,11 +168,11 @@ class LogExporter:
         sorted_ch = sorted(channels, key=lambda c: c.speed, reverse=True)
         for ch in sorted_ch:
             status = "✓" if ch.speed > 50 else "✗"
-            isp = ch.extra.get('isp', 'other')
-            is_multicast = "组播" if ch.url.strip().lower().startswith(('udp://', 'rtp://', 'rtsp://')) else "单播"
+            isp = ch.extra.get("isp", "other")
+            is_multicast = "组播" if ch.url.strip().lower().startswith(("udp://", "rtp://", "rtsp://")) else "单播"
             lines.append(
                 f"{status} {ch.name:<20} {ch.group:<15} {isp:<8} {is_multicast:<6} {ch.speed:>10.1f}  {ch.url[:60]}"
             )
 
-        with open(log_file, 'w', encoding='utf-8') as f:
-            f.write('\n'.join(lines))
+        with open(log_file, "w", encoding="utf-8") as f:
+            f.write("\n".join(lines))
