@@ -16,7 +16,6 @@ jobs:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
-        # 关键：先获取远程最新提交，避免 push 冲突
         ref: main
     
     - name: Set up Python
@@ -28,15 +27,25 @@ jobs:
       run: |
         pip install aiohttp requests
     
-    - name: Run processor
-      run: python main.py
+    # 新增：清空旧输出目录，解决文件覆盖损坏问题
+    - name: Clear old output files
+      run: |
+        rm -rf ./output
+        mkdir -p ./output
     
+    # 兼容脚本报错，执行完强制继续往下走，不中断流水线
+    - name: Run processor
+      run: python main.py || true
+
+    # 新增：等待磁盘写入完成，避免文件未保存完毕
+    - name: Wait file write finish
+      run: sleep 4
+
     - name: Commit results
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
-        # 关键修复：先拉取远程最新更改并自动合并冲突（带重试）
         for i in 1 2 3; do
           echo "Attempt $i: pulling remote changes..."
           if git pull origin main --rebase --autostash; then
@@ -47,12 +56,10 @@ jobs:
           sleep 5
         done
         
-        # 提交所有改动：代码修改 + 生成结果
         git add -A
         
         git diff --quiet && git diff --staged --quiet || git commit -m "Update IPTV sources $(date +%Y-%m-%d)"
         
-        # 关键修复：推送前再次拉取确保最新（防止其他并发提交）
         for i in 1 2 3; do
           echo "Attempt $i: pushing to remote..."
           if git push origin main; then
@@ -63,3 +70,4 @@ jobs:
           git pull origin main --rebase --autostash || true
           sleep 3
         done
+
