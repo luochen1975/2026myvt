@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+"""
+IPTV源处理器 - 优化版
+浙江宁波移动网络专用
+分层测速：组播(ffmpeg) / 国内(aiohttp) / 外网(Clash代理+aiohttp)
+"""
 import asyncio
 import json
 import os
@@ -8,7 +13,7 @@ from pathlib import Path
 from collections import OrderedDict
 from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
 
-os.environ['TZ'] = 'Asia/Shanghai'
+os.environ["TZ"] = "Asia/Shanghai"
 time.tzset()
 
 from config.settings import *
@@ -26,15 +31,15 @@ BLACKLIST_FILE_PATH = CONFIG_DIR / "blacklist.txt"
 
 def auto_detect_type(url: str) -> str:
     url_lower = url.lower()
-    if url_lower.endswith(('.m3u', '.m3u8')):
-        return 'm3u'
-    elif url_lower.endswith('.json'):
-        return 'json'
-    return 'txt'
+    if url_lower.endswith((".m3u", ".m3u8")):
+        return "m3u"
+    elif url_lower.endswith(".json"):
+        return "json"
+    return "txt"
 
 
 def load_sources() -> list:
-    with open(SOURCES_FILE, 'r', encoding='utf-8') as f:
+    with open(SOURCES_FILE, "r", encoding="utf-8") as f:
         config = json.load(f)
 
     sources = []
@@ -43,19 +48,19 @@ def load_sources() -> list:
         if isinstance(item, str):
             url = item.strip()
             sources.append({
-                'name': 'auto', 'url': url,
-                'type': auto_detect_type(url), 'isp': 'other',
-                'proxy': False, 'enabled': True
+                "name": "auto", "url": url,
+                "type": auto_detect_type(url), "isp": "other",
+                "proxy": False, "enabled": True
             })
         elif isinstance(item, dict):
-            if item.get('enabled', True):
+            if item.get("enabled", True):
                 sources.append({
-                    'name': item.get('name', 'auto'),
-                    'url': item['url'],
-                    'type': item.get('type') or auto_detect_type(item['url']),
-                    'isp': item.get('isp', 'other'),
-                    'proxy': item.get('proxy', False),
-                    'enabled': True
+                    "name": item.get("name", "auto"),
+                    "url": item["url"],
+                    "type": item.get("type") or auto_detect_type(item["url"]),
+                    "isp": item.get("isp", "other"),
+                    "proxy": item.get("proxy", False),
+                    "enabled": True
                 })
 
     if isinstance(config, list):
@@ -66,45 +71,52 @@ def load_sources() -> list:
             for item in items:
                 add_item(item)
 
-    if os.getenv('GITHUB_ACTIONS'):
-        proxy_sources = [s for s in sources if s.get('proxy')]
+    if os.getenv("GITHUB_ACTIONS"):
+        proxy_sources = [s for s in sources if s.get("proxy")]
         if proxy_sources:
             log.info(f"[GitHub Actions] 跳过 {len(proxy_sources)} 个代理源")
-            sources = [s for s in sources if not s.get('proxy')]
+            sources = [s for s in sources if not s.get("proxy")]
 
     return sources
 
 
 def load_blacklist_rules(blacklist_file: str) -> dict:
-    rules = {'domains': [], 'contains': [], 'urls': [], 'keywords': [], 'regex': [], 'genre': []}
+    rules = {
+        "domains": [], "contains": [], "urls": [],
+        "keywords": [], "regex": [], "genre": []
+    }
+
     if not os.path.exists(blacklist_file):
         log.warning(f"黑名单文件不存在: {blacklist_file}")
         return rules
 
-    with open(blacklist_file, 'r', encoding='utf-8') as f:
+    with open(blacklist_file, "r", encoding="utf-8") as f:
         for line_num, line in enumerate(f, 1):
             line = line.strip()
-            if not line or line.startswith('#'):
+            if not line or line.startswith("#"):
                 continue
-            if ':' in line:
-                rule_type, rule_value = line.split(':', 1)
+
+            if ":" in line:
+                rule_type, rule_value = line.split(":", 1)
                 rule_type = rule_type.strip().lower()
                 rule_value = rule_value.strip()
-                if rule_type == 'domain':
-                    rules['domains'].append(rule_value)
-                elif rule_type == 'contains':
-                    rules['contains'].append(rule_value)
-                elif rule_type == 'keyword':
-                    rules['keywords'].append(rule_value)
-                elif rule_type == 'regex':
+
+                if rule_type == "domain":
+                    rules["domains"].append(rule_value)
+                elif rule_type == "contains":
+                    rules["contains"].append(rule_value)
+                elif rule_type == "keyword":
+                    rules["keywords"].append(rule_value)
+                elif rule_type == "regex":
                     try:
-                        rules['regex'].append(re.compile(rule_value))
+                        rules["regex"].append(re.compile(rule_value))
                     except re.error as e:
                         log.warning(f"正则错误 第{line_num}行: {e}")
-                elif rule_type == 'genre':
-                    rules['genre'].append(rule_value)
+                elif rule_type == "genre":
+                    rules["genre"].append(rule_value)
             else:
-                rules['urls'].append(line)
+                rules["urls"].append(line)
+
     return rules
 
 
@@ -115,19 +127,19 @@ def should_blacklist(url: str, rules: dict) -> tuple[bool, str]:
     parsed = urlparse(url)
     domain = parsed.netloc.lower()
 
-    for black_url in rules['urls']:
+    for black_url in rules["urls"]:
         if black_url.lower() in url_lower:
             return True, f"URL黑名单:{black_url}"
-    for black_domain in rules['domains']:
+    for black_domain in rules["domains"]:
         if black_domain.lower() in domain:
             return True, f"域名黑名单:{black_domain}"
-    for pattern in rules['contains']:
+    for pattern in rules["contains"]:
         if pattern.lower() in url_lower:
             return True, f"包含规则:{pattern}"
-    for keyword in rules['keywords']:
+    for keyword in rules["keywords"]:
         if keyword.lower() in url_lower:
             return True, f"关键词:{keyword}"
-    for regex in rules['regex']:
+    for regex in rules["regex"]:
         if regex.search(url):
             return True, f"正则:{regex.pattern}"
     return False, ""
@@ -135,18 +147,18 @@ def should_blacklist(url: str, rules: dict) -> tuple[bool, str]:
 
 def clean_url(url: str) -> str:
     """清洗URL用于去重对比"""
-    if not url or '?' not in url:
+    if not url or "?" not in url:
         return url
     parsed = urlparse(url)
     params = parse_qs(parsed.query, keep_blank_values=True)
     cleaned = {
         k: v for k, v in params.items()
         if not any(tp.lower() in k.lower() or k.lower().startswith(tp.lower())
-                   for tp in ['play_token', 'auth_key', 'wsSecret', 'wsTime', 'token',
-                             'auth', 'sign', 'signature', 'timestamp', 'ts', 't',
-                             'expires', 'expire', 'e', 'key', 'ak', 'sk'])
+                   for tp in ["play_token", "auth_key", "wsSecret", "wsTime", "token",
+                             "auth", "sign", "signature", "timestamp", "ts", "t",
+                             "expires", "expire", "e", "key", "ak", "sk"])
     }
-    new_query = urlencode(cleaned, doseq=True) if cleaned else ''
+    new_query = urlencode(cleaned, doseq=True) if cleaned else ""
     return urlunparse((parsed.scheme, parsed.netloc, parsed.path, parsed.params, new_query, parsed.fragment))
 
 
@@ -156,9 +168,9 @@ def main():
     CONFIG_DIR.mkdir(parents=True, exist_ok=True)
 
     log.info("=" * 50)
-    log.info("IPTV 源处理器启动 [优化版]")
+    log.info("IPTV 源处理器启动 [优化版 - 分层测速]")
 
-    if os.getenv('GITHUB_ACTIONS'):
+    if os.getenv("GITHUB_ACTIONS"):
         log.info("[环境] GitHub Actions (跳过代理源)")
     else:
         log.info("[环境] 本地运行 [浙江宁波移动]")
@@ -176,14 +188,14 @@ def main():
     for source in sources:
         channels = SourceLoader.load(source)
         for ch in channels:
-            ch.source = source.get('name', 'unknown')
-            ch.extra['isp'] = source.get('isp', 'other')
+            ch.source = source.get("name", "unknown")
+            ch.extra["isp"] = source.get("isp", "other")
         all_channels.extend(channels)
-        mc_count = sum(1 for c in channels if c.url.strip().lower().startswith(('udp://', 'rtp://', 'rtsp://')))
-        proxy_tag = "[代理]" if source.get('proxy') else ""
+        mc_count = sum(1 for c in channels if c.url.strip().lower().startswith(("udp://", "rtp://", "rtsp://")))
+        proxy_tag = "[代理]" if source.get("proxy") else ""
         log.info(f"  ✓ {source['name']}{proxy_tag}: {len(channels)}个 (组播:{mc_count}个)")
 
-    total_mc = sum(1 for c in all_channels if c.url.strip().lower().startswith(('udp://', 'rtp://', 'rtsp://')))
+    total_mc = sum(1 for c in all_channels if c.url.strip().lower().startswith(("udp://", "rtp://", "rtsp://")))
     log.info(f"  总计: {len(all_channels)}个频道 (组播:{total_mc}个)")
 
     # ========== 2. 黑名单过滤 ==========
@@ -202,22 +214,31 @@ def main():
     # ========== 3. 去重（不限制数量！）==========
     log.info("[3/6] URL去重...")
     merger = ChannelMerger(
-        multicast_limit=4,
-        mobile_multicast_limit=6,
-        unicast_limit=15,
-        max_per_group=300
+        multicast_limit=MULTICAST_LIMIT,
+        mobile_multicast_limit=MOBILE_MULTICAST_LIMIT,
+        unicast_limit=UNICAST_LIMIT,
+        max_per_group=MAX_PER_GROUP
     )
     deduped = merger.merge(filtered)
     log.info(f"  去重后: {len(deduped)}个唯一URL")
 
-    # ========== 4. 测速（关键步骤）==========
-    log.info("[4/6] 测速...")
-    
-    # 分离已缓存和待测速
+    # ========== 4. 测速（关键步骤 - 分层测速）==========
+    log.info("[4/6] 分层测速...")
+
+    # 构建 source_configs 映射
+    source_configs = {}
+    for source in sources:
+        try:
+            chs = SourceLoader.load(source)
+            for ch in chs:
+                source_configs[ch.url] = source
+        except:
+            pass
+
     need_test = []
     cached_ok = 0
     cached_fail = 0
-    
+
     for ch in deduped:
         cached = cache.get(ch.url)
         if cached == SpeedCache.FAIL_MARKER:
@@ -228,59 +249,50 @@ def main():
             cached_ok += 1
         else:
             need_test.append(ch)
-    
+
     log.info(f"  缓存命中: 成功{cached_ok} 失败{cached_fail} 待测{len(need_test)}")
-    
+
     if need_test:
         tester = SpeedTester(
             timeout=SPEED_TEST_TIMEOUT,
             duration=SPEED_TEST_DURATION,
             max_concurrent=MAX_CONCURRENT_TESTS
         )
-        asyncio.run(tester.test_all(need_test))
-        
+        asyncio.run(tester.test_all(need_test, source_configs))
+
         # 保存缓存
         for ch in need_test:
             cache.set(ch.url, ch.speed)
         cache.save()
-        
-        # 统计
+
         tested_ok = sum(1 for c in need_test if c.speed is not None)
         tested_fail = len(need_test) - tested_ok
         log.info(f"  测速结果: 成功{tested_ok} 失败{tested_fail}")
 
     # ========== 5. 按类型限制数量（测速后！）==========
     log.info("[5/6] 按类型限制数量...")
-    
-    # 合并所有频道（含缓存和刚测速的）
-    all_valid = [ch for ch in deduped if ch.speed is not None]
-    # 组播源不测速，speed=None，但应该保留
-    multicast_all = [ch for ch in deduped if ch.url.strip().lower().startswith(('udp://', 'rtp://', 'rtsp://'))]
-    unicast_valid = [ch for ch in deduped if not ch.url.strip().lower().startswith(('udp://', 'rtp://', 'rtsp://')) and ch.speed is not None]
-    
-    log.info(f"  组播源: {len(multicast_all)}个 (不测速，直接保留)")
-    log.info(f"  单播有效: {len(unicast_valid)}个")
-    
-    # 限制数量
+
     limited = merger.limit_by_type(deduped)
-    log.info(f"  限制后: {len(limited)}个")
+
+    mc_kept = sum(1 for c in limited if c.url.strip().lower().startswith(("udp://", "rtp://", "rtsp://")))
+    log.info(f"  限制后: {len(limited)}个 (组播:{mc_kept}个)")
 
     # ========== 6. 分组与导出 ==========
     log.info("[6/6] 分组与导出...")
-    
+
     # 自动分组
     grouped = auto_group_by_name(limited)
-    
+
     # 每组内限制数量并排序
     final_groups = OrderedDict()
     for group_name, sub_groups in grouped.items():
         all_chs = []
         for chs in sub_groups.values():
             all_chs.extend(chs)
-        
+
         if not all_chs:
             continue
-        
+
         # 组内去重
         seen = set()
         unique = []
@@ -288,29 +300,29 @@ def main():
             if ch.url not in seen:
                 seen.add(ch.url)
                 unique.append(ch)
-        
+
         # 限制每组数量（按速度）
         limited_group = merger.limit_by_group(unique)
-        
+
         # 排序：组播在前（内网源优先），然后按速度
         def sort_key(ch):
-            is_mc = ch.url.strip().lower().startswith(('udp://', 'rtp://', 'rtsp://'))
-            speed = ch.speed if ch.speed is not None else 999999  # 组播给个高速度值排前面
+            is_mc = ch.url.strip().lower().startswith(("udp://", "rtp://", "rtsp://"))
+            speed = ch.speed if ch.speed is not None else 999999
             return (-int(is_mc), -speed)
-        
+
         limited_group.sort(key=sort_key)
-        
+
         final_groups[group_name] = OrderedDict()
-        final_groups[group_name]['全部'] = limited_group
+        final_groups[group_name]["全部"] = limited_group
 
     # 导出
     log.info("  导出结果...")
     TXTExporter.export_by_template(final_groups, str(OUTPUT_DIR / "result.txt"))
     M3UExporter.export_by_template(final_groups, str(OUTPUT_DIR))
-    
+
     # 全部频道（调试用）
     M3UExporter.export_all(deduped, str(OUTPUT_DIR / "result-all.m3u"))
-    
+
     # 移动优先
     mobile_first = sorted(
         [c for c in deduped if c.speed is not None],
@@ -319,7 +331,7 @@ def main():
     )
     M3UExporter.export_mobile_first(mobile_first, str(OUTPUT_DIR / "result-mobile-first.m3u"))
     TXTExporter.export_mobile_first(mobile_first, str(OUTPUT_DIR / "result-mobile-first.txt"))
-    
+
     # 测速日志
     LogExporter.export_speed_log(deduped, str(LOG_DIR / "speed_test.log"))
 
@@ -328,7 +340,7 @@ def main():
     log.info("=" * 50)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     try:
         main()
     except Exception as e:
