@@ -65,16 +65,20 @@ class SpeedTester:
     ):
         self.proxy_url = proxy_url
         self.max_concurrent = max_concurrent
-
-        self.connector = aiohttp.TCPConnector(
-            limit=max_concurrent * 3,
-            limit_per_host=3,
-            enable_cleanup_closed=True,
-            force_close=True,
-            ttl_dns_cache=300,
-        )
-
+        self.connector = None  # 延迟初始化，避免同步实例化时无事件循环
         self.mc_semaphore = asyncio.Semaphore(min(10, max_concurrent))
+
+    def _get_connector(self):
+        """延迟创建 TCPConnector，确保在异步上下文中调用"""
+        if self.connector is None or self.connector.closed:
+            self.connector = aiohttp.TCPConnector(
+                limit=self.max_concurrent * 3,
+                limit_per_host=3,
+                enable_cleanup_closed=True,
+                force_close=True,
+                ttl_dns_cache=300,
+            )
+        return self.connector
 
     def is_native_multicast(self, url: str) -> bool:
         return url.strip().lower().startswith(("udp://", "rtp://", "rtsp://"))
@@ -370,7 +374,9 @@ class SpeedTester:
         if http_channels:
             print(f"[测速] 开始HTTP源测速...")
 
-            async with aiohttp.ClientSession(connector=self.connector) as session:
+            # 在异步上下文中创建 connector
+            connector = self._get_connector()
+            async with aiohttp.ClientSession(connector=connector) as session:
                 async def bounded_test(ch):
                     async with semaphore:
                         cfg = self.classify_source(
@@ -398,8 +404,12 @@ class SpeedTester:
         return channels
 
     def close(self):
-        if hasattr(self, "connector"):
+        if self.connector and not self.connector.closed:
             try:
-                asyncio.get_event_loop().run_until_complete(self.connector.close())
-            except:
+                loop = asyncio.get_event_loop()
+                if loop.is_running():
+                    asyncio.create_task(self.connector.close())
+                else:
+                    loop.run_until_complete(self.connector.close())
+            except Exception:
                 pass
