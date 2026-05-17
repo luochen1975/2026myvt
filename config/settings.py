@@ -30,6 +30,9 @@ MULTICAST_MIN_SPEED = 10         # 组播最低保留速度
 MULTICAST_TEST_DURATION = 8      # 组播测速8秒
 MULTICAST_TEST_TIMEOUT = 15      # 组播超时15秒
 
+# 单播源配置（新增，修复 ImportError）
+UNICAST_MIN_SPEED = 20           # 单播最低保留速度（默认与 MIN_SPEED_KBPS 一致）
+
 # 内网源配置
 PRIVATE_MIN_SPEED = 10           # 内网最低速度
 PRIVATE_TEST_DURATION = 5        # 内网测5秒
