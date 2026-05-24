@@ -21,8 +21,8 @@ MIN_SPEED_KBPS = 20              # 最低保留速度
 MAX_CONCURRENT_TESTS = 20        # 并发数
 
 # 分层测速配置
-OVERSEAS_SPEED_DURATION = 15     # 外网/港澳台测15秒
-OVERSEAS_SPEED_TIMEOUT = 35      # 外网超时35秒
+OVERSEAS_SPEED_DURATION = 20     # 外网/港澳台测20秒
+OVERSEAS_SPEED_TIMEOUT = 25      # 外网超时35秒
 OVERSEAS_CONNECT_TIMEOUT = 10      # 外网连接超时10秒
 
 # 组播源配置
@@ -68,7 +68,7 @@ MY_ISP = "mobile"
 MY_CITY = "ningbo"
 
 # ========== 数量限制配置 ==========
-MULTICAST_LIMIT = 4              # 普通组播限制
+MULTICAST_LIMIT = 6              # 普通组播限制
 MOBILE_MULTICAST_LIMIT = 6       # 移动组播限制
 UNICAST_LIMIT = 15               # 单播限制
 MAX_PER_GROUP = 300              # 每组最大频道数
