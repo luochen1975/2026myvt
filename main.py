@@ -235,6 +235,28 @@ def main():
         except:
             pass
 
+    # 判断港澳台/国外频道
+    def is_oversea(ch):
+        name = ch.name.lower()
+        url = ch.url.lower()
+        keywords = [
+            "香港", "澳门", "台湾", "tvb", "翡翠", "明珠", "凤凰", "东森", "中天",
+            "三立", "民视", "台视", "中视", "华视", "公视", "纬来", "非凡", "年代",
+            "tvbs", "viutv", "now", "rthk", "澳视", "澳亚", "澳广视", "澳门莲花",
+            "hbo", "cnn", "bbc", "discovery", "fox", "espn", "nhk", "disney",
+            "macau", "hong kong", "taiwan", "kbs", "mbc", "abc", "cbs", "nbc",
+            "pbs", "sky", "eurosport", "france", "germany", "italy", "spain",
+            "russia", "japan", "korea", "usa", "uk", "america", "europe",
+            "star movies", "star world", "national geographic", "animal planet",
+            "cartoon network", "al jazeera", "deutsche welle", "cgtn", "wowow",
+            "fuji tv", "tv asahi", "tv tokyo", "ntv", "sbs", "tbs", "trutv",
+            "comedy central", "adult swim", "boomerang", "msnbc", "fox news",
+            "bbc world", "france 24", "bein sports", "sky sports", "bt sport",
+            "star sports", "fox sports", "showtime", "starz", "epix", "tnt",
+            "cinemax", "mtv", "tlc", "pixar", "marvel", "star wars"
+        ]
+        return any(kw in name or kw in url for kw in keywords)
+
     need_test = []
     cached_ok = 0
     cached_fail = 0
@@ -258,7 +280,50 @@ def main():
             duration=SPEED_TEST_DURATION,
             max_concurrent=MAX_CONCURRENT_TESTS
         )
-        asyncio.run(tester.test_all(need_test, source_configs))
+
+        # 分离港澳台/国外频道
+        normal_channels = [c for c in need_test if not is_oversea(c)]
+        special_channels = [c for c in need_test if is_oversea(c)]
+
+        log.info(f"  普通频道: {len(normal_channels)}个, 港澳台/国外: {len(special_channels)}个")
+
+        # 普通频道：按原配置测速
+        if normal_channels:
+            log.info("  普通频道测速...")
+            asyncio.run(tester.test_all(normal_channels, source_configs))
+
+        # 港澳台/国外频道：先直连，失败再代理
+        if special_channels:
+            log.info("  港澳台/国外频道：先直连测速...")
+            # 第一轮：强制直连（proxy=False）
+            direct_configs = {}
+            for ch in special_channels:
+                cfg = dict(source_configs.get(ch.url, {
+                    "name": "auto", "url": ch.url, "type": "txt",
+                    "isp": "other", "proxy": False, "enabled": True
+                }))
+                cfg["proxy"] = False
+                direct_configs[ch.url] = cfg
+
+            asyncio.run(tester.test_all(special_channels, direct_configs))
+
+            # 找出直连失败的
+            failed_special = [c for c in special_channels if c.speed is None]
+            if failed_special:
+                log.info(f"  港澳台/国外直连失败 {len(failed_special)} 个，切换代理重测...")
+                # 第二轮：强制代理
+                proxy_configs = {}
+                for ch in failed_special:
+                    cfg = dict(source_configs.get(ch.url, {
+                        "name": "auto", "url": ch.url, "type": "txt",
+                        "isp": "other", "proxy": True, "enabled": True
+                    }))
+                    cfg["proxy"] = True
+                    proxy_configs[ch.url] = cfg
+
+                asyncio.run(tester.test_all(failed_special, proxy_configs))
+            else:
+                log.info("  港澳台/国外频道直连全部通过")
 
         # 保存缓存
         for ch in need_test:
@@ -268,43 +333,13 @@ def main():
         tested_ok = sum(1 for c in need_test if c.speed is not None)
         tested_fail = len(need_test) - tested_ok
         log.info(f"  测速结果: 成功{tested_ok} 失败{tested_fail}")
-
-        # ========== 5. 按类型限制数量（测速后！）==========
+    # ========== 5. 按类型限制数量（测速后！）==========
     log.info("[5/6] 按类型限制数量...")
 
-    # 只保留有速度的频道（移动源全保留，其他源也仅保留有速度的）
-    speed_ok = [c for c in deduped if c.speed is not None]
+    limited = merger.limit_by_type(deduped)
 
-    def is_multicast(ch):
-        return ch.url.strip().lower().startswith(("udp://", "rtp://", "rtsp://"))
-
-    # 分离组播 / 单播
-    mc_all = [c for c in speed_ok if is_multicast(c)]
-    uc_all = [c for c in speed_ok if not is_multicast(c)]
-
-    # 组播再按 ISP 细分
-    mc_mobile = [c for c in mc_all if c.extra.get("isp") == "移动"]
-    mc_other  = [c for c in mc_all if c.extra.get("isp") != "移动"]
-
-    # 按速度排序，组播各自限制数量
-    mc_mobile.sort(key=lambda x: x.speed, reverse=True)
-    mc_other.sort(key=lambda x: x.speed, reverse=True)
-
-    limited = []
-    limited.extend(mc_mobile[:MOBILE_MULTICAST_LIMIT])
-    limited.extend(mc_other[:MULTICAST_LIMIT])
-
-    # 单播：移动源全保留；其他源按 UNICAST_LIMIT 限制
-    uc_mobile = [c for c in uc_all if c.extra.get("isp") == "移动"]
-    uc_other  = [c for c in uc_all if c.extra.get("isp") != "移动"]
-
-    uc_other.sort(key=lambda x: x.speed, reverse=True)
-
-    limited.extend(uc_mobile)                 # 移动单播：有速度的全保留
-    limited.extend(uc_other[:UNICAST_LIMIT])  # 其他单播：仅保留前 N 个
-
-    mc_kept = sum(1 for c in limited if is_multicast(c))
-    log.info(f"  限制后: {len(limited)}个 (组播:{mc_kept}个, 单播:{len(limited)-mc_kept}个)")
+    mc_kept = sum(1 for c in limited if c.url.strip().lower().startswith(("udp://", "rtp://", "rtsp://")))
+    log.info(f"  限制后: {len(limited)}个 (组播:{mc_kept}个)")
 
     # ========== 6. 分组与导出 ==========
     log.info("[6/6] 分组与导出...")
