@@ -287,10 +287,23 @@ def main():
 
         log.info(f"  普通频道: {len(normal_channels)}个, 港澳台/国外: {len(special_channels)}个")
 
+        # 进度追踪：按唯一URL计数，避免重测重复计算
+        total = len(need_test)
+        processed_urls = set()
+
+        def log_progress(batch_desc, batch_list):
+            if not batch_list:
+                return
+            for ch in batch_list:
+                processed_urls.add(ch.url)
+            pct = len(processed_urls) / total * 100 if total else 0
+            log.info(f"  [{batch_desc}] 完成 {len(batch_list)} 个 → 总进度 {len(processed_urls)}/{total} ({pct:.1f}%)")
+
         # 普通频道：按原配置测速
         if normal_channels:
             log.info("  普通频道测速...")
             asyncio.run(tester.test_all(normal_channels, source_configs))
+            log_progress("普通频道", normal_channels)
 
         # 港澳台/国外频道：先直连，失败再代理
         if special_channels:
@@ -306,6 +319,7 @@ def main():
                 direct_configs[ch.url] = cfg
 
             asyncio.run(tester.test_all(special_channels, direct_configs))
+            log_progress("港澳台直连", special_channels)
 
             # 找出直连失败的
             failed_special = [c for c in special_channels if c.speed is None]
@@ -322,6 +336,7 @@ def main():
                     proxy_configs[ch.url] = cfg
 
                 asyncio.run(tester.test_all(failed_special, proxy_configs))
+                log_progress("港澳台代理", failed_special)
             else:
                 log.info("  港澳台/国外频道直连全部通过")
 
