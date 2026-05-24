@@ -166,13 +166,42 @@ class ChannelMerger:
         return list(seen.values())
 
     def _is_mobile(self, ch: Channel) -> bool:
-        """判断是否为移动源（支持英文 mobile/cmcc 和中文 移动）"""
-        url = ch.url.lower().strip()
+        """
+        判断是否为移动源（URL特征 + IPv6前缀 + isp字段）
+        优化版：避免误匹配，支持各省移动域名和IPv6 2409前缀
+        """
+        url_low = ch.url.lower().strip()
+
+        # 1. URL 中的移动域名特征（带点分隔，避免误匹配）
+        mobile_domains = [
+            "chinamobile.com", "cmcc", "mobiletv", ".migu.",
+            "mobaibox", "bestv", "bcs.ott", "ott.mobai",
+            "zj.chinamobile", "gd.chinamobile", "js.chinamobile",
+            "sh.chinamobile", "bj.chinamobile", "sd.chinamobile",
+            "hn.chinamobile", "hb.chinamobile", "ah.chinamobile",
+            "fj.chinamobile", "sc.chinamobile", "jx.chinamobile",
+            "ln.chinamobile", "sn.chinamobile", "cq.chinamobile",
+            "he.chinamobile", "sx.chinamobile", "nm.chinamobile",
+            "hl.chinamobile", "jl.chinamobile", "zj.cmcc",
+        ]
+        if any(d in url_low for d in mobile_domains):
+            return True
+
+        # 2. IPv6 前缀（2409 = 中国移动）
+        if "[2409:" in url_low or "2409:" in url_low:
+            return True
+
+        # 3. isp 字段（从 Channel 对象读取）
         isp = getattr(ch, "isp", "") or ch.extra.get("isp", "")
-        return (
-            "mobile" in url or "cmcc" in url or
-            isp in ("mobile", "移动")
-        )
+        if isp and ("移动" in str(isp) or "mobile" in str(isp).lower()):
+            return True
+
+        # 4. 组播地址中移动内网特征（依赖 isp/source 字段）
+        if url_low.startswith(("udp://[ff15:", "rtp://[ff15:", "udp://[ff35:", "rtp://[ff35:")):
+            if isp == "移动" or ch.source == "移动" or ch.extra.get("source") == "移动":
+                return True
+
+        return False
 
     def classify(self, ch: Channel) -> Tuple[str, bool]:
         """分类频道类型"""
