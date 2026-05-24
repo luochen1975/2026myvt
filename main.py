@@ -269,13 +269,42 @@ def main():
         tested_fail = len(need_test) - tested_ok
         log.info(f"  测速结果: 成功{tested_ok} 失败{tested_fail}")
 
-    # ========== 5. 按类型限制数量（测速后！）==========
+        # ========== 5. 按类型限制数量（测速后！）==========
     log.info("[5/6] 按类型限制数量...")
 
-    limited = merger.limit_by_type(deduped)
+    # 只保留有速度的频道（移动源全保留，其他源也仅保留有速度的）
+    speed_ok = [c for c in deduped if c.speed is not None]
 
-    mc_kept = sum(1 for c in limited if c.url.strip().lower().startswith(("udp://", "rtp://", "rtsp://")))
-    log.info(f"  限制后: {len(limited)}个 (组播:{mc_kept}个)")
+    def is_multicast(ch):
+        return ch.url.strip().lower().startswith(("udp://", "rtp://", "rtsp://"))
+
+    # 分离组播 / 单播
+    mc_all = [c for c in speed_ok if is_multicast(c)]
+    uc_all = [c for c in speed_ok if not is_multicast(c)]
+
+    # 组播再按 ISP 细分
+    mc_mobile = [c for c in mc_all if c.extra.get("isp") == "移动"]
+    mc_other  = [c for c in mc_all if c.extra.get("isp") != "移动"]
+
+    # 按速度排序，组播各自限制数量
+    mc_mobile.sort(key=lambda x: x.speed, reverse=True)
+    mc_other.sort(key=lambda x: x.speed, reverse=True)
+
+    limited = []
+    limited.extend(mc_mobile[:MOBILE_MULTICAST_LIMIT])
+    limited.extend(mc_other[:MULTICAST_LIMIT])
+
+    # 单播：移动源全保留；其他源按 UNICAST_LIMIT 限制
+    uc_mobile = [c for c in uc_all if c.extra.get("isp") == "移动"]
+    uc_other  = [c for c in uc_all if c.extra.get("isp") != "移动"]
+
+    uc_other.sort(key=lambda x: x.speed, reverse=True)
+
+    limited.extend(uc_mobile)                 # 移动单播：有速度的全保留
+    limited.extend(uc_other[:UNICAST_LIMIT])  # 其他单播：仅保留前 N 个
+
+    mc_kept = sum(1 for c in limited if is_multicast(c))
+    log.info(f"  限制后: {len(limited)}个 (组播:{mc_kept}个, 单播:{len(limited)-mc_kept}个)")
 
     # ========== 6. 分组与导出 ==========
     log.info("[6/6] 分组与导出...")
