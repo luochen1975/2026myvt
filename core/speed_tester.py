@@ -1,415 +1,207 @@
 #!/usr/bin/env python3
-"""分层异步测速器 - 支持组播/单播/外网分层测速"""
+"""
+IPTV 分层测速器
+- 组播/RTSP：ffmpeg 探测
+- HTTP 国内：aiohttp 直连
+- HTTP 国外/代理：Clash + aiohttp
+"""
 import asyncio
+import subprocess
 import time
+from typing import Dict, List, Optional
+
 import aiohttp
-import ipaddress
-from typing import List, Optional, Dict
-from dataclasses import dataclass
-from urllib.parse import urlparse
+from aiohttp import ClientTimeout, TCPConnector
 
-from core.parser import Channel
-from config.settings import (
-    SPEED_TEST_TIMEOUT, SPEED_TEST_DURATION, 
-    MAX_CONCURRENT_TESTS, PROXY_ENABLED, PROXY_URL,
-    MULTICAST_MIN_SPEED, MULTICAST_TEST_DURATION, MULTICAST_TEST_TIMEOUT,
-    OVERSEAS_SPEED_DURATION, OVERSEAS_SPEED_TIMEOUT, OVERSEAS_CONNECT_TIMEOUT,
-    PRIVATE_TEST_DURATION, PRIVATE_MIN_SPEED, UNICAST_MIN_SPEED
-)
-
-
-@dataclass
-class SpeedConfig:
-    """分层测速配置"""
-    duration: float
-    total_timeout: float
-    connect_timeout: float
-    min_speed: float
-    use_proxy: bool
-    is_multicast: bool
+from utils.logger import log
 
 
 class SpeedTester:
     """
-    分层异步测速器：
-    - 原生组播(udp/rtp/rtsp): 用 ffmpeg/ffprobe 测速
-    - HTTP组播转发: 用 aiohttp 测速
-    - 内网单播: 快速测速
-    - 国内单播: 正常测速
-    - 外网/代理源: 延长测速时间，走Clash代理
+    分层测速器
+    proxy 控制逻辑：
+      - source_configs[url].get("proxy") == True  → 走 Clash 代理
+      - source_configs[url].get("proxy") == False → 直连
+      - 未设置 → 按 URL 特征自动判断（组播/本地直连，http外网走代理）
     """
-
-    OVERSEAS_PATTERNS = [
-        ".hk", ".tw", ".mo", ".sg", ".jp", ".kr", ".us", ".uk", ".eu",
-        "aktv", "youtube", "youtu.be", "google", "gstatic",
-        "cloudfront", "cloudflare", "fastly", "bunny",
-        "vimeo", "dailymotion", "twitch", "tiktok",
-        "hktv", "tvb", "viu", "mytv", "linetv",
-        "hamivideo", "ofiii", "4gtv", "litv",
-        "iqiyi", "youku", "bilibili", "douyin",
-    ]
-
-    CN_PATTERNS = [
-        ".cn", ".com.cn", ".net.cn", "alicdn", "aliyun", "aliyuncs",
-        "tencent", "qcloud", "myqcloud", "baidu", "bdstatic",
-        "douyincdn", "byteimg", "qiniu", "hwcdn", "ctyun",
-        "cctv", "cntv", "chinanet", "cmcc", "unicom", "telecom",
-    ]
 
     def __init__(
         self,
-        timeout: int = SPEED_TEST_TIMEOUT,
-        duration: int = SPEED_TEST_DURATION,
-        max_concurrent: int = MAX_CONCURRENT_TESTS,
-        proxy_url: Optional[str] = PROXY_URL if PROXY_ENABLED else None
+        timeout: float = 10.0,
+        duration: float = 3.0,
+        max_concurrent: int = 50,
+        clash_api: str = "http://127.0.0.1:7890",  # Clash HTTP 代理端口
     ):
-        self.proxy_url = proxy_url
+        self.timeout = timeout
+        self.duration = duration
         self.max_concurrent = max_concurrent
-        self.connector = None  # 延迟初始化，避免同步实例化时无事件循环
-        self.mc_semaphore = asyncio.Semaphore(min(10, max_concurrent))
+        self.clash_api = clash_api
+        self.semaphore = asyncio.Semaphore(max_concurrent)
 
-    def _get_connector(self):
-        """延迟创建 TCPConnector，确保在异步上下文中调用"""
-        if self.connector is None or self.connector.closed:
-            self.connector = aiohttp.TCPConnector(
-                limit=self.max_concurrent * 3,
-                limit_per_host=3,
-                enable_cleanup_closed=True,
-                force_close=True,
-                ttl_dns_cache=300,
-            )
-        return self.connector
+    def _is_multicast(self, url: str) -> bool:
+        url_low = url.lower().strip()
+        return url_low.startswith(("udp://", "rtp://", "rtsp://"))
 
-    def is_native_multicast(self, url: str) -> bool:
-        return url.strip().lower().startswith(("udp://", "rtp://", "rtsp://"))
+    def _is_ipv6(self, url: str) -> bool:
+        return "[" in url and "]" in url
 
-    def is_http_multicast(self, url: str) -> bool:
-        url_lower = url.strip().lower()
-        return url_lower.startswith((
-            "http://239.", "http://233.", "http://232.", "http://231.",
-            "http://[ff", "http://[23"
-        ))
+    def _need_proxy(self, ch, source_configs: dict) -> bool:
+        """
+        判断是否使用代理：
+        1. 优先读取 source_configs 中强制设置的 proxy 字段
+        2. 未设置时自动判断：
+           - 组播/IPv6 直连
+           - 国内常见域名直连
+           - 其他 HTTP 默认走代理（GitHub Actions 环境）
+        """
+        url = ch.url
+        cfg = source_configs.get(url, {})
 
-    def is_multicast(self, url: str) -> bool:
-        return self.is_native_multicast(url) or self.is_http_multicast(url)
+        # 强制指定（main.py 里对港澳台/国外会强制设 True/False）
+        if "proxy" in cfg:
+            return bool(cfg["proxy"])
 
-    def is_private_ip(self, url: str) -> bool:
-        try:
-            parsed = urlparse(url)
-            host = parsed.hostname
-            if not host:
-                return False
-            try:
-                ip = ipaddress.ip_address(host)
-                return ip.is_private
-            except ValueError:
-                return host.startswith((
-                    "10.", "172.16.", "172.17.", "172.18.", "172.19.",
-                    "172.20.", "172.21.", "172.22.", "172.23.", "172.24.",
-                    "172.25.", "172.26.", "172.27.", "172.28.", "172.29.",
-                    "172.30.", "172.31.", "192.168.", "127."
-                ))
-        except:
+        # 自动判断
+        url_low = url.lower()
+
+        # 组播/RTSP 不走代理
+        if self._is_multicast(url):
             return False
 
-    def classify_source(self, url: str, source_config: Optional[dict] = None) -> SpeedConfig:
-        url_lower = url.lower()
-        parsed = urlparse(url)
-        host = parsed.hostname or ""
+        # IPv6 地址通常是国内运营商内网，不走代理
+        if self._is_ipv6(url):
+            return False
 
-        if self.is_native_multicast(url):
-            return SpeedConfig(
-                duration=MULTICAST_TEST_DURATION,
-                total_timeout=MULTICAST_TEST_TIMEOUT,
-                connect_timeout=5,
-                min_speed=MULTICAST_MIN_SPEED,
-                use_proxy=False,
-                is_multicast=True
-            )
+        # 国内常见域名直连
+        domestic = [
+            ".cn", "chinamobile", "cmcc", "migu", "bestv", "bcs.ott",
+            "mobaibox", "gitv", "cntv", "cctv", "tvfan", "ott.fif",
+        ]
+        if any(d in url_low for d in domestic):
+            return False
 
-        if self.is_http_multicast(url):
-            return SpeedConfig(
-                duration=MULTICAST_TEST_DURATION,
-                total_timeout=MULTICAST_TEST_TIMEOUT,
-                connect_timeout=3,
-                min_speed=MULTICAST_MIN_SPEED,
-                use_proxy=False,
-                is_multicast=False
-            )
+        # 默认：HTTP/HTTPS 外网源在 Actions 环境走代理
+        return True
 
-        if self.is_private_ip(url):
-            return SpeedConfig(
-                duration=PRIVATE_TEST_DURATION,
-                total_timeout=10,
-                connect_timeout=2,
-                min_speed=PRIVATE_MIN_SPEED,
-                use_proxy=False,
-                is_multicast=False
-            )
-
-        if source_config and source_config.get("proxy"):
-            return SpeedConfig(
-                duration=OVERSEAS_SPEED_DURATION,
-                total_timeout=OVERSEAS_SPEED_TIMEOUT,
-                connect_timeout=OVERSEAS_CONNECT_TIMEOUT,
-                min_speed=15,
-                use_proxy=True,
-                is_multicast=False
-            )
-
-        if any(pat in host for pat in self.OVERSEAS_PATTERNS):
-            return SpeedConfig(
-                duration=OVERSEAS_SPEED_DURATION,
-                total_timeout=OVERSEAS_SPEED_TIMEOUT,
-                connect_timeout=OVERSEAS_CONNECT_TIMEOUT,
-                min_speed=15,
-                use_proxy=True,
-                is_multicast=False
-            )
-
-        if any(pat in host for pat in self.CN_PATTERNS):
-            return SpeedConfig(
-                duration=SPEED_TEST_DURATION,
-                total_timeout=SPEED_TEST_TIMEOUT,
-                connect_timeout=3,
-                min_speed=UNICAST_MIN_SPEED,
-                use_proxy=False,
-                is_multicast=False
-            )
-
-        return SpeedConfig(
-            duration=SPEED_TEST_DURATION,
-            total_timeout=SPEED_TEST_TIMEOUT,
-            connect_timeout=5,
-            min_speed=UNICAST_MIN_SPEED,
-            use_proxy=False,
-            is_multicast=False
-        )
-
-    async def test_native_multicast(self, channel: Channel, config: SpeedConfig) -> None:
-        url = channel.url.strip()
-
-        async with self.mc_semaphore:
-            try:
-                proc = await asyncio.create_subprocess_exec(
-                    "ffprobe", "-v", "error", "-select_streams", "v:0",
-                    "-show_entries", "stream=codec_type", "-of",
-                    "default=noprint_wrappers=1", "-timeout", "5000000",
-                    "-i", url,
-                    stdout=asyncio.subprocess.PIPE,
-                    stderr=asyncio.subprocess.PIPE,
-                )
-
-                try:
-                    stdout, stderr = await asyncio.wait_for(
-                        proc.communicate(), 
-                        timeout=config.total_timeout
-                    )
-                except asyncio.TimeoutError:
-                    proc.kill()
-                    await proc.wait()
-                    channel.speed = None
-                    return
-
-                if proc.returncode == 0 and stdout:
-                    channel.speed = 100.0
-                else:
-                    channel.speed = None
-
-            except FileNotFoundError:
-                await self._test_with_ffmpeg(channel, config)
-            except Exception:
-                channel.speed = None
-
-    async def _test_with_ffmpeg(self, channel: Channel, config: SpeedConfig) -> None:
-        url = channel.url.strip()
-
+    async def _test_ffmpeg(self, url: str) -> Optional[float]:
+        """用 ffmpeg 探测组播/RTSP 源的速度 (KB/s)"""
+        cmd = [
+            "ffmpeg",
+            "-i", url,
+            "-t", str(self.duration),
+            "-f", "null",
+            "-",
+        ]
+        start = time.time()
         try:
             proc = await asyncio.create_subprocess_exec(
-                "ffmpeg", "-i", url, "-t", "3", "-f", "null", "-",
-                "-y", "-v", "quiet",
-                stdout=asyncio.subprocess.PIPE,
+                *cmd,
+                stdout=asyncio.subprocess.DEVNULL,
                 stderr=asyncio.subprocess.PIPE,
             )
-
             try:
                 _, stderr = await asyncio.wait_for(
-                    proc.communicate(),
-                    timeout=config.total_timeout
+                    proc.communicate(), timeout=self.timeout
                 )
             except asyncio.TimeoutError:
                 proc.kill()
-                await proc.wait()
-                channel.speed = None
-                return
+                return None
 
-            if proc.returncode == 0:
-                channel.speed = 100.0
-            else:
-                err = stderr.decode("utf-8", errors="ignore") if stderr else ""
-                if "Stream #" in err or "Input #" in err:
-                    channel.speed = 100.0
-                else:
-                    channel.speed = None
+            elapsed = time.time() - start
+            if proc.returncode != 0:
+                return None
 
-        except Exception:
-            channel.speed = None
+            # 简单估算：ffmpeg 成功打开并读取了 duration 秒，认为可用
+            # 返回一个固定高速度值表示通畅（实际直播不需要精确带宽）
+            return 9999.0
+        except Exception as e:
+            log.debug(f"ffmpeg 测速失败 {url}: {e}")
+            return None
 
-    async def test_http_channel(self, session: aiohttp.ClientSession,
-                               channel: Channel,
-                               config: SpeedConfig) -> None:
-        url = channel.url.strip()
-        start = time.time()
-        total_bytes = 0
+    async def _test_aiohttp(
+        self,
+        url: str,
+        use_proxy: bool = False,
+    ) -> Optional[float]:
+        """用 aiohttp 测 HTTP 源的速度 (KB/s)"""
+        connector = TCPConnector(limit=100, force_close=True, enable_cleanup_closed=True)
 
-        client_timeout = aiohttp.ClientTimeout(
-            total=config.total_timeout,
-            connect=config.connect_timeout,
-            sock_read=config.total_timeout
-        )
+        # 代理设置
+        proxy = None
+        if use_proxy and self.clash_api:
+            proxy = self.clash_api
 
-        try:
-            async with session.get(
-                url,
-                timeout=client_timeout,
-                headers={
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-                    "Accept": "*/*",
-                    "Connection": "close",
-                    "Referer": urlparse(url).scheme + "://" + urlparse(url).netloc,
-                },
-                allow_redirects=True,
-                proxy=self.proxy_url if config.use_proxy else None,
-            ) as resp:
+        timeout = ClientTimeout(total=self.timeout, connect=5)
 
-                if resp.status not in (200, 206):
-                    channel.speed = None
-                    return
-
-                read_start = time.time()
-                async for chunk in resp.content.iter_chunked(16384):
-                    total_bytes += len(chunk)
-                    elapsed = time.time() - read_start
-
-                    if elapsed >= config.duration:
-                        break
-                    if time.time() - start > config.total_timeout:
-                        break
-                    if total_bytes > 1024 * 1024:
-                        break
-
-                elapsed = time.time() - read_start
-                if elapsed <= 0.1:
-                    elapsed = 0.1
-
-                speed_kbps = (total_bytes / 1024) / elapsed
-
-                if speed_kbps < config.min_speed:
-                    channel.speed = None
-                else:
-                    channel.speed = speed_kbps
-
-        except asyncio.TimeoutError:
-            channel.speed = None
-        except Exception:
-            channel.speed = None
-
-    async def test_channel(self, session: aiohttp.ClientSession,
-                          channel: Channel,
-                          config: SpeedConfig) -> None:
-        if config.is_multicast:
-            await self.test_native_multicast(channel, config)
-        else:
-            await self.test_http_channel(session, channel, config)
-
-    async def test_all(self, channels: List[Channel],
-                      source_configs: Optional[Dict[str, dict]] = None) -> List[Channel]:
-        semaphore = asyncio.Semaphore(self.max_concurrent)
-
-        native_mc = [c for c in channels if self.is_native_multicast(c.url)]
-        http_mc = [c for c in channels if self.is_http_multicast(c.url)]
-        unicast = [c for c in channels if not self.is_multicast(c.url)]
-
-        print(f"[测速] 原生组播: {len(native_mc)}个 (ffmpeg)")
-        print(f"[测速] HTTP组播: {len(http_mc)}个 (aiohttp)")
-        print(f"[测速] 单播源: {len(unicast)}个")
-
-        stats = {"内网": 0, "国内": 0, "代理": 0, "外网": 0, "未知": 0}
-        for ch in unicast + http_mc:
-            cfg = self.classify_source(ch.url, source_configs.get(ch.url) if source_configs else None)
-            if cfg.duration == PRIVATE_TEST_DURATION:
-                stats["内网"] += 1
-            elif not cfg.use_proxy and cfg.duration == SPEED_TEST_DURATION:
-                stats["国内"] += 1
-            elif cfg.use_proxy and cfg.duration == OVERSEAS_SPEED_DURATION:
-                if source_configs and source_configs.get(ch.url, {}).get("proxy"):
-                    stats["代理"] += 1
-                else:
-                    stats["外网"] += 1
-            else:
-                stats["未知"] += 1
-
-        for k, v in stats.items():
-            if v > 0:
-                print(f"  - {k}: {v}个")
-
-        if not channels:
-            return channels
-
-        if native_mc:
-            print(f"[测速] 开始原生组播测速...")
-            mc_tasks = []
-            for ch in native_mc:
-                cfg = self.classify_source(ch.url)
-                mc_tasks.append(self.test_native_multicast(ch, cfg))
-
-            for i in range(0, len(mc_tasks), 10):
-                batch = mc_tasks[i:i+10]
-                await asyncio.gather(*batch, return_exceptions=True)
-                done = min(i + 10, len(native_mc))
-                ok = sum(1 for c in native_mc[:done] if c.speed is not None)
-                print(f"  组播进度 {done}/{len(native_mc)}: 成功{ok}")
-
-        http_channels = http_mc + unicast
-        if http_channels:
-            print(f"[测速] 开始HTTP源测速...")
-
-            # 在异步上下文中创建 connector
-            connector = self._get_connector()
-            async with aiohttp.ClientSession(connector=connector) as session:
-                async def bounded_test(ch):
-                    async with semaphore:
-                        cfg = self.classify_source(
-                            ch.url,
-                            source_configs.get(ch.url) if source_configs else None
-                        )
-                        return await self.test_channel(session, ch, cfg)
-
-                batch_size = 30
-                total = len(http_channels)
-
-                for i in range(0, total, batch_size):
-                    batch = http_channels[i:i+batch_size]
-                    tasks = [bounded_test(ch) for ch in batch]
-                    await asyncio.gather(*tasks, return_exceptions=True)
-
-                    done = min(i + batch_size, total)
-                    success = sum(1 for c in http_channels[:done] if c.speed is not None)
-                    print(f"[测速进度] {done}/{total} ({done/total*100:.0f}%) - "
-                          f"成功:{success} 失败:{done-success}")
-
-        total_ok = sum(1 for c in channels if c.speed is not None)
-        print(f"[测速完成] 总计:{len(channels)} 成功:{total_ok} 失败:{len(channels)-total_ok}")
-
-        return channels
-
-    def close(self):
-        if self.connector and not self.connector.closed:
+        async with aiohttp.ClientSession(
+            connector=connector,
+            timeout=timeout,
+            trust_env=True,
+        ) as session:
+            start = time.time()
             try:
-                loop = asyncio.get_event_loop()
-                if loop.is_running():
-                    asyncio.create_task(self.connector.close())
-                else:
-                    loop.run_until_complete(self.connector.close())
-            except Exception:
-                pass
+                async with session.get(url, proxy=proxy, allow_redirects=True) as resp:
+                    if resp.status >= 400:
+                        return None
+
+                    total_bytes = 0
+                    chunk_start = time.time()
+                    async for chunk in resp.content.iter_chunked(8192):
+                        total_bytes += len(chunk)
+                        if time.time() - chunk_start >= self.duration:
+                            break
+
+                    elapsed = time.time() - start
+                    if elapsed < 0.1:
+                        elapsed = 0.1
+
+                    speed_kbps = (total_bytes / 1024) / elapsed
+                    return speed_kbps
+            except asyncio.TimeoutError:
+                return None
+            except Exception as e:
+                log.debug(f"aiohttp 测速失败 {url} proxy={use_proxy}: {e}")
+                return None
+            finally:
+                await connector.close()
+
+    async def _test_one(
+        self,
+        ch,
+        source_configs: dict,
+    ) -> None:
+        """测速单个频道"""
+        url = ch.url
+        use_proxy = self._need_proxy(ch, source_configs)
+
+        async with self.semaphore:
+            if self._is_multicast(url):
+                log.debug(f"[ffmpeg] {ch.name} {url[:60]}...")
+                speed = await self._test_ffmpeg(url)
+            else:
+                log.debug(f"[{'代理' if use_proxy else '直连'}] {ch.name} {url[:60]}...")
+                speed = await self._test_aiohttp(url, use_proxy=use_proxy)
+
+            ch.speed = speed
+            status = f"{speed:.1f}KB/s" if speed else "失败"
+            log.debug(f"  → {status}")
+
+    async def test_all(
+        self,
+        channels: List,
+        source_configs: dict,
+    ) -> None:
+        """批量测速"""
+        if not channels:
+            return
+
+        tasks = [
+            asyncio.create_task(self._test_one(ch, source_configs))
+            for ch in channels
+        ]
+        await asyncio.gather(*tasks, return_exceptions=True)
+
+        # 统计
+        ok = sum(1 for c in channels if c.speed is not None)
+        fail = len(channels) - ok
+        log.info(f"测速完成: 成功{ok} 失败{fail}")
