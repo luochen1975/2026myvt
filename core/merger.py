@@ -165,15 +165,20 @@ class ChannelMerger:
                     seen[ch.url] = ch
         return list(seen.values())
 
+    def _is_mobile(self, ch: Channel) -> bool:
+        """判断是否为移动源（支持英文 mobile/cmcc 和中文 移动）"""
+        url = ch.url.lower().strip()
+        isp = getattr(ch, "isp", "") or ch.extra.get("isp", "")
+        return (
+            "mobile" in url or "cmcc" in url or
+            isp in ("mobile", "移动")
+        )
+
     def classify(self, ch: Channel) -> Tuple[str, bool]:
         """分类频道类型"""
         url = ch.url.lower().strip()
-        is_multicast = url.startswith(("udp://", "rtp://", "rtsp://")) or                        url.startswith(("http://239.", "http://233.", "http://232."))
-        is_mobile = (
-            "mobile" in url or "cmcc" in url or 
-            getattr(ch, "isp", "") == "mobile" or
-            ch.extra.get("isp") == "mobile"
-        )
+        is_multicast = url.startswith(("udp://", "rtp://", "rtsp://")) or url.startswith(("http://239.", "http://233.", "http://232."))
+        is_mobile = self._is_mobile(ch)
         if is_multicast:
             return ("mobile_multicast" if is_mobile else "multicast"), is_multicast
         return ("mobile_unicast" if is_mobile else "unicast"), False
@@ -181,9 +186,15 @@ class ChannelMerger:
     def limit_by_type(self, channels: list[Channel]) -> list[Channel]:
         """
         测速后按类型限制数量：
-        - 组播源：按测速结果排序保留
-        - 单播源：按速度排序保留最快的
+        - 只保留有速度的频道（无速度一律丢弃）
+        - 移动组播：保留最快的 MOBILE_MULTICAST_LIMIT 个
+        - 普通组播：保留最快的 MULTICAST_LIMIT 个
+        - 移动单播：有速度的全保留（不限数量）
+        - 普通单播：保留最快的 UNICAST_LIMIT 个
         """
+        # 先过滤掉无速度的
+        speed_ok = [c for c in channels if c.speed is not None]
+
         buckets = {
             "multicast": [],
             "mobile_multicast": [],
@@ -191,18 +202,20 @@ class ChannelMerger:
             "mobile_unicast": []
         }
 
-        for ch in channels:
+        for ch in speed_ok:
             ctype, _ = self.classify(ch)
             buckets[ctype].append(ch)
 
         def sort_speed(chs):
-            return sorted(chs, key=lambda x: x.speed if x.speed is not None else -1, reverse=True)
+            return sorted(chs, key=lambda x: x.speed, reverse=True)
 
+        # 组播各自限制数量
         limited_mc = sort_speed(buckets["multicast"])[:self.multicast_limit]
         limited_mmc = sort_speed(buckets["mobile_multicast"])[:self.mobile_multicast_limit]
 
+        # 单播：普通限制，移动不限
         limited_uc = sort_speed(buckets["unicast"])[:self.unicast_limit]
-        limited_muc = sort_speed(buckets["mobile_unicast"])[:self.unicast_limit]
+        limited_muc = sort_speed(buckets["mobile_unicast"])  # 不限制数量
 
         result = limited_mc + limited_mmc + limited_uc + limited_muc
 
@@ -213,12 +226,17 @@ class ChannelMerger:
         return sorted(result, key=final_sort_key)
 
     def limit_by_group(self, channels: list[Channel]) -> list[Channel]:
-        """分组后限制每组数量 - 取速度最快的"""
-        if self.max_per_group <= 0 or len(channels) <= self.max_per_group:
-            return channels
+        """
+        分组后限制每组数量 - 方案A：
+        - 移动源全保留（不限制数量）
+        - 其他源按速度排序，保留前 max_per_group 个
+        """
+        mobile = [c for c in channels if self._is_mobile(c)]
+        other = [c for c in channels if not self._is_mobile(c)]
 
-        return sorted(
-            channels,
-            key=lambda x: x.speed if x.speed is not None else -1,
-            reverse=True
-        )[:self.max_per_group]
+        # 其他源按速度排序，限制数量
+        other.sort(key=lambda x: x.speed if x.speed is not None else -1, reverse=True)
+        other_limited = other[:self.max_per_group]
+
+        # 移动源全保留，不限制
+        return mobile + other_limited
