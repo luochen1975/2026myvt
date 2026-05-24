@@ -257,11 +257,31 @@ def main():
         ]
         return any(kw in name or kw in url for kw in keywords)
 
+    # 免测速域名列表：这些域名直接保留，不消耗测速资源
+    BYPASS_DOMAINS = [
+        "zj.chinamobile.com",
+        "63.141.230.178",
+        "192.151.150.154",
+        "38.75.136.137:98",
+        "107.150.60.122",
+    ]
+
+    def should_bypass_speedtest(url: str) -> bool:
+        url_low = url.lower()
+        return any(d in url_low for d in BYPASS_DOMAINS)
+
     need_test = []
     cached_ok = 0
     cached_fail = 0
+    bypass_ok = 0
 
     for ch in deduped:
+        # 免测速域名：直接标记为高速可用，不加入 need_test
+        if should_bypass_speedtest(ch.url):
+            ch.speed = 99999.0  # 极高速度值，确保排序靠前且不被过滤
+            bypass_ok += 1
+            continue
+
         cached = cache.get(ch.url)
         if cached == SpeedCache.FAIL_MARKER:
             ch.speed = None
@@ -272,7 +292,7 @@ def main():
         else:
             need_test.append(ch)
 
-    log.info(f"  缓存命中: 成功{cached_ok} 失败{cached_fail} 待测{len(need_test)}")
+    log.info(f"  缓存命中: 成功{cached_ok} 失败{cached_fail} 免测速:{bypass_ok} 待测{len(need_test)}")
 
     if need_test:
         tester = SpeedTester(
@@ -347,7 +367,10 @@ def main():
 
         tested_ok = sum(1 for c in need_test if c.speed is not None)
         tested_fail = len(need_test) - tested_ok
-        log.info(f"  测速结果: 成功{tested_ok} 失败{tested_fail}")
+        total_ok = tested_ok + bypass_ok + cached_ok
+        total_fail = tested_fail + cached_fail
+        log.info(f"  本轮测速: 成功{tested_ok} 失败{tested_fail}")
+        log.info(f"  综合结果: 可用{total_ok} 不可用{total_fail} (免测速:{bypass_ok})")
     # ========== 5. 按类型限制数量（测速后！）==========
     log.info("[5/6] 按类型限制数量...")
 
