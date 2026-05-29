@@ -1,14 +1,14 @@
 # 域名黑名单
 domain:aktv.top
 domain:aktv.live
-
+domain:192.168.6.1:8888/http://
 # 正则黑名单
 regex:购物|直销|广告|电视购物|快乐购|家家购|优购物|好享购|聚鲨|环球购物|时尚购物
 regex:春晚|春节联欢晚会|历年春晚|春晚回放|cctv春晚
 
 # 年份+逗号格式
 regex:^\d{4}年,
-
+regex:^\d{4}年春晚，
 # URL黑名单
 ads.com
 buffering
