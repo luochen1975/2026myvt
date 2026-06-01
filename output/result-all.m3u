@@ -26515,7 +26515,7 @@ https://t.freetv.fun/live/dong-sen-mei-zhou.m3u8
 https://t.freetv.fun/live/dong-sen-mei-zhou-1.m3u8
 #EXTINF:-1 group-title="綜合",東森美洲
 https://t.freetv.fun/live/dong-sen-mei-zhou-2-1.m3u8
-#EXTINF:-1 group-title="綜合",東森美洲[geo-blocked]
+#EXTINF:-1 group-title="綜合",東森美洲
 https://t.freetv.fun/live/dong-sen-mei-zhou-2.m3u8
 #EXTINF:-1 group-title="綜合",東森衛視
 https://t.freetv.fun/live/dong-sen-mei-zhou-xin-wen-tai.m3u8
@@ -26623,8 +26623,8 @@ https://t.freetv.fun/live/global-trekker-3.m3u8
 https://t.freetv.fun/live/global-trekker-5.m3u8
 #EXTINF:-1 group-title="知識",HGTV(TW)
 https://t.freetv.fun/live/hgtv-west.m3u8
-#EXTINF:-1 group-title="知識",Love Nature
-https://t.freetv.fun/live/love-nature-4.m3u8
+#EXTINF:-1 group-title="知識",Love Nature[geo-blocked]
+https://t.freetv.fun/live/love-nature.m3u8
 #EXTINF:-1 group-title="知識",Love Nature
 https://t.freetv.fun/live/love-nature-7.m3u8
 #EXTINF:-1 group-title="知識",Love Nature
@@ -26682,11 +26682,7 @@ https://t.freetv.fun/live/dong-sen-dian-ying.php
 #EXTINF:-1 group-title="電影",東森電影
 https://t.freetv.fun/live/dong-sen-dian-ying-1.php
 #EXTINF:-1 group-title="電影",民視影劇臺
-https://t.freetv.fun/live/min-shi-ying-ju.m3u8
-#EXTINF:-1 group-title="電影",民視影劇臺
 https://t.freetv.fun/live/min-shi-ying-ju-1.m3u8
-#EXTINF:-1 group-title="電影",經典電影臺[geo-blocked]
-https://t.freetv.fun/live/jing-dian-xiang-gang-dian-ying.m3u8
 #EXTINF:-1 group-title="電影",經典電影臺
 https://t.freetv.fun/live/lin-zheng-ying-jing-dian-dian-ying.m3u8
 #EXTINF:-1 group-title="電影",經典電影臺
@@ -26889,16 +26885,14 @@ https://t.freetv.fun/live/san-li-inews-11.m3u8
 https://t.freetv.fun/live/san-li-xin-wen-inews-1.m3u8
 #EXTINF:-1 group-title="新聞",中天新聞FHD
 https://t.freetv.fun/live/zhong-tian-xin-wen.m3u8
-#EXTINF:-1 group-title="新聞",中天新聞FHD[geo-blocked]
+#EXTINF:-1 group-title="新聞",中天新聞FHD
 https://t.freetv.fun/live/zhong-tian-xin-wen-1.m3u8
 #EXTINF:-1 group-title="新聞",中天新聞FHD
 https://t.freetv.fun/live/zhong-tian-xin-wen-1-1.m3u8
 #EXTINF:-1 group-title="新聞",中天新聞FHD[geo-blocked]
 https://t.freetv.fun/live/zhong-tian-xin-wen-22.m3u8
-#EXTINF:-1 group-title="新聞",中視新聞FHD
-https://t.freetv.fun/live/zhong-shi-xin-wen.m3u8
 #EXTINF:-1 group-title="新聞",中視新聞臺
-https://t.freetv.fun/live/zhong-shi-xin-wen-1.m3u8
+https://t.freetv.fun/live/zhong-shi-xin-wen.m3u8
 #EXTINF:-1 group-title="新聞",中視新聞臺[geo-blocked]
 https://t.freetv.fun/live/zhong-shi-xin-wen-12.m3u8
 #EXTINF:-1 group-title="新聞",台視新聞
@@ -47835,134 +47829,6 @@ http://23.237.104.106:8080/USA_BEIN/tracks-v1a1/mono.m3u8
 http://iptv.4666888.xyz/iptv2A.php?id=39
 #EXTINF:-1 group-title="test",金光布袋戲
 http://iptv.4666888.xyz/iptv2A.php?id=38
-#EXTINF:-1 group-title="test",Now新闻台
-https://test.946985.filegear-sg.me/proxy/0320d778835e2848
-#EXTINF:-1 group-title="test",Now星影台
-https://test.946985.filegear-sg.me/proxy/84de4c236d106553
-#EXTINF:-1 group-title="test",Now爆谷台
-https://test.946985.filegear-sg.me/proxy/d82d2bda2cc2cbaa
-#EXTINF:-1 group-title="test",功夫台
-https://test.946985.filegear-sg.me/proxy/d1e9143b859804b8
-#EXTINF:-1 group-title="test",千禧經典台
-https://test.946985.filegear-sg.me/proxy/31368ba8378b5adf
-#EXTINF:-1 group-title="test",娛樂新聞台
-https://test.946985.filegear-sg.me/proxy/19a95b082c7372e5
-#EXTINF:-1 group-title="test",年代新闻
-https://test.946985.filegear-sg.me/proxy/2f4c5ba2e00c4edd
-#EXTINF:-1 group-title="test",戲曲台
-https://test.946985.filegear-sg.me/proxy/98562dfaecb635da
-#EXTINF:-1 group-title="test",星河頻道
-https://test.946985.filegear-sg.me/proxy/e4eda8b9fe5f6076
-#EXTINF:-1 group-title="test",無綫新聞台
-https://test.946985.filegear-sg.me/proxy/0aea173d24cb1a67
-#EXTINF:-1 group-title="test",美亞電影台
-https://test.946985.filegear-sg.me/proxy/bdc068338650cbe8
-#EXTINF:-1 group-title="test",翡翠台
-https://test.946985.filegear-sg.me/proxy/5d5c47fa663940ad
-#EXTINF:-1 group-title="test",鳳凰衛視中文台
-https://test.946985.filegear-sg.me/proxy/262c16de37dff45a
-#EXTINF:-1 group-title="test",鳳凰衛視資訊台
-https://test.946985.filegear-sg.me/proxy/323659c69c899335
-#EXTINF:-1 group-title="test",鳳凰衛視香港台
-https://test.946985.filegear-sg.me/proxy/ba40adf45ca80e66
-#EXTINF:-1 group-title="test",黃金華劇台
-https://test.946985.filegear-sg.me/proxy/4b8aad30b1ac0856
-#EXTINF:-1 group-title="test",龙祥时代
-https://test.946985.filegear-sg.me/proxy/005cf3860426d8bf
-#EXTINF:-1 group-title="test",爱尔达体育一台
-https://test.946985.filegear-sg.me/proxy/dc9542866ba197e2
-#EXTINF:-1 group-title="test",hami体育一台
-https://test.946985.filegear-sg.me/proxy/7b76aee207b5af3e
-#EXTINF:-1 group-title="test",hami足球一台
-https://test.946985.filegear-sg.me/proxy/cdacd7823411edd8
-#EXTINF:-1 group-title="test",hami棒球1台
-https://test.946985.filegear-sg.me/proxy/6a8741aea167b62a
-#EXTINF:-1 group-title="test",欧洲体育1
-https://test.946985.filegear-sg.me/proxy/0ec0634135a2cd3e
-#EXTINF:-1 group-title="test",欧洲体育2
-https://test.946985.filegear-sg.me/proxy/60fbadb5d9cb8c73
-#EXTINF:-1 group-title="test",法国beIN体育1
-https://test.946985.filegear-sg.me/proxy/d4607e328de9276d
-#EXTINF:-1 group-title="test",法国beIN体育2
-https://test.946985.filegear-sg.me/proxy/036c7921c2126f1c
-#EXTINF:-1 group-title="test",法国beIN体育3
-https://test.946985.filegear-sg.me/proxy/7219fff9bec70249
-#EXTINF:-1 group-title="test",法国CANAL +FOOT
-https://test.946985.filegear-sg.me/proxy/ef3174f16d4557d2
-#EXTINF:-1 group-title="test",法国CANAL +SPORT
-https://test.946985.filegear-sg.me/proxy/2aa21fe914880e6a
-#EXTINF:-1 group-title="test",法国CANAL +SPORT 360
-https://test.946985.filegear-sg.me/proxy/3ea1678cd883a5de
-#EXTINF:-1 group-title="test",法国CANAL GOLF+
-https://test.946985.filegear-sg.me/proxy/6f6259c47fc0783c
-#EXTINF:-1 group-title="test",法国CANAL+ LIVE 1
-https://test.946985.filegear-sg.me/proxy/f5ead7385ef9e3d7
-#EXTINF:-1 group-title="test",法国CANAL+ LIVE 2
-https://test.946985.filegear-sg.me/proxy/9b5f8a8854074719
-#EXTINF:-1 group-title="test",法国CANAL+ LIVE 3
-https://test.946985.filegear-sg.me/proxy/a820824fa7237a0d
-#EXTINF:-1 group-title="test",罗马尼亚PRIMA Sport1
-https://test.946985.filegear-sg.me/proxy/031a3f93785f5e10
-#EXTINF:-1 group-title="test",罗马尼亚PRIMA Sport2
-https://test.946985.filegear-sg.me/proxy/234ec786219f8851
-#EXTINF:-1 group-title="test",罗马尼亚PRIMA Sport3
-https://test.946985.filegear-sg.me/proxy/920332fcf92f7eec
-#EXTINF:-1 group-title="test",罗马尼亚PRIMA Sport4
-https://test.946985.filegear-sg.me/proxy/ae7af16a08df032d
-#EXTINF:-1 group-title="test",罗马尼亚PRIMA Sport5
-https://test.946985.filegear-sg.me/proxy/fda91827991eb386
-#EXTINF:-1 group-title="test",波兰Polsat Sport Premium 1
-https://test.946985.filegear-sg.me/proxy/2d01a86f2b919823
-#EXTINF:-1 group-title="test",波兰Polsat Sport Premium 2
-https://test.946985.filegear-sg.me/proxy/0d12c4e1bf16ebac
-#EXTINF:-1 group-title="test",波兰CANAL+ Sport
-https://test.946985.filegear-sg.me/proxy/4bcdff64289c1f4b
-#EXTINF:-1 group-title="test",波兰CANAL+ Sport 2
-https://test.946985.filegear-sg.me/proxy/4be17144e088af8c
-#EXTINF:-1 group-title="test",葡萄牙sport•tv 1
-https://test.946985.filegear-sg.me/proxy/b57707d48ea3395e
-#EXTINF:-1 group-title="test",葡萄牙sport•tv 2
-https://test.946985.filegear-sg.me/proxy/8ce632cfdf21dc5e
-#EXTINF:-1 group-title="test",葡萄牙sport•tv 3
-https://test.946985.filegear-sg.me/proxy/ad07dd4338ccb671
-#EXTINF:-1 group-title="test",葡萄牙sport•tv 4
-https://test.946985.filegear-sg.me/proxy/6df3bb711f916488
-#EXTINF:-1 group-title="test",葡萄牙sport•tv 5
-https://test.946985.filegear-sg.me/proxy/2e5a3cb38f72a6dd
-#EXTINF:-1 group-title="test",葡萄牙sport•tv 6
-https://test.946985.filegear-sg.me/proxy/4ff930484c5dcc99
-#EXTINF:-1 group-title="test",葡萄牙sport•tv 7
-https://test.946985.filegear-sg.me/proxy/a8c7608240dec023
-#EXTINF:-1 group-title="test",德国Deluxe Music
-https://test.946985.filegear-sg.me/proxy/a341324bc76a1184
-#EXTINF:-1 group-title="test",法国M6 音乐
-https://test.946985.filegear-sg.me/proxy/803c517b325bfafc
-#EXTINF:-1 group-title="test",法国Mezzo
-https://test.946985.filegear-sg.me/proxy/b3e72e32c5be5e8e
-#EXTINF:-1 group-title="test",法国Mezzo Live
-https://test.946985.filegear-sg.me/proxy/749755700e4ed9c6
-#EXTINF:-1 group-title="test",法国NRJ Hits
-https://test.946985.filegear-sg.me/proxy/a23981548880f405
-#EXTINF:-1 group-title="test",法国1台
-https://test.946985.filegear-sg.me/proxy/71eb898aa398f1b9
-#EXTINF:-1 group-title="test",法国1台 4K
-https://test.946985.filegear-sg.me/proxy/8bf6d62eb9dc2206
-#EXTINF:-1 group-title="test",法国2台
-https://test.946985.filegear-sg.me/proxy/053bf6fe5cb58e79
-#EXTINF:-1 group-title="test",法国2台 4K
-https://test.946985.filegear-sg.me/proxy/69bf3d28c4a2aea9
-#EXTINF:-1 group-title="test",法国3台
-https://test.946985.filegear-sg.me/proxy/9a98c5ce88baad6e
-#EXTINF:-1 group-title="test",法国4台
-https://test.946985.filegear-sg.me/proxy/407c8b4eed931f9f
-#EXTINF:-1 group-title="test",法国5台
-https://test.946985.filegear-sg.me/proxy/2790b25f56f45e5f
-#EXTINF:-1 group-title="test",法国M6
-https://test.946985.filegear-sg.me/proxy/cda17ffd0436edbe
-#EXTINF:-1 group-title="test",法国gulli
-https://test.946985.filegear-sg.me/proxy/7e0a9ae6a27eee96
-#EXTINF:-1 group-title="test",法国Canal+
-https://test.946985.filegear-sg.me/proxy/9d114bb59c1b6cab
 #EXTINF:-1 group-title="test",COZI TV SD
 http://108.181.20.255:27347/livehttpplay?channel_id=23000
 #EXTINF:-1 group-title="test",TELEXITOS SD
@@ -51281,28 +51147,6 @@ http://198.204.228.26/live/lbzrf.m3u8
 http://198.204.228.26/live/lbzxc.m3u8
 #EXTINF:-1 group-title="test",林正英影院
 http://198.204.228.26/live/lblzy.m3u8
-#EXTINF:-1 group-title="test",CCTV-1
-http://69.30.245.50/live/cctv1.m3u8
-#EXTINF:-1 group-title="test",CCTV-2
-http://69.30.245.50/live/cctv2.m3u8
-#EXTINF:-1 group-title="test",CCTV-3
-http://69.30.245.50/live/cctv3.m3u8
-#EXTINF:-1 group-title="test",CCTV-4
-http://69.30.245.50/live/cctv4.m3u8
-#EXTINF:-1 group-title="test",CCTV-5
-http://69.30.245.50/live/cctv5.m3u8
-#EXTINF:-1 group-title="test",CCTV-6
-http://69.30.245.50/live/cctv6.m3u8
-#EXTINF:-1 group-title="test",CCTV-7
-http://69.30.245.50/live/cctv7.m3u8
-#EXTINF:-1 group-title="test",CCTV-8
-http://69.30.245.50/live/cctv8.m3u8
-#EXTINF:-1 group-title="test",CCTV-9
-http://69.30.245.50/live/cctv9.m3u8
-#EXTINF:-1 group-title="test",CCTV-10
-http://69.30.245.50/live/cctv10.m3u8
-#EXTINF:-1 group-title="test",CCTV-11
-http://69.30.245.50/live/cctv11.m3u8
 #EXTINF:-1 group-title="test",CCTV-1
 http://bztv.tvbus.cc:8081/cdnlive/cctv1.m3u8
 #EXTINF:-1 group-title="test",CCTV-2
