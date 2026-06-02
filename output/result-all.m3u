@@ -26459,7 +26459,7 @@ https://t.freetv.fun/live/tvbs.m3u8
 https://t.freetv.fun/live/tvbs-3.m3u8
 #EXTINF:-1 group-title="綜合",UDN TV
 https://t.freetv.fun/live/dnj-tv.m3u8
-#EXTINF:-1 group-title="綜合",rollor
+#EXTINF:-1 group-title="綜合",rollor[geo-blocked]
 https://t.freetv.fun/live/roll.m3u8
 #EXTINF:-1 group-title="綜合",rollor
 https://t.freetv.fun/live/gun-dong-li-rollor.m3u8
@@ -26535,7 +26535,7 @@ https://t.freetv.fun/live/dong-sen-chao-shi-34-5-4.m3u8
 https://t.freetv.fun/live/dong-sen-chao-shi-34-5-1-1.m3u8
 #EXTINF:-1 group-title="綜合",東森超視
 https://t.freetv.fun/live/dong-sen-chao-shi-34-5-2-2.m3u8
-#EXTINF:-1 group-title="綜合",民視[geo-blocked]
+#EXTINF:-1 group-title="綜合",民視
 https://t.freetv.fun/live/min-shi-4.m3u8
 #EXTINF:-1 group-title="綜合",民視
 https://t.freetv.fun/live/min-shi-1-1.m3u8
@@ -26623,7 +26623,7 @@ https://t.freetv.fun/live/global-trekker-3.m3u8
 https://t.freetv.fun/live/global-trekker-5.m3u8
 #EXTINF:-1 group-title="知識",HGTV(TW)[geo-blocked]
 https://t.freetv.fun/live/hgtv-west.m3u8
-#EXTINF:-1 group-title="知識",Love Nature[geo-blocked]
+#EXTINF:-1 group-title="知識",Love Nature
 https://t.freetv.fun/live/love-nature.m3u8
 #EXTINF:-1 group-title="知識",Love Nature[geo-blocked]
 https://t.freetv.fun/live/love-nature-1.m3u8
@@ -26647,7 +26647,7 @@ https://t.freetv.fun/live/amcdian-ying.m3u8
 https://t.freetv.fun/live/amcdian-ying-1.m3u8
 #EXTINF:-1 group-title="電影",CatchPlay電影
 https://t.freetv.fun/live/catchplay.m3u8
-#EXTINF:-1 group-title="電影",Hollywood[geo-blocked]
+#EXTINF:-1 group-title="電影",Hollywood
 https://t.freetv.fun/live/hollywood.m3u8
 #EXTINF:-1 group-title="電影",Hollywood
 https://t.freetv.fun/live/young-hollywood.m3u8
@@ -26743,10 +26743,6 @@ https://t.freetv.fun/live/test-channel-3.m3u8
 https://t.freetv.fun/live/kartoon-channel-2.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V]
 https://t.freetv.fun/live/light-channel.m3u8
-#EXTINF:-1 group-title="音樂",CHANNEL [V]
-https://t.freetv.fun/live/akaal-channel.m3u8
-#EXTINF:-1 group-title="音樂",CHANNEL [V]
-https://t.freetv.fun/live/light-channel-1.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V][geo-blocked]
 https://t.freetv.fun/live/saglik-channel.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V][geo-blocked]
@@ -26957,8 +26953,6 @@ https://t.freetv.fun/live/tai-shi-xin-wen-hd-1.m3u8
 https://t.freetv.fun/live/tai-shi-xin-wen.m3u8
 #EXTINF:-1 group-title="新聞",臺視新聞臺
 https://t.freetv.fun/live/tai-shi-xin-wen-2.m3u8
-#EXTINF:-1 group-title="新聞",臺視新聞臺
-https://t.freetv.fun/live/tai-shi-xin-wen-2-1.m3u8
 #EXTINF:-1 group-title="新聞",華視新聞
 https://t.freetv.fun/live/hua-shi-xin-wen.m3u8
 #EXTINF:-1 group-title="新聞",華視新聞
@@ -27067,7 +27061,7 @@ https://t.freetv.fun/live/dazn-ringside.m3u8
 https://t.freetv.fun/live/eltasheng-huo-lu-you-5.m3u8
 #EXTINF:-1 group-title="運動",ELTA體育2(備用)[geo-blocked]
 https://t.freetv.fun/live/cctv4mei-zhou.m3u8
-#EXTINF:-1 group-title="運動",ELTA體育3(備用)
+#EXTINF:-1 group-title="運動",ELTA體育3(備用)[geo-blocked]
 https://t.freetv.fun/live/cctv-4k.m3u8
 #EXTINF:-1 group-title="運動",ELTA體育4(備用)
 https://t.freetv.fun/live/delta-tv.m3u8
@@ -54379,6 +54373,14 @@ https://t33.cdn2020.com/video/m3u8/2024/10/04/485a4db7/index.m3u8
 https://t33.cdn2020.com/video/m3u8/2025/10/02/8e83b8e4/index.m3u8
 #EXTINF:-1 group-title="test",少白潔第六章MDSR-0005-6綠 艾悠
 https://t33.cdn2020.com/video/m3u8/2025/10/18/64827eee/index.m3u8
+#EXTINF:-1 group-title="国篮赛评",粤🔊03丁伟杰
+http://rihou.cc:555/tv/03男篮丁伟杰
+#EXTINF:-1 group-title="6/04赛事",粤🔊04丁伟杰
+http://rihou.cc:555/tv/04男篮丁伟杰
+#EXTINF:-1 group-title="6/05赛事",粤🔊05丁伟杰
+http://rihou.cc:555/tv/05CBA丁伟杰
+#EXTINF:-1 group-title="6/05赛事",国🔊05抖评述
+http://rihou.cc:555/tv/05CBA抖评述
 #EXTINF:-1 group-title="世界杯赛",国🔊12世评述
 http://rihou.cc:555/tv/12世界杯评述
 #EXTINF:-1 group-title="世界杯赛",国🔊12世述评
@@ -54523,6 +54525,28 @@ http://rihou.cc:555/tv/28世界杯述述
 http://rihou.cc:555/tv/28世界杯旁述
 #EXTINF:-1 group-title="世界杯赛",国🔊28世述旁
 http://rihou.cc:555/tv/28世界杯述旁
+#EXTINF:-1 group-title="赛事精锦",联赛赛事回放
+http://rihou.cc:555/tv/联赛回放赛03
+#EXTINF:-1 group-title="赛事精锦",NBA赛事回放
+http://rihou.cc:555/tv/NBA回放赛03
+#EXTINF:-1 group-title="赛事精锦",羽球赛事回放
+http://rihou.cc:555/tv/羽球回放赛03
+#EXTINF:-1 group-title="赛事精锦",橄球赛事回放
+http://rihou.cc:555/tv/橄球回放赛03
+#EXTINF:-1 group-title="赛事精锦",乒球赛事回放
+http://rihou.cc:555/tv/乒球回放赛03
+#EXTINF:-1 group-title="赛事精锦",网球赛事回放
+http://rihou.cc:555/tv/网球回放赛03
+#EXTINF:-1 group-title="赛事精锦",排球赛事回放
+http://rihou.cc:555/tv/排球回放赛03
+#EXTINF:-1 group-title="赛事精锦",格斗赛事回放
+http://rihou.cc:555/tv/格斗回放赛03
+#EXTINF:-1 group-title="赛事精锦",斯赛赛事回放
+http://rihou.cc:555/tv/斯赛回放赛03
+#EXTINF:-1 group-title="网页音乐",音乐库仓抖播
+http://rihou.cc:555/tv/音乐库仓抖03
+#EXTINF:-1 group-title="网页音乐",音乐仓库抖播
+http://rihou.cc:555/tv/音乐仓库抖03
 #EXTINF:-1 group-title="虎牙频道",雍正王朝频道
 http://cfss.cc/cdn/hy/11342439.m3u8
 #EXTINF:-1 group-title="特区地波",RTHK-32高码
