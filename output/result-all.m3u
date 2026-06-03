@@ -26385,7 +26385,7 @@ https://live.metshop.top/huya/24396360
 https://live.metshop.top/huya/17204307
 #EXTINF:-1 group-title="綜藝",CMusic
 https://t.freetv.fun/live/qmusic.m3u8
-#EXTINF:-1 group-title="綜藝",CMusic
+#EXTINF:-1 group-title="綜藝",CMusic[geo-blocked]
 https://t.freetv.fun/live/rmusic.m3u8
 #EXTINF:-1 group-title="綜藝",CMusic
 https://t.freetv.fun/live/4music.m3u8
@@ -26479,7 +26479,7 @@ https://t.freetv.fun/live/zhong-shi-22.m3u8
 https://t.freetv.fun/live/zhong-shi-3.m3u8
 #EXTINF:-1 group-title="綜合",中視HD
 https://t.freetv.fun/live/zhong-shi-5.ts
-#EXTINF:-1 group-title="綜合",八大精彩
+#EXTINF:-1 group-title="綜合",八大精彩[geo-blocked]
 https://t.freetv.fun/live/ba-da-jing-cai.m3u8
 #EXTINF:-1 group-title="綜合",八大精彩[geo-blocked]
 https://t.freetv.fun/live/ba-da-jing-cai-1.m3u8
@@ -26650,8 +26650,6 @@ https://t.freetv.fun/live/hollywood.m3u8
 #EXTINF:-1 group-title="電影",Hollywood
 https://t.freetv.fun/live/young-hollywood.m3u8
 #EXTINF:-1 group-title="電影",Hollywood
-https://t.freetv.fun/live/hollywood-1.m3u8
-#EXTINF:-1 group-title="電影",Hollywood
 https://t.freetv.fun/live/mix-hollywood.m3u8
 #EXTINF:-1 group-title="電影",Hollywood
 https://t.freetv.fun/live/hollywood-3.m3u8
@@ -26689,7 +26687,7 @@ https://t.freetv.fun/live/lin-zheng-ying-jing-dian-dian-ying.m3u8
 https://t.freetv.fun/live/jing-dian-dian-ying.m3u8
 #EXTINF:-1 group-title="電影",經典電影臺
 https://t.freetv.fun/live/jing-dian-dian-ying-5.m3u8
-#EXTINF:-1 group-title="電影",緯來電影[geo-blocked]
+#EXTINF:-1 group-title="電影",緯來電影
 https://t.freetv.fun/live/wei-lai-dian-ying.m3u8
 #EXTINF:-1 group-title="電影",采昌影劇
 https://t.freetv.fun/live/cai-chang-ying-ju.m3u8
@@ -26721,12 +26719,8 @@ https://t.freetv.fun/live/jing-yang-xi-ju.m3u8
 https://t.freetv.fun/live/jing-yang-xi-ju-1.m3u8
 #EXTINF:-1 group-title="電影",靖洋戲劇
 https://t.freetv.fun/live/jing-yang-xi-ju-1-1.php
-#EXTINF:-1 group-title="電影",龍華偶像
-https://t.freetv.fun/live/long-hua-ou-xiang.m3u8
 #EXTINF:-1 group-title="電影",龍華戲劇
 https://t.freetv.fun/live/long-hua-xi-ju.m3u8
-#EXTINF:-1 group-title="電影",龍華日韓
-https://t.freetv.fun/live/long-hua-ri-han.m3u8
 #EXTINF:-1 group-title="電影",龍華洋片
 https://t.freetv.fun/live/long-hua-yang-pian.php
 #EXTINF:-1 group-title="電影",龍華經典
@@ -26869,14 +26863,10 @@ https://t.freetv.fun/live/san-li-inews-10.m3u8
 https://t.freetv.fun/live/san-li-inews-11.m3u8
 #EXTINF:-1 group-title="新聞",三立INEWS HD
 https://t.freetv.fun/live/san-li-xin-wen-inews-1.m3u8
-#EXTINF:-1 group-title="新聞",中天新聞FHD
-https://t.freetv.fun/live/zhong-tian-xin-wen.m3u8
-#EXTINF:-1 group-title="新聞",中天新聞FHD
-https://t.freetv.fun/live/zhong-tian-xin-wen-1.m3u8
 #EXTINF:-1 group-title="新聞",中天新聞FHD[geo-blocked]
-https://t.freetv.fun/live/zhong-tian-xin-wen-1-1.m3u8
+https://t.freetv.fun/live/zhong-tian-xin-wen-1.m3u8
 #EXTINF:-1 group-title="新聞",中天新聞FHD
-https://t.freetv.fun/live/zhong-tian-xin-wen-1-2.m3u8
+https://t.freetv.fun/live/zhong-tian-xin-wen-1-1.m3u8
 #EXTINF:-1 group-title="新聞",中天新聞FHD[geo-blocked]
 https://t.freetv.fun/live/zhong-tian-xin-wen-22.m3u8
 #EXTINF:-1 group-title="新聞",中視新聞臺
@@ -26899,7 +26889,7 @@ https://t.freetv.fun/live/huan-yu-xin-wen.m3u8
 https://t.freetv.fun/live/huan-yu-xin-wen-2.m3u8
 #EXTINF:-1 group-title="新聞",寰宇新聞[geo-blocked]
 https://t.freetv.fun/live/huan-yu-xin-wen-21.m3u8
-#EXTINF:-1 group-title="新聞",寰宇新聞FHD[geo-blocked]
+#EXTINF:-1 group-title="新聞",寰宇新聞FHD
 https://t.freetv.fun/live/huan-yu-xin-wen-1.m3u8
 #EXTINF:-1 group-title="新聞",寰宇新聞FHD
 https://t.freetv.fun/live/huan-yu-xin-wen-1-1.m3u8
@@ -48987,6 +48977,354 @@ http://bztv.tvbus.cc:8081/cdnlive/xmws.m3u8
 http://bztv.tvbus.cc:8081/cdnlive/ynws.m3u8
 #EXTINF:-1 group-title="test",浙江卫视
 http://bztv.tvbus.cc:8081/cdnlive/zjws.m3u8
+#EXTINF:-1 group-title="test",CCTV-1
+http://129.211.14.102:25000/cctv1.m3u8
+#EXTINF:-1 group-title="test",CCTV-2
+http://129.211.14.102:25000/cctv2.m3u8
+#EXTINF:-1 group-title="test",CCTV-3
+http://129.211.14.102:25000/cctv3.m3u8
+#EXTINF:-1 group-title="test",CCTV-4
+http://129.211.14.102:25000/cctv4.m3u8
+#EXTINF:-1 group-title="test",CCTV-5
+http://129.211.14.102:25000/cctv5.m3u8
+#EXTINF:-1 group-title="test",CCTV-5+
+http://129.211.14.102:25000/cctv5plus.m3u8
+#EXTINF:-1 group-title="test",CCTV-6
+http://129.211.14.102:25000/cctv6.m3u8
+#EXTINF:-1 group-title="test",CCTV-7
+http://129.211.14.102:25000/cctv7.m3u8
+#EXTINF:-1 group-title="test",CCTV-8
+http://129.211.14.102:25000/cctv8.m3u8
+#EXTINF:-1 group-title="test",CCTV-9
+http://129.211.14.102:25000/cctv9.m3u8
+#EXTINF:-1 group-title="test",CCTV-10
+http://129.211.14.102:25000/cctv10.m3u8
+#EXTINF:-1 group-title="test",CCTV-11
+http://129.211.14.102:25000/cctv11.m3u8
+#EXTINF:-1 group-title="test",CCTV-12
+http://129.211.14.102:25000/cctv12.m3u8
+#EXTINF:-1 group-title="test",CCTV-13
+http://129.211.14.102:25000/cctv13.m3u8
+#EXTINF:-1 group-title="test",CCTV-14
+http://129.211.14.102:25000/cctv14.m3u8
+#EXTINF:-1 group-title="test",CCTV-15
+http://129.211.14.102:25000/cctv15.m3u8
+#EXTINF:-1 group-title="test",CCTV-16
+http://129.211.14.102:25000/cctv16.m3u8
+#EXTINF:-1 group-title="test",CCTV-17
+http://129.211.14.102:25000/cctv17.m3u8
+#EXTINF:-1 group-title="test",CETV1
+http://129.211.14.102:25000/cetv1.m3u8
+#EXTINF:-1 group-title="test",CETV2
+http://129.211.14.102:25000/cetv2.m3u8
+#EXTINF:-1 group-title="test",CETV4
+http://129.211.14.102:25000/cetv4.m3u8
+#EXTINF:-1 group-title="test",CGTN
+http://129.211.14.102:25000/cgtn.m3u8
+#EXTINF:-1 group-title="test",高尔夫网球
+http://129.211.14.102:25000/cctvgolf.m3u8
+#EXTINF:-1 group-title="test",央视台球
+http://129.211.14.102:25000/cctvtq.m3u8
+#EXTINF:-1 group-title="test",CCTV-4美洲
+http://129.211.14.102:25000/cctvmz.m3u8
+#EXTINF:-1 group-title="test",三沙卫视
+http://129.211.14.102:25000/ssws.m3u8
+#EXTINF:-1 group-title="test",东南卫视
+http://129.211.14.102:25000/dnws.m3u8
+#EXTINF:-1 group-title="test",东方卫视
+http://129.211.14.102:25000/dfws.m3u8
+#EXTINF:-1 group-title="test",云南卫视
+http://129.211.14.102:25000/ynws.m3u8
+#EXTINF:-1 group-title="test",内蒙古卫视
+http://129.211.14.102:25000/nmgws.m3u8
+#EXTINF:-1 group-title="test",北京卫视
+http://129.211.14.102:25000/bjws.m3u8
+#EXTINF:-1 group-title="test",厦门卫视
+http://129.211.14.102:25000/xmws.m3u8
+#EXTINF:-1 group-title="test",吉林卫视
+http://129.211.14.102:25000/jlws.m3u8
+#EXTINF:-1 group-title="test",四川卫视
+http://129.211.14.102:25000/scws.m3u8
+#EXTINF:-1 group-title="test",天津卫视
+http://129.211.14.102:25000/tjws.m3u8
+#EXTINF:-1 group-title="test",安徽卫视
+http://129.211.14.102:25000/ahws.m3u8
+#EXTINF:-1 group-title="test",山东卫视
+http://129.211.14.102:25000/sdws.m3u8
+#EXTINF:-1 group-title="test",山西卫视
+http://129.211.14.102:25000/sxws.m3u8
+#EXTINF:-1 group-title="test",广东卫视
+http://129.211.14.102:25000/gdws.m3u8
+#EXTINF:-1 group-title="test",广西卫视
+http://129.211.14.102:25000/gxws.m3u8
+#EXTINF:-1 group-title="test",新疆卫视
+http://129.211.14.102:25000/xjws.m3u8
+#EXTINF:-1 group-title="test",江苏卫视
+http://129.211.14.102:25000/jsws.m3u8
+#EXTINF:-1 group-title="test",江西卫视
+http://129.211.14.102:25000/jxws.m3u8
+#EXTINF:-1 group-title="test",河北卫视
+http://129.211.14.102:25000/hbws.m3u8
+#EXTINF:-1 group-title="test",河南卫视
+http://129.211.14.102:25000/hnws.m3u8
+#EXTINF:-1 group-title="test",海南卫视
+http://129.211.14.102:25000/hnws2.m3u8
+#EXTINF:-1 group-title="test",湖北卫视
+http://129.211.14.102:25000/hbws2.m3u8
+#EXTINF:-1 group-title="test",湖南卫视
+http://129.211.14.102:25000/hnws3.m3u8
+#EXTINF:-1 group-title="test",贵州卫视
+http://129.211.14.102:25000/gzws.m3u8
+#EXTINF:-1 group-title="test",辽宁卫视
+http://129.211.14.102:25000/lnws.m3u8
+#EXTINF:-1 group-title="test",黑龙江卫视
+http://129.211.14.102:25000/hljs.m3u8
+#EXTINF:-1 group-title="test",重庆卫视
+http://129.211.14.102:25000/cqws.m3u8
+#EXTINF:-1 group-title="test",陕西卫视
+http://129.211.14.102:25000/sxws2.m3u8
+#EXTINF:-1 group-title="test",甘肃卫视
+http://129.211.14.102:25000/gsws.m3u8
+#EXTINF:-1 group-title="test",宁夏卫视
+http://129.211.14.102:25000/nxws.m3u8
+#EXTINF:-1 group-title="test",青海卫视
+http://129.211.14.102:25000/qhws.m3u8
+#EXTINF:-1 group-title="test",西藏卫视
+http://129.211.14.102:25000/xzws.m3u8
+#EXTINF:-1 group-title="test",深圳卫视
+http://129.211.14.102:25000/szws.m3u8
+#EXTINF:-1 group-title="test",CCTV-1
+http://129.211.14.102:24445/cctv1.m3u8
+#EXTINF:-1 group-title="test",CCTV-2
+http://129.211.14.102:24445/cctv2.m3u8
+#EXTINF:-1 group-title="test",CCTV-3
+http://129.211.14.102:24445/cctv3.m3u8
+#EXTINF:-1 group-title="test",CCTV-4
+http://129.211.14.102:24445/cctv4.m3u8
+#EXTINF:-1 group-title="test",CCTV-5
+http://129.211.14.102:24445/cctv5.m3u8
+#EXTINF:-1 group-title="test",CCTV-5+
+http://129.211.14.102:24445/cctv5plus.m3u8
+#EXTINF:-1 group-title="test",CCTV-6
+http://129.211.14.102:24445/cctv6.m3u8
+#EXTINF:-1 group-title="test",CCTV-7
+http://129.211.14.102:24445/cctv7.m3u8
+#EXTINF:-1 group-title="test",CCTV-8
+http://129.211.14.102:24445/cctv8.m3u8
+#EXTINF:-1 group-title="test",CCTV-9
+http://129.211.14.102:24445/cctv9.m3u8
+#EXTINF:-1 group-title="test",CCTV-10
+http://129.211.14.102:24445/cctv10.m3u8
+#EXTINF:-1 group-title="test",CCTV-11
+http://129.211.14.102:24445/cctv11.m3u8
+#EXTINF:-1 group-title="test",CCTV-12
+http://129.211.14.102:24445/cctv12.m3u8
+#EXTINF:-1 group-title="test",CCTV-13
+http://129.211.14.102:24445/cctv13.m3u8
+#EXTINF:-1 group-title="test",CCTV-14
+http://129.211.14.102:24445/cctv14.m3u8
+#EXTINF:-1 group-title="test",CCTV-15
+http://129.211.14.102:24445/cctv15.m3u8
+#EXTINF:-1 group-title="test",CCTV-16
+http://129.211.14.102:24445/cctv16.m3u8
+#EXTINF:-1 group-title="test",CCTV-17
+http://129.211.14.102:24445/cctv17.m3u8
+#EXTINF:-1 group-title="test",CETV1
+http://129.211.14.102:24445/cetv1.m3u8
+#EXTINF:-1 group-title="test",CETV2
+http://129.211.14.102:24445/cetv2.m3u8
+#EXTINF:-1 group-title="test",CETV4
+http://129.211.14.102:24445/cetv4.m3u8
+#EXTINF:-1 group-title="test",CGTN
+http://129.211.14.102:24445/cgtn.m3u8
+#EXTINF:-1 group-title="test",高尔夫网球
+http://129.211.14.102:24445/cctvgolf.m3u8
+#EXTINF:-1 group-title="test",央视台球
+http://129.211.14.102:24445/cctvtq.m3u8
+#EXTINF:-1 group-title="test",CCTV-4美洲
+http://129.211.14.102:24445/cctvmz.m3u8
+#EXTINF:-1 group-title="test",三沙卫视
+http://129.211.14.102:24445/ssws.m3u8
+#EXTINF:-1 group-title="test",东南卫视
+http://129.211.14.102:24445/dnws.m3u8
+#EXTINF:-1 group-title="test",东方卫视
+http://129.211.14.102:24445/dfws.m3u8
+#EXTINF:-1 group-title="test",云南卫视
+http://129.211.14.102:24445/ynws.m3u8
+#EXTINF:-1 group-title="test",内蒙古卫视
+http://129.211.14.102:24445/nmgws.m3u8
+#EXTINF:-1 group-title="test",北京卫视
+http://129.211.14.102:24445/bjws.m3u8
+#EXTINF:-1 group-title="test",厦门卫视
+http://129.211.14.102:24445/xmws.m3u8
+#EXTINF:-1 group-title="test",吉林卫视
+http://129.211.14.102:24445/jlws.m3u8
+#EXTINF:-1 group-title="test",四川卫视
+http://129.211.14.102:24445/scws.m3u8
+#EXTINF:-1 group-title="test",天津卫视
+http://129.211.14.102:24445/tjws.m3u8
+#EXTINF:-1 group-title="test",安徽卫视
+http://129.211.14.102:24445/ahws.m3u8
+#EXTINF:-1 group-title="test",山东卫视
+http://129.211.14.102:24445/sdws.m3u8
+#EXTINF:-1 group-title="test",山西卫视
+http://129.211.14.102:24445/sxws.m3u8
+#EXTINF:-1 group-title="test",广东卫视
+http://129.211.14.102:24445/gdws.m3u8
+#EXTINF:-1 group-title="test",广西卫视
+http://129.211.14.102:24445/gxws.m3u8
+#EXTINF:-1 group-title="test",新疆卫视
+http://129.211.14.102:24445/xjws.m3u8
+#EXTINF:-1 group-title="test",江苏卫视
+http://129.211.14.102:24445/jsws.m3u8
+#EXTINF:-1 group-title="test",江西卫视
+http://129.211.14.102:24445/jxws.m3u8
+#EXTINF:-1 group-title="test",河北卫视
+http://129.211.14.102:24445/hbws.m3u8
+#EXTINF:-1 group-title="test",河南卫视
+http://129.211.14.102:24445/hnws.m3u8
+#EXTINF:-1 group-title="test",海南卫视
+http://129.211.14.102:24445/hnws2.m3u8
+#EXTINF:-1 group-title="test",湖北卫视
+http://129.211.14.102:24445/hbws2.m3u8
+#EXTINF:-1 group-title="test",湖南卫视
+http://129.211.14.102:24445/hnws3.m3u8
+#EXTINF:-1 group-title="test",贵州卫视
+http://129.211.14.102:24445/gzws.m3u8
+#EXTINF:-1 group-title="test",辽宁卫视
+http://129.211.14.102:24445/lnws.m3u8
+#EXTINF:-1 group-title="test",黑龙江卫视
+http://129.211.14.102:24445/hljs.m3u8
+#EXTINF:-1 group-title="test",重庆卫视
+http://129.211.14.102:24445/cqws.m3u8
+#EXTINF:-1 group-title="test",陕西卫视
+http://129.211.14.102:24445/sxws2.m3u8
+#EXTINF:-1 group-title="test",甘肃卫视
+http://129.211.14.102:24445/gsws.m3u8
+#EXTINF:-1 group-title="test",宁夏卫视
+http://129.211.14.102:24445/nxws.m3u8
+#EXTINF:-1 group-title="test",青海卫视
+http://129.211.14.102:24445/qhws.m3u8
+#EXTINF:-1 group-title="test",西藏卫视
+http://129.211.14.102:24445/xzws.m3u8
+#EXTINF:-1 group-title="test",深圳卫视
+http://129.211.14.102:24445/szws.m3u8
+#EXTINF:-1 group-title="test",CCTV-1
+http://129.211.14.102:22225/cctv1.m3u8
+#EXTINF:-1 group-title="test",CCTV-2
+http://129.211.14.102:22225/cctv2.m3u8
+#EXTINF:-1 group-title="test",CCTV-3
+http://129.211.14.102:22225/cctv3.m3u8
+#EXTINF:-1 group-title="test",CCTV-4
+http://129.211.14.102:22225/cctv4.m3u8
+#EXTINF:-1 group-title="test",CCTV-5
+http://129.211.14.102:22225/cctv5.m3u8
+#EXTINF:-1 group-title="test",CCTV-5+
+http://129.211.14.102:22225/cctv5plus.m3u8
+#EXTINF:-1 group-title="test",CCTV-6
+http://129.211.14.102:22225/cctv6.m3u8
+#EXTINF:-1 group-title="test",CCTV-7
+http://129.211.14.102:22225/cctv7.m3u8
+#EXTINF:-1 group-title="test",CCTV-8
+http://129.211.14.102:22225/cctv8.m3u8
+#EXTINF:-1 group-title="test",CCTV-9
+http://129.211.14.102:22225/cctv9.m3u8
+#EXTINF:-1 group-title="test",CCTV-10
+http://129.211.14.102:22225/cctv10.m3u8
+#EXTINF:-1 group-title="test",CCTV-11
+http://129.211.14.102:22225/cctv11.m3u8
+#EXTINF:-1 group-title="test",CCTV-12
+http://129.211.14.102:22225/cctv12.m3u8
+#EXTINF:-1 group-title="test",CCTV-13
+http://129.211.14.102:22225/cctv13.m3u8
+#EXTINF:-1 group-title="test",CCTV-14
+http://129.211.14.102:22225/cctv14.m3u8
+#EXTINF:-1 group-title="test",CCTV-15
+http://129.211.14.102:22225/cctv15.m3u8
+#EXTINF:-1 group-title="test",CCTV-16
+http://129.211.14.102:22225/cctv16.m3u8
+#EXTINF:-1 group-title="test",CCTV-17
+http://129.211.14.102:22225/cctv17.m3u8
+#EXTINF:-1 group-title="test",CETV1
+http://129.211.14.102:22225/cetv1.m3u8
+#EXTINF:-1 group-title="test",CETV2
+http://129.211.14.102:22225/cetv2.m3u8
+#EXTINF:-1 group-title="test",CETV4
+http://129.211.14.102:22225/cetv4.m3u8
+#EXTINF:-1 group-title="test",CGTN
+http://129.211.14.102:22225/cgtn.m3u8
+#EXTINF:-1 group-title="test",高尔夫网球
+http://129.211.14.102:22225/cctvgolf.m3u8
+#EXTINF:-1 group-title="test",央视台球
+http://129.211.14.102:22225/cctvtq.m3u8
+#EXTINF:-1 group-title="test",CCTV-4美洲
+http://129.211.14.102:22225/cctvmz.m3u8
+#EXTINF:-1 group-title="test",三沙卫视
+http://129.211.14.102:22225/ssws.m3u8
+#EXTINF:-1 group-title="test",东南卫视
+http://129.211.14.102:22225/dnws.m3u8
+#EXTINF:-1 group-title="test",东方卫视
+http://129.211.14.102:22225/dfws.m3u8
+#EXTINF:-1 group-title="test",云南卫视
+http://129.211.14.102:22225/ynws.m3u8
+#EXTINF:-1 group-title="test",内蒙古卫视
+http://129.211.14.102:22225/nmgws.m3u8
+#EXTINF:-1 group-title="test",北京卫视
+http://129.211.14.102:22225/bjws.m3u8
+#EXTINF:-1 group-title="test",厦门卫视
+http://129.211.14.102:22225/xmws.m3u8
+#EXTINF:-1 group-title="test",吉林卫视
+http://129.211.14.102:22225/jlws.m3u8
+#EXTINF:-1 group-title="test",四川卫视
+http://129.211.14.102:22225/scws.m3u8
+#EXTINF:-1 group-title="test",天津卫视
+http://129.211.14.102:22225/tjws.m3u8
+#EXTINF:-1 group-title="test",安徽卫视
+http://129.211.14.102:22225/ahws.m3u8
+#EXTINF:-1 group-title="test",山东卫视
+http://129.211.14.102:22225/sdws.m3u8
+#EXTINF:-1 group-title="test",山西卫视
+http://129.211.14.102:22225/sxws.m3u8
+#EXTINF:-1 group-title="test",广东卫视
+http://129.211.14.102:22225/gdws.m3u8
+#EXTINF:-1 group-title="test",广西卫视
+http://129.211.14.102:22225/gxws.m3u8
+#EXTINF:-1 group-title="test",新疆卫视
+http://129.211.14.102:22225/xjws.m3u8
+#EXTINF:-1 group-title="test",江苏卫视
+http://129.211.14.102:22225/jsws.m3u8
+#EXTINF:-1 group-title="test",江西卫视
+http://129.211.14.102:22225/jxws.m3u8
+#EXTINF:-1 group-title="test",河北卫视
+http://129.211.14.102:22225/hbws.m3u8
+#EXTINF:-1 group-title="test",河南卫视
+http://129.211.14.102:22225/hnws.m3u8
+#EXTINF:-1 group-title="test",海南卫视
+http://129.211.14.102:22225/hnws2.m3u8
+#EXTINF:-1 group-title="test",湖北卫视
+http://129.211.14.102:22225/hbws2.m3u8
+#EXTINF:-1 group-title="test",湖南卫视
+http://129.211.14.102:22225/hnws3.m3u8
+#EXTINF:-1 group-title="test",贵州卫视
+http://129.211.14.102:22225/gzws.m3u8
+#EXTINF:-1 group-title="test",辽宁卫视
+http://129.211.14.102:22225/lnws.m3u8
+#EXTINF:-1 group-title="test",黑龙江卫视
+http://129.211.14.102:22225/hljs.m3u8
+#EXTINF:-1 group-title="test",重庆卫视
+http://129.211.14.102:22225/cqws.m3u8
+#EXTINF:-1 group-title="test",陕西卫视
+http://129.211.14.102:22225/sxws2.m3u8
+#EXTINF:-1 group-title="test",甘肃卫视
+http://129.211.14.102:22225/gsws.m3u8
+#EXTINF:-1 group-title="test",宁夏卫视
+http://129.211.14.102:22225/nxws.m3u8
+#EXTINF:-1 group-title="test",青海卫视
+http://129.211.14.102:22225/qhws.m3u8
+#EXTINF:-1 group-title="test",西藏卫视
+http://129.211.14.102:22225/xzws.m3u8
+#EXTINF:-1 group-title="test",深圳卫视
+http://129.211.14.102:22225/szws.m3u8
 #EXTINF:-1 group-title="test",CCTV1
 http://112.30.73.119:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=0&authid=0
 #EXTINF:-1 group-title="test",CCTV2
@@ -52051,2458 +52389,6 @@ https://t33.cdn2020.com/video/m3u8/2024/10/04/485a4db7/index.m3u8
 https://t33.cdn2020.com/video/m3u8/2025/10/02/8e83b8e4/index.m3u8
 #EXTINF:-1 group-title="test",少白潔第六章MDSR-0005-6綠 艾悠
 https://t33.cdn2020.com/video/m3u8/2025/10/18/64827eee/index.m3u8
-#EXTINF:-1 group-title="国篮赛评",06-03⬇️中国男篮系列热身赛⬇️🏀📡
-http://rihou.cc:555/tv/t
-#EXTINF:-1 group-title="国篮赛评",19:35中国男篮🆚塞尔维亚FMP俱乐部
-http://rihou.cc:555/tv/v
-#EXTINF:-1 group-title="国篮赛评",粤🔊03丁伟杰
-http://rihou.cc:555/tv/03男篮丁伟杰
-#EXTINF:-1 group-title="国篮赛评",国🔊03篮评述
-http://rihou.cc:555/tv/03男篮咪评述
-#EXTINF:-1 group-title="6/04赛事",粤🔊04小肥述
-http://rihou.cc:555/tv/04NBA小肥述
-#EXTINF:-1 group-title="6/04赛事",国🔊04咪评述
-http://rihou.cc:555/tv/04NBA咪评述
-#EXTINF:-1 group-title="6/04赛事",国🔊04腾评述
-http://rihou.cc:555/tv/04NBA腾评述
-#EXTINF:-1 group-title="6/04赛事",国🔊04纬来述
-http://rihou.cc:555/tv/04NBA纬来述
-#EXTINF:-1 group-title="6/04赛事",国🔊04浙评述
-http://rihou.cc:555/tv/04浙超咪评述
-#EXTINF:-1 group-title="6/04赛事",粤🔊04丁伟杰
-http://rihou.cc:555/tv/04男篮丁伟杰
-#EXTINF:-1 group-title="6/04赛事",国🔊04篮评述
-http://rihou.cc:555/tv/04男篮咪评述
-#EXTINF:-1 group-title="6/05赛事",国🔊05浙评述
-http://rihou.cc:555/tv/05浙超咪评述
-#EXTINF:-1 group-title="6/05赛事",粤🔊05丁伟杰
-http://rihou.cc:555/tv/05CBA丁伟杰
-#EXTINF:-1 group-title="6/05赛事",国🔊05抖评述
-http://rihou.cc:555/tv/05CBA抖评述
-#EXTINF:-1 group-title="6/05赛事",国🔊05土评述
-http://rihou.cc:555/tv/05土伦咪评述
-#EXTINF:-1 group-title="6/06赛事",粤🔊06小肥述
-http://rihou.cc:555/tv/06NBA小肥述
-#EXTINF:-1 group-title="6/06赛事",国🔊06咪评述
-http://rihou.cc:555/tv/06NBA咪评述
-#EXTINF:-1 group-title="6/06赛事",国🔊06腾评述
-http://rihou.cc:555/tv/06NBA腾评述
-#EXTINF:-1 group-title="6/06赛事",国🔊06纬来述
-http://rihou.cc:555/tv/06NBA纬来述
-#EXTINF:-1 group-title="6/06赛事",国🔊06川评述
-http://rihou.cc:555/tv/06川超咪评述
-#EXTINF:-1 group-title="6/06赛事",国🔊06川述评
-http://rihou.cc:555/tv/06川超咪述评
-#EXTINF:-1 group-title="6/06赛事",国🔊06川评评
-http://rihou.cc:555/tv/06川超咪评评
-#EXTINF:-1 group-title="6/06赛事",国🔊06川述述
-http://rihou.cc:555/tv/06川超咪述述
-#EXTINF:-1 group-title="6/08赛事",国🔊08土评述
-http://rihou.cc:555/tv/08土伦咪评述
-#EXTINF:-1 group-title="6/09赛事",粤🔊09小肥述
-http://rihou.cc:555/tv/09NBA小肥述
-#EXTINF:-1 group-title="6/09赛事",国🔊09咪评述
-http://rihou.cc:555/tv/09NBA咪评述
-#EXTINF:-1 group-title="6/09赛事",国🔊09腾评述
-http://rihou.cc:555/tv/09NBA腾评述
-#EXTINF:-1 group-title="6/09赛事",国🔊09纬来述
-http://rihou.cc:555/tv/09NBA纬来述
-#EXTINF:-1 group-title="6/11赛事",粤🔊11小肥述
-http://rihou.cc:555/tv/11NBA小肥述
-#EXTINF:-1 group-title="6/11赛事",国🔊11咪评述
-http://rihou.cc:555/tv/11NBA咪评述
-#EXTINF:-1 group-title="6/11赛事",国🔊11腾评述
-http://rihou.cc:555/tv/11NBA腾评述
-#EXTINF:-1 group-title="6/11赛事",国🔊11纬来述
-http://rihou.cc:555/tv/11NBA纬来述
-#EXTINF:-1 group-title="世界杯赛",国🔊12世评述
-http://rihou.cc:555/tv/12世界杯评述
-#EXTINF:-1 group-title="世界杯赛",国🔊12世述评
-http://rihou.cc:555/tv/12世界杯述评
-#EXTINF:-1 group-title="世界杯赛",国🔊13世评述
-http://rihou.cc:555/tv/13世界杯评述
-#EXTINF:-1 group-title="世界杯赛",国🔊13世述评
-http://rihou.cc:555/tv/13世界杯述评
-#EXTINF:-1 group-title="世界杯赛",国🔊14世评述
-http://rihou.cc:555/tv/14世界杯评述
-#EXTINF:-1 group-title="世界杯赛",国🔊14世述评
-http://rihou.cc:555/tv/14世界杯述评
-#EXTINF:-1 group-title="世界杯赛",国🔊14世评评
-http://rihou.cc:555/tv/14世界杯评评
-#EXTINF:-1 group-title="世界杯赛",国🔊14世述述
-http://rihou.cc:555/tv/14世界杯述述
-#EXTINF:-1 group-title="世界杯赛",国🔊15世评述
-http://rihou.cc:555/tv/15世界杯评述
-#EXTINF:-1 group-title="世界杯赛",国🔊15世述评
-http://rihou.cc:555/tv/15世界杯述评
-#EXTINF:-1 group-title="世界杯赛",国🔊15世评评
-http://rihou.cc:555/tv/15世界杯评评
-#EXTINF:-1 group-title="世界杯赛",国🔊15世述述
-http://rihou.cc:555/tv/15世界杯述述
-#EXTINF:-1 group-title="世界杯赛",国🔊16世评述
-http://rihou.cc:555/tv/16世界杯评述
-#EXTINF:-1 group-title="世界杯赛",国🔊16世述评
-http://rihou.cc:555/tv/16世界杯述评
-#EXTINF:-1 group-title="世界杯赛",国🔊16世评评
-http://rihou.cc:555/tv/16世界杯评评
-#EXTINF:-1 group-title="世界杯赛",国🔊16世述述
-http://rihou.cc:555/tv/16世界杯述述
-#EXTINF:-1 group-title="世界杯赛",国🔊17世评述
-http://rihou.cc:555/tv/17世界杯评述
-#EXTINF:-1 group-title="世界杯赛",国🔊17世述评
-http://rihou.cc:555/tv/17世界杯述评
-#EXTINF:-1 group-title="世界杯赛",国🔊17世评评
-http://rihou.cc:555/tv/17世界杯评评
-#EXTINF:-1 group-title="世界杯赛",国🔊17世述述
-http://rihou.cc:555/tv/17世界杯述述
-#EXTINF:-1 group-title="世界杯赛",国🔊18世评述
-http://rihou.cc:555/tv/18世界杯评述
-#EXTINF:-1 group-title="世界杯赛",国🔊18世述评
-http://rihou.cc:555/tv/18世界杯述评
-#EXTINF:-1 group-title="世界杯赛",国🔊18世评评
-http://rihou.cc:555/tv/18世界杯评评
-#EXTINF:-1 group-title="世界杯赛",国🔊18世述述
-http://rihou.cc:555/tv/18世界杯述述
-#EXTINF:-1 group-title="世界杯赛",国🔊19世评述
-http://rihou.cc:555/tv/19世界杯评述
-#EXTINF:-1 group-title="世界杯赛",国🔊19世述评
-http://rihou.cc:555/tv/19世界杯述评
-#EXTINF:-1 group-title="世界杯赛",国🔊19世评评
-http://rihou.cc:555/tv/19世界杯评评
-#EXTINF:-1 group-title="世界杯赛",国🔊19世述述
-http://rihou.cc:555/tv/19世界杯述述
-#EXTINF:-1 group-title="世界杯赛",国🔊20世评述
-http://rihou.cc:555/tv/20世界杯评述
-#EXTINF:-1 group-title="世界杯赛",国🔊20世述评
-http://rihou.cc:555/tv/20世界杯述评
-#EXTINF:-1 group-title="世界杯赛",国🔊20世评评
-http://rihou.cc:555/tv/20世界杯评评
-#EXTINF:-1 group-title="世界杯赛",国🔊20世述述
-http://rihou.cc:555/tv/20世界杯述述
-#EXTINF:-1 group-title="世界杯赛",国🔊21世评述
-http://rihou.cc:555/tv/21世界杯评述
-#EXTINF:-1 group-title="世界杯赛",国🔊21世述评
-http://rihou.cc:555/tv/21世界杯述评
-#EXTINF:-1 group-title="世界杯赛",国🔊21世评评
-http://rihou.cc:555/tv/21世界杯评评
-#EXTINF:-1 group-title="世界杯赛",国🔊21世述述
-http://rihou.cc:555/tv/21世界杯述述
-#EXTINF:-1 group-title="世界杯赛",国🔊22世评述
-http://rihou.cc:555/tv/22世界杯评述
-#EXTINF:-1 group-title="世界杯赛",国🔊22世述评
-http://rihou.cc:555/tv/22世界杯述评
-#EXTINF:-1 group-title="世界杯赛",国🔊22世评评
-http://rihou.cc:555/tv/22世界杯评评
-#EXTINF:-1 group-title="世界杯赛",国🔊22世述述
-http://rihou.cc:555/tv/22世界杯述述
-#EXTINF:-1 group-title="世界杯赛",国🔊23世评述
-http://rihou.cc:555/tv/23世界杯评述
-#EXTINF:-1 group-title="世界杯赛",国🔊23世述评
-http://rihou.cc:555/tv/23世界杯述评
-#EXTINF:-1 group-title="世界杯赛",国🔊23世评评
-http://rihou.cc:555/tv/23世界杯评评
-#EXTINF:-1 group-title="世界杯赛",国🔊23世述述
-http://rihou.cc:555/tv/23世界杯述述
-#EXTINF:-1 group-title="世界杯赛",国🔊24世评述
-http://rihou.cc:555/tv/24世界杯评述
-#EXTINF:-1 group-title="世界杯赛",国🔊24世述评
-http://rihou.cc:555/tv/24世界杯述评
-#EXTINF:-1 group-title="世界杯赛",国🔊24世评评
-http://rihou.cc:555/tv/24世界杯评评
-#EXTINF:-1 group-title="世界杯赛",国🔊24世述述
-http://rihou.cc:555/tv/24世界杯述述
-#EXTINF:-1 group-title="世界杯赛",国🔊25世评述
-http://rihou.cc:555/tv/25世界杯评述
-#EXTINF:-1 group-title="世界杯赛",国🔊25世述评
-http://rihou.cc:555/tv/25世界杯述评
-#EXTINF:-1 group-title="世界杯赛",国🔊25世评评
-http://rihou.cc:555/tv/25世界杯评评
-#EXTINF:-1 group-title="世界杯赛",国🔊25世述述
-http://rihou.cc:555/tv/25世界杯述述
-#EXTINF:-1 group-title="世界杯赛",国🔊25世旁述
-http://rihou.cc:555/tv/25世界杯旁述
-#EXTINF:-1 group-title="世界杯赛",国🔊25世述旁
-http://rihou.cc:555/tv/25世界杯述旁
-#EXTINF:-1 group-title="世界杯赛",国🔊26世评述
-http://rihou.cc:555/tv/26世界杯评述
-#EXTINF:-1 group-title="世界杯赛",国🔊26世述评
-http://rihou.cc:555/tv/26世界杯述评
-#EXTINF:-1 group-title="世界杯赛",国🔊26世评评
-http://rihou.cc:555/tv/26世界杯评评
-#EXTINF:-1 group-title="世界杯赛",国🔊26世述述
-http://rihou.cc:555/tv/26世界杯述述
-#EXTINF:-1 group-title="世界杯赛",国🔊26世旁述
-http://rihou.cc:555/tv/26世界杯旁述
-#EXTINF:-1 group-title="世界杯赛",国🔊26世述旁
-http://rihou.cc:555/tv/26世界杯述旁
-#EXTINF:-1 group-title="世界杯赛",国🔊27世评述
-http://rihou.cc:555/tv/27世界杯评述
-#EXTINF:-1 group-title="世界杯赛",国🔊27世述评
-http://rihou.cc:555/tv/27世界杯述评
-#EXTINF:-1 group-title="世界杯赛",国🔊27世评评
-http://rihou.cc:555/tv/27世界杯评评
-#EXTINF:-1 group-title="世界杯赛",国🔊27世述述
-http://rihou.cc:555/tv/27世界杯述述
-#EXTINF:-1 group-title="世界杯赛",国🔊27世旁述
-http://rihou.cc:555/tv/27世界杯旁述
-#EXTINF:-1 group-title="世界杯赛",国🔊27世述旁
-http://rihou.cc:555/tv/27世界杯述旁
-#EXTINF:-1 group-title="世界杯赛",国🔊28世评述
-http://rihou.cc:555/tv/28世界杯评述
-#EXTINF:-1 group-title="世界杯赛",国🔊28世述评
-http://rihou.cc:555/tv/28世界杯述评
-#EXTINF:-1 group-title="世界杯赛",国🔊28世评评
-http://rihou.cc:555/tv/28世界杯评评
-#EXTINF:-1 group-title="世界杯赛",国🔊28世述述
-http://rihou.cc:555/tv/28世界杯述述
-#EXTINF:-1 group-title="世界杯赛",国🔊28世旁述
-http://rihou.cc:555/tv/28世界杯旁述
-#EXTINF:-1 group-title="世界杯赛",国🔊28世述旁
-http://rihou.cc:555/tv/28世界杯述旁
-#EXTINF:-1 group-title="赛事精锦",联赛赛事回放
-http://rihou.cc:555/tv/联赛回放赛03
-#EXTINF:-1 group-title="赛事精锦",NBA赛事回放
-http://rihou.cc:555/tv/NBA回放赛03
-#EXTINF:-1 group-title="赛事精锦",羽球赛事回放
-http://rihou.cc:555/tv/羽球回放赛03
-#EXTINF:-1 group-title="赛事精锦",橄球赛事回放
-http://rihou.cc:555/tv/橄球回放赛03
-#EXTINF:-1 group-title="赛事精锦",乒球赛事回放
-http://rihou.cc:555/tv/乒球回放赛03
-#EXTINF:-1 group-title="赛事精锦",网球赛事回放
-http://rihou.cc:555/tv/网球回放赛03
-#EXTINF:-1 group-title="赛事精锦",排球赛事回放
-http://rihou.cc:555/tv/排球回放赛03
-#EXTINF:-1 group-title="赛事精锦",格斗赛事回放
-http://rihou.cc:555/tv/格斗回放赛03
-#EXTINF:-1 group-title="赛事精锦",斯赛赛事回放
-http://rihou.cc:555/tv/斯赛回放赛03
-#EXTINF:-1 group-title="赛事咪咕",赛事睛彩竞技
-http://feilong123.vip/409990236/iptv/gdy.php?id=18
-#EXTINF:-1 group-title="赛事咪咕",赛事睛彩竞技
-http://feilong123.vip/409990236/iptv/gdy.php?id=24
-#EXTINF:-1 group-title="赛事咪咕",赛事睛彩竞技
-http://feilong123.vip/409990236/iptv/gdy.php?id=5
-#EXTINF:-1 group-title="赛事咪咕",赛事睛彩篮球
-http://feilong123.vip/409990236/iptv/gdy.php?id=2
-#EXTINF:-1 group-title="赛事咪咕",赛事睛彩篮球
-http://feilong123.vip/409990236/iptv/gdy.php?id=23
-#EXTINF:-1 group-title="赛事咪咕",赛事睛彩青少
-http://feilong123.vip/409990236/iptv/gdy.php?id=1
-#EXTINF:-1 group-title="赛事咪咕",赛事睛彩广场
-http://feilong123.vip/409990236/iptv/gdy.php?id=3
-#EXTINF:-1 group-title="赛事咪咕",赛事睛彩广场
-http://feilong123.vip/409990236/iptv/gdy.php?id=20
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播01
-http://feilong123.vip/409990236/iptv/gdy.php?id=6
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播02
-http://feilong123.vip/409990236/iptv/gdy.php?id=8
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播03
-http://feilong123.vip/409990236/iptv/gdy.php?id=9
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播04
-http://feilong123.vip/409990236/iptv/gdy.php?id=17
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播05
-http://feilong123.vip/409990236/iptv/gdy.php?id=10
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播06
-http://feilong123.vip/409990236/iptv/gdy.php?id=11
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播07
-http://feilong123.vip/409990236/iptv/gdy.php?id=13
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播08
-http://feilong123.vip/409990236/iptv/gdy.php?id=12
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播09
-http://feilong123.vip/409990236/iptv/gdy.php?id=21
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播10
-http://feilong123.vip/409990236/iptv/gdy.php?id=45
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播11
-http://feilong123.vip/409990236/iptv/gdy.php?id=36
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播12
-http://feilong123.vip/409990236/iptv/gdy.php?id=25
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播13
-http://feilong123.vip/409990236/iptv/gdy.php?id=26
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播14
-http://feilong123.vip/409990236/iptv/gdy.php?id=27
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播15
-http://feilong123.vip/409990236/iptv/gdy.php?id=14
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播16
-http://feilong123.vip/409990236/iptv/gdy.php?id=28
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播17
-http://feilong123.vip/409990236/iptv/gdy.php?id=29
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播18
-http://feilong123.vip/409990236/iptv/gdy.php?id=30
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播19
-http://feilong123.vip/409990236/iptv/gdy.php?id=31
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播20
-http://feilong123.vip/409990236/iptv/gdy.php?id=32
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播21
-http://feilong123.vip/409990236/iptv/gdy.php?id=15
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播22
-http://feilong123.vip/409990236/iptv/gdy.php?id=34
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播23
-http://feilong123.vip/409990236/iptv/gdy.php?id=35
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播24
-http://feilong123.vip/409990236/iptv/gdy.php?id=37
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播25
-http://feilong123.vip/409990236/iptv/gdy.php?id=38
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播26
-http://feilong123.vip/409990236/iptv/gdy.php?id=39
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播27
-http://feilong123.vip/409990236/iptv/gdy.php?id=40
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播28
-http://feilong123.vip/409990236/iptv/gdy.php?id=41
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播29
-http://feilong123.vip/409990236/iptv/gdy.php?id=42
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播30
-http://feilong123.vip/409990236/iptv/gdy.php?id=43
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播31
-http://feilong123.vip/409990236/iptv/gdy.php?id=44
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播32
-http://feilong123.vip/409990236/iptv/gdy.php?id=22
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播33
-http://feilong123.vip/409990236/iptv/gdy.php?id=16
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播34
-http://feilong123.vip/409990236/iptv/gdy.php?id=19
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播4k
-http://feilong123.vip/409990236/iptv/gdy.php?id=7
-#EXTINF:-1 group-title="赛事咪咕",赛事咪咕播4k
-http://feilong123.vip/409990236/iptv/gdy.php?id=46
-#EXTINF:-1 group-title="赛事咪咕",赛事至臻视界
-http://feilong123.vip/409990236/iptv/gdy.php?id=47
-#EXTINF:-1 group-title="赛事咪咕",赛事至臻视界
-http://feilong123.vip/409990236/iptv/gdy.php?id=4
-#EXTINF:-1 group-title="央卫咪咕",CCTV-01咪咕
-http://rihou.cc:555/tv/[mg]CCTV-01
-#EXTINF:-1 group-title="央卫咪咕",CCTV-02咪咕
-http://rihou.cc:555/tv/[mg]CCTV-02
-#EXTINF:-1 group-title="央卫咪咕",CCTV-03咪咕
-http://rihou.cc:555/tv/[mg]CCTV-03
-#EXTINF:-1 group-title="央卫咪咕",CCTV-04咪咕
-http://rihou.cc:555/tv/[mg]CCTV-04
-#EXTINF:-1 group-title="央卫咪咕",CCTV-05咪咕
-http://rihou.cc:555/tv/[mg]CCTV-05
-#EXTINF:-1 group-title="央卫咪咕",CCTV-5+咪咕
-http://rihou.cc:555/tv/[mg]CCTV-5p
-#EXTINF:-1 group-title="央卫咪咕",CCTV-06咪咕
-http://rihou.cc:555/tv/[mg]CCTV-06
-#EXTINF:-1 group-title="央卫咪咕",CCTV-07咪咕
-http://rihou.cc:555/tv/[mg]CCTV-07
-#EXTINF:-1 group-title="央卫咪咕",CCTV-08咪咕
-http://rihou.cc:555/tv/[mg]CCTV-08
-#EXTINF:-1 group-title="央卫咪咕",CCTV-09咪咕
-http://rihou.cc:555/tv/[mg]CCTV-09
-#EXTINF:-1 group-title="央卫咪咕",CCTV-10咪咕
-http://rihou.cc:555/tv/[mg]CCTV-10
-#EXTINF:-1 group-title="央卫咪咕",CCTV-11咪咕
-http://rihou.cc:555/tv/[mg]CCTV-11
-#EXTINF:-1 group-title="央卫咪咕",CCTV-12咪咕
-http://rihou.cc:555/tv/[mg]CCTV-12
-#EXTINF:-1 group-title="央卫咪咕",CCTV-13咪咕
-http://rihou.cc:555/tv/[mg]CCTV-13
-#EXTINF:-1 group-title="央卫咪咕",CCTV-14咪咕
-http://rihou.cc:555/tv/[mg]CCTV-14
-#EXTINF:-1 group-title="央卫咪咕",CCTV-15咪咕
-http://rihou.cc:555/tv/[mg]CCTV-15
-#EXTINF:-1 group-title="央卫咪咕",CCTV-16咪咕
-http://rihou.cc:555/tv/[mg]CCTV-16
-#EXTINF:-1 group-title="央卫咪咕",CCTV-17咪咕
-http://rihou.cc:555/tv/[mg]CCTV-17
-#EXTINF:-1 group-title="央卫咪咕",cct4欧洲咪咕
-http://rihou.cc:555/tv/[mg]cct4欧洲
-#EXTINF:-1 group-title="央卫咪咕",cct4美洲咪咕
-http://rihou.cc:555/tv/[mg]cct4美洲
-#EXTINF:-1 group-title="央卫咪咕",CGTN-西咪咕
-http://rihou.cc:555/tv/[mg]CGTN-西
-#EXTINF:-1 group-title="央卫咪咕",CGTN-阿咪咕
-http://rihou.cc:555/tv/[mg]CGTN-阿
-#EXTINF:-1 group-title="央卫咪咕",CGTN-法咪咕
-http://rihou.cc:555/tv/[mg]CGTN-法
-#EXTINF:-1 group-title="央卫咪咕",北京卫视咪咕
-http://rihou.cc:555/tv/[mg]北京卫视
-#EXTINF:-1 group-title="央卫咪咕",东方卫视咪咕
-http://rihou.cc:555/tv/[mg]东方卫视
-#EXTINF:-1 group-title="央卫咪咕",浙江卫视咪咕
-http://rihou.cc:555/tv/[mg]浙江卫视
-#EXTINF:-1 group-title="央卫咪咕",江苏卫视咪咕
-http://rihou.cc:555/tv/[mg]江苏卫视
-#EXTINF:-1 group-title="央卫咪咕",湖南卫视咪咕
-http://rihou.cc:555/tv/[mg]湖南卫视
-#EXTINF:-1 group-title="央卫咪咕",广东卫视咪咕
-http://rihou.cc:555/tv/[mg]广东卫视
-#EXTINF:-1 group-title="央卫咪咕",深圳卫视咪咕
-http://rihou.cc:555/tv/[mg]深圳卫视
-#EXTINF:-1 group-title="央卫咪咕",山东卫视咪咕
-http://rihou.cc:555/tv/[mg]山东卫视
-#EXTINF:-1 group-title="央卫咪咕",河南卫视咪咕
-http://rihou.cc:555/tv/[mg]河南卫视
-#EXTINF:-1 group-title="央卫咪咕",江西卫视咪咕
-http://rihou.cc:555/tv/[mg]江西卫视
-#EXTINF:-1 group-title="央卫咪咕",湖北卫视咪咕
-http://rihou.cc:555/tv/[mg]湖北卫视
-#EXTINF:-1 group-title="央卫咪咕",海南卫视咪咕
-http://rihou.cc:555/tv/[mg]海南卫视
-#EXTINF:-1 group-title="央卫咪咕",陕西卫视咪咕
-http://rihou.cc:555/tv/[mg]陕西卫视
-#EXTINF:-1 group-title="央卫咪咕",兵团卫视咪咕
-http://rihou.cc:555/tv/[mg]兵团卫视
-#EXTINF:-1 group-title="央卫咪咕",黑龙江视咪咕
-http://rihou.cc:555/tv/[mg]黑龙江视
-#EXTINF:-1 group-title="央卫咪咕",CCTV-16咪咕
-http://go.bkpcp.top/mg/cctv16
-#EXTINF:-1 group-title="央卫咪咕",cct4欧洲咪咕
-http://go.bkpcp.top/mg/cctv4o
-#EXTINF:-1 group-title="央卫咪咕",cct4美洲咪咕
-http://go.bkpcp.top/mg/cctv4m
-#EXTINF:-1 group-title="央卫咪咕",CGTN-西咪咕
-http://go.bkpcp.top/mg/cgtne
-#EXTINF:-1 group-title="央卫咪咕",CGTN-阿咪咕
-http://go.bkpcp.top/mg/cgtna
-#EXTINF:-1 group-title="央卫咪咕",CGTN-法咪咕
-http://go.bkpcp.top/mg/cgtnf
-#EXTINF:-1 group-title="央卫咪咕",CCTV-14咪咕
-http://j.s.bkpcp.top/jj/cctv14
-#EXTINF:-1 group-title="央卫咪咕",cct4欧洲咪咕
-http://j.s.bkpcp.top/jj/cctv4o
-#EXTINF:-1 group-title="央卫咪咕",cct4美洲咪咕
-http://j.s.bkpcp.top/jj/cctv4m
-#EXTINF:-1 group-title="央卫咪咕",CGTN-西咪咕
-http://j.s.bkpcp.top/jj/cgtne
-#EXTINF:-1 group-title="央卫咪咕",CGTN-阿咪咕
-http://j.s.bkpcp.top/jj/cgtna
-#EXTINF:-1 group-title="央卫咪咕",CGTN-法咪咕
-http://j.s.bkpcp.top/jj/cgtnf
-#EXTINF:-1 group-title="央卫咪咕",兵团卫视咪咕
-http://j.s.bkpcp.top/jj/btws
-#EXTINF:-1 group-title="央卫咪咕",CCTV-01咪咕
-http://t.061899.xyz/tl/tl.php?id=cctv1
-#EXTINF:-1 group-title="央卫咪咕",CCTV-02咪咕
-http://t.061899.xyz/tl/tl.php?id=cctv2
-#EXTINF:-1 group-title="央卫咪咕",CCTV-03咪咕
-http://t.061899.xyz/tl/tl.php?id=cctv3
-#EXTINF:-1 group-title="央卫咪咕",CCTV-04咪咕
-http://t.061899.xyz/tl/tl.php?id=cctv4
-#EXTINF:-1 group-title="央卫咪咕",CCTV-05咪咕
-http://t.061899.xyz/tl/tl.php?id=cctv5
-#EXTINF:-1 group-title="央卫咪咕",CCTV-5+咪咕
-http://t.061899.xyz/tl/tl.php?id=cctv5p
-#EXTINF:-1 group-title="央卫咪咕",CCTV-06咪咕
-http://t.061899.xyz/tl/tl.php?id=cctv6
-#EXTINF:-1 group-title="央卫咪咕",CCTV-07咪咕
-http://t.061899.xyz/tl/tl.php?id=cctv7
-#EXTINF:-1 group-title="央卫咪咕",CCTV-08咪咕
-http://t.061899.xyz/tl/tl.php?id=cctv8
-#EXTINF:-1 group-title="央卫咪咕",CCTV-09咪咕
-http://t.061899.xyz/tl/tl.php?id=cctv9
-#EXTINF:-1 group-title="央卫咪咕",CCTV-10咪咕
-http://t.061899.xyz/tl/tl.php?id=cctv10
-#EXTINF:-1 group-title="央卫咪咕",CCTV-11咪咕
-http://t.061899.xyz/tl/tl.php?id=cctv11
-#EXTINF:-1 group-title="央卫咪咕",CCTV-12咪咕
-http://t.061899.xyz/tl/tl.php?id=cctv12
-#EXTINF:-1 group-title="央卫咪咕",CCTV-13咪咕
-http://t.061899.xyz/tl/tl.php?id=cctv13
-#EXTINF:-1 group-title="央卫咪咕",CCTV-14咪咕
-http://t.061899.xyz/tl/tl.php?id=cctv14
-#EXTINF:-1 group-title="央卫咪咕",CCTV-15咪咕
-http://t.061899.xyz/tl/tl.php?id=cctv15
-#EXTINF:-1 group-title="央卫咪咕",CCTV-16咪咕
-http://t.061899.xyz/tl/tl.php?id=cctv16
-#EXTINF:-1 group-title="央卫咪咕",CCTV-17咪咕
-http://t.061899.xyz/tl/tl.php?id=cctv17
-#EXTINF:-1 group-title="央卫咪咕",北京卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=bjws
-#EXTINF:-1 group-title="央卫咪咕",东方卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=dfws
-#EXTINF:-1 group-title="央卫咪咕",浙江卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=zjws
-#EXTINF:-1 group-title="央卫咪咕",江苏卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=jsws
-#EXTINF:-1 group-title="央卫咪咕",湖南卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=hunws
-#EXTINF:-1 group-title="央卫咪咕",广东卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=gdws
-#EXTINF:-1 group-title="央卫咪咕",深圳卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=szws
-#EXTINF:-1 group-title="央卫咪咕",天津卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=tjws
-#EXTINF:-1 group-title="央卫咪咕",安徽卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=ahws
-#EXTINF:-1 group-title="央卫咪咕",山东卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=sdws
-#EXTINF:-1 group-title="央卫咪咕",山西卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=sxiws
-#EXTINF:-1 group-title="央卫咪咕",辽宁卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=lnws
-#EXTINF:-1 group-title="央卫咪咕",河北卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=hbws
-#EXTINF:-1 group-title="央卫咪咕",河南卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=hnws
-#EXTINF:-1 group-title="央卫咪咕",江西卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=jxws
-#EXTINF:-1 group-title="央卫咪咕",四川卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=scws
-#EXTINF:-1 group-title="央卫咪咕",重庆卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=cqws
-#EXTINF:-1 group-title="央卫咪咕",贵州卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=gzws
-#EXTINF:-1 group-title="央卫咪咕",湖北卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=hubws
-#EXTINF:-1 group-title="央卫咪咕",广西卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=gxws
-#EXTINF:-1 group-title="央卫咪咕",东南卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=dnws
-#EXTINF:-1 group-title="央卫咪咕",海南卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=hinws
-#EXTINF:-1 group-title="央卫咪咕",青海卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=qhws
-#EXTINF:-1 group-title="央卫咪咕",宁夏卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=nxws
-#EXTINF:-1 group-title="央卫咪咕",陕西卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=sxws
-#EXTINF:-1 group-title="央卫咪咕",甘肃卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=gsws
-#EXTINF:-1 group-title="央卫咪咕",新疆卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=xjws
-#EXTINF:-1 group-title="央卫咪咕",吉林卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=jlws
-#EXTINF:-1 group-title="央卫咪咕",西藏卫视咪咕
-http://t.061899.xyz/tl/tl.php?id=xzws
-#EXTINF:-1 group-title="央卫咪咕",内蒙古视咪咕
-http://t.061899.xyz/tl/tl.php?id=nmgws
-#EXTINF:-1 group-title="央卫咪咕",黑龙江视咪咕
-http://t.061899.xyz/tl/tl.php?id=hljws
-#EXTINF:-1 group-title="特新Pdtv",央视综合Pdtv
-http://rihou.cc:555/tv/[Pd]央视综合
-#EXTINF:-1 group-title="特区双音",astro欢喜双语
-https://o11.163189.xyz/stream/live/hxt/
-#EXTINF:-1 group-title="欣赏频道",粤语戏曲欣赏
-http://tl.061833.xyz/tl/null-15
-#EXTINF:-1 group-title="欣赏频道",粤语长片欣赏
-http://tl.061833.xyz/tl/null-10
-#EXTINF:-1 group-title="欣赏频道",广东珠江欣赏
-http://rihou.cc:555/tv/[At|]广东珠江
-#EXTINF:-1 group-title="欣赏频道",广东珠江欣赏
-http://rihou.cc:555/tv/[AtI]广东珠江
-#EXTINF:-1 group-title="欣赏频道",有线新闻欣赏
-http://rihou.cc:555/tv/[Mt]有线新闻
-#EXTINF:-1 group-title="欣赏频道",有线新闻欣赏
-http://rihou.cc:555/tv/[Hv]有线新闻
-#EXTINF:-1 group-title="欣赏频道",有线新闻欣赏
-http://rihou.cc:555/tv/[FY]有线新闻
-#EXTINF:-1 group-title="欣赏频道",无线新闻欣赏
-http://rihou.cc:555/tv/[Mt]无线新闻
-#EXTINF:-1 group-title="欣赏频道",无线新闻欣赏
-http://rihou.cc:555/tv/[Hk]无线新闻
-#EXTINF:-1 group-title="欣赏频道",无线新闻欣赏
-http://rihou.cc:555/tv/[SZ]无线新闻
-#EXTINF:-1 group-title="欣赏频道",无线新闻欣赏
-http://rihou.cc:555/tv/[Bx]无线新闻
-#EXTINF:-1 group-title="欣赏频道",Now新闻欣赏
-http://rihou.cc:555/tv/[Hk]Now新闻
-#EXTINF:-1 group-title="欣赏频道",Now新闻欣赏
-http://rihou.cc:555/tv/[Mt]Now新闻
-#EXTINF:-1 group-title="欣赏频道",中天新闻欣赏
-http://rihou.cc:555/tv/[Hv]中天新聞
-#EXTINF:-1 group-title="欣赏频道",中天新闻欣赏
-http://rihou.cc:555/tv/[Us]中天新闻
-#EXTINF:-1 group-title="欣赏频道",中天新闻欣赏
-http://rihou.cc:555/tv/[Bx]中天新闻
-#EXTINF:-1 group-title="欣赏频道",东森新闻欣赏
-http://rihou.cc:555/tv/[Hk]东森新闻
-#EXTINF:-1 group-title="欣赏频道",民视新闻欣赏
-http://rihou.cc:555/tv/[Hk]民视新聞
-#EXTINF:-1 group-title="欣赏频道",台视新闻欣赏
-http://rihou.cc:555/tv/[Hk]台视新闻
-#EXTINF:-1 group-title="欣赏频道",年代新闻欣赏
-http://rihou.cc:555/tv/[Hk]年代新闻
-#EXTINF:-1 group-title="欣赏频道",非凡新闻欣赏
-http://rihou.cc:555/tv/[Hk]非凡新闻
-#EXTINF:-1 group-title="欣赏频道",凤凰中文欣赏
-http://rihou.cc:555/tv/[Bx]凤凰中文
-#EXTINF:-1 group-title="欣赏频道",凤凰资讯欣赏
-http://rihou.cc:555/tv/[Bx]凤凰资讯
-#EXTINF:-1 group-title="欣赏频道",凤凰香港欣赏
-http://rihou.cc:555/tv/[Bx]凤凰香港
-#EXTINF:-1 group-title="欣赏频道",pₒₚc电影欣赏
-http://rihou.cc:555/tv/[Hv]pₒₚc电影
-#EXTINF:-1 group-title="欣赏频道",pₒₚc电影欣赏
-http://rihou.cc:555/tv/[Bx]pₒₚc电影
-#EXTINF:-1 group-title="欣赏频道",东森电影欣赏
-http://rihou.cc:555/tv/[Hk]东森电影
-#EXTINF:-1 group-title="欣赏频道",纬来电影欣赏
-http://rihou.cc:555/tv/[Hk]纬来电影
-#EXTINF:-1 group-title="欣赏频道",好莱电影欣赏
-http://rihou.cc:555/tv/[Hk]好莱电影
-#EXTINF:-1 group-title="欣赏频道",龙祥电影欣赏
-http://rihou.cc:555/tv/[Hk]龙祥电影
-#EXTINF:-1 group-title="欣赏频道",美亚电影国赏
-http://rihou.cc:555/tv/[Hv]美亚电影|
-#EXTINF:-1 group-title="欣赏频道",美亚电影闽赏
-http://rihou.cc:555/tv/[Bx]美亚电影
-#EXTINF:-1 group-title="欣赏频道",邵氏武侠欣赏
-http://rihou.cc:555/tv/[FY]邵氏武侠
-#EXTINF:-1 group-title="欣赏频道",Plus综合欣赏
-http://rihou.cc:555/tv/[Mt]Plus综合
-#EXTINF:-1 group-title="欣赏频道",Plus综合欣赏
-http://rihou.cc:555/tv/[Bx]Plus综合
-#EXTINF:-1 group-title="欣赏频道",有线综合欣赏
-http://rihou.cc:555/tv/[Mt]有线综合
-#EXTINF:-1 group-title="欣赏频道",有线赛讯欣赏
-http://rihou.cc:555/tv/[Mt]有线赛讯
-#EXTINF:-1 group-title="欣赏频道",无线翡翠欣赏
-http://rihou.cc:555/tv/[Mt]无线翡翠
-#EXTINF:-1 group-title="欣赏频道",无线翡翠欣赏
-http://rihou.cc:555/tv/[Bx]无线翡翠
-#EXTINF:-1 group-title="欣赏频道",无线翡翠欣赏
-http://rihou.cc:555/tv/[SZ]无线翡翠
-#EXTINF:-1 group-title="欣赏频道",无线明珠欣赏
-http://rihou.cc:555/tv/[Mt]无线明珠
-#EXTINF:-1 group-title="欣赏频道",无线明珠欣赏
-http://rihou.cc:555/tv/[Bx]无线明珠
-#EXTINF:-1 group-title="欣赏频道",无线千禧欣赏
-http://rihou.cc:555/tv/[Bx]无线千禧
-#EXTINF:-1 group-title="欣赏频道",无线娱乐欣赏
-http://rihou.cc:555/tv/[PL]无线娱乐
-#EXTINF:-1 group-title="欣赏频道",无线赛马欣赏
-http://rihou.cc:555/tv/[Bx]无线赛马
-#EXTINF:-1 group-title="欣赏频道",黄金翡翠欣赏
-http://rihou.cc:555/tv/[Hk]黄金翡翠
-#EXTINF:-1 group-title="欣赏频道",HUB娱家欣赏
-http://rihou.cc:555/tv/[Hk]HUB娱家
-#EXTINF:-1 group-title="欣赏频道",HUB都会欣赏
-http://rihou.cc:555/tv/[Hk]HUB都会
-#EXTINF:-1 group-title="欣赏频道",Now财经欣赏
-http://rihou.cc:555/tv/[Mt]Now财经
-#EXTINF:-1 group-title="欣赏频道",Now直播欣赏
-http://rihou.cc:555/tv/[Mt]Now直播
-#EXTINF:-1 group-title="欣赏频道",Now英超欣赏
-http://rihou.cc:555/tv/[Hk]Now英超
-#EXTINF:-1 group-title="欣赏频道",Now英超壹赏
-http://rihou.cc:555/tv/[XS]Now英超
-#EXTINF:-1 group-title="欣赏频道",Now英超贰赏
-http://rihou.cc:555/tv/[xsI]Now英超
-#EXTINF:-1 group-title="欣赏频道",Now体育壹赏
-http://rihou.cc:555/tv/[XS]Now体育
-#EXTINF:-1 group-title="欣赏频道",Now体育欣赏
-http://rihou.cc:555/tv/[Mt]Now体育
-#EXTINF:-1 group-title="欣赏频道",VIUTV'壹欣赏
-http://rihou.cc:555/tv/[Mt]VIUTV壹
-#EXTINF:-1 group-title="欣赏频道",VIUTV'贰欣赏
-http://rihou.cc:555/tv/[Mt]VIUTV贰
-#EXTINF:-1 group-title="欣赏频道",VIUTV'粤欣赏
-http://rihou.cc:555/tv/[Mt]VIUTV粤
-#EXTINF:-1 group-title="欣赏频道",VIUTV'英欣赏
-http://rihou.cc:555/tv/[Mt]VIUTV英
-#EXTINF:-1 group-title="欣赏频道",RTHK-31欣赏
-http://rihou.cc:555/tv/[Mt]RTHK-31
-#EXTINF:-1 group-title="欣赏频道",广东新闻欣赏
-http://rihou.cc:555/tv/[AtI]广东新闻
-#EXTINF:-1 group-title="欣赏频道",广东民生欣赏
-http://rihou.cc:555/tv/[AtI]广东民生
-#EXTINF:-1 group-title="欣赏频道",广东体育欣赏
-http://rihou.cc:555/tv/[AtI]广东体育
-#EXTINF:-1 group-title="欣赏频道",广东湾区欣赏
-http://rihou.cc:555/tv/[AtI]广东湾区
-#EXTINF:-1 group-title="欣赏频道",广东影视欣赏
-http://rihou.cc:555/tv/[AtI]广东影视
-#EXTINF:-1 group-title="欣赏频道",广东经济欣赏
-http://rihou.cc:555/tv/[AtI]广东经济
-#EXTINF:-1 group-title="欣赏频道",广东少儿欣赏
-http://rihou.cc:555/tv/[AtI]广东少儿
-#EXTINF:-1 group-title="欣赏频道",广东卫视欣赏
-http://rihou.cc:555/tv/[AtI]广东卫视
-#EXTINF:-1 group-title="欣赏频道",广东新闻欣赏
-http://rihou.cc:555/tv/[At|]广东新闻
-#EXTINF:-1 group-title="欣赏频道",广东民生欣赏
-http://rihou.cc:555/tv/[At|]广东民生
-#EXTINF:-1 group-title="欣赏频道",广东体育欣赏
-http://rihou.cc:555/tv/[At|]广东体育
-#EXTINF:-1 group-title="欣赏频道",广东湾区欣赏
-http://rihou.cc:555/tv/[At|]广东湾区
-#EXTINF:-1 group-title="欣赏频道",广东影视欣赏
-http://rihou.cc:555/tv/[At|]广东影视
-#EXTINF:-1 group-title="欣赏频道",广东体育欣赏
-http://rihou.cc:555/tv/[Cx]广东体育
-#EXTINF:-1 group-title="欣赏频道",万辉翡翠台庆
-http://rihou.cc:555/tv/[mv]翡翠台庆
-#EXTINF:-1 group-title="欣赏频道",万辉走红地毯
-http://rihou.cc:555/tv/[mv]走红地毯
-#EXTINF:-1 group-title="欣赏频道",万辉颁奖典礼
-http://rihou.cc:555/tv/[mv]颁奖典礼
-#EXTINF:-1 group-title="欣赏频道",万辉礼红地毯
-http://rihou.cc:555/tv/[mv]礼红地毯
-#EXTINF:-1 group-title="欣赏频道",寻秦记电影粤
-http://rihou.cc:555/tv/[mv]寻秦记粤
-#EXTINF:-1 group-title="欣赏频道",广东体育频道
-http://m.061899.xyz/mg/gdty
-#EXTINF:-1 group-title="欣赏频道",广东影视频道
-http://m.061899.xyz/mg/gdys
-#EXTINF:-1 group-title="欣赏频道",广东湾区频道
-http://m.061899.xyz/mg/dwqws
-#EXTINF:-1 group-title="欣赏频道",星空电影频道
-http://iot-mqqt.111yao.cn:8080/live/diyp_starmovies.m3u8
-#EXTINF:-1 group-title="欣赏频道",星空卫视频道
-http://xhyx.gz.cn:1698/hls/35/index.m3u8
-#EXTINF:-1 group-title="欣赏频道",星空卫视频道
-http://iot-mqqt.111yao.cn:8080/live/diyp_xingkong.m3u8
-#EXTINF:-1 group-title="欣赏频道",亚洲卫视频道
-http://rihou.cc:555/tv/NTD
-#EXTINF:-1 group-title="欣赏频道",重温经典频道
-http://php.jdshipin.com:8880/TVOD/iptv.php?id=cwjd
-#EXTINF:-1 group-title="欣赏频道",澳门莲花频道
-http://live-hls.macaulotustv.com/lotustv/macaulotustv.m3u8
-#EXTINF:-1 group-title="欣赏频道",WWE_格斗高
-http://plus.newdns.world:8080/OduLarge/UtKalQ6Vc7/7544
-#EXTINF:-1 group-title="欣赏频道",北京卫视频4k
-http://180.114.162.2:2380/c3.cdn.hunancatv.com/live/bjws4K.m3u8
-#EXTINF:-1 group-title="欣赏频道",东方卫视频4k
-http://180.114.162.2:2380/c3.cdn.hunancatv.com/live/dfws4K.m3u8
-#EXTINF:-1 group-title="欣赏频道",浙江卫视频4k
-http://180.114.162.2:2380/c3.cdn.hunancatv.com/live/zjws4K.m3u8
-#EXTINF:-1 group-title="欣赏频道",江苏卫视频4k
-http://180.114.162.2:2380/c3.cdn.hunancatv.com/live/jsws4K.m3u8
-#EXTINF:-1 group-title="欣赏频道",深圳卫视频4k
-http://180.114.162.2:2380/c3.cdn.hunancatv.com/live/szws4K.m3u8
-#EXTINF:-1 group-title="欣赏频道",广东卫视频4k
-http://180.114.162.2:2380/c3.cdn.hunancatv.com/live/gdws4K.m3u8
-#EXTINF:-1 group-title="欣赏频道",山东卫视频4k
-http://180.114.162.2:2380/c3.cdn.hunancatv.com/live/sdws4K.m3u8
-#EXTINF:-1 group-title="欣赏频道",四川卫视频4k
-http://180.114.162.2:2380/c3.cdn.hunancatv.com/live/scws4K.m3u8
-#EXTINF:-1 group-title="欣赏频道",北京卫视频4k
-http://106.53.99.30/tv/bj.php?id=bjws4k
-#EXTINF:-1 group-title="欣赏频道",东方卫视频4k
-http://106.53.99.30/tv/api.php?id=dfws4k
-#EXTINF:-1 group-title="欣赏频道",江苏卫视频4k
-http://124.116.170.138:8081/rtp/239.111.205.64:5140
-#EXTINF:-1 group-title="欣赏频道",湖南卫视频4k
-http://106.53.99.30/tv/api.php?id=hnws4k
-#EXTINF:-1 group-title="欣赏频道",广东卫视频4k
-http://124.116.170.138:8081/rtp/239.111.205.103:5140
-#EXTINF:-1 group-title="欣赏频道",深圳卫视频4k
-http://106.53.99.30/tv/api.php?id=szws4k
-#EXTINF:-1 group-title="欣赏频道",山东卫视频4k
-http://124.116.170.138:8081/rtp/239.111.205.66:5140
-#EXTINF:-1 group-title="欣赏频道",四川卫视频4k
-http://124.116.170.138:8081/rtp/239.111.205.62:5140
-#EXTINF:-1 group-title="欣赏频道",北京卫视频4k
-http://ddns.xryo.cn:8888/udp/239.111.205.51:5140
-#EXTINF:-1 group-title="欣赏频道",东方卫视频4k
-http://ddns.xryo.cn:8888/udp/239.111.205.67:5140
-#EXTINF:-1 group-title="欣赏频道",浙江卫视频4k
-http://ddns.xryo.cn:8888/udp/239.111.205.65:5140
-#EXTINF:-1 group-title="欣赏频道",江苏卫视频4k
-http://ddns.xryo.cn:8888/udp/239.111.205.64:5140
-#EXTINF:-1 group-title="欣赏频道",湖南卫视频4k
-http://ddns.xryo.cn:8888/udp/239.111.205.63:5140
-#EXTINF:-1 group-title="欣赏频道",广东卫视频4k
-http://ddns.xryo.cn:8888/udp/239.111.205.103:5140
-#EXTINF:-1 group-title="欣赏频道",深圳卫视频4k
-http://ddns.xryo.cn:8888/udp/239.111.205.104:5140
-#EXTINF:-1 group-title="欣赏频道",山东卫视频4k
-http://ddns.xryo.cn:8888/udp/239.111.205.66:5140
-#EXTINF:-1 group-title="欣赏频道",四川卫视频4k
-http://ddns.xryo.cn:8888/udp/239.111.205.62:5140
-#EXTINF:-1 group-title="欣赏频道",北京卫视频4k
-http://49.235.65.250:600/beijing/beijing.php?id=bjws4k
-#EXTINF:-1 group-title="欣赏频道",芒果4k频道超
-https://ffmpeg.pendy.dpdns.org/mgtv/mgtv.m3u8
-#EXTINF:-1 group-title="欣赏频道",第一滴血全集
-http://iptv77.iptv66.eu.org:35455/yy/1354932355
-#EXTINF:-1 group-title="欣赏频道",速度与激情集
-http://iptv77.iptv66.eu.org:35455/yy/1382736911
-#EXTINF:-1 group-title="欣赏频道",95神雕侠侣粤
-http://iptv77.iptv66.eu.org:35455/yy/1354926637
-#EXTINF:-1 group-title="欣赏频道",87经典红楼梦
-http://iptv77.iptv66.eu.org:35455/yy/1382745084
-#EXTINF:-1 group-title="欣赏频道",新白娘子轮播
-http://iptv77.iptv66.eu.org:35455/yy/1354930969
-#EXTINF:-1 group-title="欣赏频道",仙剑奇侠传剧
-http://iptv77.iptv66.eu.org:35455/yy/1382749903
-#EXTINF:-1 group-title="欣赏频道",花千骨电视剧
-http://iptv77.iptv66.eu.org:35455/yy/1354943110
-#EXTINF:-1 group-title="欣赏频道",鹊刀门传奇剧
-http://iptv77.iptv66.eu.org:35455/yy/1355344777
-#EXTINF:-1 group-title="欣赏频道",欢乐颂电视剧
-http://8.155.43.98:35455/douyu/3756989
-#EXTINF:-1 group-title="欣赏频道",我的体育老师
-http://iptv77.iptv66.eu.org:35455/yy/1382745169
-#EXTINF:-1 group-title="欣赏频道",如果岁月轮播
-http://iptv77.iptv66.eu.org:35455/yy/1382736883
-#EXTINF:-1 group-title="欣赏频道",流金岁月轮播
-http://iptv77.iptv66.eu.org:35455/yy/1382749906
-#EXTINF:-1 group-title="欣赏频道",我的前半生剧
-http://iptv77.iptv66.eu.org:35455/yy/1382735564
-#EXTINF:-1 group-title="欣赏频道",伪装者电视剧
-http://iptv77.iptv66.eu.org:35455/yy/1354936244
-#EXTINF:-1 group-title="欣赏频道",火蓝刀锋轮播
-http://iptv77.iptv66.eu.org:35455/yy/1382737892
-#EXTINF:-1 group-title="欣赏频道",二炮手电视剧
-http://iptv77.iptv66.eu.org:35455/yy/1354930964
-#EXTINF:-1 group-title="欣赏频道",炮神电视轮播
-http://iptv77.iptv66.eu.org:35455/yy/22089862
-#EXTINF:-1 group-title="欣赏频道",风筝电视轮播
-http://iptv77.iptv66.eu.org:35455/yy/1354931585
-#EXTINF:-1 group-title="欣赏频道",武林外传轮播
-http://iptv77.iptv66.eu.org:35455/yy/1355652820
-#EXTINF:-1 group-title="欣赏频道",邵氏影院频视
-http://8.155.43.98:35455/douyu/4246519
-#EXTINF:-1 group-title="欣赏频道",经典怀旧频道
-https://pull.dxhmt.cn/tv/168666456yinyue123477.flv
-#EXTINF:-1 group-title="欣赏频道",经典音乐频道
-https://pull.dxhmt.cn/tv/168666456yinyuy123477.flv
-#EXTINF:-1 group-title="网页音乐",音乐库仓抖播
-http://rihou.cc:555/tv/音乐库仓抖03
-#EXTINF:-1 group-title="网页音乐",音乐仓库抖播
-http://rihou.cc:555/tv/音乐仓库抖03
-#EXTINF:-1 group-title="欣赏音乐",湾区电影晚会
-http://jx.999315.xyz/yzzy/20250929/17368_087f472a/index.m3u8
-#EXTINF:-1 group-title="欣赏音乐",海阔天空绝版
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8bda53107d42b010370019924cf1f9a_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",旧日的足迹版
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c76cfbbc17c14f037001994b03cd07_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",灌篮AI黄家驹
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c0461f072ec101037001992f147f11_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",往日少年家驹
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e927e7581658b7010370019ac3e18182_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",[没出息]_三创
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e90225867f602a4f0370019a3064d64e_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语劲爆串烧
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8ccfd682b29e5010370019960c10c99_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语_PG'串烧
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8d89cc31cde8c4f037001998e2818b6_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语-LAK串烧
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8db8745e895c80103700199998b9637_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语_FK迷幻1
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8dd43a2346c1f4f03700199a05404d2_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语家驹串烧
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8dfc99be7c5690103700199aa2ed5b3_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语热门串烧
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8efad98e89ffa0103700199e8582d78_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语抖音串烧
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8dfce27e8a6cd0103700199aa4081b1_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语女声串一
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8be36b1bd60ee4f037001992707ce4d_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语女声串二
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c788c00738e201037001994b71736e_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语说唱版01
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c0e2e1bc52524f0370019931780143_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语说唱版02
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c0e3a6bc90554f03700199317a91d9_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语说唱版03
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c15bf007f51d0103700199334fdb54_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语说唱版04
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c16502bc27294f03700199337327e3_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语说唱版05
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c15f440705110103700199335d6699_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语说唱版06
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c1600bbcab0d4f037001993361060f_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语说唱版07
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c16291bd6f234f03700199336aa526_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语说唱版08
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c16572bc06274f0370019933759b25_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语说唱版09
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c16609bc4bfc4f037001993377eaf8_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语说唱版10
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c1669207c4f801037001993379ed55_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语说唱版11
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c167250724280103700199337c24a6_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语说唱版12
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c167a707cf370103700199337e0687_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语说唱版13
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c1681fbd7d534f03700199337fd3fe_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语说唱版14
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c168a8073a8901037001993381f523_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语说唱版15
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c169230728170103700199338a69d7_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版01
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c1b8b2bc31f54f0370019934c13583_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版02
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c1bc1e070e9d010370019934c98cdd_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版03
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c1be4cbc6a644f0370019934d1da11_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版04
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c1bf3dbbe4014f0370019934d4f1dc_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版05
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c1c000bbf0574f0370019934d826ce_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版06
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c1c14abd062e4f0370019934dcd026_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版07
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c1c1f707f05c010370019934e3b48b_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版08
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c1c466bd699c4f0370019934e91125_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版09
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c28631bd9b2d4f0370019937defd18_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版10
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c2876207175d010370019937e386d5_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版11
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c28893bce2664f0370019937e82dc9_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版12
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c289efbcc64c4f0370019937ed07ec_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版13
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c30c3307c864010370019939e955ad_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版14
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c30d3cbc1a974f0370019939ed6305_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版15
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c30ddabc71264f0370019939effeca_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版16
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c30e71073ce6010370019939f1ec20_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版17
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c30f000702df010370019939f3f909_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版18
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c30f7307cfbe010370019939f5cbe7_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版19
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c30feb0716bb010370019939f79ac4_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版20
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c3106e07f147010370019939f94103_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版21
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c3112abbe56b4f0370019939fc8599_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版22
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c311b5bd23a54f0370019939fe903f_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版23
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c313dc0722ea01037001993a071f66_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版24
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c31aa7bbf3364f037001993a21bce4_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版25
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c31b6507e15a01037001993a24d964_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版26
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c31c12bd3aff4f037001993a271560_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版27
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c31c8d071f9801037001993a28db08_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版28
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c31d0907eb2b01037001993a2ad77c_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版29
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c31d8207c9d101037001993a2ccea3_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版30
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c31e1607feba01037001993a2f0eac_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版31
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c31ec2071f9801037001993a318a54_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版32
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c31f58bc78154f037001993a33df9b_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版33
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c31ff707fb7601037001993a362fa2_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版34
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c3208607003101037001993a38aa4c_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版35
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c3214007f65301037001993a3bb583_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版36
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c454d9bc2f934f037001993eed28cb_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版37
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c4554c07286601037001993eee9d41_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版38
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c455b3bd31574f037001993ef09774_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版39
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c4562e07db1601037001993ef22950_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版40
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c4569007d7a001037001993ef4d0b6_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版41
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c45731bc6f5c4f037001993ef68ecb_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版42
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c457a8bda9eb4f037001993ef8c5d3_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版43
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c45863071bf901037001993efc1c39_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版44
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c45925bd908b4f037001993efdfa5e_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版45
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c4599607107801037001993effcb0c_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版46
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c45c63bd9c174f037001993f0a5f1a_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版47
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c45cdbbbf9d44f037001993f0f4f23_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版48
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c45e260713a901037001993f118f1b_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版49
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c45f2ebd97434f037001993f1842d5_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版50
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c46063bcc53c4f037001993f19d33b_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版51
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c460cfbc0fed4f037001993f1b8b06_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版52
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c4612d0714da01037001993f1cf5b9_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版53
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c4618bbcdc1d4f037001993f1f919b_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版54
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c4623a07fff601037001993f217a35_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版55
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c462b3072dc001037001993f230c81_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版56
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c4651e07203401037001993f2cb7fd_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版57
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c465a107216501037001993f2e7374_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版58
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c4661207111f01037001993f313c2e_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版59
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c466c707d9de01037001993f33873d_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版60
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c4674107391101037001993f34c2c4_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版61
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c467a2bc44bc4f037001993f35f84f_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版62
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c46801072f9101037001993f3910bf_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版63
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c468bb071d7d01037001993f3c4e28_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版64
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c46955072e7101037001993f3d9f88_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",粤语剧场版65
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c469d0071fab01037001993f3fffec_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",经典Dj嗨歌01
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c0531dbca1064f037001992f48d0cd_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",经典Dj嗨歌02
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c643e2bc5a744f03700199467b4c09_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",经典Dj嗨歌03
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c6443abd17df4f03700199467cffa5_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",经典Dj嗨歌04
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c644c7bc5a044f03700199467f364e_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",经典Dj嗨歌05
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c64536bc37604f03700199467f7a63_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",经典Dj嗨歌06
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c6469e07c6590103700199468fad62_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",经典Dj嗨歌07
-https://sns-video-default.xhscdn.com/stream/79/110/258/01e8c64721bd88e84f037001994687eb6c_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",经典Dj嗨歌08
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8e215ade7dc860103700199b330ed3a_258.mp4
-#EXTINF:-1 group-title="欣赏音乐",爆改版看预谋
-http://rihou.cc:555/tv/爆改版看预谋
-#EXTINF:-1 group-title="欣赏音乐",<我的好兄弟>
-https://sns-video-default.xhscdn.com/stream/1/110/258/01e8c171e907fbe0010370019933a69c19_258.mp4
-#EXTINF:-1 group-title="特马SXtv",Plus综合SXtv
-http://rihou.cc:555/tv/[SX]Plus综合
-#EXTINF:-1 group-title="特马SXtv",凤凰中文SXtv
-http://rihou.cc:555/tv/[SX]凤凰中文
-#EXTINF:-1 group-title="特马SXtv",凤凰资讯SXtv
-http://rihou.cc:555/tv/[SX]凤凰资讯
-#EXTINF:-1 group-title="特马SXtv",凤凰香港SXtv
-http://rihou.cc:555/tv/[SX]凤凰香港
-#EXTINF:-1 group-title="特马SXtv",无线新闻SXtv
-http://rihou.cc:555/tv/[SX]无线新闻
-#EXTINF:-1 group-title="特马SXtv",无线翡翠SXtv
-http://rihou.cc:555/tv/[SX]无线翡翠
-#EXTINF:-1 group-title="特马SXtv",无线明珠SXtv
-http://rihou.cc:555/tv/[SX]无线明珠
-#EXTINF:-1 group-title="特马SXtv",无线千禧SXtv
-http://rihou.cc:555/tv/[SX]无线千禧
-#EXTINF:-1 group-title="特马SXtv",无线星河国Sx
-http://rihou.cc:555/tv/[SX]无线星河
-#EXTINF:-1 group-title="特马SXtv",无线华丽国Sx
-http://rihou.cc:555/tv/[SX]无线华丽
-#EXTINF:-1 group-title="特马SXtv",无线华丽国Sx
-http://rihou.cc:555/tv/[SX]无线丽华
-#EXTINF:-1 group-title="特马SXtv",美亚电影国Sx
-http://rihou.cc:555/tv/[SX]美亚电影
-#EXTINF:-1 group-title="特马SXtv",天映频道国Sx
-http://rihou.cc:555/tv/[SX]天映频道
-#EXTINF:-1 group-title="特马SXtv",天映经典粤Sx
-http://rihou.cc:555/tv/[SX]天映经典
-#EXTINF:-1 group-title="特马SXtv",RTHK-31SXtv
-http://rihou.cc:555/tv/[SX]RTHK-31
-#EXTINF:-1 group-title="特马SXtv",RTHK-32SXtv
-http://rihou.cc:555/tv/[SX]RTHK-32
-#EXTINF:-1 group-title="特马SXtv",VIUTV'粤SXtv
-http://rihou.cc:555/tv/[SX]VIUTV粤
-#EXTINF:-1 group-title="特马SXtv",VIUTV'英SXtv
-http://rihou.cc:555/tv/[SX]VIUTV英
-#EXTINF:-1 group-title="特马SXtv",tvbS新闻SXtv
-http://rihou.cc:555/tv/[SX]tvbS新闻
-#EXTINF:-1 group-title="特马SXtv",AstroaodSXtv
-http://rihou.cc:555/tv/[SX]Astroaod
-#EXTINF:-1 group-title="特马SXtv",AstroAecSXtv
-http://rihou.cc:555/tv/[SX]AstroAec
-#EXTINF:-1 group-title="特马SXtv",Astro_QJSXtv
-http://rihou.cc:555/tv/[SX]Astro_QJ
-#EXTINF:-1 group-title="特马SXtv",Astro爱奇sxtv
-http://rihou.cc:555/tv/[SX]Astro爱奇
-#EXTINF:-1 group-title="特马SXtv",Astro欢喜sxtv
-http://rihou.cc:555/tv/[SX]Astro欢喜
-#EXTINF:-1 group-title="特马SXtv",八度空间SXtv
-http://rihou.cc:555/tv/[SX]八度空间
-#EXTINF:-1 group-title="特闽Hktv",天映频道Hktv
-http://rihou.cc:555/tv/[Hv]天映频道
-#EXTINF:-1 group-title="特闽Hktv",天映经典Hktv
-http://rihou.cc:555/tv/[Hv]天映经典
-#EXTINF:-1 group-title="特闽FYtv",广东珠江FYtv
-http://iptv.4666888.xyz/iptv2A.php?id=19
-#EXTINF:-1 group-title="特闽FYtv",广东体育FYtv
-http://iptv.4666888.xyz/iptv2A.php?id=20
-#EXTINF:-1 group-title="特闽FYtv",浙江卫视FYtv
-http://iptv.4666888.xyz/iptv2A.php?id=14
-#EXTINF:-1 group-title="特闽FYtv",江苏卫视FYtv
-http://iptv.4666888.xyz/iptv2A.php?id=15
-#EXTINF:-1 group-title="特闽FYtv",湖南卫视FYtv
-http://iptv.4666888.xyz/iptv2A.php?id=13
-#EXTINF:-1 group-title="特闽FYtv",广东卫视FYtv
-http://iptv.4666888.xyz/iptv2A.php?id=18
-#EXTINF:-1 group-title="特闽FYtv",山西卫视FYtv
-http://iptv.4666888.xyz/iptv2A.php?id=16
-#EXTINF:-1 group-title="特闽FYtv",青海卫视FYtv
-http://iptv.4666888.xyz/iptv2A.php?id=17
-#EXTINF:-1 group-title="抖音网页",央视网抖直播
-http://iptv77.iptv66.eu.org:35455/bilibili/8178490
-#EXTINF:-1 group-title="抖音网页",央视网快看播
-http://iptv77.iptv66.eu.org:35455/bilibili/22142427
-#EXTINF:-1 group-title="抖音网页",央视七套直播
-http://iptv77.iptv66.eu.org:35455/bilibili/32558016
-#EXTINF:-1 group-title="抖音网页",fm891音乐播
-http://iptv77.iptv66.eu.org:35455/bilibili/26544140
-#EXTINF:-1 group-title="抖音网页",周杰伦音乐播
-http://iptv77.iptv66.eu.org:35455/bilibili/23765388
-#EXTINF:-1 group-title="抖音网页",爵士音乐直播
-http://iptv77.iptv66.eu.org:35455/bilibili/543176
-#EXTINF:-1 group-title="抖音网页",北京朝阳街景
-http://iptv77.iptv66.eu.org:35455/bilibili/3291055
-#EXTINF:-1 group-title="抖音网页",电台粤直播壹
-http://iptv77.iptv66.eu.org:35455/bilibili/31224575
-#EXTINF:-1 group-title="抖音网页",电台轮直播肆
-http://iptv77.iptv66.eu.org:35455/bilibili/1836716199
-#EXTINF:-1 group-title="抖音网页",电台轮直播捌
-http://iptv77.iptv66.eu.org:35455/bilibili/266845
-#EXTINF:-1 group-title="虎牙频道",刘德华播频道
-http://cfss.cc/cdn/hy/11342424.m3u8
-#EXTINF:-1 group-title="虎牙频道",许冠英播频道
-http://cfss.cc/cdn/hy/11601972.m3u8
-#EXTINF:-1 group-title="虎牙频道",李连杰播频道
-http://cfss.cc/cdn/hy/11342390.m3u8
-#EXTINF:-1 group-title="虎牙频道",甄子丹播频道
-http://cfss.cc/cdn/hy/11352935.m3u8
-#EXTINF:-1 group-title="虎牙频道",周润发播频道
-http://cfss.cc/cdn/hy/11342387.m3u8
-#EXTINF:-1 group-title="虎牙频道",洪金宝播频道
-http://cfss.cc/cdn/hy/11279251.m3u8
-#EXTINF:-1 group-title="虎牙频道",梁家辉播频道
-http://cfss.cc/cdn/hy/11342429.m3u8
-#EXTINF:-1 group-title="虎牙频道",五福星播频道
-http://cfss.cc/cdn/hy/11282233.m3u8
-#EXTINF:-1 group-title="虎牙频道",邱淑贞播频道
-http://cfss.cc/cdn/hy/11352949.m3u8
-#EXTINF:-1 group-title="虎牙频道",周海媚播频道
-http://cfss.cc/cdn/hy/11279247.m3u8
-#EXTINF:-1 group-title="虎牙频道",星爷虎牙频道
-http://cfss.cc/cdn/hy/11342412.m3u8
-#EXTINF:-1 group-title="虎牙频道",英叔虎牙频道
-http://cfss.cc/cdn/hy/11342421.m3u8
-#EXTINF:-1 group-title="虎牙频道",成龙虎牙频道
-http://cfss.cc/cdn/hy/11342386.m3u8
-#EXTINF:-1 group-title="虎牙频道",王晶虎牙频道
-http://cfss.cc/cdn/hy/11602058.m3u8
-#EXTINF:-1 group-title="虎牙频道",沈腾虎牙频道
-http://cfss.cc/cdn/hy/11601968.m3u8
-#EXTINF:-1 group-title="虎牙频道",黄渤虎牙频道
-http://cfss.cc/cdn/hy/11352876.m3u8
-#EXTINF:-1 group-title="虎牙频道",强森虎牙频道
-http://cfss.cc/cdn/hy/21059581.m3u8
-#EXTINF:-1 group-title="虎牙频道",经典女神频道
-http://cfss.cc/cdn/hy/11352909.m3u8
-#EXTINF:-1 group-title="虎牙频道",许氏三杰频道
-http://cfss.cc/cdn/hy/11602033.m3u8
-#EXTINF:-1 group-title="虎牙频道",经典港片频道
-http://cfss.cc/cdn/hy/11352965.m3u8
-#EXTINF:-1 group-title="虎牙频道",雍正王朝频道
-http://cfss.cc/cdn/hy/11342439.m3u8
-#EXTINF:-1 group-title="虎牙频道",电视剧三频道
-http://cfss.cc/cdn/hy/21059563.m3u8
-#EXTINF:-1 group-title="虎牙频道",电视剧四频道
-http://cfss.cc/cdn/hy/26355783.m3u8
-#EXTINF:-1 group-title="虎牙频道",电视剧七频道
-http://cfss.cc/cdn/hy/21059630.m3u8
-#EXTINF:-1 group-title="虎牙频道",电视剧八频道
-http://cfss.cc/cdn/hy/26355775.m3u8
-#EXTINF:-1 group-title="虎牙频道",电视剧十一道
-http://cfss.cc/cdn/hy/11602088.m3u8
-#EXTINF:-1 group-title="爱奇频道",好片速递频道
-http://lvbaiducdnct.inter.ptqy.gitv.tv/tslive/c55_fast_1143_1080P_t10/c55_fast_1143_1080P_t10.m3u8?d
-#EXTINF:-1 group-title="爱奇频道",电影大片频道
-http://lvbaiducdnct.inter.ptqy.gitv.tv/tslive/c57_fast_738_1080P_t10/c57_fast_738_1080P_t10.m3u8?d
-#EXTINF:-1 group-title="特区地波",有线新闻高码
-http://222.125.207.8:2095/bysid/78
-#EXTINF:-1 group-title="特区地波",有线新闻高码
-http://feng163.com:8003/bysid/78.m3u8
-#EXTINF:-1 group-title="特区地波",无线明珠高码
-http://beishan008.asuscomm.com:8890/bysid/2.m3u8
-#EXTINF:-1 group-title="特区地波",有线赛讯高码
-http://222.125.207.8:2095/bysid/76
-#EXTINF:-1 group-title="特区地波",有线综讯高码
-http://222.125.207.8:2095/bysid/77
-#EXTINF:-1 group-title="特区地波",RTHK-32高码
-http://beishan008.asuscomm.com:8892/bysid/32.m3u8
-#EXTINF:-1 group-title="特区地波",RTHK-33高码
-http://beishan008.asuscomm.com:8892/bysid/33.m3u8
-#EXTINF:-1 group-title="广州电信",广东普宁频道
-http://121.11.160.7:9901/tsfile/live/1023_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="广州电信",广西崇左频道
-http://gxyd.484947.xyz/PLTV/77777777/224/3221226351/index.m3u8?servicetype=1&IASHttpSessionId=OTT
-#EXTINF:-1 group-title="广州电信",儋州综合频道
-http://36009.hlsplay.aodianyun.com/tv_radio_36009/tv_channel_1330.m3u8?auth_key=4854915849-0-0-5cf8df0f6f82fbb8da58b60f011965c3
-#EXTINF:-1 group-title="广州电信",广东湾区广州
-http://tvtj.jxwltx.com:8003/neimenggu.m3u8
-#EXTINF:-1 group-title="广州电信",CCTV-02广州
-http://tvtj.jxwltx.com:8003/cctv2.m3u8
-#EXTINF:-1 group-title="广州电信",CCTV-07广州
-http://tvtj.jxwltx.com:8003/cctv7.m3u8
-#EXTINF:-1 group-title="广州电信",江苏卫视广州
-http://tvtj.jxwltx.com:8003/jsws.m3u8
-#EXTINF:-1 group-title="广州电信",湖南卫视广州
-http://tvtj.jxwltx.com:8003/hunanws.m3u8
-#EXTINF:-1 group-title="广州电信",广东卫视广州
-http://tvtj.jxwltx.com:8003/gdws.m3u8
-#EXTINF:-1 group-title="广州电信",云南卫视广州
-http://tvtj.jxwltx.com:8003/ynws.m3u8
-#EXTINF:-1 group-title="广州电信",东南卫视广州
-http://tvtj.jxwltx.com:8003/dnws.m3u8
-#EXTINF:-1 group-title="童年频道",圣斗士集解叁
-http://8.155.43.98:35455/douyu/10349501
-#EXTINF:-1 group-title="童年频道",足球小将剧集
-http://8.155.43.98:35455/douyu/997925
-#EXTINF:-1 group-title="童年频道",足球小将轮播
-http://8.155.43.98:35455/douyu/11870067
-#EXTINF:-1 group-title="童年频道",头文字D解说
-http://8.155.43.98:35455/douyu/9837291
-#EXTINF:-1 group-title="童年频道",叮当全集解说
-http://8.155.43.98:35455/douyu/9445279
-#EXTINF:-1 group-title="童年频道",料理小当家集
-http://8.155.43.98:35455/douyu/8231658
-#EXTINF:-1 group-title="童年频道",柯南剧场版集
-http://8.155.43.98:35455/douyu/6484910
-#EXTINF:-1 group-title="亮剑全集",亮剑之第01集
-https://vip.dytt-play.com/20250119/1_c4ca4238/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第02集
-https://vip.dytt-play.com/20250119/2_c81e728d/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第03集
-https://vip.dytt-play.com/20250119/3_eccbc87e/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第04集
-https://vip.dytt-play.com/20250119/4_a87ff679/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第05集
-https://vip.dytt-play.com/20250119/5_e4da3b7f/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第06集
-https://vip.dytt-play.com/20250119/6_1679091c/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第07集
-https://vip.dytt-play.com/20250119/7_8f14e45f/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第08集
-https://vip.dytt-play.com/20250119/8_c9f0f895/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第09集
-https://vip.dytt-play.com/20250119/9_45c48cce/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第10集
-https://vip.dytt-play.com/20250119/10_d3d94468/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第11集
-https://vip.dytt-play.com/20250119/11_6512bd43/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第12集
-https://vip.dytt-play.com/20250119/12_c20ad4d7/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第13集
-https://vip.dytt-play.com/20250119/13_c51ce410/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第14集
-https://vip.dytt-play.com/20250119/14_aab32389/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第15集
-https://vip.dytt-play.com/20250119/15_9bf31c7f/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第16集
-https://vip.dytt-play.com/20250119/16_c74d97b0/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第17集
-https://vip.dytt-play.com/20250119/17_70efdf2e/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第18集
-https://vip.dytt-play.com/20250119/18_6f4922f4/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第19集
-https://vip.dytt-play.com/20250119/19_1f0e3dad/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第20集
-https://vip.dytt-play.com/20250119/20_98f13708/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第21集
-https://vip.dytt-play.com/20250119/21_3c59dc04/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第22集
-https://vip.dytt-play.com/20250119/22_b6d767d2/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第23集
-https://vip.dytt-play.com/20250119/23_37693cfc/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第24集
-https://vip.dytt-play.com/20250119/24_1ff1de77/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第25集
-https://vip.dytt-play.com/20250119/25_8e296a06/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第26集
-https://vip.dytt-play.com/20250119/26_4e732ced/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第27集
-https://vip.dytt-play.com/20250119/27_02e74f10/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第28集
-https://vip.dytt-play.com/20250119/28_33e75ff0/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第29集
-https://vip.dytt-play.com/20250119/29_6ea9ab1b/index.m3u8
-#EXTINF:-1 group-title="亮剑全集",亮剑之第30集
-https://vip.dytt-play.com/20250119/30_34173cb3/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第01集
-https://vip.dytt-tv.com/20250208/1775_36d75342/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第02集
-https://vip.dytt-tv.com/20250208/1776_7dd0240c/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第03集
-https://vip.dytt-tv.com/20250208/1777_e9b73bcc/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第04集
-https://vip.dytt-tv.com/20250208/1778_6709e8d6/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第05集
-https://vip.dytt-tv.com/20250208/1779_8c01a759/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第06集
-https://vip.dytt-tv.com/20250208/1780_f63f65b5/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第07集
-https://vip.dytt-tv.com/20250208/1781_8b6a80c3/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第08集
-https://vip.dytt-tv.com/20250208/1782_4a2ddf14/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第09集
-https://vip.dytt-tv.com/20250208/1783_b865367f/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第10集
-https://vip.dytt-tv.com/20250208/1784_365d1777/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第11集
-https://vip.dytt-tv.com/20250208/1785_393c55ae/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第12集
-https://vip.dytt-tv.com/20250208/1786_6449f44a/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第13集
-https://vip.dytt-tv.com/20250208/1787_d860bd12/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第14集
-https://vip.dytt-tv.com/20250208/1788_db957c62/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第15集
-https://vip.dytt-tv.com/20250208/1789_ecd62de2/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第16集
-https://vip.dytt-tv.com/20250208/1790_d2541440/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第17集
-https://vip.dytt-tv.com/20250208/1791_bf201d54/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第18集
-https://vip.dytt-tv.com/20250208/1792_05233523/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第19集
-https://vip.dytt-tv.com/20250208/1793_c8cbd669/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第20集
-https://vip.dytt-tv.com/20250208/1794_59e0b265/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第21集
-https://vip.dytt-tv.com/20250208/1795_0731460a/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第22集
-https://vip.dytt-tv.com/20250208/1796_90599c8f/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第23集
-https://vip.dytt-tv.com/20250208/1797_8d9fc230/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第24集
-https://vip.dytt-tv.com/20250208/1798_ac5dab2e/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第25集
-https://vip.dytt-tv.com/20250208/1799_0533a888/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第26集
-https://vip.dytt-tv.com/20250208/1800_f39ae9ff/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第27集
-https://vip.dytt-tv.com/20250208/1801_cd14821d/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第28集
-https://vip.dytt-tv.com/20250208/1802_dc40b712/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第29集
-https://vip.dytt-tv.com/20250208/1803_3fab5890/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第30集
-https://vip.dytt-tv.com/20250208/1804_90e13578/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第31集
-https://vip.dytt-tv.com/20250208/1805_7ffd85d9/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第32集
-https://vip.dytt-tv.com/20250208/1806_d1e946f4/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第33集
-https://vip.dytt-tv.com/20250208/1807_1f1baa5b/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第34集
-https://vip.dytt-tv.com/20250208/1808_39027dfa/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第35集
-https://vip.dytt-tv.com/20250208/1809_645098b0/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第36集
-https://vip.dytt-tv.com/20250208/1810_6e79ed05/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第37集
-https://vip.dytt-tv.com/20250208/1811_09b15d48/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第38集
-https://vip.dytt-tv.com/20250208/1812_5b6ba13f/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第39集
-https://vip.dytt-tv.com/20250208/1813_f542eae1/index.m3u8
-#EXTINF:-1 group-title="雪豹全集",雪豹之第40集
-https://vip.dytt-tv.com/20250208/1814_155fa095/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传01
-http://jx.999315.xyz/yzzy/20250727/16714_a69d15dc/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传02
-http://jx.999315.xyz/yzzy/20250727/16721_6226c5b0/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传03
-http://jx.999315.xyz/yzzy/20250727/16722_f9d81ff0/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传04
-http://jx.999315.xyz/yzzy/20250727/11839_e6a88d08/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传05
-http://jx.999315.xyz/yzzy/20250728/11871_ebc2aa04/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传06
-http://jx.999315.xyz/yzzy/20250728/16770_742d3c2a/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传07
-https://cdn.yzzy27-play.com/20250729/11931_0b364515/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传08
-http://jx.999315.xyz/yzzy/20250729/10197_ea67d66c/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传09
-https://cdn.yzzy28-play.com/20250730/10304_61a10e6a/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传10
-https://cdn.yzzy27-play.com/20250730/12036_37241d74/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传11
-https://cdn.yzzy28-play.com/20250731/10505_52d08372/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传12
-https://cdn.yzzy27-play.com/20250801/12253_5bff5f1e/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传13
-https://cdn.yzzy28-play.com/20250801/10604_75c6b2d6/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传14
-https://cdn.yzzy27-play.com/20250802/12432_fbad0579/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传15
-https://vvip.high26-playback.com/20250802/17589_45efb537/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传16
-https://cdn.yzzy28-play.com/20250803/10725_8086d56b/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传17
-https://cdn.yzzy28-play.com/20250804/10852_2a93f390/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传18
-https://vvip.high26-playback.com/20250806/17837_4cd47670/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传19
-https://cdn.yzzy28-play.com/20250805/10979_9cc25407/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传20
-https://vvip.high26-playback.com/20250806/17904_ee57534b/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传21
-https://vvip.high26-playback.com/20250806/17905_6fdf8aeb/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传22
-https://vvip.high26-playback.com/20250808/17980_e939047f/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传23
-https://cdn.yzzy27-play.com/20250808/15662_8eafcde3/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传24
-http://jx.999315.xyz/yzzy/20250809/15834_fad68b73/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传25
-https://cdn.yzzy28-play.com/20250810/11426_874f44f0/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传26
-https://vvip.high26-playback.com/20250811/18329_dba396ce/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传27
-https://cdn.yzzy27-play.com/20250812/16132_cc4288ab/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传28
-https://vvip.high26-playback.com/20250812/18354_923380fe/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传29
-https://cdn.yzzy27-play.com/20250812/16133_9db4f695/index.m3u8
-#EXTINF:-1 group-title="凡人修仙",凡人修仙传30
-https://cdn.yzzy28-play.com/20250812/11560_d1e7b08b/index.m3u8
-#EXTINF:-1 group-title="华山论剑",九阴真经01集
-https://vip.dytt-cinema.com/20250726/28214_ef7726ba/index.m3u8
-#EXTINF:-1 group-title="华山论剑",九阴真经02集
-https://vip.dytt-cinema.com/20250726/28225_66c2f73d/index.m3u8
-#EXTINF:-1 group-title="华山论剑",九阴真经03集
-https://vip.dytt-cinema.com/20250726/28229_397dc71b/index.m3u8
-#EXTINF:-1 group-title="华山论剑",九阴真经04集
-https://tyyszywvod5.com/videos/202507/26/6884c3b4fc41908e40998cf9/1g5d48/index.m3u8
-#EXTINF:-1 group-title="华山论剑",九阴真经05集
-https://vip.dytt-cinema.com/20250726/28251_1dfbac99/index.m3u8
-#EXTINF:-1 group-title="华山论剑",九阴真经06集
-https://vip.dytt-cinema.com/20250726/28252_86505d8e/index.m3u8
-#EXTINF:-1 group-title="华山论剑",九阴真经07集
-https://vip.dytt-cinema.com/20250726/28260_5596542f/index.m3u8
-#EXTINF:-1 group-title="华山论剑",九阴真经08集
-https://vip.dytt-cinema.com/20250726/28261_5005e1fa/index.m3u8
-#EXTINF:-1 group-title="华山论剑",东邪西毒09集
-https://vip.dytt-cinema.com/20250731/28751_7b061988/index.m3u8
-#EXTINF:-1 group-title="华山论剑",东邪西毒10集
-https://vip.dytt-cinema.com/20250731/28752_57b9c682/index.m3u8
-#EXTINF:-1 group-title="华山论剑",东邪西毒11集
-https://vip.dytt-cinema.com/20250731/28795_e02721e8/index.m3u8
-#EXTINF:-1 group-title="华山论剑",东邪西毒12集
-https://vip.dytt-cinema.com/20250731/28796_e082709f/index.m3u8
-#EXTINF:-1 group-title="华山论剑",东邪西毒13集
-https://vip.dytt-cinema.com/20250801/28815_a89b9b81/index.m3u8
-#EXTINF:-1 group-title="华山论剑",东邪西毒14集
-https://vip.dytt-cinema.com/20250801/28816_fc5bbeb3/index.m3u8
-#EXTINF:-1 group-title="华山论剑",东邪西毒15集
-https://vip.dytt-cinema.com/20250801/28817_f862869c/index.m3u8
-#EXTINF:-1 group-title="华山论剑",东邪西毒16集
-https://vip.dytt-cinema.com/20250801/28818_efa41f34/index.m3u8
-#EXTINF:-1 group-title="华山论剑",南帝北丐17集
-https://vip.dytt-hot.com/20250805/97765_1ca854b0/index.m3u8
-#EXTINF:-1 group-title="华山论剑",南帝北丐18集
-https://vip.dytt-hot.com/20250805/97764_034ade1f/index.m3u8
-#EXTINF:-1 group-title="华山论剑",南帝北丐19集
-https://vip.dytt-cinema.com/20250806/29245_53d7f154/index.m3u8
-#EXTINF:-1 group-title="华山论剑",南帝北丐20集
-https://vip.dytt-cinema.com/20250806/29246_193996d8/index.m3u8
-#EXTINF:-1 group-title="华山论剑",南帝北丐21集
-https://vip.dytt-cinema.com/20250806/29247_856a813b/index.m3u8
-#EXTINF:-1 group-title="华山论剑",南帝北丐22集
-https://vip.dytt-cinema.com/20250806/29248_235314df/index.m3u8
-#EXTINF:-1 group-title="华山论剑",南帝北丐23集
-https://vip.dytt-cinema.com/20250806/29249_64ca07cd/index.m3u8
-#EXTINF:-1 group-title="华山论剑",南帝北丐24集
-https://vip.dytt-cinema.com/20250806/29250_e4c60bf7/index.m3u8
-#EXTINF:-1 group-title="华山论剑",五绝争锋25集
-https://vip.dytt-hot.com/20250810/98024_b5aa9ff8/index.m3u8
-#EXTINF:-1 group-title="华山论剑",五绝争锋26集
-https://vip.dytt-hot.com/20250810/98025_1e676fdf/index.m3u8
-#EXTINF:-1 group-title="华山论剑",五绝争锋27集
-https://vip.dytt-hot.com/20250810/98026_91949fce/index.m3u8
-#EXTINF:-1 group-title="华山论剑",五绝争锋28集
-https://vip.dytt-hot.com/20250810/98027_12dc78e6/index.m3u8
-#EXTINF:-1 group-title="华山论剑",五绝争锋29集
-https://vip.dytt-hot.com/20250810/98028_690888d9/index.m3u8
-#EXTINF:-1 group-title="华山论剑",五绝争锋30集
-https://vip.dytt-hot.com/20250810/98029_68e3d1b4/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤01
-https://vip.dytt-cine.com/20250715/39352_204ed8b9/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤02
-https://vip.dytt-cine.com/20250715/39353_2dcb2f57/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤03
-https://vip.dytt-cine.com/20250715/39354_da740a2d/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤04
-https://vip.dytt-cine.com/20250715/39355_67b46df8/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤05
-https://vip.dytt-cine.com/20250715/39356_696ede2b/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤06
-https://vip.dytt-cine.com/20250715/39357_759cf6a0/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤07
-https://vip.dytt-cine.com/20250715/39358_d6a5ec16/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤08
-https://vip.dytt-cine.com/20250715/39359_a88e6ae4/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤09
-https://vip.dytt-cine.com/20250715/39361_74d1f598/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤10
-https://vip.dytt-cine.com/20250715/39362_5afcd278/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤11
-https://vip.dytt-cine.com/20250715/39363_93794ee1/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤12
-https://vip.dytt-cine.com/20250715/39364_daf553bc/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤13
-https://vip.dytt-cine.com/20250715/39365_17c77fd5/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤14
-https://vip.dytt-cine.com/20250715/39366_6266f24c/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤15
-https://vip.dytt-cine.com/20250715/39367_77abef21/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤16
-https://vip.dytt-cine.com/20250715/39368_187df28d/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤17
-https://vip.dytt-cine.com/20250715/39369_3f6ad121/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤18
-https://vip.dytt-cine.com/20250715/39370_42f5d8ad/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤19
-https://vip.dytt-cine.com/20250715/39371_78383fd6/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤20
-https://vip.dytt-cine.com/20250715/39372_d5ee46a8/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤21
-https://vip.dytt-cine.com/20250715/39373_c458bd80/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤22
-https://vip.dytt-cine.com/20250715/39374_842e8292/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤23
-https://vip.dytt-cine.com/20250715/39375_2e12fe5b/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤24
-https://vip.dytt-cine.com/20250715/39376_dbb2f657/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤25
-https://vip.dytt-cine.com/20250715/39377_65b03949/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤26
-https://vip.dytt-cine.com/20250715/39378_c9181c54/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤27
-https://vip.dytt-cine.com/20250715/39379_6b8aee8b/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤28
-https://vip.dytt-cine.com/20250715/39380_862090b9/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤29
-https://vip.dytt-cine.com/20250718/39585_34662410/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤30
-https://vip.dytt-cine.com/20250718/39586_352409af/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤31
-https://vip.dytt-cine.com/20250715/39343_bd8b4dc6/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤32
-https://vip.dytt-cine.com/20250715/39344_e079950a/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤33
-https://vip.dytt-cine.com/20250715/39345_efbb36a8/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤34
-https://vip.dytt-cine.com/20250715/39346_ad991d32/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤35
-https://vip.dytt-cine.com/20250715/39347_bd1e8ec4/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤36
-https://vip.dytt-cine.com/20250715/39348_6ded8e41/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤37
-https://vip.dytt-cine.com/20250715/39349_bac1729d/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤38
-https://vip.dytt-cine.com/20250715/39350_32d73175/index.m3u8
-#EXTINF:-1 group-title="Q-三国粤",Q版-三国粤39
-https://vip.dytt-cine.com/20250715/39351_b8e8d48c/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹01
-https://cdn9.ryplay9.com/20240922/8086_54dac94c/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹02
-https://cdn9.ryplay9.com/20240922/8087_9e2d8c07/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹03
-https://cdn9.ryplay9.com/20240922/8088_5a0040a6/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹04
-https://cdn9.ryplay9.com/20240922/8089_e5af76e7/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹05
-https://cdn9.ryplay9.com/20240922/8090_4bf81aa2/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹06
-https://cdn9.ryplay9.com/20240922/8091_fb74548b/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹07
-https://cdn9.ryplay9.com/20240922/8092_b9278e21/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹08
-https://cdn9.ryplay9.com/20240922/8093_b9e94fc9/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹09
-https://cdn9.ryplay9.com/20240922/8098_7b47f24c/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹10
-https://cdn9.ryplay9.com/20240922/8099_ea74d165/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹11
-https://cdn9.ryplay9.com/20240922/8107_297ce739/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹12
-https://cdn9.ryplay9.com/20240922/8116_fdaa4ccb/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹13
-https://cdn9.ryplay9.com/20240922/8123_14171de0/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹14
-https://cdn9.ryplay9.com/20240922/8132_77b87a9e/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹15
-https://cdn9.ryplay9.com/20240922/8133_5dff29ed/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹16
-https://cdn9.ryplay9.com/20240922/8141_358346c4/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹17
-https://cdn9.ryplay9.com/20240922/8150_80b468f6/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹18
-https://cdn9.ryplay9.com/20240922/8159_a687f6db/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹19
-https://cdn9.ryplay9.com/20240922/8160_7b5d29a4/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹20
-https://cdn9.ryplay9.com/20240922/8170_a6c4f5ef/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹21
-https://cdn9.ryplay9.com/20240922/8178_6e208990/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹22
-https://cdn9.ryplay9.com/20240922/8186_1abe096d/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹23
-https://cdn9.ryplay9.com/20240922/8187_cfc9c7bf/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹24
-https://cdn9.ryplay9.com/20240922/8196_15989709/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹25
-https://cdn9.ryplay9.com/20240922/8205_e13e5ab1/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹26
-https://cdn9.ryplay9.com/20240922/8213_5cce595f/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹27
-https://cdn9.ryplay9.com/20240922/8214_a781c5eb/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹28
-https://cdn9.ryplay9.com/20240922/8224_75531b09/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹29
-https://cdn9.ryplay9.com/20240922/8231_27e46da1/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹30
-https://cdn9.ryplay9.com/20240922/8242_1203dfd8/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹31
-https://cdn9.ryplay9.com/20240922/8243_66358eca/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹32
-https://cdn9.ryplay9.com/20240922/8252_0f8024a3/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹33
-https://cdn9.ryplay9.com/20240922/8260_4d923cba/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹34
-https://cdn9.ryplay9.com/20240922/8261_aa8ad48b/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹35
-https://cdn9.ryplay9.com/20240922/8270_0f758e3c/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹36
-https://cdn9.ryplay9.com/20240922/8279_28aa4d45/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹37
-https://cdn9.ryplay9.com/20240922/8278_d6a1bfbf/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹38
-https://cdn9.ryplay9.com/20240922/8277_fa7597cd/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹39
-https://cdn9.ryplay9.com/20240922/8276_546fa6ff/index.m3u8
-#EXTINF:-1 group-title="大时代粤",大时代粤壹40
-https://cdn9.ryplay9.com/20240922/8275_977c5d78/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹01
-https://v.cdnlz20.com/20241121/20985_9d08aaaf/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹02
-https://v.cdnlz20.com/20241121/20987_7f22ee90/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹03
-https://v.cdnlz20.com/20241121/20988_2cecc2ac/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹04
-https://v.cdnlz20.com/20241121/20989_f6634720/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹05
-https://v.cdnlz20.com/20241121/20991_a71e4985/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹06
-https://v.cdnlz20.com/20241121/20990_2a3e215a/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹07
-https://v.cdnlz20.com/20241121/20992_dbff4dcb/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹08
-https://v.cdnlz20.com/20241121/20993_9ea687dd/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹09
-https://v.cdnlz20.com/20241121/20994_579bd790/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹10
-https://v.cdnlz20.com/20241121/20995_dcb4d2ea/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹11
-https://v.cdnlz20.com/20241121/20996_d3474158/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹12
-https://v.cdnlz20.com/20241121/20997_722b7258/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹13
-https://v.cdnlz20.com/20241121/20998_b51ec43b/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹14
-https://v.cdnlz20.com/20241121/21000_9df7d1fd/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹15
-https://v.cdnlz20.com/20241121/20999_2052bc1a/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹16
-https://v.cdnlz20.com/20241121/21001_7ffc3ef8/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹17
-https://v.cdnlz20.com/20241121/21002_c487117a/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹18
-https://v.cdnlz20.com/20241121/21004_f0d557fb/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹19
-https://v.cdnlz20.com/20241121/21003_e083417f/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹20
-https://v.cdnlz20.com/20241121/21005_5372234e/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹21
-https://v.cdnlz20.com/20241121/21006_984e4d9d/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹22
-https://v.cdnlz20.com/20241121/21007_0c6f3604/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹23
-https://v.cdnlz20.com/20241121/21009_1ef47a5a/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹24
-https://v.cdnlz20.com/20241121/21008_82c743e0/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹25
-https://v.cdnlz20.com/20241121/21010_13161b67/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹26
-https://v.cdnlz20.com/20241121/21011_5a68d5ac/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹27
-https://v.cdnlz20.com/20241121/21012_d36a1fb8/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹28
-https://v.cdnlz20.com/20241121/21013_0a152d5b/index.m3u8
-#EXTINF:-1 group-title="流星花园",流星花园壹29
-https://v.cdnlz20.com/20241121/21014_0a149cb5/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹01
-https://yzzy.play-cdn8.com/20220710/3671_314a6b1b/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹02
-https://yzzy.play-cdn8.com/20220710/3670_cdafc23f/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹03
-https://yzzy.play-cdn8.com/20220710/3669_9b81e5f9/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹04
-https://yzzy.play-cdn8.com/20220710/3668_647699dd/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹05
-https://yzzy.play-cdn8.com/20220710/3667_06c8377b/inex.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹06
-https://yzzy.play-cdn8.com/20220710/3666_2ec6c259/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹07
-https://yzzy.play-cdn8.com/20220710/3665_4686697e/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹08
-https://yzzy.play-cdn8.com/20220710/3664_39ded22f/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹09
-https://yzzy.play-cdn8.com/20220710/3663_5aab8a68/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹10
-https://yzzy.play-cdn8.com/20220710/3662_9e2a0626/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹11
-https://yzzy.play-cdn8.com/20220710/3661_c0bd7c31/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹12
-https://yzzy.play-cdn8.com/20220710/3660_b24fe487/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹13
-https://yzzy.play-cdn8.com/20220710/3658_0d62f792/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹14
-https://yzzy.play-cdn8.com/20220710/3659_995cbe48/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹15
-https://yzzy.play-cdn8.com/20220710/3657_01ac0b82/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹16
-https://yzzy.play-cdn8.com/20220710/3656_3e289c3f/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹17
-https://yzzy.play-cdn8.com/20220710/3655_36717156/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹18
-https://yzzy.play-cdn8.com/20220710/3654_ae8d01fd/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹19
-https://yzzy.play-cdn8.com/20220710/3653_a1696875/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹20
-https://yzzy.play-cdn8.com/20220710/3652_31352e33/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹21
-https://yzzy.play-cdn8.com/20220710/3651_8c51ad8b/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹22
-https://yzzy.play-cdn8.com/20220710/3650_bde9774f/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹23
-https://yzzy.play-cdn8.com/20220710/3649_95656d66/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格壹24
-https://yzzy.play-cdn8.com/20220710/3648_29d10de2/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰01
-https://yzzy.play-cdn8.com/20220710/3647_728f0513/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰02
-https://yzzy.play-cdn8.com/20220710/3646_f9026ae9/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰03
-https://yzzy.play-cdn8.com/20220710/3645_3082ea33/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰04
-https://yzzy.play-cdn8.com/20220710/3644_94d6c4fe/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰05
-https://yzzy.play-cdn8.com/20220710/3643_e20c7792/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰06
-https://yzzy.play-cdn8.com/20220710/3642_e49efa22/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰07
-https://yzzy.play-cdn8.com/20220710/3641_716dc13d/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰08
-https://yzzy.play-cdn8.com/20220710/3640_60ba2907/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰09
-https://yzzy.play-cdn8.com/20220710/3639_daf4c557/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰10
-https://yzzy.play-cdn8.com/20220710/3638_1ed5dcb0/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰11
-https://yzzy.play-cdn8.com/20220710/3637_93403bfa/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰12
-https://yzzy.play-cdn8.com/20220710/3636_54a9a534/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰13
-https://yzzy.play-cdn8.com/20220710/3635_4acd2dea/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰14
-https://yzzy.play-cdn8.com/20220710/3634_e43af6d7/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰15
-https://yzzy.play-cdn8.com/20220710/3633_71994fad/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰16
-https://yzzy.play-cdn8.com/20220710/3632_84031189/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰17
-https://yzzy.play-cdn8.com/20220710/3631_c816b17f/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰18
-https://yzzy.play-cdn8.com/20220710/3630_6b92c7a3/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰19
-https://yzzy.play-cdn8.com/20220710/3629_48dbbb98/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰20
-https://yzzy.play-cdn8.com/20220710/3628_27cb15c1/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰21
-https://yzzy.play-cdn8.com/20220710/3627_b8a16aa2/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰22
-https://yzzy.play-cdn8.com/20220710/3626_8aa76a4b/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰23
-https://yzzy.play-cdn8.com/20220710/3625_72e87fb5/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰24
-https://yzzy.play-cdn8.com/20220710/3624_fcd64e64/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰25
-https://yzzy.play-cdn8.com/20220710/3623_8994bbdd/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰26
-https://yzzy.play-cdn8.com/20220710/3622_a6b7d9c5/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰27
-https://yzzy.play-cdn8.com/20220710/3621_bcfcd04d/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰28
-https://yzzy.play-cdn8.com/20220710/3620_1405602e/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰29
-https://yzzy.play-cdn8.com/20220710/3619_9324ad44/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰30
-https://yzzy.play-cdn8.com/20220710/3618_1e0a5764/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰31
-https://yzzy.play-cdn8.com/20220710/3617_a3bbd11d/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰32
-https://yzzy.play-cdn8.com/20220710/3616_3e29f404/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰33
-https://yzzy.play-cdn8.com/20220710/3615_d1fc25bd/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰34
-https://yzzy.play-cdn8.com/20220710/3614_99aad988/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰35
-https://yzzy.play-cdn8.com/20220710/3613_c31290d6/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰36
-https://yzzy.play-cdn8.com/20220710/3612_344984ac/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰37
-https://yzzy.play-cdn8.com/20220710/3611_b88bd756/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰38
-https://yzzy.play-cdn8.com/20220710/3610_0a641b2a/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰39
-https://yzzy.play-cdn8.com/20220710/3609_f1124dea/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰40
-https://yzzy.play-cdn8.com/20220710/3608_46d33910/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰41
-https://yzzy.play-cdn8.com/20220710/3607_8cb2010e/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰42
-https://yzzy.play-cdn8.com/20220710/3606_093d5ad2/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰43
-https://yzzy.play-cdn8.com/20220710/3605_42b84d10/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰44
-https://yzzy.play-cdn8.com/20220710/3604_6f6ad50c/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰45
-https://yzzy.play-cdn8.com/20220710/3603_4707992d/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰46
-https://yzzy.play-cdn8.com/20220710/3602_bd1ccb00/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰47
-https://yzzy.play-cdn8.com/20220710/3601_071cd762/index.m3u8
-#EXTINF:-1 group-title="还珠格格",还珠格格贰48
-https://yzzy.play-cdn8.com/20220710/3600_ea939ce8/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第01集
-https://vip.dytt-love.com/20250701/2664_daaaf136/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第02集
-https://vip.dytt-love.com/20250701/2665_e727fa59/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第03集
-https://vip.dytt-love.com/20250701/2666_1102a326/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第04集
-https://vip.dytt-love.com/20250701/2667_7edccc66/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第05集
-https://vip.dytt-love.com/20250701/2668_5ac8bb8a/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第06集
-https://vip.dytt-love.com/20250701/2669_0bed45bd/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第07集
-https://vip.dytt-love.com/20250701/2670_028ee724/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第08集
-https://vip.dytt-love.com/20250701/2671_f8da71e5/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第09集
-https://vip.dytt-love.com/20250701/2672_0e900ad8/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第10集
-https://vip.dytt-love.com/20250701/2673_88fee042/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第11集
-https://vip.dytt-love.com/20250701/2674_a8345c3b/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第12集
-https://vip.dytt-love.com/20250701/2675_a8aa681a/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第13集
-https://vip.dytt-love.com/20250701/2676_d89a66c7/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第14集
-https://vip.dytt-love.com/20250701/2677_e97c864e/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第15集
-https://vip.dytt-love.com/20250701/2678_94aef384/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第16集
-https://vip.dytt-love.com/20250701/2679_9813b270/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第17集
-https://vip.dytt-love.com/20250701/2680_220a7f49/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第18集
-https://vip.dytt-love.com/20250701/2681_dcda54e2/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第19集
-https://vip.dytt-love.com/20250701/2682_f15eda31/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第20集
-https://vip.dytt-love.com/20250701/2683_8420d359/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第21集
-https://vip.dytt-love.com/20250701/2684_7c4bf50b/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第22集
-https://vip.dytt-love.com/20250701/2685_41ab1b1d/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第23集
-https://vip.dytt-love.com/20250701/2686_3a0844ce/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第24集
-https://vip.dytt-love.com/20250701/2687_573eec40/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第25集
-https://vip.dytt-love.com/20250701/2688_b38e5ff5/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第26集
-https://vip.dytt-love.com/20250701/2689_577fd602/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第27集
-https://vip.dytt-love.com/20250701/2690_f6185f0e/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第28集
-https://vip.dytt-love.com/20250701/2691_110eec23/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第29集
-https://vip.dytt-love.com/20250701/2692_d790c9e6/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第30集
-https://vip.dytt-love.com/20250701/2693_3bd40173/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第31集
-https://vip.dytt-love.com/20250701/2694_cf9b2d04/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第32集
-https://vip.dytt-love.com/20250701/2695_dbbf603f/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第33集
-https://vip.dytt-love.com/20250701/2696_dc2b6905/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第34集
-https://vip.dytt-love.com/20250701/2697_ab452534/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第35集
-https://vip.dytt-love.com/20250701/2698_fb4ab556/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第36集
-https://vip.dytt-love.com/20250701/2699_0415740e/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第37集
-https://vip.dytt-love.com/20250701/2700_f1b07759/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第38集
-https://vip.dytt-love.com/20250701/2701_df0e09d6/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第39集
-https://vip.dytt-love.com/20250701/2702_2e7ceec8/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第40集
-https://vip.dytt-love.com/20250701/2703_220c77af/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第41集
-https://vip.dytt-love.com/20250701/2704_81c2f886/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第42集
-https://vip.dytt-love.com/20250701/2705_825f9cd5/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第43集
-https://vip.dytt-love.com/20250701/2706_2e74c2cf/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第44集
-https://vip.dytt-love.com/20250701/2707_65f2a94c/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第45集
-https://vip.dytt-love.com/20250701/2708_03fa2f75/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第46集
-https://vip.dytt-love.com/20250701/2709_5a99158e/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第47集
-https://vip.dytt-love.com/20250701/2710_de594ef5/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第48集
-https://vip.dytt-love.com/20250701/2711_65fc9fb4/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第49集
-https://vip.dytt-love.com/20250701/2712_bbeb0c1b/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第50集
-https://vip.dytt-love.com/20250701/2713_403ea2e8/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第51集
-https://vip.dytt-love.com/20250701/2714_b628386c/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第52集
-https://vip.dytt-love.com/20250701/2715_ff2cc3b8/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第53集
-https://vip.dytt-love.com/20250701/2716_cdd96eed/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第54集
-https://vip.dytt-love.com/20250701/2717_058d6f2f/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第55集
-https://vip.dytt-love.com/20250701/2718_ad47a008/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第56集
-https://vip.dytt-love.com/20250701/2719_7aee26c3/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第57集
-https://vip.dytt-love.com/20250701/2720_fa2e8c43/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第58集
-https://vip.dytt-love.com/20250701/2721_36238749/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第59集
-https://vip.dytt-love.com/20250701/2722_33267e5d/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第60集
-https://vip.dytt-love.com/20250701/2723_c315f032/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第61集
-https://vip.dytt-love.com/20250701/2724_64a08e5f/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第62集
-https://vip.dytt-love.com/20250701/2725_4bbdcc0e/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第63集
-https://vip.dytt-love.com/20250701/2726_b1c00bcd/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第64集
-https://vip.dytt-love.com/20250701/2727_23fc4cba/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第65集
-https://vip.dytt-love.com/20250701/2728_5e751896/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第66集
-https://vip.dytt-love.com/20250701/2729_b7f1f29d/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第67集
-https://vip.dytt-love.com/20250701/2730_421b3ac5/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第68集
-https://vip.dytt-love.com/20250701/2731_08f38e04/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第69集
-https://vip.dytt-love.com/20250701/2732_36144052/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第70集
-https://vip.dytt-love.com/20250701/2733_ec1f850d/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第71集
-https://vip.dytt-love.com/20250701/2734_7f7c351e/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第72集
-https://vip.dytt-love.com/20250701/2735_1d497805/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第73集
-https://vip.dytt-love.com/20250701/2736_47fd3c87/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第74集
-https://vip.dytt-love.com/20250701/2737_9ff7c9eb/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第75集
-https://vip.dytt-love.com/20250701/2738_a4613e8d/index.m3u8
-#EXTINF:-1 group-title="甄嬛传国",甄嬛传第76集
-https://vip.dytt-love.com/20250701/2739_56584778/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤01
-https://vip.ffzy-play.com/20221209/31605_0706f9df/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤02
-https://vip.ffzy-play.com/20221209/31606_96fabe4f/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤03
-https://vip.ffzy-play.com/20221209/31607_cbe413e6/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤04
-https://vip.ffzy-play.com/20221209/31608_32c89ec4/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤05
-https://vip.ffzy-play.com/20221209/31609_387a6eea/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤06
-https://vip.ffzy-play.com/20221209/31610_b4501fc6/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤07
-https://vip.ffzy-play.com/20221209/31611_f1a7dcd8/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤08
-https://vip.ffzy-play.com/20221209/31612_29140186/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤09
-https://vip.ffzy-play.com/20221209/31613_7f0aa3dd/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤10
-https://vip.ffzy-play.com/20221209/31614_5bc895aa/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤11
-https://vip.ffzy-play.com/20221209/31615_da4f9199/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤12
-https://vip.ffzy-play.com/20221209/31616_95970eb3/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤13
-https://vip.ffzy-play.com/20221209/31617_ba21dfb7/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤14
-https://vip.ffzy-play.com/20221209/31618_13e20d6f/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤15
-https://vip.ffzy-play.com/20221209/31619_ae941c27/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤16
-https://vip.ffzy-play.com/20221209/31620_9f9b0368/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤17
-https://vip.ffzy-play.com/20221209/31621_6af667b7/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤18
-https://vip.ffzy-play.com/20221209/31622_439627e3/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤19
-https://vip.ffzy-play.com/20221209/31623_9a2973d8/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤20
-https://vip.ffzy-play.com/20221209/31624_a05fa525/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤21
-https://vip.ffzy-play.com/20221209/31625_f39f2f1f/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤22
-https://vip.ffzy-play.com/20221209/31626_9ec65d5c/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤23
-https://vip.ffzy-play.com/20221209/31627_2c501641/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤24
-https://vip.ffzy-play.com/20221209/31628_e12df1d5/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤25
-https://vip.ffzy-play.com/20221209/31629_7f35a86f/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤26
-https://vip.ffzy-play.com/20221209/31630_5c116e83/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤27
-https://vip.ffzy-play.com/20221209/31631_25ccf1d1/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤28
-https://vip.ffzy-play.com/20221209/31632_96caf1db/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤29
-https://vip.ffzy-play.com/20221209/31633_b19c007f/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤30
-https://vip.ffzy-play.com/20221209/31634_508a80bc/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤31
-https://vip.ffzy-play.com/20221209/31635_d6b073f7/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤32
-https://vip.ffzy-play.com/20221209/31636_f00ae8e2/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤33
-https://vip.ffzy-play.com/20221209/31637_257712a1/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤34
-https://vip.ffzy-play.com/20221209/31638_6d206989/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤35
-https://vip.ffzy-play.com/20221209/31639_f6d5a27f/index.m3u8
-#EXTINF:-1 group-title="大地恩情",家在珠江粤36
-https://vip.ffzy-play.com/20221209/31640_121302e2/index.m3u8
-#EXTINF:-1 group-title="大地恩情",金山梦粤语37
-https://vip.ffzy-play.com/20221209/31641_efea54e5/index.m3u8
-#EXTINF:-1 group-title="大地恩情",金山梦粤语38
-https://vip.ffzy-play.com/20221209/31642_5e7e0b3f/index.m3u8
-#EXTINF:-1 group-title="大地恩情",金山梦粤语39
-https://vip.ffzy-play.com/20221209/31643_4a33b3ee/index.m3u8
-#EXTINF:-1 group-title="大地恩情",金山梦粤语40
-https://vip.ffzy-play.com/20221209/31644_e8c1305b/index.m3u8
-#EXTINF:-1 group-title="大地恩情",金山梦粤语41
-https://vip.ffzy-play.com/20221209/31645_9a7b693f/index.m3u8
-#EXTINF:-1 group-title="大地恩情",金山梦粤语42
-https://vip.ffzy-play.com/20221209/31646_f3238a5f/index.m3u8
-#EXTINF:-1 group-title="大地恩情",金山梦粤语43
-https://vip.ffzy-play.com/20221209/31647_2aec2b90/index.m3u8
-#EXTINF:-1 group-title="大地恩情",金山梦粤语44
-https://vip.ffzy-play.com/20221209/31648_db33ff93/index.m3u8
-#EXTINF:-1 group-title="大地恩情",金山梦粤语45
-https://vip.ffzy-play.com/20221209/31649_949a768f/index.m3u8
-#EXTINF:-1 group-title="大地恩情",金山梦粤语46
-https://vip.ffzy-play.com/20221209/31650_af1eb6fb/index.m3u8
-#EXTINF:-1 group-title="大地恩情",金山梦粤语47
-https://vip.ffzy-play.com/20221209/31651_0669f9fe/index.m3u8
-#EXTINF:-1 group-title="大地恩情",金山梦粤语48
-https://vip.ffzy-play.com/20221209/31652_97ef15f8/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤49
-https://vip.ffzy-play.com/20221209/31653_65bfbfe7/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤50
-https://vip.ffzy-play.com/20221209/31654_6c580244/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤51
-https://vip.ffzy-play.com/20221209/31655_0bb4cfb9/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤52
-https://vip.ffzy-play.com/20221209/31656_f15caa24/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤53
-https://vip.ffzy-play.com/20221209/31657_58ad5476/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤54
-https://vip.ffzy-play.com/20221209/31658_fddef7e8/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤55
-https://vip.ffzy-play.com/20221209/31659_5edcfc82/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤56
-https://vip.ffzy-play.com/20221209/31660_788f45a8/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤57
-https://vip.ffzy-play.com/20221209/31661_b40092dc/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤58
-https://vip.ffzy-play.com/20221209/31662_c8f11254/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤59
-https://vip.ffzy-play.com/20221209/31663_ea6d2c3b/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤60
-https://vip.ffzy-play.com/20221209/31664_120a5982/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤61
-https://vip.ffzy-play.com/20221209/31665_47ea1e06/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤62
-https://vip.ffzy-play.com/20221209/31666_8aaeb521/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤63
-https://vip.ffzy-play.com/20221209/31667_92c96698/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤64
-https://vip.ffzy-play.com/20221209/31668_1bb242bc/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤65
-https://vip.ffzy-play.com/20221209/31669_e1f6483c/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤66
-https://vip.ffzy-play.com/20221209/31670_dfe4afcf/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤67
-https://vip.ffzy-play.com/20221209/31671_a82852d4/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤68
-https://vip.ffzy-play.com/20221209/31672_a8aeb6ed/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤69
-https://vip.ffzy-play.com/20221209/31673_05d48252/index.m3u8
-#EXTINF:-1 group-title="大地恩情",古都惊雷粤70
-https://vip.ffzy-play.com/20221209/31674_19cdda48/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语01
-https://vip.lz-cdn8.com/20220726/19894_ad5e9bdc/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语02
-https://vip.lz-cdn8.com/20220726/19895_7939dca8/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语03
-https://vip.lz-cdn8.com/20220726/19896_37f7153f/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语04
-https://vip.lz-cdn8.com/20220726/19897_bafd0363/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语05
-https://vip.lz-cdn8.com/20220726/19898_611cd997/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语06
-https://vip.lz-cdn8.com/20220726/19899_b830cdf9/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语07
-https://vip.lz-cdn8.com/20220726/19900_c085ed2c/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语08
-https://vip.lz-cdn8.com/20220726/19901_8854d685/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语09
-https://vip.lz-cdn8.com/20220726/19902_efd26876/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语10
-https://vip.lz-cdn8.com/20220726/19903_8efcbf07/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语11
-https://vip.lz-cdn8.com/20220726/19904_04801f99/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语12
-https://vip.lz-cdn8.com/20220726/19905_6123ed83/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语13
-https://vip.lz-cdn8.com/20220726/19906_a45bd94c/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语14
-https://vip.lz-cdn8.com/20220726/19907_6906362f/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语15
-https://vip.lz-cdn8.com/20220726/19908_df138b7c/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语16
-https://vip.lz-cdn8.com/20220726/19909_068fae42/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语17
-https://vip.lz-cdn8.com/20220726/19910_9469bab5/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语18
-https://vip.lz-cdn8.com/20220726/19911_e4efa3b0/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语19
-https://vip.lz-cdn8.com/20220726/19912_dbcbcf81/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍元甲粤语20
-https://vip.lz-cdn8.com/20220726/19913_61c2ea44/1000k/hls/mixed.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版01
-https://vip.lz-cdn8.com/20220726/19854_769355c9/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版02
-https://vip.lz-cdn8.com/20220726/19855_033f55d6/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版03
-https://vip.lz-cdn8.com/20220726/19856_f9f96648/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版04
-https://vip.lz-cdn8.com/20220726/19857_c801b35c/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版05
-https://vip.lz-cdn8.com/20220726/19858_a6bd7389/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版06
-https://vip.lz-cdn8.com/20220726/19859_58bfff6d/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版07
-https://vip.lz-cdn8.com/20220726/19860_2fdc7e05/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版08
-https://vip.lz-cdn8.com/20220726/19861_58725b29/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版09
-https://vip.lz-cdn8.com/20220726/19862_667d8602/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版10
-https://vip.lz-cdn8.com/20220726/19863_0624f5c5/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版11
-https://vip.lz-cdn8.com/20220726/19864_44a19cb0/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版12
-https://vip.lz-cdn8.com/20220726/19865_d3587490/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版13
-https://vip.lz-cdn8.com/20220726/19866_10bfbaf1/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版14
-https://vip.lz-cdn8.com/20220726/19867_0bd7a5e8/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版15
-https://vip.lz-cdn8.com/20220726/19868_00454ac7/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版16
-https://vip.lz-cdn8.com/20220726/19869_0a333db0/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版17
-https://vip.lz-cdn8.com/20220726/19870_18e7fde2/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版18
-https://vip.lz-cdn8.com/20220726/19871_3bc8089f/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版19
-https://vip.lz-cdn8.com/20220726/19872_0dbf4e3e/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",陈真粤语版20
-https://vip.lz-cdn8.com/20220726/19873_7f0917c1/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语01
-https://vip.lz-cdn8.com/20220726/19944_c9253c69/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语02
-https://vip.lz-cdn8.com/20220726/19945_f069d115/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语03
-https://vip.lz-cdn8.com/20220726/19946_f2f479fd/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语04
-https://vip.lz-cdn8.com/20220726/19947_22c818d2/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语05
-https://vip.lz-cdn8.com/20220726/19948_63b416eb/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语06
-https://vip.lz-cdn8.com/20220726/19949_9556b2ef/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语07
-https://vip.lz-cdn8.com/20220726/19950_9bd371cd/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语08
-https://vip.lz-cdn8.com/20220726/19951_051a8397/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语09
-https://vip.lz-cdn8.com/20220726/19952_c1b7d232/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语10
-https://vip.lz-cdn8.com/20220726/19953_c40ead35/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语11
-https://vip.lz-cdn8.com/20220726/19954_c69c9b1c/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语12
-https://vip.lz-cdn8.com/20220726/19955_d619ab6d/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语13
-https://vip.lz-cdn8.com/20220726/19956_7ae37ea2/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语14
-https://vip.lz-cdn8.com/20220726/19957_f81af19f/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语15
-https://vip.lz-cdn8.com/20220726/19958_ade9758d/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语16
-https://vip.lz-cdn8.com/20220726/19959_efaecfd4/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语17
-https://vip.lz-cdn8.com/20220726/19960_92a61097/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语18
-https://vip.lz-cdn8.com/20220726/19961_0f9701fa/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语19
-https://vip.lz-cdn8.com/20220726/19962_24dc7f09/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语20
-https://vip.lz-cdn8.com/20220726/19963_edff6c38/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语21
-https://vip.lz-cdn8.com/20220726/19964_aa5d83ba/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语22
-https://vip.lz-cdn8.com/20220726/19965_a3dc596a/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语23
-https://vip.lz-cdn8.com/20220726/19966_ce76e526/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语24
-https://vip.lz-cdn8.com/20220726/19967_93545c49/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语25
-https://vip.lz-cdn8.com/20220726/19968_47d1f157/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语26
-https://vip.lz-cdn8.com/20220726/19969_be522d01/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语27
-https://vip.lz-cdn8.com/20220726/19970_a55cf6b4/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语28
-https://vip.lz-cdn8.com/20220726/19971_3a300498/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语29
-https://vip.lz-cdn8.com/20220726/19972_364f080f/index.m3u8
-#EXTINF:-1 group-title="粤经典剧",霍东阁粤语30
-https://vip.lz-cdn8.com/20220726/19973_8af7d3d1/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤01
-https://vip.lz-cdn8.com/20220726/19974_a291c2fd/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤02
-https://vip.lz-cdn8.com/20220726/19975_75f760a4/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤03
-https://vip.lz-cdn8.com/20220726/19976_7df1695e/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤04
-https://vip.lz-cdn8.com/20220726/19977_6a69e501/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤05
-https://vip.lz-cdn8.com/20220726/19978_423bd8b2/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤06
-https://vip.lz-cdn8.com/20220726/19979_dca6f3c0/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤07
-https://vip.lz-cdn8.com/20220726/19980_690d4cf9/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤08
-https://vip.lz-cdn8.com/20220726/19981_ad785524/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤09
-https://vip.lz-cdn8.com/20220726/19982_755ec1dc/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤10
-https://vip.lz-cdn8.com/20220726/19983_5c0cca4c/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤11
-https://vip.lz-cdn8.com/20220726/19984_20233e3c/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤12
-https://vip.lz-cdn8.com/20220726/19985_7c54480e/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤13
-https://vip.lz-cdn8.com/20220726/19986_85554912/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤14
-https://vip.lz-cdn8.com/20220726/19987_ab54ff2f/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤15
-https://vip.lz-cdn8.com/20220726/19988_5938b8ff/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤16
-https://vip.lz-cdn8.com/20220726/19989_cbd61106/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤17
-https://vip.lz-cdn8.com/20220726/19990_945fd954/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤18
-https://vip.lz-cdn8.com/20220726/19991_1804bbbe/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",热血丹心粤19
-https://vip.lz-cdn8.com/20220726/19992_e842fafd/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤20
-https://vip.lz-cdn8.com/20220726/19993_dad209ec/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤21
-https://vip.lz-cdn8.com/20220726/19994_1824043f/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤22
-https://vip.lz-cdn8.com/20220726/19995_91f6bede/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤23
-https://vip.lz-cdn8.com/20220726/19996_9c394a70/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤24
-https://vip.lz-cdn8.com/20220726/19997_55c7e298/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤25
-https://vip.lz-cdn8.com/20220726/19998_16b89161/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤26
-https://vip.lz-cdn8.com/20220726/19999_12e4dfbb/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤27
-https://vip.lz-cdn8.com/20220726/20000_1b3d5d83/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤28
-https://vip.lz-cdn8.com/20220726/20001_bea017d5/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤29
-https://vip.lz-cdn8.com/20220726/20002_eaa4a064/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤30
-https://vip.lz-cdn8.com/20220726/20003_9ba02784/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤31
-https://vip.lz-cdn8.com/20220726/20004_06583261/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤32
-https://vip.lz-cdn8.com/20220726/20005_4d883f91/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤33
-https://vip.lz-cdn8.com/20220726/20006_c2c79548/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤34
-https://vip.lz-cdn8.com/20220726/20007_84a491d9/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤35
-https://vip.lz-cdn8.com/20220726/20008_1fdb5815/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤36
-https://vip.lz-cdn8.com/20220726/20009_0350db31/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤37
-https://vip.lz-cdn8.com/20220726/20010_a210c150/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤38
-https://vip.lz-cdn8.com/20220726/20011_45c2aecd/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",东邪西毒粤39
-https://vip.lz-cdn8.com/20220726/20012_673d823b/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤40
-https://vip.lz-cdn8.com/20220726/20013_1847663b/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤41
-https://vip.lz-cdn8.com/20220726/20014_cd11774a/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤42
-https://vip.lz-cdn8.com/20220726/20015_ff10795a/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤43
-https://vip.lz-cdn8.com/20220726/20016_5319d1db/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤44
-https://vip.lz-cdn8.com/20220726/20017_e02b0fc6/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤45
-https://vip.lz-cdn8.com/20220726/20018_1e1c2790/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤46
-https://vip.lz-cdn8.com/20220726/20019_b8fb3a2a/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤47
-https://vip.lz-cdn8.com/20220726/20020_8c05ccb9/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤48
-https://vip.lz-cdn8.com/20220726/20021_105ee7f3/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤49
-https://vip.lz-cdn8.com/20220726/20022_1ad6f302/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤50
-https://vip.lz-cdn8.com/20220726/20023_ba2ce41a/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤51
-https://vip.lz-cdn8.com/20220726/20024_d5c5a834/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤52
-https://vip.lz-cdn8.com/20220726/20025_39ac11df/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤53
-https://vip.lz-cdn8.com/20220726/20026_cad79659/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤54
-https://vip.lz-cdn8.com/20220726/20027_7fd456e3/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤55
-https://vip.lz-cdn8.com/20220726/20028_e13bc5e8/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤56
-https://vip.lz-cdn8.com/20220726/20029_8a2c2bd8/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤57
-https://vip.lz-cdn8.com/20220726/20030_5d7393fb/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤58
-https://vip.lz-cdn8.com/20220726/20031_edc99cef/index.m3u8
-#EXTINF:-1 group-title="射雕英雄",华山论剑粤59
-https://vip.lz-cdn8.com/20220726/20032_51f14f2f/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤01
-https://vip.lz-cdn8.com/20220628/15515_27e612ff/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤02
-https://vip.lz-cdn8.com/20220628/15516_19259ae7/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤03
-https://vip.lz-cdn8.com/20220629/15645_62dfa7b9/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤04
-https://vip.lz-cdn8.com/20220629/15647_e71a6df9/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤05
-https://vip.lz-cdn8.com/20220628/15519_343b7200/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤06
-https://vip.lz-cdn8.com/20220628/15520_ce7f92a6/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤07
-https://vip.lz-cdn8.com/20220628/15521_2f29e417/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤08
-https://vip.lz-cdn8.com/20220628/15522_dd23065c/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤09
-https://vip.lz-cdn8.com/20220628/15523_8e76f610/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤10
-https://vip.lz-cdn8.com/20220628/15524_7c5d64f2/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤11
-https://vip.lz-cdn8.com/20220629/15646_8ae12313/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤12
-https://vip.lz-cdn8.com/20220628/15526_c6a2b6ea/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤13
-https://vip.lz-cdn8.com/20220628/15527_57504e30/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤14
-https://vip.lz-cdn8.com/20220629/15648_0f38ddba/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤15
-https://vip.lz-cdn8.com/20220629/15649_d6007bb8/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤16
-https://vip.lz-cdn8.com/20220629/15650_1b0f3986/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤17
-https://vip.lz-cdn8.com/20220628/15531_34f858d7/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤18
-https://vip.lz-cdn8.com/20220629/15651_e80e23eb/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤19
-https://vip.lz-cdn8.com/20220628/15533_afddf074/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤20
-https://vip.lz-cdn8.com/20220629/15652_6508d1b8/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤21
-https://vip.lz-cdn8.com/20220629/15653_aa4858a2/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤22
-https://vip.lz-cdn8.com/20220629/15654_aca74691/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤23
-https://vip.lz-cdn8.com/20220628/15537_f93a6d71/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤24
-https://vip.lz-cdn8.com/20220629/15655_9a269493/index.m3u8
-#EXTINF:-1 group-title="神雕侠侣",神雕侠侣粤25
-https://vip.lz-cdn8.com/20220628/15539_54f941d8/index.m3u8
-#EXTINF:-1 group-title="新坡频陆",Astro AEC(c)
-https://sc2022.stream-link.org/tv2306.php?id=h25
-#EXTINF:-1 group-title="新坡频陆",TV1(b)
-http://d25tgymtnqzu8s.cloudfront.net/smil:tv1/chunklist_b4596000_slENG.m3u8?id=1
-#EXTINF:-1 group-title="美国频陆",MSNBC b
-https://epg.pw/stream/420218c7fad9229e33635428a8c68d73de60d165d59e35c1d146c4f8d1367e12.ctv
-#EXTINF:-1 group-title="猫TV影视",➡️抖舞陪看⬅️
-http://rihou.cc:555/tv/[mv]抖舞陪看
-#EXTINF:-1 group-title="猫TV影视",➡️白嫖软件⬅️
-http://rihou.cc:555/tv/[mv]白嫖软件
-#EXTINF:-1 group-title="猫TV影视",➡️免费观看⬅️
-http://rihou.cc:555/tv/[mv]免费观看
-#EXTINF:-1 group-title="猫TV影视",➡️大街网源⬅️
-http://rihou.cc:555/tv/[mv]大街网源
-#EXTINF:-1 group-title="猫TV影视",➡️互相搬助⬅️
-http://rihou.cc:555/tv/[mv]互相搬助
-#EXTINF:-1 group-title="猫TV影视",➡️能看就行⬅️
-http://rihou.cc:555/tv/[mv]能看就行
-#EXTINF:-1 group-title="猫TV影视",➡️分享更新⬅️
-http://rihou.cc:555/tv/[mv]分享更新
-#EXTINF:-1 group-title="猫TV影视",➡️爱扒随便⬅️
-http://rihou.cc:555/tv/[mv]爱扒随便
-#EXTINF:-1 group-title="猫TV影视",➡️不必纠结⬅️
-http://rihou.cc:555/tv/[mv]不必纠结
 #EXTINF:-1 group-title="秒播央视",北京卡酷少儿
 http://107.150.60.122/live/btvkk.m3u8
 #EXTINF:-1 group-title="🇨🇳港台电影",天映经典
@@ -54523,6 +52409,8 @@ http://smt.veryfast.filegear-sg.me/smt3.2.1.php?id=Tvbclassic
 http://8.138.7.223/tv/1905.php?id=LIVE8J4LTCXPI7QJ5
 #EXTINF:-1 group-title="🇨🇳港台电影",1905电影网A
 http://php.jdshipin.com/1905.php
+#EXTINF:-1 group-title="🇨🇳港台电影",澳门莲花
+http://live-hls.macaulotustv.com/lotustv/macaulotustv.m3u8
 #EXTINF:-1 group-title="🇨🇳港台电影",澳门莲花
 http://live-hdl.macaulotustv.com/lotustv/macaulotustv.m3u8
 #EXTINF:-1 group-title="🇨🇳港台电影",CHC家庭影院
@@ -54721,6 +52609,58 @@ https://cdn6.163189.xyz/163189/fct4k
 http://o11.163189.xyz/stream/live/hlt/
 #EXTINF:-1 group-title="🇨🇳港台测试",华丽
 http://o11.163189.xyz/stream/live/jade/
+#EXTINF:-1 group-title="咪咕",CCTV-01咪咕
+http://t.061899.xyz/tl/tl.php?id=cctv1
+#EXTINF:-1 group-title="咪咕",CCTV-02咪咕
+http://t.061899.xyz/tl/tl.php?id=cctv2
+#EXTINF:-1 group-title="咪咕",CCTV-03咪咕
+http://t.061899.xyz/tl/tl.php?id=cctv3
+#EXTINF:-1 group-title="咪咕",CCTV-04咪咕
+http://t.061899.xyz/tl/tl.php?id=cctv4
+#EXTINF:-1 group-title="咪咕",CCTV-05咪咕
+http://t.061899.xyz/tl/tl.php?id=cctv5
+#EXTINF:-1 group-title="咪咕",CCTV-06咪咕
+http://t.061899.xyz/tl/tl.php?id=cctv6
+#EXTINF:-1 group-title="咪咕",CCTV-07咪咕
+http://t.061899.xyz/tl/tl.php?id=cctv7
+#EXTINF:-1 group-title="咪咕",CCTV-08咪咕
+http://t.061899.xyz/tl/tl.php?id=cctv8
+#EXTINF:-1 group-title="咪咕",CCTV-09咪咕
+http://t.061899.xyz/tl/tl.php?id=cctv9
+#EXTINF:-1 group-title="咪咕",CCTV-10咪咕
+http://t.061899.xyz/tl/tl.php?id=cctv10
+#EXTINF:-1 group-title="咪咕",CCTV-11咪咕
+http://t.061899.xyz/tl/tl.php?id=cctv11
+#EXTINF:-1 group-title="咪咕",CCTV-12咪咕
+http://t.061899.xyz/tl/tl.php?id=cctv12
+#EXTINF:-1 group-title="咪咕",CCTV-13咪咕
+http://t.061899.xyz/tl/tl.php?id=cctv13
+#EXTINF:-1 group-title="咪咕",CCTV-14咪咕
+http://j.s.bkpcp.top/jj/cctv14
+#EXTINF:-1 group-title="咪咕",CCTV-14咪咕
+http://t.061899.xyz/tl/tl.php?id=cctv14
+#EXTINF:-1 group-title="咪咕",CCTV-15咪咕
+http://t.061899.xyz/tl/tl.php?id=cctv15
+#EXTINF:-1 group-title="咪咕",CCTV-16咪咕
+http://go.bkpcp.top/mg/cctv16
+#EXTINF:-1 group-title="咪咕",CCTV-16咪咕
+http://t.061899.xyz/tl/tl.php?id=cctv16
+#EXTINF:-1 group-title="咪咕",CCTV-17咪咕
+http://t.061899.xyz/tl/tl.php?id=cctv17
+#EXTINF:-1 group-title="咪咕",CCTV-5+咪咕
+http://t.061899.xyz/tl/tl.php?id=cctv5p
+#EXTINF:-1 group-title="咪咕",CGTN-法咪咕
+http://go.bkpcp.top/mg/cgtnf
+#EXTINF:-1 group-title="咪咕",CGTN-法咪咕
+http://j.s.bkpcp.top/jj/cgtnf
+#EXTINF:-1 group-title="咪咕",CGTN-西咪咕
+http://go.bkpcp.top/mg/cgtne
+#EXTINF:-1 group-title="咪咕",CGTN-西咪咕
+http://j.s.bkpcp.top/jj/cgtne
+#EXTINF:-1 group-title="咪咕",CGTN-阿咪咕
+http://go.bkpcp.top/mg/cgtna
+#EXTINF:-1 group-title="咪咕",CGTN-阿咪咕
+http://j.s.bkpcp.top/jj/cgtna
 #EXTINF:-1 group-title="咪咕",CGTN记录
 https://english-livebkali.cgtn.com/live/doccgtn.m3u8
 #EXTINF:-1 group-title="地方卫视",咪咕视频4K
@@ -56053,6 +53993,10 @@ https://ganyu-tv-hls.cm.jstv.com:443/ganyu-tv/ganyutv.m3u8
 https://ganyu-tv-hls.cm.jstv.com:443/ganyu-tv/ganyufm.m3u8
 #EXTINF:-1 group-title="江苏视",江阴[1024*576]
 https://litchi-play-encrypted.jstv.com:443/live/jiangyin.m3u8?txSecret=8eb2b403356d1449789d0b419aec5d3a&txTime=1757381942
+#EXTINF:-1 group-title="央2视",cct4欧洲
+http://go.bkpcp.top/mg/cctv4o
+#EXTINF:-1 group-title="央2视",cct4美洲
+http://go.bkpcp.top/mg/cctv4m
 #EXTINF:-1 group-title="港澳视",Now星影台
 http://74.91.26.218:82/live/nowxy.m3u8
 #EXTINF:-1 group-title="港澳视",无线新闻
@@ -57591,6 +55535,8 @@ http://rihou.cc:555/tv/[PL]无线星河
 https://cdn6.101.qzz.io/163189/yzwx
 #EXTINF:-1 group-title="香港极速视",TVB娱乐新闻台720p
 https://cdn6.101.qzz.io/163189/ylxw
+#EXTINF:-1 group-title="香港极速视",TVB娱乐新闻台720p
+http://rihou.cc:555/tv/[PL]无线娱乐
 #EXTINF:-1 group-title="香港极速视",ViuTV 1080p
 https://stream1.freetv.fun/5fc2ba313b387d2b2538a2e46aee6266cc10890fc8b8ccf478498b82af6f7c3b.m3u8
 #EXTINF:-1 group-title="香港极速视",ViuTV 1080p
@@ -57669,6 +55615,8 @@ https://stream1.freetv.fun/07a927f5ea19746f63e8e92cd1889151f4edb274910ea867c19ea
 https://stream1.freetv.fun/409fbf8e0ec33500b4d76956cca00af9fddacac6dd2f8822f464b089fb583a6b.m3u8
 #EXTINF:-1 group-title="香港极速视",緯來綜合HD 1080p
 https://stream1.freetv.fun/541f6094f34e0290077cf0d55df31c49bc148118e6b030fa2165d5c8c35a6d1f.m3u8
+#EXTINF:-1 group-title="香港极速视",龙华日韩1080p
+https://t.freetv.fun/live/long-hua-ri-han.m3u8
 #EXTINF:-1 group-title="香港极速视",八度空间1080p
 https://cdn6.101.qzz.io/163189/8tv
 #EXTINF:-1 group-title="香港极速视",澳视澳门1080p
@@ -57775,6 +55723,10 @@ http://jiaojirentv.top/2020/yy.php?id=1354930924
 https://stream1.freetv.fun/198e72173bbbd2701989c077d068d85daac98469233e20ba3c9fede24af59687.m3u8
 #EXTINF:-1 group-title="马来西亚视",[HD]ช่อง exxxotica
 https://stream1.freetv.fun/491d04a16e4ced5b63201f8c225f2a89fa1551ec686c4863e90a0e9cb94ab072.m3u8
+#EXTINF:-1 group-title="马来西亚视",cct4欧洲咪咕
+http://j.s.bkpcp.top/jj/cctv4o
+#EXTINF:-1 group-title="马来西亚视",cct4美洲咪咕
+http://j.s.bkpcp.top/jj/cctv4m
 #EXTINF:-1 group-title="马来西亚视",cgtn西语
 https://espanol-liveali.cgtn.com/hls/LSveOGBaBw41Ea7ukkVAUdKQ220802LSTexu6xAuFH8VZNBLE1ZNEa220802cd/playlist.m3u8
 #EXTINF:-1 group-title="马来西亚视",cgtn记录
@@ -57987,6 +55939,8 @@ https://v.cdnlz17.com/20231014/29608_21156158/index.m3u8
 https://vip1.lz-cdn1.com/20230808/21699_2413bbe5/index.m3u8
 #EXTINF:-1 group-title="鬼片视",衰鬼抓狂-惊魂今晚夜【国语】（香港恐怖片）
 https://vip.lz-cdn3.com/20230709/20130_3b562a3f/index.m3u8
+#EXTINF:-1 group-title="鬼片视",重温经典
+http://php.jdshipin.com:8880/TVOD/iptv.php?id=cwjd
 #EXTINF:-1 group-title="鬼片视",阴阳界1974
 https://v.cdnlz19.com/20240423/30922_846a2982/index.m3u8
 #EXTINF:-1 group-title="鬼片视",隔世鬼奸情（香港恐怖片）
@@ -58051,6 +56005,8 @@ http://165.154.226.214:50007/of-4gtv-4gtv041/index.m3u8?proxy=true
 http://tv.ctvcamau.vn/live/tv/tv.m3u8
 #EXTINF:-1 group-title="🎂港台Mt",塞浦路斯中文
 https://cdn.istoikona.com/ccnrtv/live/playlist.m3u8
+#EXTINF:-1 group-title="🎂港台Mt",央视综合Pdtv
+http://rihou.cc:555/tv/[Pd]央视综合
 #EXTINF:-1 group-title="🏵️极速NOW",翡翠台
 https://flv-play.clouda.com/live/fc-oG2vUiheKLJzdVprWHCECxdMNCOog9HMxnt6IoIZG07iNnIYLtElHP4EpcB9tiErfUyqWLD2NQ5zlbYxAFHiNt.flv
 #EXTINF:-1 group-title="🏵️极速NOW",无线新闻
@@ -58197,6 +56153,8 @@ http://rihou.cc:555/tv/[Pd]%E6%BE%B3%E9%97%A8%E4%BD%93%E8%82%B2
 http://rihou.cc:555/tv/[Pd]%E6%BE%B3%E9%97%A8%E7%BB%BC%E8%89%BA
 #EXTINF:-1 group-title="🇲🇴澳门",澳门莲花
 http://rihou.cc:555/tv/[Pd]%E6%BE%B3%E9%97%A8%E8%8E%B2%E8%8A%B1
+#EXTINF:-1 group-title="🍒极速风云",广东珠江
+http://iptv.4666888.xyz/iptv2A.php?id=19
 #EXTINF:-1 group-title="🍇港台",五星体育
 http://cdn3.163189.xyz/163189/wxty
 #EXTINF:-1 group-title="🍇港台",TVB星河国语
@@ -62997,6 +60955,8 @@ https://kavencat01.kodview.com/live/hnntv.php?id=hnxw
 https://live2.hkbtv.cn/live/tv2501.m3u8
 #EXTINF:-1 group-title="🐠海南省",海口-2
 https://live2.hkbtv.cn/live/tv2502.m3u8
+#EXTINF:-1 group-title="🐠海南省",儋州
+http://36009.hlsplay.aodianyun.com/tv_radio_36009/tv_channel_1330.m3u8?auth_key=4854915849-0-0-5cf8df0f6f82fbb8da58b60f011965c3
 #EXTINF:-1 group-title="🐠海南省",CMTVSD
 http://www.alihomes.top:8188/rtp/239.254.96.111:7772
 #EXTINF:-1 group-title="🐠海南省",海南万宁SD
@@ -63907,6 +61867,8 @@ https://stream1.freetv.fun/f9a98e499e8ca7f86379b3a1324172f7094b0209bf2ccd97294e4
 https://stream1.freetv.fun/b89645829cac90dd29cf3ed26eac1e5f5b832770d15bd1cd293c55c4692c5f92.ctv
 #EXTINF:-1 group-title="🍈广东111",潮州
 https://stream1.freetv.fun/322ba7641aa73e731d1df1b54706f70e8253530da5021d12a90f90c707140b8e.ctv
+#EXTINF:-1 group-title="🍈广东111",广东体育欣赏
+http://rihou.cc:555/tv/[Cx]广东体育
 #EXTINF:-1 group-title="🍈广东111",广州综合|澜露直播
 http://47.108.20.161:8866/guangdong/guangzhou.php?id=zhonghe广州新闻|澜露直播,http://47.108.20.161:8866/guangdong/guangzhou.php?id=xinwen
 #EXTINF:-1 group-title="🍈广东111",广州法治|澜露直播
