@@ -1555,9 +1555,6 @@ MovieMusic,https://lotus.stingray.com/manifest/cmusic-cme004-montreal/samsungtvp
 AsiaFM音乐,http://asiafm.hk:8000/asiahd
 AsiaFM亚洲经典,http://goldfm.cn:8000/goldfm
 
-❤️其他,#genre#
-76,https://stream.ads.ottera.tv/playlist.m3u8?network_id=76
-
 🐎🐎⬇️❤️xianggang\wanwan,#genre#
 DW_之声,http://rihou.cc:555/tv/[Pd]DW-之声
 华纳电影,http://rihou.cc:555/tv/[Pd]华纳电影
@@ -1624,13 +1621,6 @@ AstroQJ,http://rihou.cc:555/tv/[SX]AstroQJ
 🐎🐎⬇️❤️xianggang\wanwan,#genre#
 寰宇新闻,http://rihou.cc:555/tv/[Pd]寰宇新闻
 
-❤️其他,#genre#
-102,https://stream.ads.ottera.tv/playlist.m3u8?network_id=102
-79,https://stream.ads.ottera.tv/playlist.m3u8?network_id=79
-77,https://stream.ads.ottera.tv/playlist.m3u8?network_id=77
-83,https://stream.ads.ottera.tv/playlist.m3u8?network_id=83
-84,https://stream.ads.ottera.tv/playlist.m3u8?network_id=84
-82,https://stream.ads.ottera.tv/playlist.m3u8?network_id=82
 
 🐎🐎⬇️❤️xianggang\wanwan,#genre#
 amc电影,https://cdn12.178.indevs.in/163189/0bcf9bb8c452e56a
@@ -1639,25 +1629,7 @@ amc电影,https://cdn12.178.indevs.in/163189/0bcf9bb8c452e56a
 波斯中文,https://mediaserver.abnvideos.com/streams/abnchina.m3u8
 
 ❤️其他,#genre#
-145,https://stream.ads.ottera.tv/playlist.m3u8?network_id=145
-159,https://stream.ads.ottera.tv/playlist.m3u8?network_id=159
-160,https://stream.ads.ottera.tv/playlist.m3u8?network_id=160
-294,https://stream.ads.ottera.tv/playlist.m3u8?network_id=294
-292,https://stream.ads.ottera.tv/playlist.m3u8?network_id=292
-134,https://stream.ads.ottera.tv/playlist.m3u8?network_id=134
-165,https://stream.ads.ottera.tv/playlist.m3u8?network_id=165
-207,https://stream.ads.ottera.tv/playlist.m3u8?network_id=207
-71,https://stream.ads.ottera.tv/playlist.m3u8?network_id=71
-115,https://stream.ads.ottera.tv/playlist.m3u8?network_id=115
-144,https://stream.ads.ottera.tv/playlist.m3u8?network_id=144
-200,https://stream.ads.ottera.tv/playlist.m3u8?network_id=200
-264,https://stream.ads.ottera.tv/playlist.m3u8?network_id=264
-269,https://stream.ads.ottera.tv/playlist.m3u8?network_id=269
-50,https://stream.ads.ottera.tv/playlist.m3u8?network_id=50
-39,https://stream.ads.ottera.tv/playlist.m3u8?network_id=39
-38,https://stream.ads.ottera.tv/playlist.m3u8?network_id=38
-40,https://stream.ads.ottera.tv/playlist.m3u8?network_id=40
-188,https://stream.ads.ottera.tv/playlist.m3u8?network_id=188
+
 
 🐎🐎⬇️❤️xianggang\wanwan,#genre#
 闽壹电影,http://rihou.cc:555/tv/[Pd]闽壹电影
@@ -1667,8 +1639,7 @@ amc电影,https://cdn12.178.indevs.in/163189/0bcf9bb8c452e56a
 ❤️剧电影,#genre#
 音乐仓库抖播,http://rihou.cc:555/tv/音乐仓库抖05
 
-❤️其他,#genre#
-41,https://stream.ads.ottera.tv/playlist.m3u8?network_id=41
+
 
 🐎🐎⬇️❤️xianggang\wanwan,#genre#
 影迷数字电影,https://cdn12.178.indevs.in/163189/a643783ec587540e
@@ -1676,15 +1647,6 @@ amc电影,https://cdn12.178.indevs.in/163189/0bcf9bb8c452e56a
 DAZN-贰,http://rihou.cc:555/tv/[Pd]DAZN-贰
 动物星球,http://rihou.cc:555/tv/[Pd]动物星球
 
-❤️其他,#genre#
-201,https://stream.ads.ottera.tv/playlist.m3u8?network_id=201
-223,https://stream.ads.ottera.tv/playlist.m3u8?network_id=223
-14,https://stream.ads.ottera.tv/playlist.m3u8?network_id=14
-157,https://stream.ads.ottera.tv/playlist.m3u8?network_id=157
-275,https://stream.ads.ottera.tv/playlist.m3u8?network_id=275
-225,https://stream.ads.ottera.tv/playlist.m3u8?network_id=225
-271,https://stream.ads.ottera.tv/playlist.m3u8?network_id=271
-284,https://stream.ads.ottera.tv/playlist.m3u8?network_id=284
 
 🐎🐎⬇️❤️xianggang\wanwan,#genre#
 东南卫视,http://rihou.cc:555/tv/[Pd]东南卫视
@@ -1704,11 +1666,7 @@ DAZN-贰,http://rihou.cc:555/tv/[Pd]DAZN-贰
 CinemaWorld,https://cdn12.178.indevs.in/163189/6086cfe7a9756110
 靖天映画,https://cdn12.178.indevs.in/163189/bd4752bd7828b2bf
 
-❤️其他,#genre#
-117,https://stream.ads.ottera.tv/playlist.m3u8?network_id=117
-72,https://stream.ads.ottera.tv/playlist.m3u8?network_id=72
-191,https://stream.ads.ottera.tv/playlist.m3u8?network_id=191
-125,https://stream.ads.ottera.tv/playlist.m3u8?network_id=125
+
 
 🐎🐎⬇️❤️xianggang\wanwan,#genre#
 采昌影剧,https://cdn12.178.indevs.in/163189/0a6204ed0261460c
@@ -1716,19 +1674,11 @@ CinemaWorld,https://cdn12.178.indevs.in/163189/6086cfe7a9756110
 ❤️广播,#genre#
 AsiaFM亚洲音乐,http://asiafm.hk:8000/asiafm
 
-❤️其他,#genre#
-274,https://stream.ads.ottera.tv/playlist.m3u8?network_id=274
-46,https://stream.ads.ottera.tv/playlist.m3u8?network_id=46
-291,https://stream.ads.ottera.tv/playlist.m3u8?network_id=291
+
 
 ❤️北京,#genre#
 北京新闻,http://49.235.65.250:600/beijing/beijing.php?id=bjxw
 
-❤️其他,#genre#
-286,https://stream.ads.ottera.tv/playlist.m3u8?network_id=286
-58,https://stream.ads.ottera.tv/playlist.m3u8?network_id=58
-189,https://stream.ads.ottera.tv/playlist.m3u8?network_id=189
-35,https://stream.ads.ottera.tv/playlist.m3u8?network_id=35
 
 ❤️浙江,#genre#
 浙江国际,https://zwebl02.cztv.com/live/channel101080Pnew.m3u8?auth_key=2524708799-ca798ce95dda85537a46f2eb5be537be-0-895310d00bcd28384a9238088f08375a
@@ -1737,12 +1687,6 @@ AsiaFM亚洲音乐,http://asiafm.hk:8000/asiafm
 北京财经,http://49.235.65.250:600/beijing/beijing.php?id=bjcj
 北京纪实科教,http://49.235.65.250:600/beijing/beijing.php?id=bjjs
 北京体育休闲,http://49.235.65.250:600/beijing/beijing.php?id=bjty
-
-❤️其他,#genre#
-285,https://stream.ads.ottera.tv/playlist.m3u8?network_id=285
-143,https://stream.ads.ottera.tv/playlist.m3u8?network_id=143
-47,https://stream.ads.ottera.tv/playlist.m3u8?network_id=47
-297,https://stream.ads.ottera.tv/playlist.m3u8?network_id=297
 
 ❤️福建,#genre#
 福建文体,http://tv.sohu.blog/d/fjbst.php?id=161
@@ -1756,12 +1700,6 @@ AsiaFM亚洲音乐,http://asiafm.hk:8000/asiafm
 ❤️北京,#genre#
 北京生活,http://49.235.65.250:600/beijing/beijing.php?id=bjsh
 
-❤️其他,#genre#
-142,https://stream.ads.ottera.tv/playlist.m3u8?network_id=142
-34,https://stream.ads.ottera.tv/playlist.m3u8?network_id=34
-199,https://stream.ads.ottera.tv/playlist.m3u8?network_id=199
-222,https://stream.ads.ottera.tv/playlist.m3u8?network_id=222
-37,https://stream.ads.ottera.tv/playlist.m3u8?network_id=37
 
 🐎🐎⬇️❤️xianggang\wanwan,#genre#
 靖天电影,https://cdn12.178.indevs.in/163189/ed33509e03e78c7a
@@ -1773,41 +1711,23 @@ AsiaFM亚洲音乐,http://asiafm.hk:8000/asiafm
 🐎🐎⬇️❤️xianggang\wanwan,#genre#
 靖天戏剧,https://cdn12.178.indevs.in/163189/177d541552f78003
 
-❤️其他,#genre#
-195,https://stream.ads.ottera.tv/playlist.m3u8?network_id=195
 
 ❤️辽宁,#genre#
 辽宁体育,http://tv.sohu.blog/d/mg.php?id=962067526
 
-❤️其他,#genre#
-59,https://stream.ads.ottera.tv/playlist.m3u8?network_id=59
-198,https://stream.ads.ottera.tv/playlist.m3u8?network_id=198
-190,https://stream.ads.ottera.tv/playlist.m3u8?network_id=190
 
 ❤️福建,#genre#
 福建经济生活,http://tv.sohu.blog/d/fjbst.php?id=160
 福建旅游,http://tv.sohu.blog/d/fjbst.php?id=159
 福建公共,http://tv.sohu.blog/d/fjbst.php?id=156
-
-❤️其他,#genre#
-172,https://stream.ads.ottera.tv/playlist.m3u8?network_id=172
-293,https://stream.ads.ottera.tv/playlist.m3u8?network_id=293
-61,https://stream.ads.ottera.tv/playlist.m3u8?network_id=61
-
-❤️福建,#genre#
 福建新闻,http://tv.sohu.blog/d/fjbst.php?id=157
 
-❤️其他,#genre#
-33,https://stream.ads.ottera.tv/playlist.m3u8?network_id=33
 
 ❤️广播,#genre#
 AsiaFM亚洲天空,http://funradio.cn:8000/funradio
 
 🐎🐎⬇️❤️xianggang\wanwan,#genre#
 CMusic,https://cdn12.178.indevs.in/163189/d396cb84b6c89889
-
-❤️其他,#genre#
-36,https://stream.ads.ottera.tv/playlist.m3u8?network_id=36
 
 🐎🐎⬇️❤️xianggang\wanwan,#genre#
 金光布袋戏,https://cdn12.178.indevs.in/163189/5479c245d9d580b5
@@ -1824,8 +1744,6 @@ Horse and Country,https://hncfree-samsungau.amagi.tv/playlist.m3u8
 ☘️河南,#genre#
 全纪实,http://39.165.39.49:85/tsfile/live/1126_1.m3u8?key=txiptv&playlive=0&authid=0
 
-❤️其他,#genre#
-60,https://stream.ads.ottera.tv/playlist.m3u8?network_id=60
 
 ☘️河南,#genre#
 炫动卡通,http://39.165.39.49:85/tsfile/live/1159_1.m3u8?key=txiptv&playlive=0&authid=0
