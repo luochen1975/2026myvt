@@ -10,7 +10,7 @@ regex:春晚|春节联欢晚会|历年春晚|春晚回放|cctv春晚
 # 年份+逗号格式
 regex:^\d{4}年,
 regex:^\d{4}年春晚，
-春晚regex:^\d{4}年，
+regex:春晚^\d{4}年，
 # URL黑名单
 ads.com
 buffering
