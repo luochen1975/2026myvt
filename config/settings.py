@@ -71,7 +71,7 @@ MY_CITY = "ningbo"
 MULTICAST_LIMIT = 6              # 普通组播限制
 MOBILE_MULTICAST_LIMIT = 6       # 移动组播限制
 UNICAST_LIMIT = 15               # 单播限制
-MAX_PER_GROUP = 300              # 每组最大频道数
+MAX_PER_GROUP = 500              # 每组最大频道数
 
 # 确保目录存在
 OUTPUT_DIR.mkdir(exist_ok=True)
