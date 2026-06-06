@@ -144,7 +144,7 @@ class ChannelMerger:
         multicast_limit: int = 4,
         mobile_multicast_limit: int = 6,
         unicast_limit: int = 15,
-        max_per_group: int = 300
+        max_per_group: int = 500
     ):
         self.multicast_limit = multicast_limit
         self.mobile_multicast_limit = mobile_multicast_limit
