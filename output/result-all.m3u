@@ -26427,8 +26427,6 @@ https://t.freetv.fun/live/tele8-tv.m3u8
 https://t.freetv.fun/live/funtan-suo-yu-le-5.m3u8
 #EXTINF:-1 group-title="綜合",Rollor TV
 https://t.freetv.fun/live/folklore-tv.m3u8
-#EXTINF:-1 group-title="綜合",Rollor TV
-https://t.freetv.fun/live/tvr-folclor.m3u8
 #EXTINF:-1 group-title="綜合",TVBS Asia
 https://t.freetv.fun/live/tvbs-asia.m3u8
 #EXTINF:-1 group-title="綜合",TVBS Asia
@@ -26503,8 +26501,6 @@ https://t.freetv.fun/live/dong-sen-chao-shi-5.m3u8
 https://t.freetv.fun/live/dong-sen-chao-shi-6.m3u8
 #EXTINF:-1 group-title="綜合",東森超視
 https://t.freetv.fun/live/dong-sen-chao-shi-34-5-4.m3u8
-#EXTINF:-1 group-title="綜合",東森超視
-https://t.freetv.fun/live/dong-sen-chao-shi-34-5-1-1.m3u8
 #EXTINF:-1 group-title="綜合",東森超視
 https://t.freetv.fun/live/dong-sen-chao-shi-34-5-2-2.m3u8
 #EXTINF:-1 group-title="綜合",民視[geo-blocked]
@@ -26727,12 +26723,6 @@ https://t.freetv.fun/live/warner-channel-2.m3u8
 https://t.freetv.fun/live/ent-channel.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V]
 https://t.freetv.fun/live/ivoire-channel-1.m3u8
-#EXTINF:-1 group-title="音樂",CHANNEL [V][geo-blocked]
-https://t.freetv.fun/live/f1-channel.m3u8
-#EXTINF:-1 group-title="音樂",CHANNEL [V]
-https://t.freetv.fun/live/mrvtv-channel-45.m3u8
-#EXTINF:-1 group-title="音樂",CHANNEL [V]
-https://t.freetv.fun/live/mrvtv-channel-44.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V]
 https://t.freetv.fun/live/channel-i.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V]
@@ -54643,14 +54633,6 @@ https://t33.cdn2020.com/video/m3u8/2024/10/04/485a4db7/index.m3u8
 https://t33.cdn2020.com/video/m3u8/2025/10/02/8e83b8e4/index.m3u8
 #EXTINF:-1 group-title="test",少白潔第六章MDSR-0005-6綠 艾悠
 https://t33.cdn2020.com/video/m3u8/2025/10/18/64827eee/index.m3u8
-#EXTINF:-1 group-title="虎牙频道",雍正王朝频道
-http://cfss.cc/cdn/hy/11342439.m3u8
-#EXTINF:-1 group-title="特区地波",RTHK-32高码
-http://beishan008.asuscomm.com:8892/bysid/32.m3u8
-#EXTINF:-1 group-title="新坡频陆",Astro AEC(c)
-https://sc2022.stream-link.org/tv2306.php?id=h25
-#EXTINF:-1 group-title="新坡频陆",TV1(b)
-http://d25tgymtnqzu8s.cloudfront.net/smil:tv1/chunklist_b4596000_slENG.m3u8?id=1
 #EXTINF:-1 group-title="秒播央视",北京卡酷少儿
 http://107.150.60.122/live/btvkk.m3u8
 #EXTINF:-1 group-title="🇨🇳港台电影",天映经典
