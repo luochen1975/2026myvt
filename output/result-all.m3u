@@ -26419,7 +26419,7 @@ https://t.freetv.fun/live/jin-guang-bu-dai-xi-1-1.m3u8
 https://t.freetv.fun/live/tele8-tv.m3u8
 #EXTINF:-1 group-title="綜合",FUN探索娛樂
 https://t.freetv.fun/live/funtan-suo-yu-le-5.m3u8
-#EXTINF:-1 group-title="綜合",Rollor TV
+#EXTINF:-1 group-title="綜合",Rollor TV[geo-blocked]
 https://t.freetv.fun/live/folklore-tv.m3u8
 #EXTINF:-1 group-title="綜合",TVBS Asia
 https://t.freetv.fun/live/tvbs-asia.m3u8
@@ -26473,7 +26473,7 @@ https://t.freetv.fun/live/dong-sen-mei-zhou.m3u8
 https://t.freetv.fun/live/dong-sen-mei-zhou-1.m3u8
 #EXTINF:-1 group-title="綜合",東森美洲
 https://t.freetv.fun/live/dong-sen-mei-zhou-2-1.m3u8
-#EXTINF:-1 group-title="綜合",東森美洲
+#EXTINF:-1 group-title="綜合",東森美洲[geo-blocked]
 https://t.freetv.fun/live/dong-sen-mei-zhou-2.m3u8
 #EXTINF:-1 group-title="綜合",東森衛視[geo-blocked]
 https://t.freetv.fun/live/dong-sen-mei-zhou-xin-wen-tai.m3u8
@@ -26535,8 +26535,6 @@ https://t.freetv.fun/live/jing-dian-qia-tong-5.m3u8
 https://t.freetv.fun/live/jing-tian-qia-tong.m3u8
 #EXTINF:-1 group-title="兒童",靖天育樂
 https://t.freetv.fun/live/jing-tian-yu-le.m3u8
-#EXTINF:-1 group-title="知識",BBC Earth(tw)
-https://t.freetv.fun/live/bbc-earth.m3u8
 #EXTINF:-1 group-title="知識",CI罪案偵查
 https://t.freetv.fun/live/cizui-an-zhen-cha-4.m3u8
 #EXTINF:-1 group-title="知識",DISCOVERY HD WORLD
@@ -26557,8 +26555,10 @@ https://t.freetv.fun/live/global-trekker-5.m3u8
 https://t.freetv.fun/live/hgtv.m3u8
 #EXTINF:-1 group-title="知識",HGTV(TW)[geo-blocked]
 https://t.freetv.fun/live/hgtv-1.m3u8
-#EXTINF:-1 group-title="知識",Love Nature
-https://t.freetv.fun/live/love-nature.m3u8
+#EXTINF:-1 group-title="知識",HGTV(TW)[geo-blocked]
+https://t.freetv.fun/live/hgtv-2.ts
+#EXTINF:-1 group-title="知識",HGTV(TW)
+https://t.freetv.fun/live/hgtv-3.ts
 #EXTINF:-1 group-title="知識",Love Nature
 https://t.freetv.fun/live/love-nature-1.m3u8
 #EXTINF:-1 group-title="知識",Love Nature[geo-blocked]
@@ -26573,6 +26573,8 @@ https://t.freetv.fun/live/ying-mi-shu-wei-ji-shi.m3u8
 https://t.freetv.fun/live/shi-na-hua-ren-ji-shi.m3u8
 #EXTINF:-1 group-title="電影",AMC電影
 https://t.freetv.fun/live/amcdian-ying.m3u8
+#EXTINF:-1 group-title="電影",FOX Movies HD(TW)[geo-blocked]
+https://t.freetv.fun/live/hbo-movies.ts
 #EXTINF:-1 group-title="電影",Hollywood[geo-blocked]
 https://t.freetv.fun/live/young-hollywood.m3u8
 #EXTINF:-1 group-title="電影",Hollywood
@@ -26626,8 +26628,6 @@ https://t.freetv.fun/live/white-channel-1.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V]
 https://t.freetv.fun/live/test-channel-3.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V]
-https://t.freetv.fun/live/kartoon-channel-1.m3u8
-#EXTINF:-1 group-title="音樂",CHANNEL [V]
 https://t.freetv.fun/live/light-channel.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V]
 https://t.freetv.fun/live/saglik-channel.m3u8
@@ -26675,6 +26675,8 @@ https://t.freetv.fun/live/channel-win.m3u8
 https://t.freetv.fun/live/chile-channel-720p-1.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V][geo-blocked]
 https://t.freetv.fun/live/lego-channel-1080p.m3u8
+#EXTINF:-1 group-title="音樂",CHANNEL [V]
+https://t.freetv.fun/live/kartoon-channel.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V]
 https://t.freetv.fun/live/channel-11-scottsdale-az.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V]
@@ -26799,7 +26801,7 @@ https://t.freetv.fun/live/food-network-2.m3u8
 https://t.freetv.fun/live/liveabchu-dong-ying-yu-5.m3u8
 #EXTINF:-1 group-title="其它",NICE TV
 https://t.freetv.fun/live/unife-tv.m3u8
-#EXTINF:-1 group-title="其它",PET CLUB TV[geo-blocked]
+#EXTINF:-1 group-title="其它",PET CLUB TV
 https://t.freetv.fun/live/pet-club-tv.m3u8
 #EXTINF:-1 group-title="其它",PET CLUB TV
 https://t.freetv.fun/live/ch-ng-pet-club.m3u8
@@ -26855,6 +26857,8 @@ https://t.freetv.fun/live/dazn-ringside.m3u8
 https://t.freetv.fun/live/dazn-4-50fps.m3u8
 #EXTINF:-1 group-title="運動",DAZN 2(TW)
 https://t.freetv.fun/live/dazn-2-50fps.m3u8
+#EXTINF:-1 group-title="運動",DAZN 2(TW)[geo-blocked]
+https://t.freetv.fun/live/dazn-3-50fps.m3u8
 #EXTINF:-1 group-title="運動",ELTA生活旅遊
 https://t.freetv.fun/live/eltasheng-huo-lu-you-5.m3u8
 #EXTINF:-1 group-title="運動",ELTA體育2(備用)[geo-blocked]
@@ -48675,126 +48679,6 @@ https://v.cdnlz3.com/20250108/31968_952e92d4/index.m3u8
 https://v.cdnlz3.com/20250109/32034_5378cc11/index.m3u8
 #EXTINF:-1 group-title="🎞️剧集",人生是道选择题
 https://v.cdnlz3.com/20250109/32033_5753391c/index.m3u8
-#EXTINF:-1 group-title="6/12赛事",国🔊12鄂评述
-http://rihou.cc:555/tv/12鄂超咪评述
-#EXTINF:-1 group-title="6/12赛事",国🔊12川评述
-http://rihou.cc:555/tv/12川超咪评述
-#EXTINF:-1 group-title="6/12赛事",国🔊12东评述
-http://rihou.cc:555/tv/12东北超评述
-#EXTINF:-1 group-title="6/13赛事",国🔊粤13评述
-http://rihou.cc:555/tv/13粤超咪评述
-#EXTINF:-1 group-title="6/13赛事",国🔊粤13述评
-http://rihou.cc:555/tv/13粤超咪述评
-#EXTINF:-1 group-title="6/13赛事",国🔊粤13评评
-http://rihou.cc:555/tv/13粤超咪评评
-#EXTINF:-1 group-title="6/13赛事",国🔊粤13述述
-http://rihou.cc:555/tv/13粤超咪述述
-#EXTINF:-1 group-title="6/13赛事",国🔊粤13旁述
-http://rihou.cc:555/tv/13粤超咪旁述
-#EXTINF:-1 group-title="6/13赛事",国🔊13蒙评述
-http://rihou.cc:555/tv/13蒙超咪评述
-#EXTINF:-1 group-title="6/13赛事",国🔊13蒙述评
-http://rihou.cc:555/tv/13蒙超咪述评
-#EXTINF:-1 group-title="6/13赛事",国🔊13蒙评评
-http://rihou.cc:555/tv/13蒙超咪评评
-#EXTINF:-1 group-title="6/13赛事",国🔊13蒙述述
-http://rihou.cc:555/tv/13蒙超咪述述
-#EXTINF:-1 group-title="6/13赛事",国🔊13蒙旁述
-http://rihou.cc:555/tv/13蒙超咪旁述
-#EXTINF:-1 group-title="6/13赛事",国🔊13蒙述旁
-http://rihou.cc:555/tv/13蒙超咪述旁
-#EXTINF:-1 group-title="6/13赛事",国🔊13疆评述
-http://rihou.cc:555/tv/13疆超咪评述
-#EXTINF:-1 group-title="6/13赛事",国🔊13疆述评
-http://rihou.cc:555/tv/13疆超咪述评
-#EXTINF:-1 group-title="6/13赛事",国🔊13闽评述
-http://rihou.cc:555/tv/13闽超咪评述
-#EXTINF:-1 group-title="6/13赛事",国🔊13闽述评
-http://rihou.cc:555/tv/13闽超咪述评
-#EXTINF:-1 group-title="6/13赛事",国🔊13闽评评
-http://rihou.cc:555/tv/13闽超咪评评
-#EXTINF:-1 group-title="6/13赛事",国🔊13闽述述
-http://rihou.cc:555/tv/13闽超咪述述
-#EXTINF:-1 group-title="6/13赛事",国🔊13闽旁述
-http://rihou.cc:555/tv/13闽超咪旁述
-#EXTINF:-1 group-title="6/13赛事",国🔊13鄂评述
-http://rihou.cc:555/tv/13鄂超咪评述
-#EXTINF:-1 group-title="6/13赛事",国🔊13鄂述评
-http://rihou.cc:555/tv/13鄂超咪述评
-#EXTINF:-1 group-title="6/13赛事",国🔊13鄂评评
-http://rihou.cc:555/tv/13鄂超咪评评
-#EXTINF:-1 group-title="6/13赛事",国🔊13鄂述述
-http://rihou.cc:555/tv/13鄂超咪述述
-#EXTINF:-1 group-title="6/13赛事",国🔊13鄂旁述
-http://rihou.cc:555/tv/13鄂超咪旁述
-#EXTINF:-1 group-title="6/13赛事",国🔊13赣评述
-http://rihou.cc:555/tv/13赣超咪评述
-#EXTINF:-1 group-title="6/13赛事",国🔊13赣述评
-http://rihou.cc:555/tv/13赣超咪述评
-#EXTINF:-1 group-title="6/13赛事",国🔊13赣评评
-http://rihou.cc:555/tv/13赣超咪评评
-#EXTINF:-1 group-title="6/13赛事",国🔊13东评述
-http://rihou.cc:555/tv/13东北超评述
-#EXTINF:-1 group-title="6/13赛事",国🔊13苏评述
-http://rihou.cc:555/tv/13苏超咪评述
-#EXTINF:-1 group-title="6/13赛事",国🔊13苏述评
-http://rihou.cc:555/tv/13苏超咪述评
-#EXTINF:-1 group-title="6/13赛事",国🔊13苏评评
-http://rihou.cc:555/tv/13苏超咪评评
-#EXTINF:-1 group-title="6/14赛事",粤🔊14小肥述
-http://rihou.cc:555/tv/14NBA小肥述
-#EXTINF:-1 group-title="6/14赛事",国🔊14咪评述
-http://rihou.cc:555/tv/14NBA咪评述
-#EXTINF:-1 group-title="6/14赛事",国🔊14腾评述
-http://rihou.cc:555/tv/14NBA腾评述
-#EXTINF:-1 group-title="6/14赛事",国🔊14纬来述
-http://rihou.cc:555/tv/14NBA纬来述
-#EXTINF:-1 group-title="6/14赛事",国🔊粤14评述
-http://rihou.cc:555/tv/14粤超咪评述
-#EXTINF:-1 group-title="6/14赛事",国🔊粤14述评
-http://rihou.cc:555/tv/14粤超咪述评
-#EXTINF:-1 group-title="6/14赛事",国🔊粤14评评
-http://rihou.cc:555/tv/14粤超咪评评
-#EXTINF:-1 group-title="6/14赛事",国🔊粤14述述
-http://rihou.cc:555/tv/14粤超咪述述
-#EXTINF:-1 group-title="6/14赛事",国🔊粤14旁述
-http://rihou.cc:555/tv/14粤超咪旁述
-#EXTINF:-1 group-title="6/14赛事",国🔊14疆评述
-http://rihou.cc:555/tv/14疆超咪评述
-#EXTINF:-1 group-title="6/14赛事",国🔊14疆述评
-http://rihou.cc:555/tv/14疆超咪述评
-#EXTINF:-1 group-title="6/14赛事",国🔊14疆评评
-http://rihou.cc:555/tv/14疆超咪评评
-#EXTINF:-1 group-title="6/14赛事",国🔊14疆述述
-http://rihou.cc:555/tv/14疆超咪述述
-#EXTINF:-1 group-title="6/14赛事",国🔊14鄂评述
-http://rihou.cc:555/tv/14鄂超咪评述
-#EXTINF:-1 group-title="6/14赛事",国🔊14赣评述
-http://rihou.cc:555/tv/14赣超咪评述
-#EXTINF:-1 group-title="6/14赛事",国🔊14赣述评
-http://rihou.cc:555/tv/14赣超咪述评
-#EXTINF:-1 group-title="6/14赛事",国🔊14川评述
-http://rihou.cc:555/tv/14川超咪评述
-#EXTINF:-1 group-title="6/14赛事",国🔊14川述评
-http://rihou.cc:555/tv/14川超咪述评
-#EXTINF:-1 group-title="6/18赛事",国🔊18鄂评述
-http://rihou.cc:555/tv/18鄂超咪评述
-#EXTINF:-1 group-title="欣赏频道",粤语戏曲欣赏
-http://rihou.cc:555/tv/[Uk]无线戏曲
-#EXTINF:-1 group-title="欣赏频道",粤语戏曲欣赏
-http://rihou.cc:555/tv/[Us]无线戏曲
-#EXTINF:-1 group-title="欣赏频道",粤语长片欣赏
-http://rihou.cc:555/tv/[Uk]无线粤片
-#EXTINF:-1 group-title="欣赏频道",粤语长片欣赏
-http://rihou.cc:555/tv/[Us]无线粤片
-#EXTINF:-1 group-title="虎牙频道",雍正王朝频道
-http://cfss.cc/cdn/hy/11342439.m3u8
-#EXTINF:-1 group-title="特区地波",RTHK-32高码
-http://beishan008.asuscomm.com:8892/bysid/32.m3u8
-#EXTINF:-1 group-title="新坡频陆",Astro AEC(c)
-https://sc2022.stream-link.org/tv2306.php?id=h25
-#EXTINF:-1 group-title="新坡频陆",TV1(b)
-http://d25tgymtnqzu8s.cloudfront.net/smil:tv1/chunklist_b4596000_slENG.m3u8?id=1
 #EXTINF:-1 group-title="5.29更新公告",❤️4K视频
 http://xjj1.716888.xyz/fenlei/4k/4k.php
 #EXTINF:-1 group-title="5.29更新公告",❥韩国舞曲
