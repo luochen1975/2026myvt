@@ -26399,8 +26399,6 @@ https://t.freetv.fun/live/tvbs-asia.m3u8
 https://t.freetv.fun/live/tvbs.m3u8
 #EXTINF:-1 group-title="綜合",rollor
 https://t.freetv.fun/live/roll.m3u8
-#EXTINF:-1 group-title="綜合",台視HD
-https://t.freetv.fun/live/tai-shi-28.ts
 #EXTINF:-1 group-title="綜合",國會頻道1
 https://t.freetv.fun/live/guo-hui-pin-dao-1.m3u8
 #EXTINF:-1 group-title="綜合",東森美洲
@@ -26431,26 +26429,14 @@ https://t.freetv.fun/live/min-shi-28.m3u8
 https://t.freetv.fun/live/min-shi-di-yi-1.m3u8
 #EXTINF:-1 group-title="綜合",緯來綜合
 https://t.freetv.fun/live/wei-lai-jing-cai.m3u8
-#EXTINF:-1 group-title="兒童",DreamWorks(TW)
-https://t.freetv.fun/live/dreamworksmeng-gong-chang-dong-hua.m3u8
-#EXTINF:-1 group-title="兒童",DreamWorks(TW)
-https://t.freetv.fun/live/dreamworksmeng-gong-han-dong-hua.m3u8
 #EXTINF:-1 group-title="兒童",靖天卡通[geo-blocked]
 https://t.freetv.fun/live/jing-tian-qia-tong.m3u8
-#EXTINF:-1 group-title="知識",DISCOVERY HD WORLD
-https://t.freetv.fun/live/discovery-world.m3u8
 #EXTINF:-1 group-title="知識",Discovery(TW)
 https://t.freetv.fun/live/discovery.m3u8
 #EXTINF:-1 group-title="知識",Discovery(TW)
 https://t.freetv.fun/live/discovery-id.m3u8
-#EXTINF:-1 group-title="知識",Discovery(TW)
-https://t.freetv.fun/live/discovery-id-extra.php
-#EXTINF:-1 group-title="知識",Discovery(TW)
-https://t.freetv.fun/live/discovery-dtx.php
 #EXTINF:-1 group-title="知識",HGTV(TW)
 https://t.freetv.fun/live/hgtv.m3u8
-#EXTINF:-1 group-title="知識",HGTV(TW)
-https://t.freetv.fun/live/hgtv-3.ts
 #EXTINF:-1 group-title="知識",Love Nature[geo-blocked]
 https://t.freetv.fun/live/love-nature.m3u8
 #EXTINF:-1 group-title="知識",Love Nature
@@ -26463,10 +26449,6 @@ https://t.freetv.fun/live/natgeo-japan.m3u8
 https://t.freetv.fun/live/amcdian-ying.m3u8
 #EXTINF:-1 group-title="電影",Hollywood[geo-blocked]
 https://t.freetv.fun/live/young-hollywood.m3u8
-#EXTINF:-1 group-title="電影",Hollywood
-https://t.freetv.fun/live/hollywood-9.m3u8
-#EXTINF:-1 group-title="電影",Hollywood
-https://t.freetv.fun/live/hollywood-1080p.m3u8
 #EXTINF:-1 group-title="電影",Star Movies Gold
 https://t.freetv.fun/live/gold-star.m3u8
 #EXTINF:-1 group-title="電影",經典電影臺
@@ -26513,10 +26495,6 @@ https://t.freetv.fun/live/xtremo-channel.m3u8
 https://t.freetv.fun/live/chile-channel-720p-1.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V][geo-blocked]
 https://t.freetv.fun/live/lego-channel-1080p.m3u8
-#EXTINF:-1 group-title="音樂",CHANNEL [V]
-https://t.freetv.fun/live/channel-i.m3u8
-#EXTINF:-1 group-title="音樂",CHANNEL [V]
-https://t.freetv.fun/live/channel-4-plus-1.m3u8
 #EXTINF:-1 group-title="新聞",TVBS新聞HD
 https://t.freetv.fun/live/tvbsxin-wen-1.m3u8
 #EXTINF:-1 group-title="新聞",中天新聞FHD
@@ -26591,12 +26569,6 @@ https://t.freetv.fun/live/wei-xin-dian-shi-1-1.m3u8
 https://t.freetv.fun/live/hao-xiao-xi.m3u8
 #EXTINF:-1 group-title="運動",DAZN 1(TW)
 https://t.freetv.fun/live/dazn-ringside.m3u8
-#EXTINF:-1 group-title="運動",DAZN 2(TW)
-https://t.freetv.fun/live/dazn-4-50fps.m3u8
-#EXTINF:-1 group-title="運動",DAZN 2(TW)
-https://t.freetv.fun/live/dazn-2-50fps.m3u8
-#EXTINF:-1 group-title="運動",DAZN 2(TW)[geo-blocked]
-https://t.freetv.fun/live/dazn-3-50fps.m3u8
 #EXTINF:-1 group-title="運動",ELTA體育2(備用)[geo-blocked]
 https://t.freetv.fun/live/cctv4mei-zhou.m3u8
 #EXTINF:-1 group-title="運動",ELTA體育4(備用)
@@ -48497,50 +48469,494 @@ https://v.cdnlz3.com/20250108/31968_952e92d4/index.m3u8
 https://v.cdnlz3.com/20250109/32034_5378cc11/index.m3u8
 #EXTINF:-1 group-title="🎞️剧集",人生是道选择题
 https://v.cdnlz3.com/20250109/32033_5753391c/index.m3u8
-#EXTINF:-1 group-title="滇超赛评",国🔊13滇评述
-http://rihou.cc:555/tv/13滇超咪评述
-#EXTINF:-1 group-title="滇超赛评",国🔊13滇述评
-http://rihou.cc:555/tv/13滇超咪述评
-#EXTINF:-1 group-title="滇超赛评",国🔊13滇评评
-http://rihou.cc:555/tv/13滇超咪评评
-#EXTINF:-1 group-title="滇超赛评",国🔊13滇述述
-http://rihou.cc:555/tv/13滇超咪述述
-#EXTINF:-1 group-title="村超赛评",国🔊13村评述
-http://rihou.cc:555/tv/13村超咪评述
-#EXTINF:-1 group-title="村超赛评",国🔊13村述评
-http://rihou.cc:555/tv/13村超咪述评
-#EXTINF:-1 group-title="6/14赛事",粤🔊14江忠德
+#EXTINF:-1 group-title="世界杯赛",粤🔊14江忠德
 http://rihou.cc:555/tv/14世杯江忠德
-#EXTINF:-1 group-title="6/14赛事",国🔊14李欣述
+#EXTINF:-1 group-title="世界杯赛",国🔊14李欣述
 http://rihou.cc:555/tv/14世杯李欣述
-#EXTINF:-1 group-title="6/14赛事",粤🔊14陈凯冬
+#EXTINF:-1 group-title="世界杯赛",粤🔊14陈凯冬
 http://rihou.cc:555/tv/14世杯陈凯冬
-#EXTINF:-1 group-title="6/14赛事",国🔊14詹俊述
+#EXTINF:-1 group-title="世界杯赛",国🔊14詹俊述
 http://rihou.cc:555/tv/14世杯詹俊述
-#EXTINF:-1 group-title="6/14赛事",国🔊14涂远述
+#EXTINF:-1 group-title="世界杯赛",国🔊14涂远述
 http://rihou.cc:555/tv/14世杯涂远述
-#EXTINF:-1 group-title="6/14赛事",粤🔊14陈曦述
+#EXTINF:-1 group-title="世界杯赛",粤🔊14陈曦述
 http://rihou.cc:555/tv/14世杯陈曦述
-#EXTINF:-1 group-title="6/14赛事",国🔊14刘腾述
+#EXTINF:-1 group-title="世界杯赛",国🔊14刘腾述
 http://rihou.cc:555/tv/14世杯刘腾述
-#EXTINF:-1 group-title="6/14赛事",国🔊14村评述
+#EXTINF:-1 group-title="村超赛评",国🔊14村评述
 http://rihou.cc:555/tv/14村超咪评述
-#EXTINF:-1 group-title="6/14赛事",国🔊14村述评
+#EXTINF:-1 group-title="村超赛评",国🔊14村述评
 http://rihou.cc:555/tv/14村超咪述评
-#EXTINF:-1 group-title="6/14赛事",国🔊14村评评
+#EXTINF:-1 group-title="村超赛评",国🔊14村评评
 http://rihou.cc:555/tv/14村超咪评评
-#EXTINF:-1 group-title="6/14赛事",国🔊14村述述
+#EXTINF:-1 group-title="村超赛评",国🔊14村述述
 http://rihou.cc:555/tv/14村超咪述述
-#EXTINF:-1 group-title="6/14赛事",20:30水尾村足球队🆚忠诚村足球队
+#EXTINF:-1 group-title="村超赛评",20:30水尾村足球队🆚忠诚村足球队
 http://r*ihou.cc:555/tv/v
-#EXTINF:-1 group-title="6/14赛事",国🔊14村旁述
+#EXTINF:-1 group-title="村超赛评",国🔊14村旁述
 http://rihou.cc:555/tv/14村超咪旁述
-#EXTINF:-1 group-title="6/14赛事",国🔊14闽评述
+#EXTINF:-1 group-title="闽超赛评",国🔊14闽评述
 http://rihou.cc:555/tv/14闽超咪评述
+#EXTINF:-1 group-title="赛事精锦",联赛赛事回放
+http://rihou.cc:555/tv/联赛回放赛14
+#EXTINF:-1 group-title="赛事精锦",NBA赛事回放
+http://rihou.cc:555/tv/NBA回放赛14
+#EXTINF:-1 group-title="赛事精锦",羽球赛事回放
+http://rihou.cc:555/tv/羽球回放赛14
+#EXTINF:-1 group-title="赛事精锦",橄球赛事回放
+http://rihou.cc:555/tv/橄球回放赛14
+#EXTINF:-1 group-title="赛事精锦",乒球赛事回放
+http://rihou.cc:555/tv/乒球回放赛14
+#EXTINF:-1 group-title="赛事精锦",网球赛事回放
+http://rihou.cc:555/tv/网球回放赛14
+#EXTINF:-1 group-title="赛事精锦",排球赛事回放
+http://rihou.cc:555/tv/排球回放赛14
+#EXTINF:-1 group-title="赛事精锦",格斗赛事回放
+http://rihou.cc:555/tv/格斗回放赛14
+#EXTINF:-1 group-title="赛事精锦",斯赛赛事回放
+http://rihou.cc:555/tv/斯赛回放赛14
+#EXTINF:-1 group-title="欣赏频道",雪中悍刀行剧
+http://120.220.76.91:2003/huya.php?id=11336592
+#EXTINF:-1 group-title="欣赏频道",庆余年一轮播
+http://120.220.76.91:2003/huya.php?id=11352960
+#EXTINF:-1 group-title="欣赏频道",庆余年二轮播
+http://120.220.76.91:2003/huya.php?id=23740156
+#EXTINF:-1 group-title="欣赏频道",传闻中的芊芊
+http://120.220.76.91:2003/huya.php?id=21059608
+#EXTINF:-1 group-title="欣赏频道",如懿传电视剧
+http://120.220.76.91:2003/huya.php?id=29465868
+#EXTINF:-1 group-title="欣赏频道",芈月传电视剧
+http://120.220.76.91:2003/huya.php?id=11352975
+#EXTINF:-1 group-title="欣赏频道",延禧攻略轮播
+http://120.220.76.91:2003/huya.php?id=26355864
+#EXTINF:-1 group-title="欣赏频道",与凤行电视剧
+http://120.220.76.91:2003/huya.php?id=26355866
+#EXTINF:-1 group-title="欣赏频道",柳舟记电视剧
+http://120.220.76.91:2003/huya.php?id=23860039
+#EXTINF:-1 group-title="欣赏频道",开端电视轮播
+http://120.220.76.91:2003/huya.php?id=11342397
+#EXTINF:-1 group-title="欣赏频道",我爱男保姆播
+http://120.220.76.91:2003/huya.php?id=29581262
+#EXTINF:-1 group-title="欣赏频道",渗透电视轮播
+http://120.220.76.91:2003/huya.php?id=30080244
+#EXTINF:-1 group-title="欣赏频道",亮剑电视轮播
+http://120.220.76.91:2003/huya.php?id=30080238
+#EXTINF:-1 group-title="欣赏频道",雪豹电视轮播
+http://120.220.76.91:2003/huya.php?id=29580970
+#EXTINF:-1 group-title="欣赏频道",科幻梦工场播
+http://120.220.76.91:2003/huya.php?id=15152155
+#EXTINF:-1 group-title="欣赏频道",脱口秀大会肆
+http://120.220.76.91:2003/huya.php?id=30080243
+#EXTINF:-1 group-title="欣赏频道",脱口秀大会伍
+http://120.220.76.91:2003/huya.php?id=11352875
+#EXTINF:-1 group-title="欣赏频道",粤语星爷电影
+http://120.220.76.91:2003/huya.php?id=11336587
+#EXTINF:-1 group-title="网页音乐",音乐库仓抖播
+http://rihou.cc:555/tv/音乐库仓抖14
+#EXTINF:-1 group-title="网页音乐",音乐仓库抖播
+http://rihou.cc:555/tv/音乐仓库抖14
+#EXTINF:-1 group-title="央卫高码",CCTV-01高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=CCTV1
+#EXTINF:-1 group-title="央卫高码",CCTV-02高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=CCTV2
+#EXTINF:-1 group-title="央卫高码",CCTV-03高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=CCTV3
+#EXTINF:-1 group-title="央卫高码",CCTV-04高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=CCTV4
+#EXTINF:-1 group-title="央卫高码",CCTV-05高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=CCTV5
+#EXTINF:-1 group-title="央卫高码",CCTV-5+高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=CCTV5p
+#EXTINF:-1 group-title="央卫高码",CCTV-06高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=CCTV6
+#EXTINF:-1 group-title="央卫高码",CCTV-07高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=CCTV7
+#EXTINF:-1 group-title="央卫高码",CCTV-08高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=CCTV8
+#EXTINF:-1 group-title="央卫高码",CCTV-09高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=CCTV9
+#EXTINF:-1 group-title="央卫高码",CCTV-10高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=CCTV10
+#EXTINF:-1 group-title="央卫高码",CCTV-11高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=CCTV11
+#EXTINF:-1 group-title="央卫高码",CCTV-12高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=CCTV12
+#EXTINF:-1 group-title="央卫高码",CCTV-13高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=CCTV13
+#EXTINF:-1 group-title="央卫高码",CCTV-14高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=CCTV14
+#EXTINF:-1 group-title="央卫高码",CCTV-15高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=CCTV15
+#EXTINF:-1 group-title="央卫高码",CCTV-16高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=CCTV16
+#EXTINF:-1 group-title="央卫高码",CCTV-17高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=CCTV17
+#EXTINF:-1 group-title="央卫高码",北京卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=北京卫视
+#EXTINF:-1 group-title="央卫高码",东方卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=东方卫视
+#EXTINF:-1 group-title="央卫高码",浙江卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=浙江卫视
+#EXTINF:-1 group-title="央卫高码",江苏卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=江苏卫视
+#EXTINF:-1 group-title="央卫高码",湖南卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=湖南卫视
+#EXTINF:-1 group-title="央卫高码",广东卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=广东卫视
+#EXTINF:-1 group-title="央卫高码",深圳卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=深圳卫视
+#EXTINF:-1 group-title="央卫高码",天津卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=天津卫视
+#EXTINF:-1 group-title="央卫高码",安徽卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=安徽卫视
+#EXTINF:-1 group-title="央卫高码",山东卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=山东卫视
+#EXTINF:-1 group-title="央卫高码",辽宁卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=辽宁卫视
+#EXTINF:-1 group-title="央卫高码",河北卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=河北卫视
+#EXTINF:-1 group-title="央卫高码",河南卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=河南卫视
+#EXTINF:-1 group-title="央卫高码",江西卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=江西卫视
+#EXTINF:-1 group-title="央卫高码",四川卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=四川卫视
+#EXTINF:-1 group-title="央卫高码",重庆卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=重庆卫视
+#EXTINF:-1 group-title="央卫高码",贵州卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=贵州卫视
+#EXTINF:-1 group-title="央卫高码",湖北卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=湖北卫视
+#EXTINF:-1 group-title="央卫高码",广西卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=广西卫视
+#EXTINF:-1 group-title="央卫高码",东南卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=东南卫视
+#EXTINF:-1 group-title="央卫高码",海南卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=海南卫视
+#EXTINF:-1 group-title="央卫高码",青海卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=青海卫视
+#EXTINF:-1 group-title="央卫高码",吉林卫视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=吉林卫视
+#EXTINF:-1 group-title="央卫高码",内蒙古视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=内蒙古卫视
+#EXTINF:-1 group-title="央卫高码",黑龙江视高码
+http://v.mgytv.top/TVBoxOSC/wj.php?id=黑龙江卫视
+#EXTINF:-1 group-title="虎牙频道",放映厅播频道
+http://120.220.76.91:2003/huya.php?id=11602077
+#EXTINF:-1 group-title="虎牙频道",刘德华播频道
+http://120.220.76.91:2003/huya.php?id=11342424
+#EXTINF:-1 group-title="虎牙频道",许冠英播频道
+http://120.220.76.91:2003/huya.php?id=11601972
+#EXTINF:-1 group-title="虎牙频道",李连杰播频道
+http://120.220.76.91:2003/huya.php?id=11342390
+#EXTINF:-1 group-title="虎牙频道",甄子丹播频道
+http://120.220.76.91:2003/huya.php?id=11352935
+#EXTINF:-1 group-title="虎牙频道",周润发播频道
+http://120.220.76.91:2003/huya.php?id=11342387
+#EXTINF:-1 group-title="虎牙频道",洪金宝播频道
+http://120.220.76.91:2003/huya.php?id=11279251
+#EXTINF:-1 group-title="虎牙频道",梁家辉播频道
+http://120.220.76.91:2003/huya.php?id=11342429
+#EXTINF:-1 group-title="虎牙频道",五福星播频道
+http://120.220.76.91:2003/huya.php?id=11282233
+#EXTINF:-1 group-title="虎牙频道",古天乐播频道
+http://120.220.76.91:2003/huya.php?id=11602041
+#EXTINF:-1 group-title="虎牙频道",邱淑贞播频道
+http://120.220.76.91:2003/huya.php?id=11352949
+#EXTINF:-1 group-title="虎牙频道",周海媚播频道
+http://120.220.76.91:2003/huya.php?id=11279247
+#EXTINF:-1 group-title="虎牙频道",星爷虎牙频道
+http://120.220.76.91:2003/huya.php?id=11342412
+#EXTINF:-1 group-title="虎牙频道",英叔虎牙频道
+http://120.220.76.91:2003/huya.php?id=11342421
+#EXTINF:-1 group-title="虎牙频道",成龙虎牙频道
+http://120.220.76.91:2003/huya.php?id=11342386
+#EXTINF:-1 group-title="虎牙频道",王晶虎牙频道
+http://120.220.76.91:2003/huya.php?id=11602058
+#EXTINF:-1 group-title="虎牙频道",沈腾虎牙频道
+http://120.220.76.91:2003/huya.php?id=11601968
+#EXTINF:-1 group-title="虎牙频道",黄渤虎牙频道
+http://120.220.76.91:2003/huya.php?id=11352876
+#EXTINF:-1 group-title="虎牙频道",强森虎牙频道
+http://120.220.76.91:2003/huya.php?id=21059581
+#EXTINF:-1 group-title="虎牙频道",玄幻虎牙频道
+http://120.220.76.91:2003/huya.php?id=11342414
+#EXTINF:-1 group-title="虎牙频道",喜剧虎牙频道
+http://120.220.76.91:2003/huya.php?id=11352877
+#EXTINF:-1 group-title="虎牙频道",港片虎牙频道
+http://120.220.76.91:2003/huya.php?id=11602043
+#EXTINF:-1 group-title="虎牙频道",国产虎牙频道
+http://120.220.76.91:2003/huya.php?id=11352973
+#EXTINF:-1 group-title="虎牙频道",漫威虎牙频道
+http://120.220.76.91:2003/huya.php?id=11602034
+#EXTINF:-1 group-title="虎牙频道",宇宙虎牙频道
+http://120.220.76.91:2003/huya.php?id=11342428
+#EXTINF:-1 group-title="虎牙频道",怪兽虎牙频道
+http://120.220.76.91:2003/huya.php?id=21059577
+#EXTINF:-1 group-title="虎牙频道",武侠虎牙频道
+http://120.220.76.91:2003/huya.php?id=11342427
+#EXTINF:-1 group-title="虎牙频道",警匪虎牙频道
+http://120.220.76.91:2003/huya.php?id=11352886
+#EXTINF:-1 group-title="虎牙频道",罪犯虎牙频道
+http://120.220.76.91:2003/huya.php?id=11352962
+#EXTINF:-1 group-title="虎牙频道",枪战虎牙频道
+http://120.220.76.91:2003/huya.php?id=21059579
+#EXTINF:-1 group-title="虎牙频道",盗墓虎牙频道
+http://120.220.76.91:2003/huya.php?id=21059552
+#EXTINF:-1 group-title="虎牙频道",海盗虎牙频道
+http://120.220.76.91:2003/huya.php?id=21059595
+#EXTINF:-1 group-title="虎牙频道",救援虎牙频道
+http://120.220.76.91:2003/huya.php?id=21059594
+#EXTINF:-1 group-title="虎牙频道",热血虎牙频道
+http://120.220.76.91:2003/huya.php?id=11352934
+#EXTINF:-1 group-title="虎牙频道",谍战虎牙频道
+http://120.220.76.91:2003/huya.php?id=21059585
+#EXTINF:-1 group-title="虎牙频道",战争虎牙频道
+http://120.220.76.91:2003/huya.php?id=21059592
+#EXTINF:-1 group-title="虎牙频道",小鬼头播频道
+http://120.220.76.91:2003/huya.php?id=11352963
+#EXTINF:-1 group-title="虎牙频道",陈翔六点频道
+http://120.220.76.91:2003/huya.php?id=11274154
+#EXTINF:-1 group-title="虎牙频道",喜剧专场频道
+http://120.220.76.91:2003/huya.php?id=11602044
+#EXTINF:-1 group-title="虎牙频道",高分动作频道
+http://120.220.76.91:2003/huya.php?id=11352884
+#EXTINF:-1 group-title="虎牙频道",不挤影院频道
+http://120.220.76.91:2003/huya.php?id=11352897
+#EXTINF:-1 group-title="虎牙频道",黑帮斗争频道
+http://120.220.76.91:2003/huya.php?id=11342419
+#EXTINF:-1 group-title="虎牙频道",嫣然影厅频道
+http://120.220.76.91:2003/huya.php?id=11601977
+#EXTINF:-1 group-title="虎牙频道",女神系列频道
+http://120.220.76.91:2003/huya.php?id=11336571
+#EXTINF:-1 group-title="虎牙频道",经典女神频道
+http://120.220.76.91:2003/huya.php?id=11352909
+#EXTINF:-1 group-title="虎牙频道",许氏三杰频道
+http://120.220.76.91:2003/huya.php?id=11602033
+#EXTINF:-1 group-title="虎牙频道",经典港片频道
+http://120.220.76.91:2003/huya.php?id=11352965
+#EXTINF:-1 group-title="虎牙频道",镖行天下频道
+http://120.220.76.91:2003/huya.php?id=11352969
+#EXTINF:-1 group-title="虎牙频道",蘑菇影厅频道
+http://120.220.76.91:2003/huya.php?id=11601981
+#EXTINF:-1 group-title="虎牙频道",搞笑恐怖频道
+http://120.220.76.91:2003/huya.php?id=11601960
+#EXTINF:-1 group-title="虎牙频道",死神来了频道
+http://120.220.76.91:2003/huya.php?id=11352903
+#EXTINF:-1 group-title="虎牙频道",超异能族频道
+http://120.220.76.91:2003/huya.php?id=21059586
+#EXTINF:-1 group-title="虎牙频道",古墓系列频道
+http://120.220.76.91:2003/huya.php?id=11352913
+#EXTINF:-1 group-title="虎牙频道",搞笑喜剧频道
+http://120.220.76.91:2003/huya.php?id=11342423
+#EXTINF:-1 group-title="虎牙频道",欢笑影院频道
+http://120.220.76.91:2003/huya.php?id=11352894
+#EXTINF:-1 group-title="虎牙频道",国产悬疑频道
+http://120.220.76.91:2003/huya.php?id=11342395
+#EXTINF:-1 group-title="虎牙频道",快意江湖频道
+http://120.220.76.91:2003/huya.php?id=11342435
+#EXTINF:-1 group-title="虎牙频道",喜乐影院频道
+http://120.220.76.91:2003/huya.php?id=21059580
+#EXTINF:-1 group-title="虎牙频道",怪兽系列频道
+http://120.220.76.91:2003/huya.php?id=21059554
+#EXTINF:-1 group-title="虎牙频道",杰森斯坦频道
+http://120.220.76.91:2003/huya.php?id=21059588
+#EXTINF:-1 group-title="虎牙频道",寻秦记播频道
+http://120.220.76.91:2003/huya.php?id=29465848
+#EXTINF:-1 group-title="虎牙频道",寻秦记播频道
+http://120.220.76.91:2003/huya.php?id=29633850
+#EXTINF:-1 group-title="虎牙频道",西游记播频道
+http://120.220.76.91:2003/huya.php?id=29465859
+#EXTINF:-1 group-title="虎牙频道",扫黄先锋频道
+http://120.220.76.91:2003/huya.php?id=29465855
+#EXTINF:-1 group-title="虎牙频道",楚汉骄雄频道
+http://120.220.76.91:2003/huya.php?id=29465854
+#EXTINF:-1 group-title="虎牙频道",陀枪师姐频道
+http://120.220.76.91:2003/huya.php?id=29465857
+#EXTINF:-1 group-title="虎牙频道",法证先锋频道
+http://120.220.76.91:2003/huya.php?id=29465861
+#EXTINF:-1 group-title="虎牙频道",刑事侦缉频道
+http://120.220.76.91:2003/huya.php?id=29465856
+#EXTINF:-1 group-title="虎牙频道",笑看风云频道
+http://120.220.76.91:2003/huya.php?id=29465858
+#EXTINF:-1 group-title="虎牙频道",大唐双龙频道
+http://120.220.76.91:2003/huya.php?id=29465850
+#EXTINF:-1 group-title="虎牙频道",洗冤录播频道
+http://120.220.76.91:2003/huya.php?id=29465851
+#EXTINF:-1 group-title="虎牙频道",金枝欲孽频道
+http://120.220.76.91:2003/huya.php?id=29465847
+#EXTINF:-1 group-title="虎牙频道",野蛮奶奶频道
+http://120.220.76.91:2003/huya.php?id=23863796
+#EXTINF:-1 group-title="虎牙频道",创世纪播频道
+http://120.220.76.91:2003/huya.php?id=29465852
+#EXTINF:-1 group-title="虎牙频道",封神榜播频道
+http://120.220.76.91:2003/huya.php?id=29465849
+#EXTINF:-1 group-title="虎牙频道",神雕侠侣频道
+http://120.220.76.91:2003/huya.php?id=30454429
+#EXTINF:-1 group-title="虎牙频道",妙手仁心频道
+http://120.220.76.91:2003/huya.php?id=29465853
+#EXTINF:-1 group-title="虎牙频道",活佛济公频道
+http://120.220.76.91:2003/huya.php?id=23903123
+#EXTINF:-1 group-title="虎牙频道",倚天屠龙频道
+http://120.220.76.91:2003/huya.php?id=27834853
+#EXTINF:-1 group-title="虎牙频道",鹿鼎记98频道
+http://120.220.76.91:2003/huya.php?id=26355806
+#EXTINF:-1 group-title="虎牙频道",小李飞刀频道
+http://120.220.76.91:2003/huya.php?id=11342417
+#EXTINF:-1 group-title="虎牙频道",水月洞天频道
+http://120.220.76.91:2003/huya.php?id=21059567
+#EXTINF:-1 group-title="虎牙频道",绝代双娇频道
+http://120.220.76.91:2003/huya.php?id=29465867
+#EXTINF:-1 group-title="虎牙频道",风云雄霸频道
+http://120.220.76.91:2003/huya.php?id=21059612
+#EXTINF:-1 group-title="虎牙频道",王子青蛙频道
+http://120.220.76.91:2003/huya.php?id=11601964
+#EXTINF:-1 group-title="虎牙频道",永夜星河频道
+http://120.220.76.91:2003/huya.php?id=23734169
+#EXTINF:-1 group-title="虎牙频道",玫瑰故事频道
+http://120.220.76.91:2003/huya.php?id=23865142
+#EXTINF:-1 group-title="虎牙频道",漫长季节频道
+http://120.220.76.91:2003/huya.php?id=11342393
+#EXTINF:-1 group-title="虎牙频道",梦华录播频道
+http://120.220.76.91:2003/huya.php?id=11336590
+#EXTINF:-1 group-title="虎牙频道",乌龙院闯频道
+http://120.220.76.91:2003/huya.php?id=26355767
+#EXTINF:-1 group-title="虎牙频道",新楚留香频道
+http://120.220.76.91:2003/huya.php?id=26355848
+#EXTINF:-1 group-title="虎牙频道",新楚留香频道
+http://120.220.76.91:2003/huya.php?id=23863804
+#EXTINF:-1 group-title="虎牙频道",无心法师频道
+http://120.220.76.91:2003/huya.php?id=30080233
+#EXTINF:-1 group-title="虎牙频道",征服虎牙频道
+http://120.220.76.91:2003/huya.php?id=30311494
+#EXTINF:-1 group-title="虎牙频道",蜡笔小新频道
+http://120.220.76.91:2003/huya.php?id=30299353
+#EXTINF:-1 group-title="虎牙频道",海绵宝宝频道
+http://120.220.76.91:2003/huya.php?id=11352919
+#EXTINF:-1 group-title="虎牙频道",龙珠虎牙频道
+http://120.220.76.91:2003/huya.php?id=10279885
+#EXTINF:-1 group-title="虎牙频道",叮当全集频道
+http://120.220.76.91:2003/huya.php?id=11601963
+#EXTINF:-1 group-title="虎牙频道",樱桃小丸频道
+http://120.220.76.91:2003/huya.php?id=11342394
+#EXTINF:-1 group-title="虎牙频道",猫和老鼠频道
+http://120.220.76.91:2003/huya.php?id=11352879
+#EXTINF:-1 group-title="虎牙频道",精绝古城频道
+http://120.220.76.91:2003/huya.php?id=11352871
+#EXTINF:-1 group-title="虎牙频道",怒晴湘西频道
+http://120.220.76.91:2003/huya.php?id=11602075
+#EXTINF:-1 group-title="虎牙频道",龙岭迷窟频道
+http://120.220.76.91:2003/huya.php?id=29465863
+#EXTINF:-1 group-title="虎牙频道",云南虫谷频道
+http://120.220.76.91:2003/huya.php?id=11352898
+#EXTINF:-1 group-title="虎牙频道",JJ斗地主频道
+http://120.220.76.91:2003/huya.php?id=14079954
+#EXTINF:-1 group-title="虎牙频道",民兵葛二频道
+http://120.220.76.91:2003/huya.php?id=11602072
+#EXTINF:-1 group-title="虎牙频道",我的团长频道
+http://120.220.76.91:2003/huya.php?id=11352910
+#EXTINF:-1 group-title="虎牙频道",铁道游击频道
+http://120.220.76.91:2003/huya.php?id=11352936
+#EXTINF:-1 group-title="虎牙频道",铁梨花播频道
+http://120.220.76.91:2003/huya.php?id=11352912
+#EXTINF:-1 group-title="虎牙频道",康熙微服频道
+http://120.220.76.91:2003/huya.php?id=11342418
+#EXTINF:-1 group-title="虎牙频道",御赐仵作频道
+http://120.220.76.91:2003/huya.php?id=11352948
+#EXTINF:-1 group-title="虎牙频道",新水浒传频道
+http://120.220.76.91:2003/huya.php?id=11342384
+#EXTINF:-1 group-title="虎牙频道",神探狄仁频道
+http://120.220.76.91:2003/huya.php?id=11352958
+#EXTINF:-1 group-title="虎牙频道",三国演义频道
+http://120.220.76.91:2003/huya.php?id=11602081
+#EXTINF:-1 group-title="虎牙频道",新三国演频道
+http://120.220.76.91:2003/huya.php?id=11352944
+#EXTINF:-1 group-title="虎牙频道",问心虎牙频道
+http://120.220.76.91:2003/huya.php?id=11352890
+#EXTINF:-1 group-title="虎牙频道",家有儿女频道
+http://120.220.76.91:2003/huya.php?id=29774370
+#EXTINF:-1 group-title="虎牙频道",全职高手频道
+http://120.220.76.91:2003/huya.php?id=11352901
+#EXTINF:-1 group-title="虎牙频道",炊事班的频道
+http://120.220.76.91:2003/huya.php?id=19524135
+#EXTINF:-1 group-title="虎牙频道",医馆笑传频道
+http://120.220.76.91:2003/huya.php?id=11352891
+#EXTINF:-1 group-title="虎牙频道",杨光生活频道
+http://120.220.76.91:2003/huya.php?id=11602085
+#EXTINF:-1 group-title="虎牙频道",陈情令播频道
+http://120.220.76.91:2003/huya.php?id=29465862
+#EXTINF:-1 group-title="虎牙频道",神医喜来频道
+http://120.220.76.91:2003/huya.php?id=11601978
+#EXTINF:-1 group-title="虎牙频道",大宋提刑频道
+http://120.220.76.91:2003/huya.php?id=26355856
+#EXTINF:-1 group-title="虎牙频道",鹊刀门传频道
+http://120.220.76.91:2003/huya.php?id=29805872
+#EXTINF:-1 group-title="虎牙频道",白鹿原播频道
+http://120.220.76.91:2003/huya.php?id=11342416
+#EXTINF:-1 group-title="虎牙频道",长相思播频道
+http://120.220.76.91:2003/huya.php?id=11336593
+#EXTINF:-1 group-title="虎牙频道",你是我的频道
+http://120.220.76.91:2003/huya.php?id=11352920
+#EXTINF:-1 group-title="虎牙频道",一代枭雄频道
+http://120.220.76.91:2003/huya.php?id=11342398
+#EXTINF:-1 group-title="虎牙频道",铁齿铜牙频道
+http://120.220.76.91:2003/huya.php?id=11342396
+#EXTINF:-1 group-title="虎牙频道",星汉灿烂频道
+http://120.220.76.91:2003/huya.php?id=11336591
+#EXTINF:-1 group-title="虎牙频道",将夜虎牙频道
+http://120.220.76.91:2003/huya.php?id=11352885
+#EXTINF:-1 group-title="虎牙频道",父母爱情频道
+http://120.220.76.91:2003/huya.php?id=11602071
+#EXTINF:-1 group-title="虎牙频道",大染坊播频道
+http://120.220.76.91:2003/huya.php?id=11602086
+#EXTINF:-1 group-title="虎牙频道",地下交通频道
+http://120.220.76.91:2003/huya.php?id=11342433
+#EXTINF:-1 group-title="虎牙频道",邻里一家频道
+http://120.220.76.91:2003/huya.php?id=11342426
 #EXTINF:-1 group-title="虎牙频道",雍正王朝频道
-http://cfss.cc/cdn/hy/11342439.m3u8
+http://120.220.76.91:2003/huya.php?id=11342439
+#EXTINF:-1 group-title="虎牙频道",士兵突击频道
+http://120.220.76.91:2003/huya.php?id=11342430
+#EXTINF:-1 group-title="虎牙频道",爱情公寓频道
+http://120.220.76.91:2003/huya.php?id=11336726
+#EXTINF:-1 group-title="虎牙频道",电视剧三频道
+http://120.220.76.91:2003/huya.php?id=21059563
+#EXTINF:-1 group-title="虎牙频道",电视剧四频道
+http://120.220.76.91:2003/huya.php?id=26355783
+#EXTINF:-1 group-title="虎牙频道",电视剧七频道
+http://120.220.76.91:2003/huya.php?id=21059630
+#EXTINF:-1 group-title="虎牙频道",电视剧八频道
+http://120.220.76.91:2003/huya.php?id=26355775
+#EXTINF:-1 group-title="虎牙频道",电视剧十一道
+http://120.220.76.91:2003/huya.php?id=11602088
 #EXTINF:-1 group-title="特区地波",RTHK-32高码
 http://beishan008.asuscomm.com:8892/bysid/32.m3u8
+#EXTINF:-1 group-title="童年频道",龙珠全集解贰
+http://120.220.76.91:2003/huya.php?id=19757963
+#EXTINF:-1 group-title="童年频道",龙珠全集剧叁
+http://120.220.76.91:2003/huya.php?id=11601966
+#EXTINF:-1 group-title="童年频道",龙珠全集剧肆
+http://120.220.76.91:2003/huya.php?id=16755322
+#EXTINF:-1 group-title="童年频道",斌哥解说漫壹
+http://120.220.76.91:2003/huya.php?id=18632116
+#EXTINF:-1 group-title="童年频道",斌哥解说漫贰
+http://120.220.76.91:2003/huya.php?id=21059621
+#EXTINF:-1 group-title="童年频道",圣斗士集解壹
+http://120.220.76.91:2003/huya.php?id=27817468
+#EXTINF:-1 group-title="童年频道",圣斗士集解贰
+http://120.220.76.91:2003/huya.php?id=11352904
+#EXTINF:-1 group-title="童年频道",足球小将解说
+http://120.220.76.91:2003/huya.php?id=25725150
+#EXTINF:-1 group-title="童年频道",头文字D剧集
+http://120.220.76.91:2003/huya.php?id=11352889
+#EXTINF:-1 group-title="童年频道",一人之上漫剧
+http://120.220.76.91:2003/huya.php?id=11602065
+#EXTINF:-1 group-title="童年频道",四驱兄弟剧集
+http://120.220.76.91:2003/huya.php?id=11352922
+#EXTINF:-1 group-title="童年频道",蜡笔小新剧集
+http://120.220.76.91:2003/huya.php?id=11352970
+#EXTINF:-1 group-title="童年频道",Q版-三国剧集
+http://120.220.76.91:2003/huya.php?id=29465871
 #EXTINF:-1 group-title="新坡频陆",Astro AEC(c)
 https://sc2022.stream-link.org/tv2306.php?id=h25
 #EXTINF:-1 group-title="新坡频陆",TV1(b)
