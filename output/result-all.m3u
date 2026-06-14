@@ -26399,21 +26399,15 @@ https://t.freetv.fun/live/tvbs-asia.m3u8
 https://t.freetv.fun/live/tvbs.m3u8
 #EXTINF:-1 group-title="綜合",rollor
 https://t.freetv.fun/live/roll.m3u8
-#EXTINF:-1 group-title="綜合",東森美洲
-https://t.freetv.fun/live/dong-sen-mei-zhou-xin-wen.m3u8
-#EXTINF:-1 group-title="綜合",東森美洲
-https://t.freetv.fun/live/dong-sen-mei-zhou-2.m3u8
-#EXTINF:-1 group-title="綜合",東森衛視
-https://t.freetv.fun/live/dong-sen-mei-zhou-xin-wen-tai.m3u8
 #EXTINF:-1 group-title="綜合",東森超視
 https://t.freetv.fun/live/dong-sen-chao-shi-34-5-3.m3u8
-#EXTINF:-1 group-title="綜合",東森超視
-https://t.freetv.fun/live/dong-sen-chao-shi-5.m3u8
 #EXTINF:-1 group-title="綜合",東森超視[geo-blocked]
+https://t.freetv.fun/live/dong-sen-chao-shi-5.m3u8
+#EXTINF:-1 group-title="綜合",東森超視
 https://t.freetv.fun/live/dong-sen-chao-shi-6.m3u8
 #EXTINF:-1 group-title="綜合",東森超視
 https://t.freetv.fun/live/dong-sen-chao-shi-34-5-2-1.m3u8
-#EXTINF:-1 group-title="綜合",民視[geo-blocked]
+#EXTINF:-1 group-title="綜合",民視
 https://t.freetv.fun/live/min-shi-2.m3u8
 #EXTINF:-1 group-title="綜合",民視
 https://t.freetv.fun/live/min-shi-1-1.ts
@@ -26426,17 +26420,17 @@ https://t.freetv.fun/live/min-shi-di-yi-1.m3u8
 #EXTINF:-1 group-title="兒童",靖天卡通[geo-blocked]
 https://t.freetv.fun/live/jing-tian-qia-tong.m3u8
 #EXTINF:-1 group-title="知識",Discovery(TW)
-https://t.freetv.fun/live/discovery.m3u8
-#EXTINF:-1 group-title="知識",Discovery(TW)
 https://t.freetv.fun/live/discovery-id.m3u8
 #EXTINF:-1 group-title="知識",HGTV(TW)
 https://t.freetv.fun/live/hgtv.m3u8
-#EXTINF:-1 group-title="知識",Love Nature[geo-blocked]
+#EXTINF:-1 group-title="知識",Love Nature
 https://t.freetv.fun/live/love-nature.m3u8
 #EXTINF:-1 group-title="知識",Love Nature
 https://t.freetv.fun/live/love-nature-1.m3u8
 #EXTINF:-1 group-title="知識",Love Nature[geo-blocked]
 https://t.freetv.fun/live/love-nature-2.m3u8
+#EXTINF:-1 group-title="知識",Love Nature
+https://t.freetv.fun/live/love-nature-3.m3u8
 #EXTINF:-1 group-title="電影",AMC電影
 https://t.freetv.fun/live/amcdian-ying.m3u8
 #EXTINF:-1 group-title="電影",Hollywood[geo-blocked]
@@ -26445,7 +26439,7 @@ https://t.freetv.fun/live/young-hollywood.m3u8
 https://t.freetv.fun/live/gold-star.m3u8
 #EXTINF:-1 group-title="電影",龍華經典
 https://t.freetv.fun/live/long-hua-jing-dian.m3u8
-#EXTINF:-1 group-title="電影",龍華電影[geo-blocked]
+#EXTINF:-1 group-title="電影",龍華電影
 https://t.freetv.fun/live/long-hua-dian-ying.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V]
 https://t.freetv.fun/live/white-channel-1.m3u8
@@ -26454,16 +26448,12 @@ https://t.freetv.fun/live/test-channel-3.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V]
 https://t.freetv.fun/live/kartoon-channel.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V]
-https://t.freetv.fun/live/light-channel.m3u8
-#EXTINF:-1 group-title="音樂",CHANNEL [V]
 https://t.freetv.fun/live/ficom-channel.m3u8
-#EXTINF:-1 group-title="音樂",CHANNEL [V]
-https://t.freetv.fun/live/tempe-channel-11-1.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V]
 https://t.freetv.fun/live/light-channel-2.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V]
 https://t.freetv.fun/live/chile-channel.m3u8
-#EXTINF:-1 group-title="音樂",CHANNEL [V][geo-blocked]
+#EXTINF:-1 group-title="音樂",CHANNEL [V]
 https://t.freetv.fun/live/channel-y.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V][geo-blocked]
 https://t.freetv.fun/live/lego-channel.m3u8
@@ -26485,6 +26475,8 @@ https://t.freetv.fun/live/xtremo-channel.m3u8
 https://t.freetv.fun/live/chile-channel-720p.m3u8
 #EXTINF:-1 group-title="音樂",CHANNEL [V][geo-blocked]
 https://t.freetv.fun/live/lego-channel-1080p.m3u8
+#EXTINF:-1 group-title="音樂",CHANNEL [V]
+https://t.freetv.fun/live/tempe-channel-11.m3u8
 #EXTINF:-1 group-title="新聞",TVBS新聞HD
 https://t.freetv.fun/live/tvbsxin-wen-1.m3u8
 #EXTINF:-1 group-title="新聞",中天新聞FHD
@@ -26505,8 +26497,6 @@ https://t.freetv.fun/live/tai-shi-xin-wen.m3u8
 https://t.freetv.fun/live/tai-shi-xin-wen-2.m3u8
 #EXTINF:-1 group-title="新聞",鏡新聞
 https://t.freetv.fun/live/xin-wen.m3u8
-#EXTINF:-1 group-title="其它",AFN(TW)
-https://t.freetv.fun/live/afn-tv.m3u8
 #EXTINF:-1 group-title="其它",Food Network(TW)
 https://t.freetv.fun/live/food-network.m3u8
 #EXTINF:-1 group-title="其它",Food Network(TW)
@@ -26515,7 +26505,7 @@ https://t.freetv.fun/live/food-network-1.m3u8
 https://t.freetv.fun/live/food-network-2.m3u8
 #EXTINF:-1 group-title="其它",NICE TV
 https://t.freetv.fun/live/unife-tv.m3u8
-#EXTINF:-1 group-title="其它",PET CLUB TV[geo-blocked]
+#EXTINF:-1 group-title="其它",PET CLUB TV
 https://t.freetv.fun/live/pet-club-tv.m3u8
 #EXTINF:-1 group-title="其它",人間衛視
 https://t.freetv.fun/live/ren-jian-wei-shi.m3u
