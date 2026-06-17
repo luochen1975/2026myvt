@@ -198,18 +198,61 @@ def main():
     total_mc = sum(1 for c in all_channels if c.url.strip().lower().startswith(("udp://", "rtp://", "rtsp://")))
     log.info(f"  总计: {len(all_channels)}个频道 (组播:{total_mc}个)")
 
-    # ========== 2. 黑名单过滤 ==========
-    log.info("[2/6] 黑名单过滤...")
-    blacklist_rules = load_blacklist_rules(str(BLACKLIST_FILE_PATH))
-    filtered = []
-    blocked = 0
-    for ch in all_channels:
-        is_block, reason = should_blacklist(ch.url, blacklist_rules)
-        if is_block:
-            blocked += 1
-        else:
-            filtered.append(ch)
-    log.info(f"  过滤后: {len(filtered)}个 (移除{blocked}个)")
+   # ========== 2. 黑名单过滤 ==========
+log.info("[2/6] 黑名单过滤...")
+blacklist_rules = load_blacklist_rules(str(BLACKLIST_FILE_PATH))
+
+# 频道名黑名单关键词
+NAME_BLACKLIST = [
+    "私密频道", "成人", "限制级", "18+", "vip专享",
+    "购物", "直销", "广告", "电视购物", "快乐购", "家家购",
+    "优购物", "好享购", "聚鲨", "环球购物", "时尚购物",
+    "春晚", "春节联欢晚会", "历年春晚", "春晚回放", "cctv春晚"
+]
+
+# 分组/genre黑名单关键词
+GENRE_BLACKLIST = [
+    "私密频道", "成人频道", "限制级", "成人"
+]
+
+filtered = []
+blocked = 0
+for ch in all_channels:
+    # 1. 原有：URL黑名单
+    is_block, reason = should_blacklist(ch.url, blacklist_rules)
+    
+    # 2. 新增：频道名黑名单
+    if not is_block and hasattr(ch, 'name') and ch.name:
+        name_lower = ch.name.lower()
+        for keyword in NAME_BLACKLIST:
+            if keyword in name_lower:
+                is_block = True
+                reason = f"名称黑名单:{keyword}"
+                break
+    
+    # 3. 新增：分组/genre黑名单
+    if not is_block:
+        # 尝试多种可能的分组属性
+        genre = ""
+        if hasattr(ch, 'group'):
+            genre = ch.group
+        elif hasattr(ch, 'extra') and isinstance(ch.extra, dict):
+            genre = ch.extra.get('genre', '') or ch.extra.get('group', '')
+        
+        if genre:
+            genre_lower = genre.lower()
+            for g in GENRE_BLACKLIST:
+                if g in genre_lower:
+                    is_block = True
+                    reason = f"分组黑名单:{g}"
+                    break
+    
+    if is_block:
+        blocked += 1
+    else:
+        filtered.append(ch)
+
+log.info(f"  过滤后: {len(filtered)}个 (移除{blocked}个)")
 
     # ========== 3. 去重（不限制数量！）==========
     log.info("[3/6] URL去重...")
