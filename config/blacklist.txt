@@ -3,16 +3,37 @@ domain:aktv.top
 domain:aktv.live
 domain:192.168.6.1:8888
 domain:220.135.64.124:5050
-# 正则黑名单
+# URL正则
 regex:购物|直销|广告|电视购物|快乐购|家家购|优购物|好享购|聚鲨|环球购物|时尚购物
 regex:春晚|春节联欢晚会|历年春晚|春晚回放|cctv春晚
 
-# 年份+逗号格式
-regex:\d{4}年春晚
-regex:春晚\d{4}年
+# 频道名正则（新增）
+# regex:^\d{4}年	只想屏蔽纯年份开头的频道（如 2024年春晚）保留 CCTV-2024年 这种
+# regex:\d{4}年	想屏蔽所有含年份的频道不管出现在哪里
+# regex:^\d{4}年春晚是URL里没有"2024年春晚"
+# name_regex:^\d{4}年春晚名称有没有"2024年春晚"
+name_regex:^\d{4}年春晚
+name_regex:^\d{4}年
+name_regex:春晚\d{4}年
+name_regex:私密频道
+name_regex:私密频道.*169169
 regex:历年春晚
-regex:\d{4}年,
 # URL黑名单
 ads.com
 buffering
 timeout
+# 频道名关键词（新增）
+name:私密频道
+name:成人
+name:限制级
+name:18+
+name:春晚
+name:春节联欢晚会
+
+# 分组/genre关键词（原有）
+genre:私密频道
+genre:成人频道
+genre:日本频道
+genre:外国频道
+genre:历年春晚
+genre:历届春晚
