@@ -83,7 +83,8 @@ def load_sources() -> list:
 def load_blacklist_rules(blacklist_file: str) -> dict:
     rules = {
         "domains": [], "contains": [], "urls": [],
-        "keywords": [], "regex": [], "genre": []
+        "keywords": [], "regex": [], "genre": [],
+        "names": [], "name_regex": []
     }
 
     if not os.path.exists(blacklist_file):
@@ -114,19 +115,28 @@ def load_blacklist_rules(blacklist_file: str) -> dict:
                         log.warning(f"正则错误 第{line_num}行: {e}")
                 elif rule_type == "genre":
                     rules["genre"].append(rule_value)
+                elif rule_type == "name":
+                    rules["names"].append(rule_value)
+                elif rule_type == "name_regex":
+                    try:
+                        rules["name_regex"].append(re.compile(rule_value))
+                    except re.error as e:
+                        log.warning(f"名称正则错误 第{line_num}行: {e}")
             else:
                 rules["urls"].append(line)
 
     return rules
 
 
-def should_blacklist(url: str, rules: dict) -> tuple[bool, str]:
+def should_blacklist(ch, rules: dict) -> tuple[bool, str]:
+    url = ch.url if hasattr(ch, 'url') else str(ch)
     if not url:
         return False, ""
     url_lower = url.lower()
     parsed = urlparse(url)
     domain = parsed.netloc.lower()
 
+    # 1. URL黑名单
     for black_url in rules["urls"]:
         if black_url.lower() in url_lower:
             return True, f"URL黑名单:{black_url}"
@@ -142,6 +152,31 @@ def should_blacklist(url: str, rules: dict) -> tuple[bool, str]:
     for regex in rules["regex"]:
         if regex.search(url):
             return True, f"正则:{regex.pattern}"
+
+    # 2. 频道名黑名单
+    name = ch.name if hasattr(ch, 'name') and ch.name else ""
+    if name:
+        name_lower = name.lower()
+        for n in rules.get("names", []):
+            if n.lower() in name_lower:
+                return True, f"名称黑名单:{n}"
+        for regex in rules.get("name_regex", []):
+            if regex.search(name):
+                return True, f"名称正则:{regex.pattern}"
+
+    # 3. 分组/genre黑名单
+    genre = ""
+    if hasattr(ch, 'group'):
+        genre = ch.group
+    elif hasattr(ch, 'extra') and isinstance(ch.extra, dict):
+        genre = ch.extra.get('genre', '') or ch.extra.get('group', '')
+
+    if genre:
+        genre_lower = genre.lower()
+        for g in rules.get("genre", []):
+            if g.lower() in genre_lower:
+                return True, f"分组黑名单:{g}"
+
     return False, ""
 
 
@@ -198,61 +233,20 @@ def main():
     total_mc = sum(1 for c in all_channels if c.url.strip().lower().startswith(("udp://", "rtp://", "rtsp://")))
     log.info(f"  总计: {len(all_channels)}个频道 (组播:{total_mc}个)")
 
-   # ========== 2. 黑名单过滤 ==========
-log.info("[2/6] 黑名单过滤...")
-blacklist_rules = load_blacklist_rules(str(BLACKLIST_FILE_PATH))
+    # ========== 2. 黑名单过滤 ==========
+    log.info("[2/6] 黑名单过滤...")
+    blacklist_rules = load_blacklist_rules(str(BLACKLIST_FILE_PATH))
 
-# 频道名黑名单关键词
-NAME_BLACKLIST = [
-    "私密频道", "成人", "限制级", "18+", "vip专享",
-    "购物", "直销", "广告", "电视购物", "快乐购", "家家购",
-    "优购物", "好享购", "聚鲨", "环球购物", "时尚购物",
-    "春晚", "春节联欢晚会", "历年春晚", "春晚回放", "cctv春晚"
-]
+    filtered = []
+    blocked = 0
+    for ch in all_channels:
+        is_block, reason = should_blacklist(ch, blacklist_rules)
+        if is_block:
+            blocked += 1
+        else:
+            filtered.append(ch)
 
-# 分组/genre黑名单关键词
-GENRE_BLACKLIST = [
-    "私密频道", "成人频道", "限制级", "成人"
-]
-
-filtered = []
-blocked = 0
-for ch in all_channels:
-    # 1. 原有：URL黑名单
-    is_block, reason = should_blacklist(ch.url, blacklist_rules)
-    
-    # 2. 新增：频道名黑名单
-    if not is_block and hasattr(ch, 'name') and ch.name:
-        name_lower = ch.name.lower()
-        for keyword in NAME_BLACKLIST:
-            if keyword in name_lower:
-                is_block = True
-                reason = f"名称黑名单:{keyword}"
-                break
-    
-    # 3. 新增：分组/genre黑名单
-    if not is_block:
-        # 尝试多种可能的分组属性
-        genre = ""
-        if hasattr(ch, 'group'):
-            genre = ch.group
-        elif hasattr(ch, 'extra') and isinstance(ch.extra, dict):
-            genre = ch.extra.get('genre', '') or ch.extra.get('group', '')
-        
-        if genre:
-            genre_lower = genre.lower()
-            for g in GENRE_BLACKLIST:
-                if g in genre_lower:
-                    is_block = True
-                    reason = f"分组黑名单:{g}"
-                    break
-    
-    if is_block:
-        blocked += 1
-    else:
-        filtered.append(ch)
-
-log.info(f"  过滤后: {len(filtered)}个 (移除{blocked}个)")
+    log.info(f"  过滤后: {len(filtered)}个 (移除{blocked}个)")
 
     # ========== 3. 去重（不限制数量！）==========
     log.info("[3/6] URL去重...")
