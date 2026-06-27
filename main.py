@@ -305,6 +305,7 @@ def main():
         "1.94.31.214",
         "my5353.com",
         "v.mgytv.top",
+        "36.155.98.21",
     ]
 
     def should_bypass_speedtest(url: str) -> bool:
