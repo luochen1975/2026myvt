@@ -1,0 +1,31 @@
+name: Deploy Live Source to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # - name: Prepare static files
+       # run: |
+       #   mkdir -p dist
+          # 把直播源文件复制到 dist 目录（按需修改）
+        #  cp *.m3u *.txt dist/ 2>/dev/null || true
+          # 如果有子目录也一起复制
+          # cp -r epg/* dist/ 2>/dev/null || true
+          ls -la dist/
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          projectName: 2026myvt      # 改成你在 Cloudflare 创建的项目名
+          directory: output               # 上传 dist 目录里的内容
+          # gitHubToken: ${{ secrets.GITHUB_TOKEN }}  # 可选，在 PR 里显示部署状态
