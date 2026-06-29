@@ -1,24 +1,19 @@
-name: Deploy Live Source to Cloudflare Pages
-
 on:
   push:
     branches: [main]
-  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: List files to deploy
-        run: ls -la output/
+      - uses: actions/checkout@v4
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          projectName: 2026myvt
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: your-tv-project
           directory: output
