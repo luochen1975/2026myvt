@@ -1,6 +1,6 @@
 {
   "txt": [
-    {"name": "主源", "url": "https://wp.kayyw.com/f/MbVmc6/zb2026.txt", "isp": "telecom,unicom,cmcc,broadnet"},
+    {"name": "主源", "url": "https://wp.kayyw.com/f/MbVmc6/zb2026.txt", "isp": "telecom,unicom,cmcc"},
     {"name": "备用1", "url": "https://raw.githubusercontent.com/luochen1975/dszby/refs/heads/main/merged_output.txt"},
     {"name": "备用2", "url": "https://raw.githubusercontent.com/jiandantv/IPTV2026/refs/heads/main/live.txt"},
     {"name": "备用3", "url": "https://raw.githubusercontent.com/n3rddd/collect-tv-txt/refs/heads/main/others_output.txt"},
