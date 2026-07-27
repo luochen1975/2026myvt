@@ -2,9 +2,11 @@
 ❤️❤️歌舞,#group#
 
 ❤️全部,#genre#
-邓紫棋精选30首(2小时),https://txmov2.a.kwimgs.com/upic/2023/05/08/12/BMjAyMzA1MDgxMjIwNTNfMzQ4MzI0MjA1OF8xMDI1NjYyMjM5MDZfMF8z_b_B0675fa55fe8ce0583fb05fa02330e9f1.mp4
-陈奕迅精选34首(2小时),https://txmov2.a.kwimgs.com/upic/2022/12/22/17/BMjAyMjEyMjIxNzM3NDNfMTg1NzcxNTYxOF85MTcyMjE1NDQzNV8yXzM=_b_B16479ab3769c6fcfed15a06b75c2656e.mp4
 高清舞曲,https://txmov2.a.kwimgs.com/upic/2022/03/25/20/BMjAyMjAzMjUyMDUyNTZfMjM0NDc1MTE5N183MDQ0NzkzMTQxOV8wXzM=_b_B383b34c7a7c97f97b5350f622d8da0a6.mp4?tag=1-1648554367-std-1-puqq96jiry-1167f7fd60758f88&clientCacheKey=3x3qtumzyu5rh6w_b.mp4&tt=b&di=79c43beb&bp=12681
+莫文蔚精选72首(5小时),https://txmov2.a.kwimgs.com/upic/2023/07/27/21/BMjAyMzA3MjcyMTQ2MjdfMzYxMjUyNDA3MV8xMDkwMzM1MjA2NTJfMF8z_b_B144de29e473911c6e9187c9d591b8943.mp4
+王心凌精选69首(4小时),https://txmov2.a.kwimgs.com/upic/2023/07/26/22/BMjAyMzA3MjYyMjExNTNfMzYxMjUyNDA3MV8xMDg5NTQ4NjE1ODlfMF8z_b_Bdded2693ce6f7de089cfd7030b45bef7.mp4
+庄心妍精选44首(2小时),https://txmov2.a.kwimgs.com/upic/2023/09/29/09/BMjAyMzA5MjkwOTEzMDVfMjE0OTExOTI2N18xMTM3OTU3ODM3NzFfMF8z_b_B1909889bf55e6af6f994b05596fb589f.mp4
+徐良精选30首(1小时),https://alimov2.a.kwimgs.com/upic/2024/05/08/20/BMjAyNDA1MDgyMDAyMjFfMTg1NzcxNTYxOF8xMzE5MDIyNTY0NzNfMl8z_b_B62cb1e50d6a0dea4efc3e6da93662aa4.mp4
 
 ❤️❤️新电视,#group#
 
@@ -45,18 +47,6 @@ iHOT爱玩具,http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamobile.co
 iHOT爱科学,http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221235603/index.m3u8?fmt=ts2hls
 iHOT爱科幻,http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221230025/index.m3u8?fmt=ts2hls
 iHOT爱院线,http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221230019/index.m3u8?fmt=ts2hls
-NewTV古装剧场,http://120.201.232.170:80/snctcc-tvod.tx-cdn.gitv.tv/gitv_live/GITV-JS-51/GITV-JS-51.m3u8?p=GITV&area=JS_CMCC_CP
-NewTV中国功夫,http://120.201.232.170:80/snctcc-tvod.tx-cdn.gitv.tv/gitv_live/GITV-JS-60/GITV-JS-60.m3u8?p=GITV&area=JS_CMCC_CP
-NewTV家庭剧场,http://120.201.232.170:80/snctcc-tvod.tx-cdn.gitv.tv/gitv_live/GITV-JS-54/GITV-JS-54.m3u8?p=GITV&area=JS_CMCC_CP
-NewTV军旅剧场,http://120.201.232.170:80/snctcc-tvod.tx-cdn.gitv.tv/gitv_live/GITV-JS-53/GITV-JS-53.m3u8?p=GITV&area=JS_CMCC_CP
-NewTV军事评论,http://120.201.232.170:80/snctcc-tvod.tx-cdn.gitv.tv/gitv_live/GITV-JS-62/GITV-JS-62.m3u8?p=GITV&area=JS_CMCC_CP
-NewTV精品纪录,http://120.201.232.170:80/snctcc-tvod.tx-cdn.gitv.tv/gitv_live/GITV-JS-64/GITV-JS-64.m3u8?p=GITV&area=JS_CMCC_CP
-NewTV潮妈辣婆,http://120.201.232.170:80/snctcc-tvod.tx-cdn.gitv.tv/gitv_live/GITV-JS-66/GITV-JS-66.m3u8?p=GITV&area=JS_CMCC_CP
-NewTV农业致富,http://120.201.232.170:80/snctcc-tvod.tx-cdn.gitv.tv/gitv_live/GITV-JS-63/GITV-JS-63.m3u8?p=GITV&area=JS_CMCC_CP
-NewTV惊悚悬疑,http://120.201.232.170:80/snctcc-tvod.tx-cdn.gitv.tv/gitv_live/GITV-JS-55/GITV-JS-55.m3u8?p=GITV&area=JS_CMCC_CP
-NewTV精品体育,http://120.201.232.170:80/snctcc-tvod.tx-cdn.gitv.tv/gitv_live/GITV-JS-65/GITV-JS-65.m3u8?p=GITV&area=JS_CMCC_CP
-NewTV爱情喜剧,http://120.201.232.170:80/snctcc-tvod.tx-cdn.gitv.tv/gitv_live/GITV-JS-58/GITV-JS-58.m3u8?p=GITV&area=JS_CMCC_CP
-NewTV精品大剧,http://120.201.232.170:80/snctcc-tvod.tx-cdn.gitv.tv/gitv_live/GITV-JS-59/GITV-JS-59.m3u8?p=GITV&area=JS_CMCC_CP
 
 ❤️❤️央视,#group#
 
@@ -223,7 +213,6 @@ CCTV高尔夫网球,http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/322
 CCTV4-K,http://39.134.181.77:6610/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229373/42330389.smil/index.m3u8?fmt=ts2hls
 CCTV4-K,http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229373/smil/index.m3u8
 CCTV8K,http://[2409:8087:2801:20:100::4a]/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221236588/index.m3u8fmt=ts2hls
-CCTV4K,http://120.201.232.170:80/snctcc-tvod.tx-cdn.gitv.tv/gitv_live/G_CCTV-4K-HD/G_CCTV-4K-HD.m3u8?p=GITV&area=JS_CMCC_CP
 CCTV1,http://[2409:8087:5e01:34::20]:6610/ZTE_CMS/00000001000000060000000000000131/index.m3u8?key=tvbox6_com$LR•IPV6『线路14』
 CCTV2,http://[2409:8087:5e01:34::22]:6610/ZTE_CMS/00000001000000060000000000000372/index.m3u8?key=tvbox6_com$LR•IPV6『线路8』
 CCTV4,http://[2409:8087:5e01:34::23]:6610/ZTE_CMS/00000001000000060000000000000485/index.m3u8?key=tvbox6_com$LR•IPV6『线路16』
@@ -243,7 +232,6 @@ CCTV17,http://[2409:8087:5e01:34::22]:6610/ZTE_CMS/00000001000000060000000000000
 
 ❤️全部,#genre#
 广东卫视,https://txmov2.a.kwimgs.com/upic/2023/01/26/09/BMjAyMzAxMjYwOTE3NDVfNzM5MzQzNzIyXzk0NjI1OTUwNTA3XzBfMw==_b_B81ddda927d33445d544befd008e60109.mp4
-江苏卫视,https://txmov2.a.kwimgs.com/upic/2023/02/07/12/BMjAyMzAyMDcxMjQ3NDlfNzM5MzQzNzIyXzk1NjcxMTk5ODM5XzBfMw==_b_Bb92095c7df3c98b458dd14abf1d4b575.mp4
 深圳卫视4K,http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221236849/index.m3u8?fmt=ts2hls
 四川卫视4K,http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221236851/index.m3u8?fmt=ts2hls
 湖南卫视4K,http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221236853/index.m3u8?fmt=ts2hls
@@ -593,14 +581,15 @@ CGTN西语 [组播],rtp://239.3.1.217:4220
 CGTN法语 [组播],rtp://239.3.1.218:4220
 CGTN阿语 [组播],rtp://239.3.1.219:4220
 CGTN俄语 [组播],rtp://239.3.1.220:4220
-一半疯了,https://txmov2.a.kwimgs.com/upic/2023/06/26/13/BMjAyMzA2MjYxMzEwNDhfMjk4Mjk3ODMxOF8xMDY0ODAxMTIxNTdfMl8z_b_B8c230eb7bad8f8cf5a9baf8c13d7800d.mp4?clientCacheKey=3x8redaakre6nhe_b.mp4&tt=b&di=75b3b1ea&bp=10000
-☆向云端,https://txmov2.a.kwimgs.com/upic/2023/07/15/23/BMjAyMzA3MTUyMzA4MTJfMzUwMDUzNzE1MV8xMDgwNTU2MzcxNzJfMF8z_b_B4495a19eefa94ff40d651b48e6810cdb.mp4
+更新日期,https://gitlab.com/lr77/IPTV/-/raw/main/%E4%B8%BB%E8%A7%92.mp4
+刘德华1994演唱会,https://alimov2.a.kwimgs.com/upic/2020/11/21/21/BMjAyMDExMjEyMTA2NDdfODI4NTk1NTQ0XzM5NTk1NzIyODQ0XzJfMw==_b_Bd2a633720f4eb58f50fcf669ac9f6481.mp4
 泡沫,https://txmov2.a.kwimgs.com/upic/2023/08/19/20/BMjAyMzA4MTkyMDE2MzZfMzM5Njk4MTMyNl8xMTA5MDEwNzA2NDJfMF8z_b_Bdc4b6f3b05140acd82a8c7c5cfbad250.mp4
-☆作酒,https://txmov2.a.kwimgs.com/upic/2023/05/12/14/BMjAyMzA1MTIxNDI0MDZfMzM5Njk4MTMyNl8xMDI4NTExODIzMjRfMF8z_b_Bb991494a13c1280bda5a8d70459f3f52.mp4
-☆无哥骷,https://txmov2.a.kwimgs.com/upic/2023/07/19/01/BMjAyMzA3MTkwMTQ1NDdfMzUwMDUzNzE1MV8xMDgzMTA5ODA0OThfMF8z_b_B5baa776881443bda78efb570c3841f4b.mp4
-43,https://txmov2.a.kwimgs.com/upic/2022/05/28/17/BMjAyMjA1MjgxNzAyNDlfOTU2MzA3MDg4Xzc1NDQ5MzgzOTMzXzJfMw==_b_B6d79792fb36617b506b1a1b2ba410fd7.mp4
-虞美人,https://txmov2.a.kwimgs.com/upic/2023/07/24/10/BMjAyMzA3MjQxMDE1MzhfMzM5Njk4MTMyNl8xMDg3Mzg1MDIyNDlfMF8z_b_B619755058caa32de37dc1757898da485.mp4?clientCacheKey=3xnyr7n3qatxncg_b.mp4&tt=b&di=75b3b1ea&bp=10000
-☆卜卦,https://txmov2.a.kwimgs.com/upic/2023/08/09/14/BMjAyMzA4MDkxNDUzMjRfMzUwMDUzNzE1MV8xMTAwNjE1NTk3ODhfMl8z_b_Bc2b167ee144cd617ded961fccf210da8.mp4
+蔡依林演唱会,https://alimov2.a.kwimgs.com/upic/2020/07/13/17/BMjAyMDA3MTMxNzEyMzZfODY2NDU4ODQ1XzMyMjk2MDQ4MzQ4XzJfMw==_b_B8f6ffb1ac85e8c6f0363ee3c3076d8df.mp4
+刘德华1996演唱会,https://txmov2.a.kwimgs.com/upic/2020/11/24/04/BMjAyMDExMjQwNDAwMzFfODI4NTk1NTQ0XzM5NzA5NDUwNzEyXzJfMw==_b_B5b8c14b2ba01d46f3c1f12fbeba49c43.mp4
+刘德华1999演唱会,https://alimov2.a.kwimgs.com/upic/2020/11/18/21/BMjAyMDExMTgyMTQ0NDlfODI4NTk1NTQ0XzM5NDM1NzU0Njc0XzJfMw==_b_B98fc4057c592f311f03825bd7f3bb05c.mp4
+雨中相思-龙千玉,http://txmov2.a.yximgs.com/upic/2020/11/25/16/BMjAyMDExMjUxNjAwNDRfMTU0MDc1NjUwOF8zOTc3MTI2OTA2MF8yXzM=_b_B0652e68c50f21d5cb6bdda5dbc7a3c13.mp4
+叶倩文演唱会,https://alimov2.a.kwimgs.com/upic/2020/10/01/20/BMjAyMDEwMDEyMDMzNDlfMTE0Mzc4ODk3OF8zNjk0Njc4ODI3OF8yXzM=_b_B77b9c6c66d5b6dafbe520a286bb6e6b9.mp4
+一半疯了,https://txmov2.a.kwimgs.com/upic/2023/06/26/13/BMjAyMzA2MjYxMzEwNDhfMjk4Mjk3ODMxOF8xMDY0ODAxMTIxNTdfMl8z_b_B8c230eb7bad8f8cf5a9baf8c13d7800d.mp4?clientCacheKey=3x8redaakre6nhe_b.mp4&tt=b&di=75b3b1ea&bp=10000
 亚洲影院,http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228365/42613673.smil/index.m3u8?fmt=ts2hls
 亚洲影院,http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228365/index.m3u8?fmt=ts2hls
 欧美影院,http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228384/42613784.smil/index.m3u8?fmt=ts2hls
@@ -704,8 +693,6 @@ CETV4,http://183.249.160.53:6610/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/2
 睛彩篮球,http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221232657/index.m3u8?fmt=ts2hls
 游戏,http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229320/index.m3u8?fmt=ts2hls
 都市剧场,http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229280/index.m3u8?fmt=ts2hls
-咪咕视频1,http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000001000005969&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
-咪咕视频2,http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000001000007218&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
 CGTN英语,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225604/index.m3u8
 CGTN西语,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226431/index.m3u8
 CGTN俄语,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226543/index.m3u8
