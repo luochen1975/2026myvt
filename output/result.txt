@@ -3,8 +3,6 @@
 
 ❤️全部,#genre#
 电视剧歌曲合集,https://alimov2.a.kwimgs.com/upic/2022/03/03/00/BMjAyMjAzMDMwMDA1MThfODI4NTk1NTQ0XzY4NzY0NTM0NTk3XzJfMw==_b_B657263864dc4be00e4943c7700e92685.mp4
-张韶涵-12首合集,https://www.iesdouyin.com/aweme/v1/play/?video_id=v0d00fg10000ct7cdovog65o09j282vg&ratio=720p&line=0
-许嵩精选30首(2小时),https://alimov2.a.kwimgs.com/upic/2020/09/14/21/BMjAyMDA5MTQyMTMzMDdfODI4NTk1NTQ0XzM2MDUzMTE1NjM5XzJfMw==_b_B789c6ea6a87d1b67019f19f16c9f71f7.mp4
 
 ❤️❤️新电视,#group#
 
@@ -402,8 +400,9 @@ CCTV17,http://[2409:8087:5e01:34::22]:6610/ZTE_CMS/00000001000000060000000000000
 重庆卫视,http://39.134.181.77:6610/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221232642/42330389.smil/index.m3u8?fmt=ts2hls
 浙江卫视,http://183.249.160.53:6610/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221233043/1/index.m3u8?
 大湾区卫视,http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221236327/index.m3u8
-东方卫视,http://bp-resource-dfl.bestv.cn/148/3/video.m3u8
 东方卫视,http://bp-resource-dfl.bestv.cn/155/3/video.m3u8
+东方卫视4K,https://bp-resource-dfl.bestv.cn/148/3/video.m3u8
+东方卫视,http://bp-resource-dfl.bestv.cn/148/3/video.m3u8
 湖南卫视,http://[2409:8087:5e01:34::23]:6610/ZTE_CMS/00000001000000060000000000000174/index.m3u8?key=tvbox6_com$LR•IPV6『线路17』
 浙江卫视,http://[2409:8087:5e01:34::22]:6610/ZTE_CMS/00000001000000060000000000000248/index.m3u8?key=tvbox6_com$LR•IPV6『线路18』
 东方卫视,http://[2409:8087:5e01:34::21]:6610/ZTE_CMS/00000001000000060000000000000182/index.m3u8?key=tvbox6_com$LR•IPV6『线路21』
@@ -583,16 +582,18 @@ CGTN法语 [组播],rtp://239.3.1.218:4220
 CGTN阿语 [组播],rtp://239.3.1.219:4220
 CGTN俄语 [组播],rtp://239.3.1.220:4220
 你的眼神,https://alimov2.a.kwimgs.com/upic/2023/06/20/08/BMjAyMzA2MjAwODI4MzhfMzM5Njk4MTMyNl8xMDU5NjQ3NTA5MzdfMF8z_b_Be3c3571129119949480139b9f913048a.mp4
-蔡依林演唱会,https://alimov2.a.kwimgs.com/upic/2020/07/13/17/BMjAyMDA3MTMxNzEyMzZfODY2NDU4ODQ1XzMyMjk2MDQ4MzQ4XzJfMw==_b_B8f6ffb1ac85e8c6f0363ee3c3076d8df.mp4
 陈慧娴告别演唱会,https://alimov2.a.kwimgs.com/upic/2021/01/06/20/BMjAyMTAxMDYyMDM3MDlfODI4NTk1NTQ0XzQxOTc4MTcyNTcwXzJfMw==_b_B433cd58306ccc133cade9d3cdcf0b0f1.mp4
-分裂,https://alimov2.a.kwimgs.com/upic/2024/10/09/09/BMjAyNDEwMDkwOTA4NDFfMTMxNzAwMDUwNV8xNDU2Nzg0MDk5MDdfMl8z_b_Bf4bc983e2d5804ab066c988ba7652ec5.mp4
+雨中相思-龙千玉,http://txmov2.a.yximgs.com/upic/2020/11/25/16/BMjAyMDExMjUxNjAwNDRfMTU0MDc1NjUwOF8zOTc3MTI2OTA2MF8yXzM=_b_B0652e68c50f21d5cb6bdda5dbc7a3c13.mp4
+☆越南神曲,https://alimov2.a.kwimgs.com/upic/2023/08/05/05/BMjAyMzA4MDUwNTQ5MjJfMzUwMDUzNzE1MV8xMDk3MDM5ODM3ODdfMF8z_b_B7172bf63ab1ba23cd273233ae6307339.mp4
+☆特别的爱给特别的你,https://alimov2.a.kwimgs.com/upic/2023/07/26/14/BMjAyMzA3MjYxNDAwNDhfMzUwMDUzNzE1MV8xMDg5MTUxNTkyMzdfMl8z_b_Bd1197da32eb1b75b6854664cefc52e97.mp4
+☆护花使者,https://alimov2.a.kwimgs.com/upic/2023/07/27/14/BMjAyMzA3MjcxNDA3MDhfMzUwMDUzNzE1MV8xMDg5OTYxMTA0NDBfMl8z_b_Bc80cec26e6c8cbeae064bea41ab58d3a.mp4
 刘德华1994演唱会,https://alimov2.a.kwimgs.com/upic/2020/11/21/21/BMjAyMDExMjEyMTA2NDdfODI4NTk1NTQ0XzM5NTk1NzIyODQ0XzJfMw==_b_Bd2a633720f4eb58f50fcf669ac9f6481.mp4
-那个谁,https://alimov2.a.kwimgs.com/upic/2023/05/26/11/BMjAyMzA1MjYxMTEyMDJfMjk4Mjk3ODMxOF8xMDM5NjY4MjE1OTBfMl8z_b_Bcc6eb6ccadec6fb846db0e43bebd553d.mp4?clientCacheKey=3x9jrbwim3x3tug_b.mp4&tt=b&di=75b3b1ea&bp=10000
-她会魔法吧,https://alimov2.a.kwimgs.com/upic/2023/07/05/14/BMjAyMzA3MDUxNDI4MDNfMzM5Njk4MTMyNl8xMDcxOTQ0MDAzMTZfMF8z_b_Ba25f91cfecba0a4a29040d64165ff029.mp4
-刘德华2001演唱会,https://alimov2.a.kwimgs.com/upic/2020/11/18/21/BMjAyMDExMTgyMTA3MjdfODI4NTk1NTQ0XzM5NDMzNDM3OTI0XzJfMw==_b_B52993094a9f0b4a854478aca541a9a58.mp4
-☆月亮不曾奔我来,https://alimov2.a.kwimgs.com/upic/2023/07/27/00/BMjAyMzA3MjcwMDEzNDBfMzUwMDUzNzE1MV8xMDg5NjI3MDUyMzBfMl8z_b_Bbe40fd5c0503d204b062a77c8a2c834c.mp4
+羞答答的玫瑰,https://alimov2.a.kwimgs.com/upic/2023/07/28/11/BMjAyMzA3MjgxMTQ3MDRfMzM5Njk4MTMyNl8xMDkwNjczMTE5NDlfMF8z_b_B8423a7dac79a1e58599a94e4226e7987.mp4?clientCacheKey=3xyfhpvzhi825f4_b.mp4&tt=b&di=75b3b1ea&bp=10000
 张学友演唱会,https://alimov2.a.kwimgs.com/upic/2020/05/11/04/BMjAyMDA1MTEwNDE3NTRfMTA4ODgyMjg1OF8yODM1OTM2NTkxMl8yXzM=_b_Bf2cbd177f1349dcfc12d89443cf374af.mp4
-☆晚风心里吹,https://alimov2.a.kwimgs.com/upic/2023/07/10/14/BMjAyMzA3MTAxNDE5MTdfMzM5Njk4MTMyNl8xMDc2MDM1MDcwMjhfMF8z_b_B2c9fa52d46ef9499c4682907e8328111.mp4
+蔡依林演唱会,https://alimov2.a.kwimgs.com/upic/2020/07/13/17/BMjAyMDA3MTMxNzEyMzZfODY2NDU4ODQ1XzMyMjk2MDQ4MzQ4XzJfMw==_b_B8f6ffb1ac85e8c6f0363ee3c3076d8df.mp4
+旧梦一场,https://alimov2.a.kwimgs.com/upic/2024/01/08/11/BMjAyNDAxMDgxMTA4MzRfMzM5Njk4MTMyNl8xMjE2MTA4MzA1NzVfMF8z_b_Bc4838009184d86069bda9e4bdb946dd5.mp4
+刘德华2001演唱会,https://alimov2.a.kwimgs.com/upic/2020/11/18/21/BMjAyMDExMTgyMTA3MjdfODI4NTk1NTQ0XzM5NDMzNDM3OTI0XzJfMw==_b_B52993094a9f0b4a854478aca541a9a58.mp4
+思念指甲绕,https://alimov2.a.kwimgs.com/upic/2023/07/03/14/BMjAyMzA3MDMxNDQ3MzFfMzM5Njk4MTMyNl8xMDcwMzkxMjk4MjlfMF8z_b_B662f5e109deb14476a3c73a57cc6b6c9.mp4
 亚洲影院,http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228365/42613673.smil/index.m3u8?fmt=ts2hls
 亚洲影院,http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228365/index.m3u8?fmt=ts2hls
 欧美影院,http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228384/42613784.smil/index.m3u8?fmt=ts2hls
