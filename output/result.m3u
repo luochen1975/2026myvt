@@ -769,12 +769,8 @@ http://39.134.181.77:6610/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221
 http://183.249.160.53:6610/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221233043/1/index.m3u8?
 #EXTINF:-1 group-title="❤️卫视-全部",大湾区卫视
 http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221236327/index.m3u8
-#EXTINF:-1 group-title="❤️卫视-全部",东方卫视
-http://bp-resource-dfl.bestv.cn/148/3/video.m3u8
 #EXTINF:-1 group-title="❤️卫视-全部",东方卫视4K
 https://bp-resource-dfl.bestv.cn/148/3/video.m3u8
-#EXTINF:-1 group-title="❤️卫视-全部",东方卫视
-http://bp-resource-dfl.bestv.cn/155/3/video.m3u8
 #EXTINF:-1 group-title="❤️卫视-全部",湖南卫视
 http://[2409:8087:5e01:34::23]:6610/ZTE_CMS/00000001000000060000000000000174/index.m3u8?key=tvbox6_com$LR•IPV6『线路17』
 #EXTINF:-1 group-title="❤️卫视-全部",浙江卫视
@@ -1073,8 +1069,6 @@ rtp://239.3.1.218:4220
 rtp://239.3.1.219:4220
 #EXTINF:-1 group-title="❤️其他频道-全部",CGTN俄语[组播]
 rtp://239.3.1.220:4220
-#EXTINF:-1 group-title="❤️其他频道-全部",维护时间：2025-1-15#佛系维护...
-https://material.1989.click/v/301.mp4
 #EXTINF:-1 group-title="❤️其他频道-全部",亚洲影院
 http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228365/42613673.smil/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="❤️其他频道-全部",亚洲影院
@@ -1309,6 +1303,8 @@ http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channe
 http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000010000006077&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
 #EXTINF:-1 group-title="❤️其他频道-全部",咪咕视频14
 http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000010000006658&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
+#EXTINF:-1 group-title="❤️其他频道-全部",咪咕视频15
+http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000010000009788&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
 #EXTINF:-1 group-title="❤️其他频道-全部",CGTN英语
 http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225604/index.m3u8
 #EXTINF:-1 group-title="❤️其他频道-全部",CGTN西语
