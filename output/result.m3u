@@ -1,4 +1,10 @@
 #EXTM3U
+#EXTINF:-1 group-title="❤️歌舞-全部",徐良精选30首(1小时)
+https://alimov2.a.kwimgs.com/upic/2024/05/08/20/BMjAyNDA1MDgyMDAyMjFfMTg1NzcxNTYxOF8xMzE5MDIyNTY0NzNfMl8z_b_B62cb1e50d6a0dea4efc3e6da93662aa4.mp4
+#EXTINF:-1 group-title="❤️歌舞-全部",电视剧歌曲合集
+https://alimov2.a.kwimgs.com/upic/2022/03/03/00/BMjAyMjAzMDMwMDA1MThfODI4NTk1NTQ0XzY4NzY0NTM0NTk3XzJfMw==_b_B657263864dc4be00e4943c7700e92685.mp4
+#EXTINF:-1 group-title="❤️歌舞-全部",许嵩精选30首(2小时)
+https://alimov2.a.kwimgs.com/upic/2020/09/14/21/BMjAyMDA5MTQyMTMzMDdfODI4NTk1NTQ0XzM2MDUzMTE1NjM5XzJfMw==_b_B789c6ea6a87d1b67019f19f16c9f71f7.mp4
 #EXTINF:-1 group-title="❤️新电视-全部",NewTV中国功夫
 http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221236267/index.m3u8
 #EXTINF:-1 group-title="❤️新电视-全部",NewTV军事评论
@@ -423,6 +429,8 @@ http://[2409:8087:5e01:34::23]:6610/ZTE_CMS/00000001000000060000000000000378/ind
 http://[2409:8087:5e01:34::20]:6610/ZTE_CMS/00000001000000060000000000000501/index.m3u8?key=tvbox6_com$LR•IPV6『线路16』
 #EXTINF:-1 group-title="❤️央视-全部",CCTV17
 http://[2409:8087:5e01:34::22]:6610/ZTE_CMS/00000001000000060000000000000494/index.m3u8?key=tvbox6_com$LR•IPV6『线路16』
+#EXTINF:-1 group-title="❤️卫视-全部",江苏卫视
+https://txmov2.a.kwimgs.com/upic/2023/02/07/12/BMjAyMzAyMDcxMjQ3NDlfNzM5MzQzNzIyXzk1NjcxMTk5ODM5XzBfMw==_b_Bb92095c7df3c98b458dd14abf1d4b575.mp4
 #EXTINF:-1 group-title="❤️卫视-全部",深圳卫视4K
 http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221236849/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="❤️卫视-全部",四川卫视4K
@@ -770,11 +778,9 @@ http://183.249.160.53:6610/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/322
 #EXTINF:-1 group-title="❤️卫视-全部",大湾区卫视
 http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221236327/index.m3u8
 #EXTINF:-1 group-title="❤️卫视-全部",东方卫视
-http://bp-resource-dfl.bestv.cn/148/3/video.m3u8
-#EXTINF:-1 group-title="❤️卫视-全部",东方卫视
 http://bp-resource-dfl.bestv.cn/155/3/video.m3u8
-#EXTINF:-1 group-title="❤️卫视-全部",东方卫视4K
-https://bp-resource-dfl.bestv.cn/148/3/video.m3u8
+#EXTINF:-1 group-title="❤️卫视-全部",东方卫视
+http://bp-resource-dfl.bestv.cn/148/3/video.m3u8
 #EXTINF:-1 group-title="❤️卫视-全部",湖南卫视
 http://[2409:8087:5e01:34::23]:6610/ZTE_CMS/00000001000000060000000000000174/index.m3u8?key=tvbox6_com$LR•IPV6『线路17』
 #EXTINF:-1 group-title="❤️卫视-全部",浙江卫视
@@ -1053,6 +1059,8 @@ http://183.249.160.53:6610/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/322
 http://183.249.160.53:6610/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221235614/1/index.m3u8?
 #EXTINF:-1 group-title="❤️湖南-全部",金鹰纪实
 http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229328/78602057.smil/index.m3u8?fmt=ts2hls
+#EXTINF:-1 group-title="❤️广东-全部",☆我在广州等你
+https://alimov2.a.kwimgs.com/upic/2023/10/14/15/BMjAyMzEwMTQxNTMzMzNfMzUwMDUzNzE1MV8xMTQ5Njc2NTY1NDhfMl8z_b_Bb09edbc5c475de303114646ba69364b6.mp4
 #EXTINF:-1 group-title="❤️香港-全部",凤凰中文
 http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221236260/index.m3u8
 #EXTINF:-1 group-title="❤️香港-全部",凤凰中文
@@ -1073,6 +1081,26 @@ rtp://239.3.1.218:4220
 rtp://239.3.1.219:4220
 #EXTINF:-1 group-title="❤️其他频道-全部",CGTN俄语[组播]
 rtp://239.3.1.220:4220
+#EXTINF:-1 group-title="❤️其他频道-全部",维护时间：2025-1-15#佛系维护...
+https://material.1989.click/v/301.mp4
+#EXTINF:-1 group-title="❤️其他频道-全部",雨中相思-龙千玉
+http://txmov2.a.yximgs.com/upic/2020/11/25/16/BMjAyMDExMjUxNjAwNDRfMTU0MDc1NjUwOF8zOTc3MTI2OTA2MF8yXzM=_b_B0652e68c50f21d5cb6bdda5dbc7a3c13.mp4
+#EXTINF:-1 group-title="❤️其他频道-全部",免费订阅：请勿贩卖...
+https://material.1989.click/v/302.mp4
+#EXTINF:-1 group-title="❤️其他频道-全部",☆如愿
+https://alimov2.a.kwimgs.com/upic/2023/06/29/10/BMjAyMzA2MjkxMDAxNDNfMzM5Njk4MTMyNl8xMDY2ODcwODY0NzRfMF8z_b_Bb3a3c0fc1723f611bbb6a13b1af7b7ce.mp4
+#EXTINF:-1 group-title="❤️其他频道-全部",刘德华2001演唱会
+https://alimov2.a.kwimgs.com/upic/2020/11/18/21/BMjAyMDExMTgyMTA3MjdfODI4NTk1NTQ0XzM5NDMzNDM3OTI0XzJfMw==_b_B52993094a9f0b4a854478aca541a9a58.mp4
+#EXTINF:-1 group-title="❤️其他频道-全部",☆难忘
+https://alimov2.a.kwimgs.com/upic/2023/08/08/14/BMjAyMzA4MDgxNDQwMTlfMzUwMDUzNzE1MV8xMDk5Nzg4MDkxNjFfMl8z_b_Bc948bd6dca1d18ddd0e8296fb62ce505.mp4
+#EXTINF:-1 group-title="❤️其他频道-全部",一砖一瓦-杨哲
+http://txmov2.a.yximgs.com/upic/2020/11/07/23/BMjAyMDExMDcyMzQxMzZfMTU0MDc1NjUwOF8zODg5OTUwODg5MF8yXzM=_b_B41249b6fddaf4b4ef4bb5aee7c4f431c.mp4
+#EXTINF:-1 group-title="❤️其他频道-全部",陈慧娴告别演唱会
+https://alimov2.a.kwimgs.com/upic/2021/01/06/20/BMjAyMTAxMDYyMDM3MDlfODI4NTk1NTQ0XzQxOTc4MTcyNTcwXzJfMw==_b_B433cd58306ccc133cade9d3cdcf0b0f1.mp4
+#EXTINF:-1 group-title="❤️其他频道-全部",☆来迟
+https://alimov2.a.kwimgs.com/upic/2023/07/19/01/BMjAyMzA3MTkwMTQwNDVfMzUwMDUzNzE1MV8xMDgzMTA4ODY3ODlfMF8z_b_Bbd48b2af17f0bf1d8db03abe58e974f8.mp4
+#EXTINF:-1 group-title="❤️其他频道-全部",☆嘉宾
+https://alimov2.a.kwimgs.com/upic/2023/08/03/01/BMjAyMzA4MDMwMTA4NTJfMzUwMDUzNzE1MV8xMDk1NDExMDQ4NzdfMl8z_b_B88c7e9dfecd64f9bc7d28c3386a93455.mp4
 #EXTINF:-1 group-title="❤️其他频道-全部",亚洲影院
 http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228365/42613673.smil/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="❤️其他频道-全部",亚洲影院
@@ -1279,36 +1307,6 @@ http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamobile.com/PLTV/8888888
 http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229320/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="❤️其他频道-全部",都市剧场
 http://[2409:8087:2801:20:100::015]/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229280/index.m3u8?fmt=ts2hls
-#EXTINF:-1 group-title="❤️其他频道-全部",咪咕视频1
-http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000001000005969&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
-#EXTINF:-1 group-title="❤️其他频道-全部",咪咕视频2
-http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000001000007218&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
-#EXTINF:-1 group-title="❤️其他频道-全部",咪咕视频3
-http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000001000008001&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
-#EXTINF:-1 group-title="❤️其他频道-全部",咪咕视频4
-http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000001000010129&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
-#EXTINF:-1 group-title="❤️其他频道-全部",咪咕视频5
-http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000001000010948&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
-#EXTINF:-1 group-title="❤️其他频道-全部",咪咕视频6
-http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000001000028638&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
-#EXTINF:-1 group-title="❤️其他频道-全部",咪咕视频7
-http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000001000031494&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
-#EXTINF:-1 group-title="❤️其他频道-全部",咪咕视频8
-http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000010000000097&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
-#EXTINF:-1 group-title="❤️其他频道-全部",咪咕视频9
-http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000010000002019&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
-#EXTINF:-1 group-title="❤️其他频道-全部",咪咕视频10
-http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000010000003915&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
-#EXTINF:-1 group-title="❤️其他频道-全部",咪咕视频11
-http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000010000004193&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
-#EXTINF:-1 group-title="❤️其他频道-全部",咪咕视频12
-http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000010000005837&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
-#EXTINF:-1 group-title="❤️其他频道-全部",咪咕视频13
-http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000010000006077&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
-#EXTINF:-1 group-title="❤️其他频道-全部",咪咕视频14
-http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000010000006658&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
-#EXTINF:-1 group-title="❤️其他频道-全部",咪咕视频15
-http://36.155.98.21/gslbserv.itv.cmvideo.cn:80/5000000011000265001/1.m3u8?channel-id=FifastbLive&Contentid=3000000010000009788&livemode=1&stbId=001C366F865C602F58587E8BE8616930&mode=1&
 #EXTINF:-1 group-title="❤️其他频道-全部",CGTN英语
 http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225604/index.m3u8
 #EXTINF:-1 group-title="❤️其他频道-全部",CGTN西语
