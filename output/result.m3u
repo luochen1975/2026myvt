@@ -1,18 +1,24 @@
 #EXTM3U
+#EXTINF:-1 group-title="❤️歌舞-全部",王心凌精选69首(4小时)
+https://txmov2.a.kwimgs.com/upic/2023/07/26/22/BMjAyMzA3MjYyMjExNTNfMzYxMjUyNDA3MV8xMDg5NTQ4NjE1ODlfMF8z_b_Bdded2693ce6f7de089cfd7030b45bef7.mp4
+#EXTINF:-1 group-title="❤️歌舞-全部",周杰伦精选120首(8小时)
+https://txmov2.a.kwimgs.com/upic/2023/06/18/23/BMjAyMzA2MTgyMzE1MjBfMzQ4MzI0MjA1OF8xMDU4Nzc4MzAzNjZfMF8z_b_B386baa1bb2c0c48626a830ff69393771.mp4
+#EXTINF:-1 group-title="❤️歌舞-全部",高清舞曲
+https://txmov2.a.kwimgs.com/upic/2022/03/25/20/BMjAyMjAzMjUyMDUyNTZfMjM0NDc1MTE5N183MDQ0NzkzMTQxOV8wXzM=_b_B383b34c7a7c97f97b5350f622d8da0a6.mp4?tag=1-1648554367-std-1-puqq96jiry-1167f7fd60758f88&clientCacheKey=3x3qtumzyu5rh6w_b.mp4&tt=b&di=79c43beb&bp=12681
+#EXTINF:-1 group-title="❤️歌舞-全部",林俊杰精选81首(5小时)
+https://txmov2.a.kwimgs.com/upic/2024/01/09/12/BMjAyNDAxMDkxMjA2MDdfMzQ4MzI0MjA1OF8xMjE2Nzg4Mjk4NTZfMF8z_b_Bc9f7d3b0c4b69136e61d8328a8538bd2.mp4?clientCacheKey=3xajh8b4u5j6uva_b.mp4
+#EXTINF:-1 group-title="❤️歌舞-全部",陶喆精选30首(2小时)
+https://txmov2.a.kwimgs.com/upic/2023/08/06/13/BMjAyMzA4MDYxMzEzMzhfODM0NDUzMTQ2XzEwOTgxMDA2NzAyNF8wXzM=_b_B5e5a6bf1ef67081a9a226a2f6145ea2d.mp4
+#EXTINF:-1 group-title="❤️歌舞-全部",陈奕迅精选34首(2小时)
+https://txmov2.a.kwimgs.com/upic/2022/12/22/17/BMjAyMjEyMjIxNzM3NDNfMTg1NzcxNTYxOF85MTcyMjE1NDQzNV8yXzM=_b_B16479ab3769c6fcfed15a06b75c2656e.mp4
+#EXTINF:-1 group-title="❤️歌舞-全部",蔡健雅精选30首(2小时)
+https://txmov2.a.kwimgs.com/upic/2023/08/18/21/BMjAyMzA4MTgyMTA4MzZfODM0NDUzMTQ2XzExMDgyNTA1MjcwM18wXzM=_b_B0d509c2419313652932c68153a65e4ed.mp4
 #EXTINF:-1 group-title="❤️央视-全部",CCTV15
 http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv15hd
 #EXTINF:-1 group-title="❤️央视-全部",CCTV16
 http://38.75.136.137:98/gslb/dsdqbv/cctv16hd.m3u8?auth=test20251009
 #EXTINF:-1 group-title="❤️央视-全部",CCTV16
 http://38.75.136.137:98/gslb/dsdqpub/cctv16hd.m3u8?auth=testpub
-#EXTINF:-1 group-title="❤️央视-全部",CCTV4K
-http://107.150.60.122/live/cctv4k.m3u8
-#EXTINF:-1 group-title="❤️央视-全部",CCTV4K
-http://192.151.150.154/live/cctv4k.m3u8
-#EXTINF:-1 group-title="❤️央视-全部",CCTV8K
-http://107.150.60.122/live/cctv8k.m3u8
-#EXTINF:-1 group-title="❤️央视-全部",CCTV8K
-http://38.75.136.137:98/gslb/dsdqpub/cctv8k.m3u8?auth=testpub
 #EXTINF:-1 group-title="❤️央视-全部",CCTV1
 http://[2409:8087:5e01:34::20]:6610/ZTE_CMS/00000001000000060000000000000131/index.m3u8?key=tvbox6_com$LR•IPV6『线路14』
 #EXTINF:-1 group-title="❤️央视-全部",CCTV2
@@ -47,10 +53,10 @@ http://63.141.230.178:82/gslb/zbdq5.m3u8?id=scwshd
 http://38.75.136.137:98/gslb/dsdqpub/ssws.m3u8?auth=testpub
 #EXTINF:-1 group-title="❤️卫视-全部",东方卫视4K
 http://bp-resource-dfl.bestv.cn/148/3/video.m3u8
-#EXTINF:-1 group-title="❤️卫视-全部",东方卫视
-http://bp-resource-dfl.bestv.cn/155/3/video.m3u8
 #EXTINF:-1 group-title="❤️卫视-全部",东方卫视4K
 https://bp-resource-dfl.bestv.cn/148/3/video.m3u8
+#EXTINF:-1 group-title="❤️卫视-全部",东方卫视
+http://bp-resource-dfl.bestv.cn/155/3/video.m3u8
 #EXTINF:-1 group-title="❤️卫视-全部",湖南卫视
 http://[2409:8087:5e01:34::23]:6610/ZTE_CMS/00000001000000060000000000000174/index.m3u8?key=tvbox6_com$LR•IPV6『线路17』
 #EXTINF:-1 group-title="❤️卫视-全部",浙江卫视
@@ -113,18 +119,12 @@ rtp://239.3.1.218:4220
 rtp://239.3.1.219:4220
 #EXTINF:-1 group-title="❤️其他频道-全部",CGTN俄语[组播]
 rtp://239.3.1.220:4220
-#EXTINF:-1 group-title="❤️其他频道-全部",CHC影迷电影
-http://38.75.136.137:98/gslb/dsdqpub/chchd.m3u8?auth=testpub
-#EXTINF:-1 group-title="❤️其他频道-全部",CHC动作电影
-http://192.151.150.154/live/chcdz.m3u8
-#EXTINF:-1 group-title="❤️其他频道-全部",CHC家庭影院
-http://63.141.230.178:82/gslb/zbdq5.m3u8?id=chcjt
-#EXTINF:-1 group-title="❤️其他频道-全部",CHC家庭影院
-http://192.151.150.154/live/chcjt.m3u8
-#EXTINF:-1 group-title="❤️其他频道-全部",CHC家庭影院
-http://38.75.136.137:98/gslb/dsdqpub/chcjt.m3u8?auth=testpub
-#EXTINF:-1 group-title="❤️其他频道-全部",CHC家庭影院
-http://107.150.60.122/live/chcjt.m3u8
+#EXTINF:-1 group-title="❤️其他频道-全部",刘德华1996演唱会
+https://txmov2.a.kwimgs.com/upic/2020/11/24/04/BMjAyMDExMjQwNDAwMzFfODI4NTk1NTQ0XzM5NzA5NDUwNzEyXzJfMw==_b_B5b8c14b2ba01d46f3c1f12fbeba49c43.mp4
+#EXTINF:-1 group-title="❤️其他频道-全部",2024-09-26
+https://gitlab.com/lr77/IPTV/-/raw/main/%E8%B5%B7%E9%A3%8E%E4%BA%86.mp4
+#EXTINF:-1 group-title="❤️其他频道-全部",一半疯了
+https://txmov2.a.kwimgs.com/upic/2023/06/26/13/BMjAyMzA2MjYxMzEwNDhfMjk4Mjk3ODMxOF8xMDY0ODAxMTIxNTdfMl8z_b_B8c230eb7bad8f8cf5a9baf8c13d7800d.mp4?clientCacheKey=3x8redaakre6nhe_b.mp4&tt=b&di=75b3b1ea&bp=10000
 #EXTINF:-1 group-title="❤️其他频道-全部",CGTN英语
 http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225604/index.m3u8
 #EXTINF:-1 group-title="❤️其他频道-全部",CGTN西语
