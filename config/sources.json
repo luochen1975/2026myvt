@@ -1,15 +1,15 @@
 {
   "txt": [
     {"name": "主源", "url": "https://wp.kayyw.com/f/MbVmc6/zb2026.txt", "isp": "telecom,unicom,cmcc"},
-    {"name": "备用1", "url": ""},
+    {"name": "备用1", "url": "https://raw.githubusercontent.com/Supprise0901/TVBox_live/refs/heads/main/live.txt"},
     {"name": "备用2", "url": ""},
     {"name": "备用3", "url": ""},
-    {"name": "备用4", "url": "https://raw.githubusercontent.com/zxmlxw520/5566/refs/heads/main/sfzb2.txt"},
+    {"name": "备用4", "url": ""},
     {"name": "备用5", "url": ""},
     {"name": "备用6", "url": "https://raw.githubusercontent.com/lbxxxtw2/iptv/refs/heads/master/output/tv.txt"},
-    {"name": "组播", "url": "", "isp":"telecom,unicom,cmcc,broadnet"},
-    {"name": "组播1", "url": "https://gh-proxy.org/https://raw.githubusercontent.com/zxmlxw520/5566/refs/heads/main/fhtv.txt", "isp": "telecom,unicom,cmcc,broadnet"},
-    {"name": "组播2", "url": "https://raw.githubusercontent.com/ShaoWentao/iptv-sources/refs/heads/main/m3u/gd-unicom.m3u", "isp": "telecom,unicom,cmcc,broadnet"},
+    {"name": "组播", "url": "https://raw.githubusercontent.com/Wind5170/IPTV/refs/heads/main/output/zubo_all.txt", "isp":"telecom,unicom,cmcc,broadnet"},
+    {"name": "组播1", "url": "https://raw.githubusercontent.com/q1017673817/iptvz/refs/heads/main/zubo_all.txt", "isp": "telecom,unicom,cmcc,broadnet"},
+    {"name": "组播2", "url": "", "isp": "telecom,unicom,cmcc,broadnet"},
     {"name": "组播3", "url": "", "isp": "telecom"},
     {"name": "组播4", "url": "", "isp": "telecom"}
   ],
