@@ -197,6 +197,46 @@ def clean_url(url: str) -> str:
     return urlunparse((parsed.scheme, parsed.netloc, parsed.path, parsed.params, new_query, parsed.fragment))
 
 
+def normalize_isp_group_names(grouped_channels: OrderedDict) -> OrderedDict:
+    """把类似 '河南电信-组播1' 统一为 '河南电信-组播'。"""
+    pattern = re.compile(r'^(?P<prefix>.*?)(?P<isp>电信|联通|移动)-组播\d+$')
+
+    normalized = OrderedDict()
+    for group_name, sub_groups in grouped_channels.items():
+        match = pattern.match(group_name)
+        if match:
+            group_name = f"{match.group('prefix')}{match.group('isp')}-组播"
+
+        if group_name not in normalized:
+            normalized[group_name] = OrderedDict()
+
+        for sub_name, channels in sub_groups.items():
+            if sub_name not in normalized[group_name]:
+                normalized[group_name][sub_name] = []
+            normalized[group_name][sub_name].extend(channels)
+
+    for group_name, sub_groups in normalized.items():
+        for sub_name, channels in sub_groups.items():
+            seen = {}
+            unique = []
+            for ch in channels:
+                if ch.url not in seen:
+                    seen[ch.url] = ch
+                    unique.append(ch)
+                else:
+                    existing = seen[ch.url]
+                    ch_speed = getattr(ch, 'speed', float('inf'))
+                    ex_speed = getattr(existing, 'speed', float('inf'))
+                    if ch_speed < ex_speed:
+                        seen[ch.url] = ch
+                        unique.remove(existing)
+                        unique.append(ch)
+            unique.sort(key=lambda x: getattr(x, 'speed', float('inf')))
+            sub_groups[sub_name] = unique
+
+    return normalized
+
+
 def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     LOG_DIR.mkdir(parents=True, exist_ok=True)
@@ -248,7 +288,7 @@ def main():
 
     log.info(f"  过滤后: {len(filtered)}个 (移除{blocked}个)")
 
-    # ========== 3. 去重（不限制数量！）==========
+    # ========== 3. 去重（不限制数量！）=========
     log.info("[3/6] URL去重...")
     merger = ChannelMerger(
         multicast_limit=MULTICAST_LIMIT,
@@ -259,7 +299,7 @@ def main():
     deduped = merger.merge(filtered)
     log.info(f"  去重后: {len(deduped)}个唯一URL")
 
-    # ========== 4. 测速（关键步骤 - 分层测速）==========
+    # ========== 4. 测速（关键步骤 - 分层测速）=========
     log.info("[4/6] 分层测速...")
 
     # 构建 source_configs 映射
@@ -349,7 +389,6 @@ def main():
 
         log.info(f"  普通频道: {len(normal_channels)}个, 港澳台/国外: {len(special_channels)}个")
 
-        # 进度追踪：按唯一URL计数，避免重测重复计算
         total = len(need_test)
         processed_urls = set()
 
@@ -361,16 +400,13 @@ def main():
             pct = len(processed_urls) / total * 100 if total else 0
             log.info(f"  [{batch_desc}] 完成 {len(batch_list)} 个 → 总进度 {len(processed_urls)}/{total} ({pct:.1f}%)")
 
-        # 普通频道：按原配置测速
         if normal_channels:
             log.info("  普通频道测速...")
             asyncio.run(tester.test_all(normal_channels, source_configs))
             log_progress("普通频道", normal_channels)
 
-        # 港澳台/国外频道：先直连，失败再代理
         if special_channels:
             log.info("  港澳台/国外频道：先直连测速...")
-            # 第一轮：强制直连（proxy=False）
             direct_configs = {}
             for ch in special_channels:
                 cfg = dict(source_configs.get(ch.url, {
@@ -383,11 +419,9 @@ def main():
             asyncio.run(tester.test_all(special_channels, direct_configs))
             log_progress("港澳台直连", special_channels)
 
-            # 找出直连失败的
             failed_special = [c for c in special_channels if c.speed is None]
             if failed_special:
                 log.info(f"  港澳台/国外直连失败 {len(failed_special)} 个，切换代理重测...")
-                # 第二轮：强制代理
                 proxy_configs = {}
                 for ch in failed_special:
                     cfg = dict(source_configs.get(ch.url, {
@@ -402,7 +436,6 @@ def main():
             else:
                 log.info("  港澳台/国外频道直连全部通过")
 
-        # 保存缓存
         for ch in need_test:
             cache.set(ch.url, ch.speed)
         cache.save()
@@ -413,7 +446,7 @@ def main():
         total_fail = tested_fail + cached_fail
         log.info(f"  本轮测速: 成功{tested_ok} 失败{tested_fail}")
         log.info(f"  综合结果: 可用{total_ok} 不可用{total_fail} (免测速:{bypass_ok})")
-    # ========== 5. 按类型限制数量（测速后！）==========
+    # ========== 5. 按类型限制数量（测速后！）===========
     log.info("[5/6] 按类型限制数量...")
 
     limited = merger.limit_by_type(deduped)
@@ -424,10 +457,8 @@ def main():
     # ========== 6. 分组与导出 ==========
     log.info("[6/6] 分组与导出...")
 
-    # 自动分组
     grouped = auto_group_by_name(limited)
 
-    # 每组内限制数量并排序
     final_groups = OrderedDict()
     for group_name, sub_groups in grouped.items():
         all_chs = []
@@ -437,7 +468,6 @@ def main():
         if not all_chs:
             continue
 
-        # 组内去重
         seen = set()
         unique = []
         for ch in all_chs:
@@ -445,10 +475,8 @@ def main():
                 seen.add(ch.url)
                 unique.append(ch)
 
-        # 限制每组数量（按速度）
         limited_group = merger.limit_by_group(unique)
 
-        # 排序：组播在前（内网源优先），然后按速度
         def sort_key(ch):
             is_mc = ch.url.strip().lower().startswith(("udp://", "rtp://", "rtsp://"))
             speed = ch.speed if ch.speed is not None else 999999
@@ -459,15 +487,14 @@ def main():
         final_groups[group_name] = OrderedDict()
         final_groups[group_name]["全部"] = limited_group
 
-    # 导出
+    final_groups = normalize_isp_group_names(final_groups)
+
     log.info("  导出结果...")
     TXTExporter.export_by_template(final_groups, str(OUTPUT_DIR / "result.txt"))
     M3UExporter.export_by_template(final_groups, str(OUTPUT_DIR))
 
-    # 全部频道（调试用）
     M3UExporter.export_all(deduped, str(OUTPUT_DIR / "result-all.m3u"))
 
-    # 移动优先
     mobile_first = sorted(
         [c for c in deduped if c.speed is not None],
         key=lambda x: x.speed if x.speed is not None else 0,
@@ -476,7 +503,6 @@ def main():
     M3UExporter.export_mobile_first(mobile_first, str(OUTPUT_DIR / "result-mobile-first.m3u"))
     TXTExporter.export_mobile_first(mobile_first, str(OUTPUT_DIR / "result-mobile-first.txt"))
 
-    # 测速日志
     LogExporter.export_speed_log(deduped, str(LOG_DIR / "speed_test.log"))
 
     elapsed = time.time() - start_time
