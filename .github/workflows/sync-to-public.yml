@@ -13,36 +13,16 @@ jobs:
         env:
           TOKEN: ${{ secrets.SYNC_TOKEN }}
         run: |
+          # 清除可能注入的代理变量（GitHub runner 不需要代理）
+          unset http_proxy https_proxy all_proxy HTTP_PROXY HTTPS_PROXY ALL_PROXY || true
+          env | grep -i proxy || echo "no proxy set"
+
+          rm -rf /tmp/mytv source
+          git clone --depth 1 \
+            "https://x-access-token:${TOKEN}@github.com/luochen1975/mytv.git" /tmp/mytv
+
           mkdir -p source/output
-          
-          # 获取文件列表
-          curl -sL \
-               -H "Authorization: Bearer ${TOKEN}" \
-               -H "Accept: application/vnd.github+json" \
-               -o /tmp/files.json \
-               "https://api.github.com/repos/luochen1975/mytv/contents/output?ref=main"
-          
-          FILES=$(cat /tmp/files.json | jq -r '.[].name // empty' 2>/dev/null)
-          
-          if [ -z "$FILES" ]; then
-            echo "❌ No files found"
-            cat /tmp/files.json
-            exit 1
-          fi
-          
-          echo "Files: $FILES"
-          
-          # 下载文件
-          echo "$FILES" | while IFS= read -r FILE; do
-            [ -z "$FILE" ] && continue
-            curl -sL \
-                 -H "Authorization: Bearer ${TOKEN}" \
-                 -H "Accept: application/vnd.github.v3.raw" \
-                 -o "source/output/${FILE}" \
-                 "https://api.github.com/repos/luochen1975/mytv/contents/output/${FILE}?ref=main"
-            echo "✅ ${FILE}"
-          done
-          
+          cp -r /tmp/mytv/output/. source/output/
           ls -la source/output/
 
       - name: Push to public repo
@@ -50,19 +30,20 @@ jobs:
           TOKEN: ${{ secrets.SYNC_TOKEN }}
           PUBLIC_REPO: ${{ secrets.PUBLIC_REPO }}
         run: |
+          unset http_proxy https_proxy all_proxy HTTP_PROXY HTTPS_PROXY ALL_PROXY || true
           cd source
-          
+
           git init
           git checkout -b main 2>/dev/null || git checkout main
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          
+
           git add .
-          git commit -m "sync output - $(date +%Y-%m-%d_%H:%M:%S)"
-          
+          git commit -m "sync output - $(date +%Y-%m-%d_%H:%M:%S)" || echo "no changes to commit"
+
           git remote add public "https://x-access-token:${TOKEN}@github.com/${PUBLIC_REPO}.git"
           git push public main --force
-          
+
           echo "✅ Done: https://github.com/${PUBLIC_REPO}"
 
       - name: Verify
