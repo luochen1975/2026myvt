@@ -5,47 +5,44 @@ permissions:
 
 on:
   schedule:
-    - cron: '0 8,20 * * *'
+    # 每天上海时间 04:17 和 16:17，避开整点高峰
+    - cron: '17 4,16 * * *'
+      timezone: Asia/Shanghai
   workflow_dispatch:
 
 jobs:
   update:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
         ref: main
-    
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.12'
-    
+
     - name: Install dependencies
       run: |
         pip install aiohttp requests
-    
-    # 新增：清空旧输出目录，解决文件覆盖损坏问题
+
+    # 清空旧输出目录，避免旧结果残留
     - name: Clear old output files
       run: |
         rm -rf ./output
         mkdir -p ./output
-    
-    # 兼容脚本报错，执行完强制继续往下走，不中断流水线
-    - name: Run processor
-      run: python main.py || true
 
-    # 新增：等待磁盘写入完成，避免文件未保存完毕
-    - name: Wait file write finish
-      run: sleep 4
+    - name: Run processor
+      run: python main.py
 
     - name: Commit results
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        
+
         for i in 1 2 3; do
           echo "Attempt $i: pulling remote changes..."
           if git pull origin main --rebase --autostash; then
@@ -55,11 +52,11 @@ jobs:
           echo "Pull failed, waiting 5 seconds..."
           sleep 5
         done
-        
+
         git add -A
-        
+
         git diff --quiet && git diff --staged --quiet || git commit -m "Update IPTV sources $(date +%Y-%m-%d)"
-        
+
         for i in 1 2 3; do
           echo "Attempt $i: pushing to remote..."
           if git push origin main; then
@@ -70,4 +67,3 @@ jobs:
           git pull origin main --rebase --autostash || true
           sleep 3
         done
-
