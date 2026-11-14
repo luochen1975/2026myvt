@@ -8,7 +8,7 @@ from urllib.parse import urlparse
 from dataclasses import dataclass
 from typing import List, Optional, Dict
 
-from config.settings import PROXY_ENABLED, PROXY_URL, USER_AGENT
+from config.settings import PROXY_ENABLED, PROXY_URL, USER_AGENT, NAME_RULES_FILE
 
 
 @dataclass
@@ -164,6 +164,85 @@ class JSONParser:
 BLACKLIST_FILE = Path(__file__).parent.parent / "config" / "blacklist.txt"
 
 
+def _yaml_scalar(value: str):
+    """把 YAML 的简单字符串值转成 Python 字符串。"""
+    value = value.strip()
+    if not value:
+        return ""
+    if (value.startswith("'") and value.endswith("'")) or (value.startswith('"') and value.endswith('"')):
+        return value[1:-1]
+    return value
+
+
+def load_name_rules(path: str | Path = NAME_RULES_FILE) -> list[dict]:
+    """加载 `config/name_rules.yaml`，兼容该项目的简化 YAML 结构。"""
+    path = Path(path)
+    if not path.exists():
+        return []
+
+    rules = []
+    current = None
+
+    for raw in path.read_text(encoding="utf-8").splitlines():
+        line = raw.rstrip()
+        if not line.strip() or line.lstrip().startswith("#"):
+            continue
+
+        stripped = line.lstrip()
+        if stripped.startswith("- "):
+            if current:
+                rules.append(current)
+            current = {}
+            rest = stripped[2:].strip()
+            if rest and ":" in rest:
+                key, value = rest.split(":", 1)
+                current[key.strip()] = _yaml_scalar(value)
+            continue
+
+        if current is None or ":" not in stripped:
+            continue
+
+        key, value = stripped.split(":", 1)
+        current[key.strip()] = _yaml_scalar(value)
+
+    if current:
+        rules.append(current)
+
+    return rules
+
+
+def apply_name_rules(channels: List[Channel], rules: Optional[List[dict]] = None) -> List[Channel]:
+    """应用名称清洗/重命名规则，统一修正频道名和分组。"""
+    if rules is None:
+        rules = load_name_rules()
+
+    for ch in channels:
+        name = ch.name
+        for rule in rules:
+            pattern = rule.get("filter")
+            if not pattern:
+                continue
+            try:
+                regex = re.compile(pattern, re.IGNORECASE)
+            except re.error as exc:
+                print(f"[WARNING] 名称规则编译失败 '{pattern}': {exc}")
+                continue
+
+            matched_before = bool(regex.fullmatch(name))
+            if "replace" in rule:
+                name = regex.sub(rule.get("replace", ""), name)
+
+            if "rename" in rule and matched_before:
+                name = rule["rename"]
+
+            if "group" in rule and (matched_before or bool(regex.fullmatch(name))):
+                ch.group = rule["group"]
+
+        ch.name = name
+
+    return channels
+
+
 def load_blacklist_rules() -> dict:
     """加载黑名单规则"""
     rules = {
@@ -258,6 +337,7 @@ class SourceLoader:
 
             parser = SourceLoader.PARSERS.get(file_type, M3UParser)
             channels = parser.parse(content, source=name)
+            channels = apply_name_rules(channels)
 
             isp = source_config.get("isp", "other")
             for ch in channels:
