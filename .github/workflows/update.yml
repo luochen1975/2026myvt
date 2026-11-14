@@ -11,41 +11,46 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
         ref: main
-    
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.12'
-    
+
     - name: Install dependencies
       run: |
         pip install aiohttp requests
-    
-    # 新增：清空旧输出目录，解决文件覆盖损坏问题
+
     - name: Clear old output files
       run: |
         rm -rf ./output
         mkdir -p ./output
-    
-    # 兼容脚本报错，执行完强制继续往下走，不中断流水线
-    - name: Run processor
-      run: python main.py || true
 
-    # 新增：等待磁盘写入完成，避免文件未保存完毕
+    - name: Run processor
+      run: |
+        # 清除可能注入的代理变量，避免 aiohttp 走无效代理导致全部测速失败
+        unset http_proxy https_proxy all_proxy HTTP_PROXY HTTPS_PROXY ALL_PROXY || true
+        python main.py || echo "⚠️ processor exited with error, will commit whatever output exists"
+
     - name: Wait file write finish
       run: sleep 4
+
+    - name: Check output
+      run: |
+        ls -la ./output/
+        test -s ./output/result.txt || echo "⚠️ result.txt is missing or empty!"
 
     - name: Commit results
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        
+
         for i in 1 2 3; do
           echo "Attempt $i: pulling remote changes..."
           if git pull origin main --rebase --autostash; then
@@ -55,11 +60,10 @@ jobs:
           echo "Pull failed, waiting 5 seconds..."
           sleep 5
         done
-        
+
         git add -A
-        
         git diff --quiet && git diff --staged --quiet || git commit -m "Update IPTV sources $(date +%Y-%m-%d)"
-        
+
         for i in 1 2 3; do
           echo "Attempt $i: pushing to remote..."
           if git push origin main; then
@@ -70,4 +74,3 @@ jobs:
           git pull origin main --rebase --autostash || true
           sleep 3
         done
-
