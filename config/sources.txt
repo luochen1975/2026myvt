@@ -1,0 +1,3 @@
+https://example.com/source1.m3u
+https://example.com/source2.txt
+# 支持 m3u / m3u8 / txt（频道名,url 格式）
